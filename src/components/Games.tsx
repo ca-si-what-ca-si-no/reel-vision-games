@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import gamesShowcase from "@/assets/games-showcase.jpg";
+import kenoGame from "@/assets/keno-game.png";
+import hiloGame from "@/assets/hilo-game.png";
+import crashGame from "@/assets/crash-game.png";
 import { Play, Star, TrendingUp } from "lucide-react";
 
 const Games = () => {
@@ -40,14 +42,83 @@ const Games = () => {
           </p>
         </div>
 
-        {/* Featured Game Showcase */}
+        {/* Featured Games Showcase */}
         <div className="mb-20">
-          <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Keno Game */}
+            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={kenoGame} 
+                  alt="Keno game interface" 
+                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-primary-glow/20 text-primary-glow border-primary-glow/30">
+                  Keno
+                </Badge>
+                <Button 
+                  size="sm" 
+                  className="absolute bottom-4 left-4 accent-gradient"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Демо
+                </Button>
+              </div>
+            </Card>
+
+            {/* Hilo Game */}
+            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={hiloGame} 
+                  alt="Hilo card game interface" 
+                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-accent/20 text-accent border-accent/30">
+                  Hilo
+                </Badge>
+                <Button 
+                  size="sm" 
+                  className="absolute bottom-4 left-4 accent-gradient"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Демо
+                </Button>
+              </div>
+            </Card>
+
+            {/* Crash Game */}
+            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={crashGame} 
+                  alt="Crash game interface" 
+                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-primary/30 text-primary-glow border-primary/50">
+                  Crash
+                </Badge>
+                <Button 
+                  size="sm" 
+                  className="absolute bottom-4 left-4 accent-gradient"
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Демо
+                </Button>
+              </div>
+            </Card>
+          </div>
+
+          {/* Main Feature Card */}
+          <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition mt-8">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative overflow-hidden">
                 <img 
-                  src={gamesShowcase} 
-                  alt="Gaming showcase" 
+                  src={crashGame} 
+                  alt="Featured crash game" 
                   className="w-full h-80 lg:h-full object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
@@ -56,19 +127,19 @@ const Games = () => {
                   className="absolute bottom-6 left-6 accent-gradient glow-effect"
                 >
                   <Play className="w-5 h-5 mr-2" />
-                  Демо версия
+                  Попробовать все игры
                 </Button>
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <Badge className="w-fit mb-4 bg-primary-glow/20 text-primary-glow border-primary-glow/30">
-                  Хит продаж
+                  Полная коллекция
                 </Badge>
                 <h3 className="text-3xl font-bold mb-4 text-foreground">
-                  Crash Games Pack
+                  Готовые игровые решения
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Полный пакет crash-игр с единой системой управления. 
-                  Настраиваемый RTP, детальная аналитика и простая интеграция.
+                  Keno, Hilo и пакет Crash игр с настраиваемым RTP, 
+                  современным дизайном и полной интеграционной поддержкой.
                 </p>
                 <div className="flex items-center gap-6 text-sm">
                   <div className="flex items-center gap-2">
@@ -77,7 +148,7 @@ const Games = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-primary-glow" />
-                    <span className="text-muted-foreground">Управление игрой</span>
+                    <span className="text-muted-foreground">Готовы к запуску</span>
                   </div>
                 </div>
               </div>
