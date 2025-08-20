@@ -16,8 +16,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Создаем инновационные игры для казино с передовыми технологиями 
-              и непревзойденным качеством. Работаем с операторами по всему миру.
+              Профессиональная игровая студия, создающая инновационные решения для казино. 
+              Экспертиза в разработке, интеграции и поддержке игрового контента.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">

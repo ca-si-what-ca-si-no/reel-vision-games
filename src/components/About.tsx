@@ -34,8 +34,8 @@ const About = () => {
             <span className="text-transparent bg-gradient-accent bg-clip-text">такие</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            GdeNazvanie Studio — это динамично развивающаяся игровая студия, 
-            специализирующаяся на создании инновационных решений для индустрии онлайн-казино.
+            GdeNazvanie Studio — это профессиональная игровая студия с глубокой экспертизой 
+            в создании высокотехнологичных решений для индустрии онлайн-казино.
           </p>
         </div>
         
@@ -64,8 +64,8 @@ const About = () => {
         <div className="mt-20 text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="text-4xl font-bold text-accent mb-2">3</div>
-              <div className="text-muted-foreground">Готовые игры</div>
+              <div className="text-4xl font-bold text-accent mb-2">3+</div>
+              <div className="text-muted-foreground">Готовых продукта</div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="text-4xl font-bold text-accent mb-2">90-99%</div>

@@ -31,11 +31,11 @@ const Games = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Наши</span>{" "}
-            <span className="text-transparent bg-gradient-accent bg-clip-text">игры</span>
+            <span className="text-transparent bg-gradient-accent bg-clip-text">решения</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Каждая игра создается с учетом современных требований рынка 
-            и предпочтений игроков со всего мира.
+            Портфолио готовых игровых продуктов с современными технологиями 
+            и гибкими настройками для каждого оператора.
           </p>
         </div>
 

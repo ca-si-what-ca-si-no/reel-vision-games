@@ -90,8 +90,8 @@ const Integrators = () => {
             <span className="text-transparent bg-gradient-accent bg-clip-text">интеграторов</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Предоставляем полный спектр решений для интеграции наших игр 
-            в ваши казино и игровые платформы.
+            Комплексные решения для интеграции игрового контента в ваши платформы. 
+            От API до технической поддержки — всё для успешного запуска.
           </p>
         </div>
 

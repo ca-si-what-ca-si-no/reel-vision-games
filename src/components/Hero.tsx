@@ -48,8 +48,8 @@ const Hero = () => {
           </div>
           
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Разрабатываем Keno, Hilo и crash игры с настраиваемым RTP 
-            и полной технической поддержкой для интеграторов казино.
+            Игровая студия с экспертизой в создании казино игр. Наш актуальный портфолио включает 
+            Keno, Hilo и crash игры с настраиваемым RTP и полной интеграционной поддержкой.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
