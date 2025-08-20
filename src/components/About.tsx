@@ -64,16 +64,16 @@ const About = () => {
         <div className="mt-20 text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="text-4xl font-bold text-accent mb-2">100+</div>
-              <div className="text-muted-foreground">Игр создано</div>
+              <div className="text-4xl font-bold text-accent mb-2">3</div>
+              <div className="text-muted-foreground">Готовые игры</div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="text-4xl font-bold text-accent mb-2">25+</div>
-              <div className="text-muted-foreground">Стран</div>
+              <div className="text-4xl font-bold text-accent mb-2">90-99%</div>
+              <div className="text-muted-foreground">Настраиваемый RTP</div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="text-4xl font-bold text-accent mb-2">98%</div>
-              <div className="text-muted-foreground">RTP</div>
+              <div className="text-4xl font-bold text-accent mb-2">24ч</div>
+              <div className="text-muted-foreground">Интеграция</div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <div className="text-4xl font-bold text-accent mb-2">24/7</div>

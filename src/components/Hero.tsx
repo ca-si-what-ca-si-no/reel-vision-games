@@ -29,18 +29,18 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-4 mb-8 text-lg">
             <div className="flex items-center gap-2">
               <Rocket className="w-5 h-5 text-accent" />
-              <span className="text-accent font-semibold">Инновационные решения</span>
+              <span className="text-accent font-semibold">Настраиваемый RTP</span>
             </div>
             <div className="w-2 h-2 rounded-full bg-muted-foreground/50"></div>
             <div className="flex items-center gap-2">
               <Star className="w-5 h-5 text-primary-glow" />
-              <span className="text-muted-foreground">Премиум качество</span>
+              <span className="text-muted-foreground">Админка включена</span>
             </div>
           </div>
           
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Разрабатываем высокотехнологичные игры для казино с современным дизайном, 
-            надежной механикой и интеграцией для операторов по всему миру.
+            Разрабатываем Keno, Hilo и crash игры с административными панелями, 
+            настраиваемым RTP и полной технической поддержкой для интеграторов.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

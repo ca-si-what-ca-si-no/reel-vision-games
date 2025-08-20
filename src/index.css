@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Gaming Casino Theme - Dark Professional */
-    --background: 0 0% 5%;
+    /* Modern Cyber Gaming Theme */
+    --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 8%;
+    --card: 0 0% 6%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 8%;
+    --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
 
-    /* Gaming Red Primary */
-    --primary: 0 72% 25%;
+    /* Cyber Purple Primary */
+    --primary: 260 100% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 0 72% 35%;
+    --primary-glow: 260 100% 60%;
 
-    /* Gold Accent for CTAs */
-    --secondary: 45 100% 60%;
+    /* Electric Blue Accent */
+    --secondary: 190 100% 50%;
     --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 45 100% 60%;
+    --accent: 190 100% 50%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 0 72% 35%;
+    --input: 0 0% 10%;
+    --ring: 260 100% 60%;
 
     --radius: 0.75rem;
 
-    /* Gaming Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 72% 15%), hsl(350 70% 25%), hsl(0 50% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%), hsl(0 0% 12%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 100% 60%), hsl(35 100% 55%));
+    /* Cyber Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(260 60% 8%), hsl(240 80% 12%), hsl(260 40% 5%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 6%), hsl(240 20% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 100% 50%), hsl(260 100% 60%));
     
-    /* Gaming Effects */
-    --shadow-glow: 0 0 40px hsla(0, 72%, 35%, 0.3);
-    --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.5);
+    /* Cyber Effects */
+    --shadow-glow: 0 0 40px hsla(260, 100%, 60%, 0.4);
+    --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.6);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -71,25 +71,25 @@ All colors MUST be HSL.
 
   .dark {
     /* Same as light theme - we're using dark by default */
-    --background: 0 0% 5%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 8%;
+    --card: 0 0% 6%;
     --card-foreground: 0 0% 95%;
-    --popover: 0 0% 8%;
+    --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
-    --primary: 0 72% 25%;
+    --primary: 260 100% 45%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 45 100% 60%;
+    --secondary: 190 100% 50%;
     --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 45 100% 60%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 190 100% 50%;
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 0 72% 35%;
+    --input: 0 0% 10%;
+    --ring: 260 100% 60%;
   }
 }
 

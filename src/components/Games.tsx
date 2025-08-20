@@ -7,28 +7,22 @@ import { Play, Star, TrendingUp } from "lucide-react";
 const Games = () => {
   const gameTypes = [
     {
-      title: "Слоты",
-      description: "Современные игровые автоматы с уникальными механиками",
-      count: "60+",
+      title: "Keno",
+      description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
+      features: ["Настраиваемый RTP", "Административная панель", "Реалтайм аналитика"],
       badge: "Популярное"
     },
     {
-      title: "Рулетка",
-      description: "Классические и инновационные версии рулетки",
-      count: "15+",
-      badge: "Премиум"
+      title: "Hilo",
+      description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
+      features: ["Быстрые раунды", "Мобильная оптимизация", "Настройка лимитов"],
+      badge: "Топ"
     },
     {
-      title: "Карточные игры",
-      description: "Покер, блэкджек и другие карточные игры",
-      count: "25+",
-      badge: "Новое"
-    },
-    {
-      title: "Краш игры",
-      description: "Динамичные игры с мгновенными выплатами",
-      count: "10+",
-      badge: "Тренд"
+      title: "Crash Games Pack",
+      description: "Полный пакет краш-игр с уникальными механиками и дизайном",
+      features: ["5 уникальных игр", "Общая админка", "Синхронизированная статистика"],
+      badge: "Новинка"
     }
   ];
 
@@ -67,23 +61,23 @@ const Games = () => {
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <Badge className="w-fit mb-4 bg-primary-glow/20 text-primary-glow border-primary-glow/30">
-                  Премьера
+                  Хит продаж
                 </Badge>
                 <h3 className="text-3xl font-bold mb-4 text-foreground">
-                  Cosmic Fortune
+                  Crash Games Pack
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Революционный слот с уникальной механикой космических путешествий. 
-                  Инновационные бонусные раунды и захватывающий геймплей.
+                  Полный пакет crash-игр с единой административной панелью. 
+                  Настраиваемый RTP, детальная аналитика и простая интеграция.
                 </p>
                 <div className="flex items-center gap-6 text-sm">
                   <div className="flex items-center gap-2">
                     <Star className="w-4 h-4 text-accent fill-current" />
-                    <span className="text-muted-foreground">RTP 96.5%</span>
+                    <span className="text-muted-foreground">RTP 90-99%</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-primary-glow" />
-                    <span className="text-muted-foreground">Высокая волатильность</span>
+                    <span className="text-muted-foreground">Админка включена</span>
                   </div>
                 </div>
               </div>
@@ -92,7 +86,7 @@ const Games = () => {
         </div>
 
         {/* Game Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {gameTypes.map((game, index) => (
             <Card 
               key={index}
@@ -106,17 +100,25 @@ const Games = () => {
                 <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
                   {game.title}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-4 leading-relaxed">
                   {game.description}
                 </p>
-                <div className="text-3xl font-bold text-accent mb-4">
-                  {game.count}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Особенности:</h4>
+                  <ul className="space-y-1">
+                    {game.features.map((feature, idx) => (
+                      <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
+                        <Star className="w-3 h-3 text-accent fill-current" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <Button 
                   variant="outline" 
                   className="w-full border-border hover:bg-card"
                 >
-                  Подробнее
+                  Демо версия
                 </Button>
               </CardContent>
             </Card>

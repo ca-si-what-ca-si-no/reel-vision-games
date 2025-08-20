@@ -20,8 +20,8 @@ const Integrators = () => {
     },
     {
       icon: Shield,
-      title: "Безопасность",
-      description: "Сертифицированные игры с полным соответствием международным стандартам"
+      title: "Настраиваемый RTP",
+      description: "Полный контроль над RTP от 90% до 99% через административную панель"
     },
     {
       icon: Zap,
@@ -30,59 +30,54 @@ const Integrators = () => {
     },
     {
       icon: HeadphonesIcon,
-      title: "Поддержка 24/7",
-      description: "Круглосуточная техническая поддержка на русском и английском языках"
+      title: "Админка включена",
+      description: "Полнофункциональная административная панель для управления играми"
     },
     {
       icon: BarChart3,
-      title: "Аналитика",
-      description: "Подробная статистика и отчеты по производительности игр"
+      title: "Реалтайм аналитика",
+      description: "Подробная статистика и отчеты по производительности игр в реальном времени"
     },
     {
       icon: Globe,
-      title: "Мультиязычность",
-      description: "Поддержка 20+ языков и различных валют"
+      title: "Готовые решения",
+      description: "Keno, Hilo и пакет Crash игр готовы к немедленной интеграции"
     }
   ];
 
-  const packages = [
+  const gamePackages = [
     {
-      title: "Стартовый",
-      price: "Бесплатно",
-      description: "Идеально для тестирования",
+      title: "Keno",
+      description: "Классическая лотерейная игра",
       features: [
-        "5 игр в портфолио",
-        "Базовое API",
-        "Email поддержка",
-        "Стандартная аналитика"
-      ],
-      badge: "Популярный"
+        "Настраиваемый RTP 90-99%",
+        "Административная панель",
+        "Мобильная версия",
+        "Реалтайм статистика",
+        "Полная документация API"
+      ]
     },
     {
-      title: "Профессиональный",
-      price: "€2,500/мес",
-      description: "Для растущих операторов",
+      title: "Hilo",
+      description: "Карточная игра с высокой отдачей",
       features: [
-        "25+ игр",
-        "Расширенное API",
-        "24/7 поддержка",
-        "Кастомизация интерфейса",
+        "Быстрые раунды игры",
+        "Настройка лимитов ставок",
+        "Адаптивный дизайн",
+        "Интегрированная админка",
         "Детальная аналитика"
-      ],
-      badge: "Рекомендуем"
+      ]
     },
     {
-      title: "Энтерпрайз",
-      price: "Индивидуально",
-      description: "Для крупных операторов",
+      title: "Crash Games Pack",
+      description: "Пакет из 5 crash игр",
       features: [
-        "Весь портфолио игр",
-        "Персональный менеджер",
-        "Кастомные игры",
-        "SLA 99.9%",
-        "Белый лейбл решения"
-      ],
-      badge: "VIP"
+        "5 уникальных crash игр",
+        "Единая админ панель",
+        "Синхронизированная статистика",
+        "Настраиваемые параметры",
+        "24/7 техподдержка"
+      ]
     }
   ];
 
@@ -123,39 +118,29 @@ const Integrators = () => {
           ))}
         </div>
 
-        {/* Pricing Plans */}
+        {/* Game Packages */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center mb-12 text-foreground">
-            Тарифные планы
+            Готовые игровые решения
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {packages.map((plan, index) => (
+            {gamePackages.map((game, index) => (
               <Card 
                 key={index}
-                className={`gaming-border card-shadow smooth-transition hover:shadow-glow relative ${
-                  index === 1 ? 'scale-105 border-accent/50' : ''
-                } animate-fade-in`}
+                className="gaming-border card-shadow smooth-transition hover:shadow-glow animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {plan.badge && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground">
-                    {plan.badge}
-                  </Badge>
-                )}
                 <CardHeader className="text-center p-8">
                   <CardTitle className="text-2xl font-bold text-foreground mb-2">
-                    {plan.title}
+                    {game.title}
                   </CardTitle>
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    {plan.price}
-                  </div>
                   <p className="text-muted-foreground">
-                    {plan.description}
+                    {game.description}
                   </p>
                 </CardHeader>
                 <CardContent className="p-8 pt-0">
                   <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
+                    {game.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-3">
                         <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
                         <span className="text-muted-foreground">{feature}</span>
@@ -163,12 +148,9 @@ const Integrators = () => {
                     ))}
                   </ul>
                   <Button 
-                    className={`w-full ${
-                      index === 1 ? 'accent-gradient glow-effect' : 'border-border hover:bg-card'
-                    }`}
-                    variant={index === 1 ? 'default' : 'outline'}
+                    className="w-full accent-gradient glow-effect"
                   >
-                    {index === 2 ? 'Связаться с нами' : 'Начать работу'}
+                    Демо и интеграция
                   </Button>
                 </CardContent>
               </Card>
@@ -182,15 +164,15 @@ const Integrators = () => {
             Готовы начать интеграцию?
           </h3>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Получите доступ к нашему API и начните тестирование уже сегодня. 
-            Техническая документация и примеры кода доступны сразу после регистрации.
+            Все игры поставляются с административной панелью и настраиваемым RTP. 
+            Начните тестирование прямо сейчас!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="accent-gradient glow-effect font-semibold">
-              Получить API ключ
+              Демо доступ
             </Button>
             <Button size="lg" variant="outline" className="border-border hover:bg-card">
-              Техническая документация
+              API документация
             </Button>
           </div>
         </Card>
