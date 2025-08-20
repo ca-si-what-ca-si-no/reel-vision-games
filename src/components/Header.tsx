@@ -7,9 +7,9 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Gaming Studio Logo" className="w-10 h-10 animate-float" />
+            <img src={logo} alt="GdeNazvanie Studio Logo" className="w-10 h-10 animate-float" />
             <span className="text-2xl font-bold text-foreground">
-              GameForge <span className="text-accent">Studio</span>
+              GdeNazvanie <span className="text-accent">Studio</span>
             </span>
           </div>
           

@@ -15,7 +15,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "business@gameforge-studio.com",
+      content: "business@gdeNazvanie-studio.com",
       description: "Для деловых предложений"
     },
     {
@@ -27,7 +27,7 @@ const Contact = () => {
     {
       icon: MessageCircle,
       title: "Telegram",
-      content: "@gameforge_support",
+      content: "@gdeNazvanie_support",
       description: "Быстрые ответы и поддержка"
     },
     {

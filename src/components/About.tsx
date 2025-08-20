@@ -26,7 +26,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-24 relative background-pattern">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -34,7 +34,7 @@ const About = () => {
             <span className="text-transparent bg-gradient-accent bg-clip-text">такие</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            GameForge Studio — это динамично развивающаяся игровая студия, 
+            GdeNazvanie Studio — это динамично развивающаяся игровая студия, 
             специализирующаяся на создании инновационных решений для индустрии онлайн-казино.
           </p>
         </div>

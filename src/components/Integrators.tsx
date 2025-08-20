@@ -21,7 +21,7 @@ const Integrators = () => {
     {
       icon: Shield,
       title: "Настраиваемый RTP",
-      description: "Полный контроль над RTP от 90% до 99% через административную панель"
+      description: "Полный контроль над RTP от 90% до 99% для каждой игры"
     },
     {
       icon: Zap,
@@ -30,8 +30,8 @@ const Integrators = () => {
     },
     {
       icon: HeadphonesIcon,
-      title: "Админка включена",
-      description: "Полнофункциональная административная панель для управления играми"
+      title: "Управление играми",
+      description: "Удобные инструменты для настройки и мониторинга игрового процесса"
     },
     {
       icon: BarChart3,
@@ -51,7 +51,7 @@ const Integrators = () => {
       description: "Классическая лотерейная игра",
       features: [
         "Настраиваемый RTP 90-99%",
-        "Административная панель",
+        "Управление через API",
         "Мобильная версия",
         "Реалтайм статистика",
         "Полная документация API"
@@ -64,8 +64,8 @@ const Integrators = () => {
         "Быстрые раунды игры",
         "Настройка лимитов ставок",
         "Адаптивный дизайн",
-        "Интегрированная админка",
-        "Детальная аналитика"
+        "Встроенная аналитика",
+        "Детальная статистика"
       ]
     },
     {
@@ -73,7 +73,7 @@ const Integrators = () => {
       description: "Пакет из 5 crash игр",
       features: [
         "5 уникальных crash игр",
-        "Единая админ панель",
+        "Единая панель управления",
         "Синхронизированная статистика",
         "Настраиваемые параметры",
         "24/7 техподдержка"
@@ -82,7 +82,7 @@ const Integrators = () => {
   ];
 
   return (
-    <section id="integrators" className="py-24 relative">
+    <section id="integrators" className="py-24 relative background-pattern">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -164,7 +164,7 @@ const Integrators = () => {
             Готовы начать интеграцию?
           </h3>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Все игры поставляются с административной панелью и настраиваемым RTP. 
+            Все игры поставляются с инструментами управления и настраиваемым RTP. 
             Начните тестирование прямо сейчас!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

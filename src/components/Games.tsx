@@ -9,7 +9,7 @@ const Games = () => {
     {
       title: "Keno",
       description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
-      features: ["Настраиваемый RTP", "Административная панель", "Реалтайм аналитика"],
+      features: ["Настраиваемый RTP", "Веб-интерфейс управления", "Реалтайм аналитика"],
       badge: "Популярное"
     },
     {
@@ -21,13 +21,13 @@ const Games = () => {
     {
       title: "Crash Games Pack",
       description: "Полный пакет краш-игр с уникальными механиками и дизайном",
-      features: ["5 уникальных игр", "Общая админка", "Синхронизированная статистика"],
+      features: ["5 уникальных игр", "Единое управление", "Синхронизированная статистика"],
       badge: "Новинка"
     }
   ];
 
   return (
-    <section id="games" className="py-24 relative">
+    <section id="games" className="py-24 relative background-grid">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -67,7 +67,7 @@ const Games = () => {
                   Crash Games Pack
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Полный пакет crash-игр с единой административной панелью. 
+                  Полный пакет crash-игр с единой системой управления. 
                   Настраиваемый RTP, детальная аналитика и простая интеграция.
                 </p>
                 <div className="flex items-center gap-6 text-sm">
@@ -77,7 +77,7 @@ const Games = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-primary-glow" />
-                    <span className="text-muted-foreground">Админка включена</span>
+                    <span className="text-muted-foreground">Управление игрой</span>
                   </div>
                 </div>
               </div>

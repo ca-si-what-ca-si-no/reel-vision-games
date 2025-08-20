@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern Cyber Gaming Theme */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Softer Cyber Gaming Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 92%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 92%;
 
-    /* Cyber Purple Primary */
-    --primary: 260 100% 45%;
+    /* Muted Purple Primary */
+    --primary: 250 60% 35%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 260 100% 60%;
+    --primary-glow: 250 50% 45%;
 
-    /* Electric Blue Accent */
-    --secondary: 190 100% 50%;
-    --secondary-foreground: 0 0% 10%;
+    /* Soft Teal Accent */
+    --secondary: 180 60% 40%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 190 100% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 180 60% 40%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 260 100% 60%;
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 250 50% 45%;
 
     --radius: 0.75rem;
 
-    /* Cyber Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(260 60% 8%), hsl(240 80% 12%), hsl(260 40% 5%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 6%), hsl(240 20% 8%));
-    --gradient-accent: linear-gradient(135deg, hsl(190 100% 50%), hsl(260 100% 60%));
+    /* Softer Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(250 40% 10%), hsl(240 50% 12%), hsl(250 30% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%), hsl(240 15% 10%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 60% 40%), hsl(250 60% 35%));
     
-    /* Cyber Effects */
-    --shadow-glow: 0 0 40px hsla(260, 100%, 60%, 0.4);
-    --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.6);
+    /* Softer Effects */
+    --shadow-glow: 0 0 30px hsla(250, 50%, 45%, 0.25);
+    --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -71,25 +71,25 @@ All colors MUST be HSL.
 
   .dark {
     /* Same as light theme - we're using dark by default */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 260 100% 45%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 250 60% 35%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 190 100% 50%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 190 100% 50%;
-    --accent-foreground: 0 0% 10%;
-    --destructive: 0 84% 60%;
+    --secondary: 180 60% 40%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 180 60% 40%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 260 100% 60%;
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 250 50% 45%;
   }
 }
 
@@ -140,5 +140,36 @@ All colors MUST be HSL.
       hsl(var(--card)), 
       hsl(0 0% 10%)
     );
+  }
+
+  .background-pattern {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .background-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary-glow) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .background-dots {
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--muted-foreground) / 0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .background-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 }
