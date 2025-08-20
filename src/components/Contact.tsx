@@ -137,31 +137,6 @@ const Contact = () => {
               </Card>
             ))}
             
-            {/* Integration Process */}
-            <Card className="gaming-border card-shadow p-6">
-              <h4 className="font-semibold text-foreground mb-4">
-                Процесс интеграции
-              </h4>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">1</div>
-                  <span className="text-sm text-muted-foreground">Техническое обсуждение</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">2</div>
-                  <span className="text-sm text-muted-foreground">Предоставление API ключей</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">3</div>
-                  <span className="text-sm text-muted-foreground">Тестирование и настройка</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">4</div>
-                  <span className="text-sm text-muted-foreground">Запуск в продакшн</span>
-                </div>
-              </div>
-            </Card>
-
             {/* Quick Stats */}
             <Card className="gaming-border card-shadow p-6">
               <h4 className="font-semibold text-foreground mb-4">
@@ -199,31 +174,6 @@ const Contact = () => {
                   <div className="text-sm text-muted-foreground">
                     Опыта в индустрии
                   </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Technical Support */}
-            <Card className="gaming-border card-shadow p-6">
-              <h4 className="font-semibold text-foreground mb-4">
-                Техническая поддержка
-              </h4>
-              <div className="space-y-3 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>API документация</span>
-                  <span className="text-accent">✓ Полная</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Примеры интеграции</span>
-                  <span className="text-accent">✓ Готовые</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Тестовая среда</span>
-                  <span className="text-accent">✓ Доступна</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Поддержка 24/7</span>
-                  <span className="text-accent">✓ Включена</span>
                 </div>
               </div>
             </Card>
