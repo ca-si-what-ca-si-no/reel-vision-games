@@ -82,16 +82,14 @@ const Footer = () => {
             <div className="text-muted-foreground text-sm">
               © 2024 GdeNazvanie Studio. Все права защищены.
             </div>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-muted-foreground hover:text-accent smooth-transition text-sm">
-                Политика конфиденциальности
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-accent smooth-transition text-sm">
-                Условия использования
-              </a>
+            <div className="flex items-center">
               <Button 
                 size="sm" 
                 className="accent-gradient text-sm font-semibold"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Начать сотрудничество
                 <ExternalLink className="w-4 h-4 ml-2" />
