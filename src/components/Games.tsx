@@ -51,7 +51,7 @@ const Games = () => {
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-primary-glow/20 text-primary-glow border-primary-glow/30">
+                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
                   Keno
                 </Badge>
                 <Button 
@@ -73,7 +73,7 @@ const Games = () => {
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-accent/20 text-accent border-accent/30">
+                <Badge className="absolute top-4 left-4 bg-background/95 text-accent border-accent/50 font-semibold backdrop-blur-sm">
                   Hilo
                 </Badge>
                 <Button 
@@ -95,7 +95,7 @@ const Games = () => {
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-primary/30 text-primary-glow border-primary/50">
+                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
                   Crash
                 </Badge>
                 <Button 
@@ -128,7 +128,7 @@ const Games = () => {
                 </Button>
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <Badge className="w-fit mb-4 bg-primary-glow/20 text-primary-glow border-primary-glow/30">
+                <Badge className="w-fit mb-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
                   Полная коллекция
                 </Badge>
                 <h3 className="text-3xl font-bold mb-4 text-foreground">
