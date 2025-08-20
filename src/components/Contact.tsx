@@ -4,8 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { 
   Mail, 
-  Phone, 
-  MapPin, 
   MessageCircle,
   Send
 } from "lucide-react";
@@ -19,22 +17,10 @@ const Contact = () => {
       description: "Для деловых предложений"
     },
     {
-      icon: Phone,
-      title: "Телефон",
-      content: "+7 (495) 123-45-67",
-      description: "Пн-Пт с 10:00 до 19:00 МСК"
-    },
-    {
       icon: MessageCircle,
       title: "Telegram",
       content: "@gdeNazvanie_support",
       description: "Быстрые ответы и поддержка"
-    },
-    {
-      icon: MapPin,
-      title: "Офис",
-      content: "Москва, Россия",
-      description: "Встречи по предварительной записи"
     }
   ];
 
@@ -183,10 +169,10 @@ const Contact = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    5 лет
+                    5+ лет
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    На рынке
+                    Опыта в индустрии
                   </div>
                 </div>
               </div>

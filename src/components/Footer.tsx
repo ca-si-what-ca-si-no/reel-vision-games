@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -23,14 +23,6 @@ const Footer = () => {
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4" />
                 <span>business@gdeNazvanie-studio.com</span>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>+7 (495) 123-45-67</span>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <span>Москва, Россия</span>
               </div>
             </div>
           </div>
