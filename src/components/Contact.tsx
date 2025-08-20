@@ -177,6 +177,19 @@ const Contact = () => {
                 </div>
               </div>
             </Card>
+            
+            {/* Response Time Note */}
+            <Card className="gaming-border card-shadow p-6">
+              <div className="text-center">
+                <h4 className="font-semibold text-foreground mb-2">
+                  Время работы
+                </h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Мы работаем 24/7 и отвечаем на все сообщения в течение суток. 
+                  Для срочных вопросов используйте Telegram.
+                </p>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
