@@ -93,7 +93,7 @@ const Contact = () => {
                 </label>
                 <Textarea 
                   placeholder="Расскажите подробнее о вашем проекте..."
-                  rows={5}
+                  rows={3}
                   className="bg-input border-border focus:border-accent resize-none"
                 />
               </div>
