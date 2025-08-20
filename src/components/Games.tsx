@@ -1,9 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import kenoGame from "@/assets/keno-game.png";
-import hiloGame from "@/assets/hilo-game.png";
-import crashGame from "@/assets/crash-game.png";
 import { Play, Star, TrendingUp } from "lucide-react";
 
 const Games = () => {
@@ -49,7 +46,7 @@ const Games = () => {
             <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
               <div className="relative overflow-hidden">
                 <img 
-                  src={kenoGame} 
+                  src="/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png" 
                   alt="Keno game interface" 
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
@@ -71,7 +68,7 @@ const Games = () => {
             <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
               <div className="relative overflow-hidden">
                 <img 
-                  src={hiloGame} 
+                  src="/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png" 
                   alt="Hilo card game interface" 
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
@@ -93,7 +90,7 @@ const Games = () => {
             <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
               <div className="relative overflow-hidden">
                 <img 
-                  src={crashGame} 
+                  src="/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png" 
                   alt="Crash game interface" 
                   className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                 />
@@ -117,7 +114,7 @@ const Games = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative overflow-hidden">
                 <img 
-                  src={crashGame} 
+                  src="/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png" 
                   alt="Featured crash game" 
                   className="w-full h-80 lg:h-full object-cover group-hover:scale-105 smooth-transition"
                 />
