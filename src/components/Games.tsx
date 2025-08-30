@@ -161,30 +161,32 @@ const Games = () => {
               className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-8 text-center">
-                <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-                  {game.badge}
-                </Badge>
-                <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
-                  {game.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {game.description}
-                </p>
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Особенности:</h4>
-                  <ul className="space-y-1">
-                    {game.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <Star className="w-3 h-3 text-accent fill-current" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+              <CardContent className="p-8 text-center flex flex-col h-full">
+                <div className="flex-1">
+                  <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
+                    {game.badge}
+                  </Badge>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
+                    {game.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {game.description}
+                  </p>
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-foreground mb-2">Особенности:</h4>
+                    <ul className="space-y-1">
+                      {game.features.map((feature, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
+                          <Star className="w-3 h-3 text-accent fill-current" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full border-border hover:bg-card"
+                  className="w-full border-border hover:bg-card mt-auto"
                 >
                   Демо версия
                 </Button>
