@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Star, TrendingUp, X } from "lucide-react";
 import { useState } from "react";
 
@@ -203,20 +203,13 @@ const Games = () => {
 
       {/* Keno Demo Modal */}
       <Dialog open={isKenoModalOpen} onOpenChange={setIsKenoModalOpen}>
-        <DialogContent className="max-w-6xl w-full h-[90vh] p-0">
-          <DialogHeader className="p-6 pb-0">
-            <DialogTitle className="text-2xl font-bold text-foreground">
-              Keno - Демо версия
-            </DialogTitle>
-          </DialogHeader>
-          <div className="flex-1 p-6 pt-0">
-            <iframe
-              src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
-              className="w-full h-full rounded-lg border-0"
-              title="Keno Demo Game"
-              allow="fullscreen"
-            />
-          </div>
+        <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
+          <iframe
+            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
+            className="w-full h-full rounded-lg border-0"
+            title="Keno Demo Game"
+            allow="fullscreen"
+          />
         </DialogContent>
       </Dialog>
     </section>
