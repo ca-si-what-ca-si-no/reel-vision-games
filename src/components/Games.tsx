@@ -206,7 +206,7 @@ const Games = () => {
         <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
           <iframe
             src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
-            className="w-full h-full rounded-lg border-0 custom-scrollbar"
+            className="w-full h-full rounded-lg border-0"
             title="Keno Demo Game"
             allow="fullscreen"
           />
