@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Star, ArrowLeft, Smartphone, Monitor, Tablet, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,6 +11,11 @@ const Keno = () => {
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
   const [activeScreenshot, setActiveScreenshot] = useState<string | null>(null);
+
+  // Прокручиваем страницу наверх при загрузке
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const gameData = {
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
