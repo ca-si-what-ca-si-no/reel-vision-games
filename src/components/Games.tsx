@@ -118,6 +118,10 @@ const Games = () => {
                   className="w-full h-80 lg:h-full object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                <Badge className="absolute bottom-6 left-6 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
+                  <Clock className="w-4 h-4 mr-2" />
+                  Скоро в продаже
+                </Badge>
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <Badge className="w-fit mb-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
