@@ -66,7 +66,7 @@ const Games = () => {
                   {game.badge}
                 </Badge>
               </div>
-              <CardContent className="p-6 text-center flex flex-col h-full">
+              <CardContent className="p-6 text-center flex flex-col">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
                     {game.title}
@@ -86,20 +86,22 @@ const Games = () => {
                     </ul>
                   </div>
                 </div>
-                {game.title === "Keno" ? (
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-border hover:bg-card mt-auto"
-                    asChild
-                  >
-                    <a href="#contact">Демо версия</a>
-                  </Button>
-                ) : (
-                  <Badge className="w-full py-2 bg-muted text-muted-foreground border-border font-semibold mt-auto justify-center">
-                    <Clock className="w-4 h-4 mr-2" />
-                    Скоро в продаже
-                  </Badge>
-                )}
+                <div className="mt-auto pt-4">
+                  {game.title === "Keno" ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-border hover:bg-card"
+                      asChild
+                    >
+                      <a href="#contact">Демо версия</a>
+                    </Button>
+                  ) : (
+                    <Badge className="w-full py-2 bg-muted text-muted-foreground border-border font-semibold justify-center">
+                      <Clock className="w-4 h-4 mr-2" />
+                      Скоро в продаже
+                    </Badge>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
