@@ -43,7 +43,7 @@ const Integrators = () => {
     features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
   }];
   return <section id="integrators" className="py-20 relative">
-      <ParallaxSection speed={0.2} className="container mx-auto px-6">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Для</span>{" "}
@@ -92,7 +92,7 @@ const Integrators = () => {
             </Button>
           </div>
         </Card>
-      </ParallaxSection>
+      </div>
     </section>;
 };
 export default Integrators;

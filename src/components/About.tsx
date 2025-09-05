@@ -55,7 +55,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 relative">
-      <ParallaxSection speed={0.3} className="container mx-auto px-6">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-foreground">Кто мы</span>{" "}
@@ -119,7 +119,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </ParallaxSection>
+      </div>
     </section>
   );
 };

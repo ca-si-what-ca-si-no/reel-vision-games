@@ -52,7 +52,7 @@ const Hero = () => {
         </div>
       </ParallaxBackground>
       
-      <ParallaxSection speed={0.1} className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-foreground">Создаем</span>{" "}
@@ -95,7 +95,7 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-      </ParallaxSection>
+      </div>
       
       {/* Enhanced Background Pattern with slower parallax */}
       <ParallaxBackground speed={0.15} className="absolute inset-0 opacity-8 pointer-events-none">
