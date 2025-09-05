@@ -30,10 +30,13 @@ const Keno = () => {
       <main className="pt-20">
         <div className="container mx-auto px-6 py-12">
           {/* Breadcrumb */}
-          <div className="mb-8">
+          <div className="flex items-center justify-between mb-8">
             <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="w-4 h-4" />
               Назад к играм
+            </Link>
+            <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
+              2xWet Studio
             </Link>
           </div>
 
