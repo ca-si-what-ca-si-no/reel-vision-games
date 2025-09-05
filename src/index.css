@@ -286,7 +286,7 @@ All colors MUST be HSL.
     overflow: hidden;
     font-weight: 600;
     transition: all 0.3s ease;
-    animation: demo-pulse 2s ease-in-out infinite;
+    animation: demo-pulse 8s ease-in-out infinite;
   }
 
   .demo-button::before {
@@ -316,7 +316,7 @@ All colors MUST be HSL.
     opacity: 0;
     z-index: -1;
     filter: blur(8px);
-    animation: demo-glow 5s ease-in-out infinite;
+    animation: demo-glow 8s ease-in-out infinite;
   }
 
   @keyframes demo-pulse {
