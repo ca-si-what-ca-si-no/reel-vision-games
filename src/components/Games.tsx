@@ -22,18 +22,6 @@ const Games = () => {
     badge: "Популярное",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   }, {
-    title: "Hilo",
-    description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
-    features: {
-      volatility: 4,
-      rtp: "96-98%",
-      platforms: ["Web", "Mobile"],
-      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
-      maxMultiplier: "2500x"
-    },
-    badge: "Топ",
-    image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"
-  }, {
     title: "Crash Games Pack",
     description: "Полный пакет краш-игр с уникальными механиками и дизайном",
     features: {
@@ -45,6 +33,18 @@ const Games = () => {
     },
     badge: "Новинка",
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
+  }, {
+    title: "Hilo",
+    description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
+    features: {
+      volatility: 4,
+      rtp: "96-98%",
+      platforms: ["Web", "Mobile"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
+      maxMultiplier: "2500x"
+    },
+    badge: "Топ",
+    image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"
   }];
   return <section id="games" className="py-20 relative">
       <div className="container mx-auto px-6">
