@@ -60,7 +60,7 @@ const Hero = () => {
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">Игровая студия с экспертизой в создании казино игр. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="accent-gradient text-lg px-8 py-4 glow-effect animate-glow-pulse font-semibold" asChild>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
               <a href="#games">Каталог игр</a>
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-border hover:bg-card" asChild>
