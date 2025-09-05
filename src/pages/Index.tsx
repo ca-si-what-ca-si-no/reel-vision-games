@@ -5,10 +5,12 @@ import Games from "@/components/Games";
 import Integrators from "@/components/Integrators";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ParticlesBackground />
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
