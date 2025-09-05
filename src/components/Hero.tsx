@@ -89,19 +89,13 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {/* CTA-1: Основная кнопка - Связаться с нами */}
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px] relative overflow-hidden group" asChild>
-              <a href="#integrators">
-                <span className="relative z-10">Связаться с нами</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-glow via-accent to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
-              </a>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
+              <a href="#integrators">Связаться с нами</a>
             </Button>
             
             {/* CTA-2: Вторичная кнопка - Показать игры */}
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold relative overflow-hidden group" asChild>
-              <a href="#games">
-                <span className="relative z-10">Посмотреть игры</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-              </a>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold" asChild>
+              <a href="#games">Посмотреть игры</a>
             </Button>
           </div>
         </div>
