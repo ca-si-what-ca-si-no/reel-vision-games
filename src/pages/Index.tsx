@@ -9,6 +9,21 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* Animated Background */}
+      <div className="animated-background">
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="geometric-shape"></div>
+        <div className="geometric-shape"></div>
+        <div className="geometric-shape"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="animated-grid"></div>
+      </div>
       <Header />
       <main>
         <Hero />
