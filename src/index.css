@@ -316,21 +316,21 @@ All colors MUST be HSL.
     opacity: 0;
     z-index: -1;
     filter: blur(8px);
-    animation: demo-glow 2s ease-in-out infinite;
+    animation: demo-glow 3s ease-in-out infinite;
   }
 
   @keyframes demo-pulse {
     0%, 100% {
       box-shadow: 
-        0 4px 20px hsla(var(--primary) / 0.3),
-        0 0 20px hsla(var(--accent) / 0.2);
+        0 4px 20px hsla(var(--primary) / 0.2),
+        0 0 15px hsla(var(--accent) / 0.15);
       transform: scale(1);
     }
     50% {
       box-shadow: 
-        0 6px 25px hsla(var(--primary) / 0.4),
-        0 0 30px hsla(var(--accent) / 0.3);
-      transform: scale(1.02);
+        0 5px 22px hsla(var(--primary) / 0.25),
+        0 0 20px hsla(var(--accent) / 0.2);
+      transform: scale(1.005);
     }
   }
 
@@ -339,7 +339,7 @@ All colors MUST be HSL.
       opacity: 0;
     }
     50% {
-      opacity: 0.3;
+      opacity: 0.15;
     }
   }
 
