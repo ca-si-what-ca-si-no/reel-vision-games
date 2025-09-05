@@ -216,13 +216,17 @@ const Keno = () => {
 
       {/* Tablet Modal */}
       <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
-        <DialogContent className="max-w-5xl w-full h-[85vh] p-0">
-          <iframe 
-            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-            className="w-full h-full rounded-lg border-0" 
-            title="Keno Tablet Demo Game" 
-            allow="fullscreen" 
-          />
+        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur">
+          <div className="tablet-frame relative mx-auto">
+            <div className="tablet-screen">
+              <iframe 
+                src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                className="w-full h-full border-0 rounded-[15px]" 
+                title="Keno Tablet Demo Game" 
+                allow="fullscreen" 
+              />
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
       
