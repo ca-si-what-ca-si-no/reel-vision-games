@@ -127,7 +127,7 @@ const Games = () => {
                       <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-3 px-4 rounded-lg text-center">
                         Играть!
                       </button>
-                      <Link to="/keno" className="accent-gradient glow-effect font-semibold py-3 px-4 rounded-lg text-center">
+                      <Link to="/keno" className="outline-button py-3 px-4 rounded-lg text-center">
                         Подробнее
                       </Link>
                     </div>
@@ -137,7 +137,7 @@ const Games = () => {
                         <Clock className="w-4 h-4" />
                         Скоро в продаже
                       </div>
-                      <button onClick={() => setSelectedGame(game)} className="accent-gradient glow-effect font-semibold w-full py-2 px-4 rounded-lg text-center text-sm">
+                      <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
                         Подробнее
                       </button>
                     </div>
