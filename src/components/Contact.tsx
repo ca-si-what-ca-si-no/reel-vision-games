@@ -37,38 +37,38 @@ const Contact = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                  <label className="text-base font-medium text-muted-foreground mb-2 block">
                     Имя
                   </label>
-                  <Input placeholder="Ваше имя" className="bg-input border-border focus:border-accent" />
+                  <Input placeholder="Ваше имя" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                  <label className="text-base font-medium text-muted-foreground mb-2 block">
                     Компания
                   </label>
-                  <Input placeholder="Название компании" className="bg-input border-border focus:border-accent" />
+                  <Input placeholder="Название компании" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
                 </div>
               </div>
               
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                <label className="text-base font-medium text-muted-foreground mb-2 block">
                   Email
                 </label>
-                <Input type="email" placeholder="your@email.com" className="bg-input border-border focus:border-accent" />
+                <Input type="email" placeholder="your@email.com" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
               </div>
               
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                <label className="text-base font-medium text-muted-foreground mb-2 block">
                   Тема
                 </label>
-                <Input placeholder="Интеграция игр / Партнерство / Техподдержка" className="bg-input border-border focus:border-accent" />
+                <Input placeholder="Интеграция игр / Партнерство / Техподдержка" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
               </div>
               
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-2 block">
+                <label className="text-base font-medium text-muted-foreground mb-2 block">
                   Сообщение
                 </label>
-                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} className="bg-input border-border focus:border-accent resize-none" />
+                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
               </div>
               
               <Button className="w-full accent-gradient glow-effect font-semibold">
