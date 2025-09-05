@@ -7,10 +7,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10 animate-float" />
-            <span className="text-2xl font-bold text-foreground">
-              2xWet <span className="text-accent">Studio</span>
-            </span>
+            <a href="/" className="flex items-center space-x-3 hover:opacity-80 smooth-transition">
+              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10 animate-float" />
+              <span className="text-2xl font-bold text-foreground">
+                2xWet <span className="text-accent">Studio</span>
+              </span>
+            </a>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
