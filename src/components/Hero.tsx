@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">Игровая студия с экспертизой в создании казино игр. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией.</p>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">Игровая студия с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией.</p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {/* CTA-1: Основная кнопка - Связаться с нами */}
