@@ -42,10 +42,11 @@ const Games = () => {
 
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col" style={{
+          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden" style={{
           animationDelay: `${index * 0.15}s`
         }}>
-              <div className="game-image relative group">
+              {/* Image section */}
+              <div className="game-image relative h-56 transition-all duration-500 group-hover:h-0 group-hover:opacity-0">
                 <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
                 <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0">
@@ -55,7 +56,8 @@ const Games = () => {
                 </div>
               </div>
               
-              <div className="p-6 flex flex-col flex-1">
+              {/* Content section */}
+              <div className="p-6 flex flex-col flex-1 transition-all duration-500 group-hover:pt-12">
                 <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
@@ -64,6 +66,16 @@ const Games = () => {
                     <p className="text-muted-foreground leading-relaxed text-sm">
                       {game.description}
                     </p>
+                  </div>
+                  
+                  {/* Features list - показывается при наведении */}
+                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-32 space-y-2">
+                    {game.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                        {feature}
+                      </div>
+                    ))}
                   </div>
                 </div>
                 
