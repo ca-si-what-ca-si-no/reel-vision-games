@@ -156,7 +156,7 @@ const Contact = () => {
                     99.9%
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Аптайм
+                    Успешных интеграций
                   </div>
                 </div>
                 <div className="text-center">
