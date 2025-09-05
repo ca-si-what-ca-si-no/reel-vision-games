@@ -285,7 +285,7 @@ All colors MUST be HSL.
     position: relative;
     overflow: hidden;
     font-weight: 600;
-    animation: demo-pulse 30s ease-in-out infinite;
+    animation: demo-pulse 3s ease-in-out infinite;
   }
 
   .demo-button::before {
@@ -315,7 +315,7 @@ All colors MUST be HSL.
     opacity: 0;
     z-index: -1;
     filter: blur(8px);
-    animation: demo-glow 30s ease-in-out infinite;
+    animation: demo-glow 3s ease-in-out infinite;
   }
 
   @keyframes demo-pulse {
