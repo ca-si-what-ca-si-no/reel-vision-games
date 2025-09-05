@@ -26,7 +26,7 @@ const Games = () => {
     {
       title: "Crash Games Pack",
       description: "Полный пакет краш-игр с уникальными механиками и дизайном",
-      features: ["5 уникальных игр", "Единое управление", "Высокая волатильность", "Автоматические турниры"],
+      features: ["5 уникальных игр", "Единое управление", "Высокая волатильность"],
       badge: "Новинка",
       image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
     }
@@ -52,7 +52,7 @@ const Games = () => {
           {gameTypes.map((game, index) => (
             <div 
               key={index}
-              className="game-card animate-fade-in rounded-xl"
+              className="game-card animate-fade-in rounded-xl flex flex-col"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="game-image relative">
@@ -69,7 +69,7 @@ const Games = () => {
                 </div>
               </div>
               
-              <div className="p-6 flex flex-col h-auto">
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
@@ -95,7 +95,7 @@ const Games = () => {
                   </div>
                 </div>
                 
-                <div className="mt-6 pt-4 border-t border-border/50">
+                <div className="mt-auto pt-6 border-t border-border/50">
                   {game.title === "Keno" ? (
                     <a 
                       href="#contact"
