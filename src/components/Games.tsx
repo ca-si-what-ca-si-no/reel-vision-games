@@ -45,9 +45,27 @@ const Games = () => {
           {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col" style={{
           animationDelay: `${index * 0.15}s`
         }}>
-              <div className="game-image relative">
-                <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
+              <div className="game-image relative group">
+                <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover transition-opacity duration-300 group-hover:opacity-0" />
+                
+                {/* Hover content - описание и функции */}
+                <div className="absolute inset-0 bg-background/95 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-6">
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {game.description}
+                    </p>
+                    <div className="space-y-2">
+                      {game.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60 group-hover:opacity-0 transition-opacity duration-300"></div>
                 <div className="absolute top-4 left-4">
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
                     {game.badge}
@@ -61,21 +79,6 @@ const Games = () => {
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
                       {game.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {game.description}
-                    </p>
-                  </div>
-                  
-                  <div className="feature-list">
-                    
-                    <div className="space-y-2">
-                      {game.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
                 
