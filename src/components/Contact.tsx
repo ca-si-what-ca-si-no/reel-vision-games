@@ -30,7 +30,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="game-card card-shadow p-8 animate-slide-in">
+          <Card className="gaming-border card-shadow p-8 animate-slide-in">
             <h3 className="text-2xl font-bold mb-6 text-foreground">
               Отправить сообщение
             </h3>
