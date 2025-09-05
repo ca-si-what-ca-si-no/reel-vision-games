@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Zap, Star } from "lucide-react";
 import TypewriterText from "./TypewriterText";
+import ParallaxBackground from "./ParallaxBackground";
+import ParallaxSection from "./ParallaxSection";
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Animated Background Elements with Parallax */}
+      <ParallaxBackground speed={0.2} className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large Floating Orbs */}
         <div className="absolute w-96 h-96 -top-48 -left-48 bg-gradient-to-r from-primary/20 via-primary-glow/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '4s'}}></div>
         <div className="absolute w-80 h-80 top-1/4 -right-40 bg-gradient-to-l from-accent/25 via-accent/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '5s', animationDirection: 'reverse'}}></div>
@@ -23,40 +25,34 @@ const Hero = () => {
         {/* Moving Light Streaks */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-glow/50 to-transparent animate-pulse transform rotate-12"></div>
         <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-accent/50 to-transparent animate-pulse transform -rotate-12" style={{animationDelay: '2s'}}></div>
-      </div>
-      {/* Enhanced Floating Elements */}
-      <div className="absolute top-20 left-10 animate-float opacity-60" style={{
-      animationDelay: '0s'
-    }}>
-        <Star className="w-6 h-6 text-accent/60" />
-      </div>
-      <div className="absolute top-40 right-20 animate-float opacity-50" style={{
-      animationDelay: '1s'
-    }}>
-        <Zap className="w-8 h-8 text-primary-glow/50" />
-      </div>
-      <div className="absolute bottom-32 left-20 animate-float opacity-40" style={{
-      animationDelay: '2s'
-    }}>
-        <Star className="w-4 h-4 text-accent/40" />
-      </div>
-      <div className="absolute top-1/3 left-1/4 animate-float opacity-30" style={{
-      animationDelay: '0.5s'
-    }}>
-        <Rocket className="w-5 h-5 text-primary/30" />
-      </div>
-      <div className="absolute bottom-1/4 right-1/3 animate-float opacity-25" style={{
-      animationDelay: '1.5s'
-    }}>
-        <Star className="w-3 h-3 text-accent/25" />
-      </div>
-      <div className="absolute top-2/3 right-10 animate-float opacity-35" style={{
-      animationDelay: '2.5s'
-    }}>
-        <Zap className="w-6 h-6 text-primary-glow/35" />
-      </div>
+      </ParallaxBackground>
       
-      <div className="container mx-auto px-6 text-center relative z-10">
+      {/* Enhanced Floating Elements with different parallax speeds */}
+      <ParallaxBackground speed={0.4} className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 animate-float opacity-60" style={{animationDelay: '0s'}}>
+          <Star className="w-6 h-6 text-accent/60" />
+        </div>
+        <div className="absolute top-40 right-20 animate-float opacity-50" style={{animationDelay: '1s'}}>
+          <Zap className="w-8 h-8 text-primary-glow/50" />
+        </div>
+        <div className="absolute bottom-32 left-20 animate-float opacity-40" style={{animationDelay: '2s'}}>
+          <Star className="w-4 h-4 text-accent/40" />
+        </div>
+      </ParallaxBackground>
+      
+      <ParallaxBackground speed={0.6} className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 animate-float opacity-30" style={{animationDelay: '0.5s'}}>
+          <Rocket className="w-5 h-5 text-primary/30" />
+        </div>
+        <div className="absolute bottom-1/4 right-1/3 animate-float opacity-25" style={{animationDelay: '1.5s'}}>
+          <Star className="w-3 h-3 text-accent/25" />
+        </div>
+        <div className="absolute top-2/3 right-10 animate-float opacity-35" style={{animationDelay: '2.5s'}}>
+          <Zap className="w-6 h-6 text-primary-glow/35" />
+        </div>
+      </ParallaxBackground>
+      
+      <ParallaxSection speed={0.1} className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-foreground">Создаем</span>{" "}
@@ -99,14 +95,14 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </ParallaxSection>
       
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 opacity-8">
+      {/* Enhanced Background Pattern with slower parallax */}
+      <ParallaxBackground speed={0.15} className="absolute inset-0 opacity-8 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary-glow/10 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl"></div>
-      </div>
+      </ParallaxBackground>
     </section>
   );
 };

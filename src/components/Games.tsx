@@ -6,6 +6,7 @@ import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
 import { RussiaFlag, USAFlag, GermanyFlag, FranceFlag } from "@/components/ui/flag-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ParallaxSection from "./ParallaxSection";
 const Games = () => {
   const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
@@ -47,7 +48,7 @@ const Games = () => {
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
   }];
   return <section id="games" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <ParallaxSection speed={0.25} className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Наши</span>{" "}
@@ -146,7 +147,7 @@ const Games = () => {
               </div>
             </div>)}
         </div>
-      </div>
+      </ParallaxSection>
 
       {/* Game Info Modal */}
       <Dialog open={!!selectedGame} onOpenChange={() => setSelectedGame(null)}>

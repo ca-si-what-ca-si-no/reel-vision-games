@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
+import ParallaxSection from "./ParallaxSection";
 const Integrators = () => {
   const benefits = [{
     icon: Code,
@@ -42,7 +43,7 @@ const Integrators = () => {
     features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
   }];
   return <section id="integrators" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <ParallaxSection speed={0.2} className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Для</span>{" "}
@@ -91,7 +92,7 @@ const Integrators = () => {
             </Button>
           </div>
         </Card>
-      </div>
+      </ParallaxSection>
     </section>;
 };
 export default Integrators;

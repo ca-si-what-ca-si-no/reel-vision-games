@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Trophy, Users, Globe, Zap } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
+import ParallaxSection from "./ParallaxSection";
 
 const About = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -54,7 +55,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <ParallaxSection speed={0.3} className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-foreground">Кто мы</span>{" "}
@@ -118,7 +119,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </ParallaxSection>
     </section>
   );
 };

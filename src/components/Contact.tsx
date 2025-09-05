@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MessageCircle, Send } from "lucide-react";
+import ParallaxSection from "./ParallaxSection";
 const Contact = () => {
   const contactInfo = [{
     icon: Mail,
@@ -16,7 +17,7 @@ const Contact = () => {
     description: "Быстрые ответы и поддержка"
   }];
   return <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      <ParallaxSection speed={0.35} className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Свяжитесь</span>{" "}
@@ -111,7 +112,7 @@ const Contact = () => {
             
           </div>
         </div>
-      </div>
+      </ParallaxSection>
     </section>;
 };
 export default Contact;
