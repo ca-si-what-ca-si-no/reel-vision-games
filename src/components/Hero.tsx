@@ -56,8 +56,9 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="accent-gradient text-lg px-8 py-4 glow-effect animate-glow-pulse font-semibold"
+              asChild
             >
-              Посмотреть игры
+              <a href="#games">Посмотреть игры</a>
             </Button>
             <Button 
               variant="outline" 
