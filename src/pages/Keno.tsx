@@ -36,19 +36,11 @@ const Keno = () => {
             {/* Game Information */}
             <div className="space-y-8">
               <div>
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-6">
                   <h1 className="text-4xl font-bold text-foreground">{gameData.title}</h1>
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
                     {gameData.badge}
                   </div>
-                </div>
-                
-                <div className="rounded-lg overflow-hidden mb-6">
-                  <img 
-                    src={gameData.image} 
-                    alt={`${gameData.title} game interface`} 
-                    className="w-full h-64 object-cover"
-                  />
                 </div>
               </div>
               
@@ -120,6 +112,17 @@ const Keno = () => {
                       <span>Высокие множители до 1000x</span>
                     </li>
                   </ul>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">Скриншот игры</h2>
+                  <div className="rounded-lg overflow-hidden mb-6">
+                    <img 
+                      src={gameData.image} 
+                      alt={`${gameData.title} game interface`} 
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
                 </div>
                 
                 <div className="pt-6 border-t">
