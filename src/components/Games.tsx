@@ -14,7 +14,7 @@ const Games = () => {
       volatility: 3,
       rtp: "94-97%",
       platforms: ["Web", "Mobile", "Desktop"],
-      languages: ["🟦🟨 RU", "🔴⚪🔵 EN", "🖤❤️💛 DE"],
+      languages: ["🇷🇺", "🇺🇸", "🇩🇪"],
       maxMultiplier: "1000x"
     },
     badge: "Популярное",
@@ -26,7 +26,7 @@ const Games = () => {
       volatility: 4,
       rtp: "96-98%",
       platforms: ["Web", "Mobile"],
-      languages: ["🟦🟨 RU", "🔴⚪🔵 EN"],
+      languages: ["🇷🇺", "🇺🇸"],
       maxMultiplier: "2500x"
     },
     badge: "Топ",
@@ -38,7 +38,7 @@ const Games = () => {
       volatility: 5,
       rtp: "95-99%",
       platforms: ["Web", "Mobile", "Desktop", "API"],
-      languages: ["🟦🟨 RU", "🔴⚪🔵 EN", "🖤❤️💛 DE", "🔵⚪🔴 FR"],
+      languages: ["🇷🇺", "🇺🇸", "🇩🇪", "🇫🇷"],
       maxMultiplier: "10000x"
     },
     badge: "Новинка",
