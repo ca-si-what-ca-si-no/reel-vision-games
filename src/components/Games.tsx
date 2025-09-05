@@ -50,60 +50,68 @@ const Games = () => {
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {gameTypes.map((game, index) => (
-            <Card 
+            <div 
               key={index}
-              className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="game-card animate-fade-in rounded-xl"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="relative overflow-hidden">
+              <div className="game-image relative">
                 <img 
                   src={game.image} 
                   alt={`${game.title} game interface`} 
-                  className="w-full h-48 object-cover group-hover:scale-105 smooth-transition"
+                  className="w-full h-56 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
-                  {game.badge}
-                </Badge>
-              </div>
-              <CardContent className="p-6 text-center flex flex-col">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
-                    {game.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {game.description}
-                  </p>
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-foreground mb-2">Особенности:</h4>
-                    <ul className="space-y-1">
-                      {game.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
-                          <Star className="w-3 h-3 text-accent fill-current" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
+                <div className="absolute top-4 left-4">
+                  <div className="game-badge px-3 py-1 rounded-full text-sm">
+                    {game.badge}
                   </div>
                 </div>
-                <div className="mt-auto pt-4">
+              </div>
+              
+              <div className="p-6 flex flex-col h-auto">
+                <div className="flex-1 space-y-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
+                      {game.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {game.description}
+                    </p>
+                  </div>
+                  
+                  <div className="feature-list">
+                    <h4 className="text-sm font-semibold text-foreground mb-3 opacity-80">
+                      Особенности:
+                    </h4>
+                    <div className="space-y-2">
+                      {game.features.map((feature, idx) => (
+                        <div key={idx} className="feature-item text-sm text-muted-foreground">
+                          <div className="feature-icon w-2 h-2 bg-accent rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-border/50">
                   {game.title === "Keno" ? (
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-border hover:bg-card"
-                      asChild
+                    <a 
+                      href="#contact"
+                      className="demo-button w-full py-3 px-4 rounded-lg text-center block transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                     >
-                      <a href="#contact">Демо версия</a>
-                    </Button>
+                      Демо версия
+                    </a>
                   ) : (
-                    <Badge className="w-full py-2 bg-muted text-muted-foreground border-border font-semibold justify-center">
-                      <Clock className="w-4 h-4 mr-2" />
+                    <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
+                      <Clock className="w-4 h-4" />
                       Скоро в продаже
-                    </Badge>
+                    </div>
                   )}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>
