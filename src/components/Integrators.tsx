@@ -77,7 +77,7 @@ const Integrators = () => {
         
 
         {/* CTA Section */}
-        <div className="p-12 text-center backdrop-blur-lg bg-gray-500/30 rounded-lg border border-gray-400/40 shadow-lg">
+        <div className="p-12 text-center backdrop-blur-sm bg-background/20 rounded-lg border border-border/50">
           <h3 className="text-3xl font-bold mb-6 text-foreground">
             Готовы начать интеграцию?
           </h3>
