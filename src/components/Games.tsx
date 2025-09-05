@@ -65,17 +65,6 @@ const Games = () => {
                       {game.description}
                     </p>
                   </div>
-                  
-                  <div className="feature-list">
-                    <div className="space-y-2">
-                      {game.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
                 
                 <div className="mt-auto pt-6 border-t border-border/50">
