@@ -140,13 +140,13 @@ const Keno = () => {
                         )}
                       </button>
                       {activeScreenshot === 'jackpot' && (
-                        <div className="p-4 border-t border-border">
+                        <div className="p-4 border-t border-border text-center">
                           <img 
                             src={gameData.image} 
                             alt="Keno jackpot screen" 
                             className="w-full h-64 object-cover rounded-lg"
                           />
-                          <p className="text-sm text-muted-foreground mt-2">
+                          <p className="text-base text-muted-foreground mt-3">
                             Экран джекпота с максимальными выигрышами
                           </p>
                         </div>
@@ -170,13 +170,13 @@ const Keno = () => {
                         )}
                       </button>
                       {activeScreenshot === 'win' && (
-                        <div className="p-4 border-t border-border">
+                        <div className="p-4 border-t border-border text-center">
                           <img 
                             src={gameData.image} 
                             alt="Keno winning screen" 
                             className="w-full h-64 object-cover rounded-lg"
                           />
-                          <p className="text-sm text-muted-foreground mt-2">
+                          <p className="text-base text-muted-foreground mt-3">
                             Экран с выигрышной комбинацией
                           </p>
                         </div>
@@ -199,18 +199,18 @@ const Keno = () => {
                           <ChevronDown className="w-5 h-5 text-muted-foreground" />
                         )}
                       </button>
-                      {activeScreenshot === 'loss' && (
-                        <div className="p-4 border-t border-border">
-                          <img 
-                            src={gameData.image} 
-                            alt="Keno losing screen" 
-                            className="w-full h-64 object-cover rounded-lg"
-                          />
-                          <p className="text-sm text-muted-foreground mt-2">
-                            Экран без выигрышных комбинаций
-                          </p>
-                        </div>
-                      )}
+                       {activeScreenshot === 'loss' && (
+                         <div className="p-4 border-t border-border text-center">
+                           <img 
+                             src={gameData.image} 
+                             alt="Keno losing screen" 
+                             className="w-full h-64 object-cover rounded-lg"
+                           />
+                           <p className="text-base text-muted-foreground mt-3">
+                             Экран без выигрышных комбинаций
+                           </p>
+                         </div>
+                       )}
                     </div>
                   </div>
                 </div>
