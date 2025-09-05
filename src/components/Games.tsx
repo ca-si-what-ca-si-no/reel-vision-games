@@ -118,13 +118,6 @@ const Games = () => {
                   className="w-full h-80 lg:h-full object-cover group-hover:scale-105 smooth-transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <Button 
-                  size="lg" 
-                  className="absolute bottom-6 left-6 accent-gradient glow-effect"
-                >
-                  <Play className="w-5 h-5 mr-2" />
-                  Попробовать все игры
-                </Button>
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <Badge className="w-fit mb-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
