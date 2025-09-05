@@ -20,7 +20,7 @@ const Games = () => {
       maxMultiplier: "1000x"
     },
     badge: "Популярное",
-    image: "/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png"
+    image: "/lovable-uploads/7034b72a-1679-41c7-842d-e99a60e540ce.png"
   }, {
     title: "Hilo",
     description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
