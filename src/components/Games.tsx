@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
+import { RussiaFlag, USAFlag, GermanyFlag, FranceFlag } from "@/components/ui/flag-icons";
 import { useState } from "react";
 const Games = () => {
   const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
@@ -14,7 +15,7 @@ const Games = () => {
       volatility: 3,
       rtp: "94-97%",
       platforms: ["Web", "Mobile", "Desktop"],
-      languages: ["🇷🇺", "🇺🇸", "🇩🇪"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />, <GermanyFlag size={20} />],
       maxMultiplier: "1000x"
     },
     badge: "Популярное",
@@ -26,7 +27,7 @@ const Games = () => {
       volatility: 4,
       rtp: "96-98%",
       platforms: ["Web", "Mobile"],
-      languages: ["🇷🇺", "🇺🇸"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
       maxMultiplier: "2500x"
     },
     badge: "Топ",
@@ -38,7 +39,7 @@ const Games = () => {
       volatility: 5,
       rtp: "95-99%",
       platforms: ["Web", "Mobile", "Desktop", "API"],
-      languages: ["🇷🇺", "🇺🇸", "🇩🇪", "🇫🇷"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />, <GermanyFlag size={20} />, <FranceFlag size={20} />],
       maxMultiplier: "10000x"
     },
     badge: "Новинка",
@@ -106,7 +107,11 @@ const Games = () => {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <span>Языки:</span>
-                      <span className="text-foreground">{game.features.languages.join(", ")}</span>
+                      <div className="flex gap-2">
+                        {game.features.languages.map((flag, i) => (
+                          <span key={i}>{flag}</span>
+                        ))}
+                      </div>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <span>Макс. множитель:</span>
@@ -191,7 +196,11 @@ const Games = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Языки</span>
-                      <span className="text-sm font-medium">{selectedGame.features.languages.join(", ")}</span>
+                      <div className="flex gap-2">
+                        {selectedGame.features.languages.map((flag, i) => (
+                          <span key={i}>{flag}</span>
+                        ))}
+                      </div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Макс. множитель</span>
