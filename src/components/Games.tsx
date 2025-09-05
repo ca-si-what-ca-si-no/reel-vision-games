@@ -46,7 +46,7 @@ const Games = () => {
     badge: "Новинка",
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
   }];
-  return <section id="games" className="py-24 relative background-grid">
+  return <section id="games" className="py-24 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

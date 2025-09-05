@@ -3,7 +3,7 @@ import { Rocket, Zap, Star } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 background-pattern background-dots">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large Floating Orbs */}
