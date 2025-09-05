@@ -64,8 +64,9 @@ const Hero = () => {
               variant="outline" 
               size="lg" 
               className="text-lg px-8 py-4 border-border hover:bg-card"
+              asChild
             >
-              Для интеграторов
+              <a href="#integrators">Для интеграторов</a>
             </Button>
           </div>
         </div>
