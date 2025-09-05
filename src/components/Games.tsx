@@ -68,18 +68,32 @@ const Games = () => {
                   <div className="feature-list">
                     
                     <div className="space-y-2">
-                      {game.features.map((feature, idx) => {})}
+                      {game.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-auto pt-6 border-t border-border/50">
-                  {game.title === "Keno" ? <button onClick={() => setIsKenoModalOpen(true)} className="demo-button w-full py-3 px-4 rounded-lg text-center block">
-                      Демо версия
-                    </button> : <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
+                  {game.title === "Keno" ? (
+                    <div className="flex gap-2">
+                      <button onClick={() => setIsKenoModalOpen(true)} className="demo-button flex-1 py-3 px-4 rounded-lg text-center">
+                        Играть!
+                      </button>
+                      <button className="outline-button py-3 px-4 rounded-lg text-center">
+                        Подробнее
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
                       <Clock className="w-4 h-4" />
                       Скоро в продаже
-                    </div>}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>)}
