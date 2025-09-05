@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Play, Star, TrendingUp, X } from "lucide-react";
+import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
 import { useState } from "react";
 
 const Games = () => {
@@ -81,13 +81,10 @@ const Games = () => {
                 <Badge className="absolute top-4 left-4 bg-background/95 text-accent border-accent/50 font-semibold backdrop-blur-sm">
                   Hilo
                 </Badge>
-                <Button 
-                  size="sm" 
-                  className="absolute bottom-4 left-4 accent-gradient"
-                >
-                  <Play className="w-4 h-4 mr-2" />
-                  Демо
-                </Button>
+                <Badge className="absolute bottom-4 left-4 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
+                  <Clock className="w-4 h-4 mr-2" />
+                  Скоро в продаже
+                </Badge>
               </div>
             </Card>
 
@@ -103,13 +100,10 @@ const Games = () => {
                 <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
                   Crash
                 </Badge>
-                <Button 
-                  size="sm" 
-                  className="absolute bottom-4 left-4 accent-gradient"
-                >
-                  <Play className="w-4 h-4 mr-2" />
-                  Демо
-                </Button>
+                <Badge className="absolute bottom-4 left-4 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
+                  <Clock className="w-4 h-4 mr-2" />
+                  Скоро в продаже
+                </Badge>
               </div>
             </Card>
           </div>
@@ -189,12 +183,19 @@ const Games = () => {
                     </ul>
                   </div>
                 </div>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-border hover:bg-card mt-auto"
-                >
-                  Демо версия
-                </Button>
+                {game.title === "Keno" ? (
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-border hover:bg-card mt-auto"
+                  >
+                    Демо версия
+                  </Button>
+                ) : (
+                  <Badge className="w-full py-2 bg-muted text-muted-foreground border-border font-semibold mt-auto justify-center">
+                    <Clock className="w-4 h-4 mr-2" />
+                    Скоро в продаже
+                  </Badge>
+                )}
               </CardContent>
             </Card>
           ))}
