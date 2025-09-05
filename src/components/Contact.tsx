@@ -2,30 +2,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Mail, 
-  MessageCircle,
-  Send
-} from "lucide-react";
-
+import { Mail, MessageCircle, Send } from "lucide-react";
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      content: "business@2xwet-studio.com",
-      description: "Для деловых предложений"
-    },
-    {
-      icon: MessageCircle,
-      title: "Telegram",
-      content: "@2xwet_support",
-      description: "Быстрые ответы и поддержка"
-    }
-  ];
-
-  return (
-    <section id="contact" className="py-24 relative">
+  const contactInfo = [{
+    icon: Mail,
+    title: "Email",
+    content: "business@gdeNazvanie-studio.com",
+    description: "Для деловых предложений"
+  }, {
+    icon: MessageCircle,
+    title: "Telegram",
+    content: "@gdeNazvanie_support",
+    description: "Быстрые ответы и поддержка"
+  }];
+  return <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -50,19 +40,13 @@ const Contact = () => {
                   <label className="text-sm font-medium text-muted-foreground mb-2 block">
                     Имя
                   </label>
-                  <Input 
-                    placeholder="Ваше имя"
-                    className="bg-input border-border focus:border-accent"
-                  />
+                  <Input placeholder="Ваше имя" className="bg-input border-border focus:border-accent" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-muted-foreground mb-2 block">
                     Компания
                   </label>
-                  <Input 
-                    placeholder="Название компании"
-                    className="bg-input border-border focus:border-accent"
-                  />
+                  <Input placeholder="Название компании" className="bg-input border-border focus:border-accent" />
                 </div>
               </div>
               
@@ -70,32 +54,21 @@ const Contact = () => {
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Email
                 </label>
-                <Input 
-                  type="email"
-                  placeholder="your@email.com"
-                  className="bg-input border-border focus:border-accent"
-                />
+                <Input type="email" placeholder="your@email.com" className="bg-input border-border focus:border-accent" />
               </div>
               
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Тема
                 </label>
-                <Input 
-                  placeholder="Интеграция игр / Партнерство / Техподдержка"
-                  className="bg-input border-border focus:border-accent"
-                />
+                <Input placeholder="Интеграция игр / Партнерство / Техподдержка" className="bg-input border-border focus:border-accent" />
               </div>
               
               <div>
                 <label className="text-sm font-medium text-muted-foreground mb-2 block">
                   Сообщение
                 </label>
-                <Textarea 
-                  placeholder="Расскажите подробнее о вашем проекте..."
-                  rows={3}
-                  className="bg-input border-border focus:border-accent resize-none"
-                />
+                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} className="bg-input border-border focus:border-accent resize-none" />
               </div>
               
               <Button className="w-full accent-gradient glow-effect font-semibold">
@@ -106,16 +79,14 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6 animate-slide-in" style={{ animationDelay: '0.2s' }}>
+          <div className="space-y-6 animate-slide-in" style={{
+          animationDelay: '0.2s'
+        }}>
             <h3 className="text-2xl font-bold mb-6 text-foreground">
               Контактная информация
             </h3>
             
-            {contactInfo.map((info, index) => (
-              <Card 
-                key={index} 
-                className="gaming-border card-shadow smooth-transition hover:shadow-glow group"
-              >
+            {contactInfo.map((info, index) => <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 smooth-transition">
@@ -134,54 +105,13 @@ const Contact = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
             
             {/* Quick Stats */}
-            <Card className="gaming-border card-shadow p-6">
-              <h4 className="font-semibold text-foreground mb-4">
-                Почему выбирают нас  
-              </h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">
-                    1 день
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Быстрая интеграция
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">
-                    100%
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Кастомизация
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">
-                    24/7
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Техподдержка
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">
-                    5+ лет
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Опыта в индустрии
-                  </div>
-                </div>
-              </div>
-            </Card>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
