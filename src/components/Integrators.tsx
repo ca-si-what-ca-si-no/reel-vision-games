@@ -77,7 +77,7 @@ const Integrators = () => {
         
 
         {/* CTA Section */}
-        <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-12 text-center shadow-xl">
+        <div className="p-12 text-center">
           <h3 className="text-3xl font-bold mb-6 text-foreground">
             Готовы начать интеграцию?
           </h3>
@@ -90,7 +90,7 @@ const Integrators = () => {
               <a href="#contact">Демо доступ</a>
             </Button>
           </div>
-        </Card>
+        </div>
       </div>
     </section>;
 };
