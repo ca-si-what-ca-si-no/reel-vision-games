@@ -32,7 +32,7 @@ const Games = () => {
       maxMultiplier: "2500x"
     },
     badge: "Топ",
-    image: "/lovable-uploads/70fe6bd6-0a02-4642-abe3-eb33d37072ea.png"
+    image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"
   }, {
     title: "Crash Games Pack",
     description: "Полный пакет краш-игр с уникальными механиками и дизайном",
