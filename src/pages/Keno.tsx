@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, ArrowLeft, Smartphone, Monitor, Tablet } from "lucide-react";
+import { Star, ArrowLeft, Smartphone, Monitor, Tablet, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState } from "react";
@@ -10,6 +10,7 @@ const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
+  const [activeScreenshot, setActiveScreenshot] = useState<string | null>(null);
   const gameData = {
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
@@ -120,13 +121,97 @@ const Keno = () => {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4">Скриншот игры</h2>
-                  <div className="rounded-lg overflow-hidden mb-6">
-                    <img 
-                      src={gameData.image} 
-                      alt={`${gameData.title} game interface`} 
-                      className="w-full h-64 object-cover"
-                    />
+                  <h2 className="text-2xl font-semibold mb-4">Скриншоты игры</h2>
+                  <div className="space-y-3">
+                    {/* Джекпот */}
+                    <div className="border border-border rounded-lg overflow-hidden">
+                      <button 
+                        onClick={() => setActiveScreenshot(activeScreenshot === 'jackpot' ? null : 'jackpot')}
+                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                          <span className="font-medium text-lg">Джекпот</span>
+                        </div>
+                        {activeScreenshot === 'jackpot' ? (
+                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                        )}
+                      </button>
+                      {activeScreenshot === 'jackpot' && (
+                        <div className="p-4 border-t border-border">
+                          <img 
+                            src={gameData.image} 
+                            alt="Keno jackpot screen" 
+                            className="w-full h-64 object-cover rounded-lg"
+                          />
+                          <p className="text-sm text-muted-foreground mt-2">
+                            Экран джекпота с максимальными выигрышами
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Выигрыш */}
+                    <div className="border border-border rounded-lg overflow-hidden">
+                      <button 
+                        onClick={() => setActiveScreenshot(activeScreenshot === 'win' ? null : 'win')}
+                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"></div>
+                          <span className="font-medium text-lg">Выигрыш</span>
+                        </div>
+                        {activeScreenshot === 'win' ? (
+                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                        )}
+                      </button>
+                      {activeScreenshot === 'win' && (
+                        <div className="p-4 border-t border-border">
+                          <img 
+                            src={gameData.image} 
+                            alt="Keno winning screen" 
+                            className="w-full h-64 object-cover rounded-lg"
+                          />
+                          <p className="text-sm text-muted-foreground mt-2">
+                            Экран с выигрышной комбинацией
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Проигрыш */}
+                    <div className="border border-border rounded-lg overflow-hidden">
+                      <button 
+                        onClick={() => setActiveScreenshot(activeScreenshot === 'loss' ? null : 'loss')}
+                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-red-400 to-rose-500"></div>
+                          <span className="font-medium text-lg">Проигрыш</span>
+                        </div>
+                        {activeScreenshot === 'loss' ? (
+                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                        )}
+                      </button>
+                      {activeScreenshot === 'loss' && (
+                        <div className="p-4 border-t border-border">
+                          <img 
+                            src={gameData.image} 
+                            alt="Keno losing screen" 
+                            className="w-full h-64 object-cover rounded-lg"
+                          />
+                          <p className="text-sm text-muted-foreground mt-2">
+                            Экран без выигрышных комбинаций
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
                 
