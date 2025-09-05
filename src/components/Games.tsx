@@ -67,7 +67,7 @@ const Games = () => {
         }}>
               {/* Image section */}
               <div className="game-image relative h-56 transition-all duration-500 group-hover:h-0 group-hover:opacity-0">
-                <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
+                <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-contain bg-gradient-to-br from-background/20 to-background/40" />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
                 <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0">
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
