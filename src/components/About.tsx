@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Trophy, Users, Globe, Zap } from "lucide-react";
 
 const About = () => {
@@ -29,37 +30,38 @@ const About = () => {
     <section id="about" className="py-24 relative background-pattern">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-foreground">Кто мы</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">такие</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            2xWet Studio — это профессиональная игровая студия с глубокой экспертизой 
-            в создании высокотехнологичных решений для индустрии онлайн-казино.
-          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-accent flex items-center justify-center group-hover:scale-110 smooth-transition">
-                  <feature.icon className="w-8 h-8 text-accent-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {features.map((feature, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card 
+                  className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-accent flex items-center justify-center group-hover:scale-110 smooth-transition">
+                      <feature.icon className="w-8 h-8 text-accent-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-4 text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
         
         <div className="mt-20 text-center">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
