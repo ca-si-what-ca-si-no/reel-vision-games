@@ -30,7 +30,7 @@ const Header = () => {
             </a>
           </div>
           
-          <Button variant="secondary" size="sm" className="font-semibold" asChild>
+          <Button size="sm" className="accent-gradient glow-effect font-semibold" asChild>
             <a href="#contact">Связаться с нами</a>
           </Button>
         </nav>

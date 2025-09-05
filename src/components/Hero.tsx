@@ -89,12 +89,12 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {/* CTA-1: Основная кнопка - Связаться с нами */}
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
+            <Button size="lg" className="accent-gradient glow-effect font-semibold text-lg px-10 py-4 shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
               <a href="#integrators">Связаться с нами</a>
             </Button>
             
             {/* CTA-2: Вторичная кнопка - Каталог */}
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold" asChild>
+            <Button size="lg" className="accent-gradient glow-effect font-semibold text-lg px-8 py-4 transition-all duration-300 min-w-[200px]" asChild>
               <a href="#games">Каталог</a>
             </Button>
           </div>

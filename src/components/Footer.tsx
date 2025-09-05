@@ -85,7 +85,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Button 
                 size="sm" 
-                className="accent-gradient text-sm font-semibold"
+                className="accent-gradient glow-effect font-semibold text-sm"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
