@@ -149,8 +149,9 @@ const Integrators = () => {
                   </ul>
                   <Button 
                     className="w-full accent-gradient glow-effect"
+                    asChild
                   >
-                    Демо и интеграция
+                    <a href="#contact">Демо и интеграция</a>
                   </Button>
                 </CardContent>
               </Card>

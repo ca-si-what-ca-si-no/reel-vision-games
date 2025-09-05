@@ -61,10 +61,12 @@ const Games = () => {
                 <Button 
                   size="sm" 
                   className="absolute bottom-4 left-4 accent-gradient"
-                  onClick={() => setIsKenoModalOpen(true)}
+                  asChild
                 >
-                  <Play className="w-4 h-4 mr-2" />
-                  Демо
+                  <a href="#contact">
+                    <Play className="w-4 h-4 mr-2" />
+                    Демо
+                  </a>
                 </Button>
               </div>
             </Card>
@@ -184,9 +186,9 @@ const Games = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-border hover:bg-card mt-auto"
-                    onClick={() => setIsKenoModalOpen(true)}
+                    asChild
                   >
-                    Демо версия
+                    <a href="#contact">Демо версия</a>
                   </Button>
                 ) : (
                   <Badge className="w-full py-2 bg-muted text-muted-foreground border-border font-semibold mt-auto justify-center">
