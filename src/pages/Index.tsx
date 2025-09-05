@@ -6,15 +6,11 @@ import Integrators from "@/components/Integrators";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import ParallaxContainer from "@/components/ParallaxContainer";
-import ParallaxBackground from "@/components/ParallaxBackground";
 
 const Index = () => {
   return (
-    <ParallaxContainer className="min-h-screen">
+    <div className="min-h-screen">
       <ParticlesBackground />
-      <ParallaxBackground />
-      
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -30,9 +26,8 @@ const Index = () => {
         <div className="particle"></div>
         <div className="animated-grid"></div>
       </div>
-      
       <Header />
-      <main className="relative z-10">
+      <main>
         <Hero />
         <About />
         <Games />
@@ -40,7 +35,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
-    </ParallaxContainer>
+    </div>
   );
 };
 
