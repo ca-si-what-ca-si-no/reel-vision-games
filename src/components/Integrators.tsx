@@ -168,11 +168,8 @@ const Integrators = () => {
             Начните тестирование прямо сейчас!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="accent-gradient glow-effect font-semibold">
-              Демо доступ
-            </Button>
-            <Button size="lg" variant="outline" className="border-border hover:bg-card">
-              API документация
+            <Button size="lg" className="accent-gradient glow-effect font-semibold" asChild>
+              <a href="#contact">Демо доступ</a>
             </Button>
           </div>
         </Card>
