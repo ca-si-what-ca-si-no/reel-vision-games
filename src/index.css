@@ -285,7 +285,6 @@ All colors MUST be HSL.
     position: relative;
     overflow: hidden;
     font-weight: 600;
-    transition: all 0.3s ease;
     animation: demo-pulse 8s ease-in-out infinite;
   }
 
