@@ -59,12 +59,15 @@ const Hero = () => {
           
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">Игровая студия с экспертизой в создании казино игр. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией.</p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
-              <a href="#games">Каталог игр</a>
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-border hover:bg-card" asChild>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* CTA-1: Основная кнопка - Связаться с нами */}
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
               <a href="#integrators">Связаться с нами</a>
+            </Button>
+            
+            {/* CTA-2: Вторичная кнопка - Показать игры */}
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold" asChild>
+              <a href="#games">Посмотреть игры</a>
             </Button>
           </div>
         </div>
