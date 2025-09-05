@@ -1,8 +1,34 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Trophy, Users, Globe, Zap } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 const About = () => {
+  const [api, setApi] = useState<CarouselApi>()
+  const intervalRef = useRef<NodeJS.Timeout>()
+
+  const startAutoScroll = useCallback(() => {
+    if (!api) return
+    
+    intervalRef.current = setInterval(() => {
+      api.scrollNext()
+    }, 3000)
+  }, [api])
+
+  const stopAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!api) return
+
+    startAutoScroll()
+    return stopAutoScroll
+  }, [api, startAutoScroll, stopAutoScroll])
+
   const features = [
     {
       icon: Trophy,
@@ -36,7 +62,12 @@ const About = () => {
           </h2>
         </div>
         
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel 
+          setApi={setApi}
+          className="w-full max-w-5xl mx-auto"
+          onMouseEnter={stopAutoScroll}
+          onMouseLeave={startAutoScroll}
+        >
           <CarouselContent className="-ml-2 md:-ml-4">
             {features.map((feature, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
