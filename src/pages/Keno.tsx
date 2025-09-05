@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
+  const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
   const gameData = {
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
@@ -170,12 +171,8 @@ const Keno = () => {
                     <span className="text-sm font-medium">Десктоп</span>
                   </button>
                   <button
-                    onClick={() => setSelectedDevice('tablet')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${
-                      selectedDevice === 'tablet' 
-                        ? 'bg-primary text-primary-foreground shadow-sm' 
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
+                    onClick={() => setIsTabletModalOpen(true)}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   >
                     <Tablet className="w-4 h-4" />
                     <span className="text-sm font-medium">Планшет</span>
@@ -184,31 +181,16 @@ const Keno = () => {
 
                 {/* Device Preview */}
                 <div className="flex justify-center">
-                  {selectedDevice === 'mobile' && (
-                    <div className="phone-frame relative">
-                      <div className="phone-screen">
-                        <iframe 
-                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                          className="w-full h-full border-0 rounded-[20px]" 
-                          title="Keno Mobile Demo Game" 
-                          allow="fullscreen"
-                        />
-                      </div>
+                  <div className="phone-frame relative">
+                    <div className="phone-screen">
+                      <iframe 
+                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                        className="w-full h-full border-0 rounded-[20px]" 
+                        title="Keno Mobile Demo Game" 
+                        allow="fullscreen"
+                      />
                     </div>
-                  )}
-                  
-                  {selectedDevice === 'tablet' && (
-                    <div className="tablet-frame relative">
-                      <div className="tablet-screen">
-                        <iframe 
-                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                          className="w-full h-full border-0 rounded-[12px]" 
-                          title="Keno Tablet Demo Game" 
-                          allow="fullscreen"
-                        />
-                      </div>
-                    </div>
-                  )}
+                  </div>
                 </div>
                 
                 <p className="text-sm text-muted-foreground text-center mt-4">
@@ -227,6 +209,18 @@ const Keno = () => {
             src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
             className="w-full h-full rounded-lg border-0" 
             title="Keno Desktop Demo Game" 
+            allow="fullscreen" 
+          />
+        </DialogContent>
+      </Dialog>
+
+      {/* Tablet Modal */}
+      <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
+        <DialogContent className="max-w-5xl w-full h-[85vh] p-0">
+          <iframe 
+            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+            className="w-full h-full rounded-lg border-0" 
+            title="Keno Tablet Demo Game" 
             allow="fullscreen" 
           />
         </DialogContent>
