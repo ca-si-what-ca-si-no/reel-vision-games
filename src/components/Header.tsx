@@ -30,7 +30,7 @@ const Header = () => {
             </a>
           </div>
           
-          <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
+          <Button variant="secondary" size="sm" className="font-semibold" asChild>
             <a href="#contact">Связаться с нами</a>
           </Button>
         </nav>
