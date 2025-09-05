@@ -6,6 +6,7 @@ import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
 import { useState } from "react";
 const Games = () => {
   const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
   const gameTypes = [{
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
@@ -84,14 +85,19 @@ const Games = () => {
                       <button onClick={() => setIsKenoModalOpen(true)} className="demo-button flex-1 py-3 px-4 rounded-lg text-center">
                         Играть!
                       </button>
-                      <button className="outline-button py-3 px-4 rounded-lg text-center">
+                      <button onClick={() => setSelectedGame(game)} className="outline-button py-3 px-4 rounded-lg text-center">
                         Подробнее
                       </button>
                     </div>
                   ) : (
-                    <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
-                      <Clock className="w-4 h-4" />
-                      Скоро в продаже
+                    <div className="flex flex-col gap-2">
+                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
+                        <Clock className="w-4 h-4" />
+                        Скоро в продаже
+                      </div>
+                      <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
+                        Подробнее
+                      </button>
                     </div>
                   )}
                 </div>
@@ -99,6 +105,62 @@ const Games = () => {
             </div>)}
         </div>
       </div>
+
+      {/* Game Info Modal */}
+      <Dialog open={!!selectedGame} onOpenChange={() => setSelectedGame(null)}>
+        <DialogContent className="max-w-2xl">
+          {selectedGame && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h2 className="text-3xl font-bold text-foreground">{selectedGame.title}</h2>
+                <div className="game-badge px-3 py-1 rounded-full text-sm">
+                  {selectedGame.badge}
+                </div>
+              </div>
+              
+              <div className="rounded-lg overflow-hidden">
+                <img 
+                  src={selectedGame.image} 
+                  alt={`${selectedGame.title} game interface`} 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Описание</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {selectedGame.description}
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Ключевые особенности</h3>
+                  <div className="grid grid-cols-1 gap-3">
+                    {selectedGame.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                        <span className="text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="pt-4 border-t">
+                  <div className="flex gap-4">
+                    <Button onClick={() => setSelectedGame(null)} variant="outline" className="flex-1">
+                      Закрыть
+                    </Button>
+                    <Button className="flex-1">
+                      Запросить интеграцию
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Keno Demo Modal */}
       <Dialog open={isKenoModalOpen} onOpenChange={setIsKenoModalOpen}>
