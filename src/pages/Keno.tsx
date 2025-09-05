@@ -27,7 +27,7 @@ const Keno = () => {
       maxMultiplier: "1000x"
     },
     badge: "Популярное",
-    image: "/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png"
+    image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
 
   return (
