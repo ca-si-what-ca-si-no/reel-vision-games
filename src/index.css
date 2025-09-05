@@ -386,6 +386,24 @@ All colors MUST be HSL.
     background-size: 50px 50px;
   }
 
+  /* Additional grid pattern for more variety */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--primary-glow) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--accent) / 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: grid-shift 30s linear infinite;
+  }
+
+  @keyframes grid-shift {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 60px 60px;
+    }
+  }
+
   .game-card {
     position: relative;
     background: linear-gradient(145deg, hsl(var(--card)), hsl(240 20% 22%));

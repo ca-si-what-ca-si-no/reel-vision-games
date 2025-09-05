@@ -1,7 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Zap, Star } from "lucide-react";
+import TypewriterText from "./TypewriterText";
 const Hero = () => {
-  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 background-pattern background-dots">
+  return (
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 background-pattern background-dots">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large Floating Orbs */}
+        <div className="absolute w-96 h-96 -top-48 -left-48 bg-gradient-to-r from-primary/20 via-primary-glow/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '20s'}}></div>
+        <div className="absolute w-80 h-80 top-1/4 -right-40 bg-gradient-to-l from-accent/25 via-accent/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '25s', animationDirection: 'reverse'}}></div>
+        <div className="absolute w-64 h-64 bottom-1/4 -left-32 bg-gradient-to-r from-secondary/20 via-secondary/10 to-transparent rounded-full blur-3xl animate-bounce" style={{animationDuration: '15s'}}></div>
+        
+        {/* Moving Grid Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-20 animate-pulse"></div>
+        
+        {/* Floating Particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-glow rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-3/4 left-3/4 w-1 h-1 bg-accent rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-secondary rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-primary rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+        
+        {/* Moving Light Streaks */}
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-glow/50 to-transparent animate-pulse transform rotate-12"></div>
+        <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-accent/50 to-transparent animate-pulse transform -rotate-12" style={{animationDelay: '2s'}}></div>
+      </div>
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-60" style={{
       animationDelay: '0s'
@@ -57,17 +79,29 @@ const Hero = () => {
             </div>
           </div>
           
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">Игровая студия с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией.</p>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <TypewriterText 
+              initialText="Игровая студия "
+              typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией."
+              speed={80}
+            />
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {/* CTA-1: Основная кнопка - Связаться с нами */}
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
-              <a href="#integrators">Связаться с нами</a>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-4 font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 min-w-[200px] relative overflow-hidden group" asChild>
+              <a href="#integrators">
+                <span className="relative z-10">Связаться с нами</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-glow via-accent to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+              </a>
             </Button>
             
             {/* CTA-2: Вторичная кнопка - Показать игры */}
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold" asChild>
-              <a href="#games">Посмотреть игры</a>
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold relative overflow-hidden group" asChild>
+              <a href="#games">
+                <span className="relative z-10">Посмотреть игры</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              </a>
             </Button>
           </div>
         </div>
@@ -79,6 +113,8 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl"></div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
