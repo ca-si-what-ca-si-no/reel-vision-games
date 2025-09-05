@@ -28,8 +28,8 @@ const Header = () => {
             </a>
           </div>
           
-          <Button variant="secondary" size="sm" className="accent-gradient font-semibold">
-            Связаться с нами
+          <Button variant="secondary" size="sm" className="accent-gradient font-semibold" asChild>
+            <a href="#contact">Связаться с нами</a>
           </Button>
         </nav>
       </div>
