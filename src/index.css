@@ -159,7 +159,7 @@ All colors MUST be HSL.
       radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
       radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.05) 0%, transparent 70%);
     pointer-events: none;
-    animation: float-bg 20s ease-in-out infinite;
+    animation: float-bg 4s ease-in-out infinite;
   }
 
   /* Animated Background Elements */
@@ -179,7 +179,7 @@ All colors MUST be HSL.
     border-radius: 50%;
     filter: blur(40px);
     opacity: 0.3;
-    animation: float-orb 15s ease-in-out infinite;
+    animation: float-orb 3s ease-in-out infinite;
   }
 
   .floating-orb:nth-child(1) {
@@ -189,7 +189,7 @@ All colors MUST be HSL.
     top: 10%;
     left: 10%;
     animation-delay: 0s;
-    animation-duration: 20s;
+    animation-duration: 4s;
   }
 
   .floating-orb:nth-child(2) {
@@ -199,7 +199,7 @@ All colors MUST be HSL.
     top: 60%;
     right: 15%;
     animation-delay: -5s;
-    animation-duration: 25s;
+    animation-duration: 5s;
   }
 
   .floating-orb:nth-child(3) {
@@ -209,7 +209,7 @@ All colors MUST be HSL.
     bottom: 20%;
     left: 20%;
     animation-delay: -10s;
-    animation-duration: 30s;
+    animation-duration: 6s;
   }
 
   .floating-orb:nth-child(4) {
@@ -219,7 +219,7 @@ All colors MUST be HSL.
     top: 30%;
     right: 30%;
     animation-delay: -15s;
-    animation-duration: 18s;
+    animation-duration: 3.6s;
   }
 
   /* Geometric Shapes */
@@ -227,7 +227,7 @@ All colors MUST be HSL.
     position: absolute;
     opacity: 0.1;
     border: 1px solid hsl(var(--primary-glow) / 0.3);
-    animation: rotate-float 25s linear infinite;
+    animation: rotate-float 5s linear infinite;
   }
 
   .geometric-shape:nth-child(5) {
@@ -312,7 +312,7 @@ All colors MUST be HSL.
       filter: blur(40px);
     }
     50% { 
-      transform: translateY(-20px) rotate(180deg);
+      transform: translateY(-100px) rotate(180deg);
       filter: blur(60px);
     }
   }
@@ -322,13 +322,13 @@ All colors MUST be HSL.
       transform: translate(0, 0) scale(1);
     }
     25% {
-      transform: translate(30px, -30px) scale(1.1);
+      transform: translate(150px, -150px) scale(1.5);
     }
     50% {
-      transform: translate(-20px, -60px) scale(0.9);
+      transform: translate(-100px, -300px) scale(0.5);
     }
     75% {
-      transform: translate(-40px, 20px) scale(1.05);
+      transform: translate(-200px, 100px) scale(1.25);
     }
   }
 
@@ -337,13 +337,13 @@ All colors MUST be HSL.
       transform: rotate(0deg) translateY(0px);
     }
     25% {
-      transform: rotate(90deg) translateY(-20px);
+      transform: rotate(90deg) translateY(-100px);
     }
     50% {
-      transform: rotate(180deg) translateY(-10px);
+      transform: rotate(180deg) translateY(-50px);
     }
     75% {
-      transform: rotate(270deg) translateY(-30px);
+      transform: rotate(270deg) translateY(-150px);
     }
     100% {
       transform: rotate(360deg) translateY(0px);
@@ -392,7 +392,7 @@ All colors MUST be HSL.
       linear-gradient(hsl(var(--primary-glow) / 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--accent) / 0.1) 1px, transparent 1px);
     background-size: 60px 60px;
-    animation: grid-shift 30s linear infinite;
+    animation: grid-shift 6s linear infinite;
   }
 
   @keyframes grid-shift {
@@ -516,7 +516,7 @@ All colors MUST be HSL.
     position: relative;
     overflow: hidden;
     font-weight: 600;
-    animation: demo-pulse 2s ease-in-out infinite;
+    animation: demo-pulse 0.4s ease-in-out infinite;
   }
 
   .demo-button::before {
@@ -546,7 +546,7 @@ All colors MUST be HSL.
     opacity: 0;
     z-index: -1;
     filter: blur(8px);
-    animation: demo-glow 2s ease-in-out infinite;
+    animation: demo-glow 0.4s ease-in-out infinite;
   }
 
   @keyframes demo-pulse {
@@ -588,7 +588,7 @@ All colors MUST be HSL.
     width: 100%;
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--muted-foreground) / 0.5), transparent);
-    animation: shimmer 2s infinite;
+    animation: shimmer 0.4s infinite;
   }
 
   .outline-button {
@@ -743,7 +743,7 @@ All colors MUST be HSL.
 
   /* Floating Action Animation */
   .float-action {
-    animation: float-gentle 4s ease-in-out infinite;
+    animation: float-gentle 0.8s ease-in-out infinite;
   }
 
   @keyframes float-gentle {
@@ -751,7 +751,7 @@ All colors MUST be HSL.
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-50px);
     }
   }
 
