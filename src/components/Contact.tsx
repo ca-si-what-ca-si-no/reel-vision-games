@@ -15,7 +15,7 @@ const Contact = () => {
     content: "@gdeNazvanie_support",
     description: "Быстрые ответы и поддержка"
   }];
-  return <section id="contact" className="py-24 relative">
+  return <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
