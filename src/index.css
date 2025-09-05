@@ -286,6 +286,7 @@ All colors MUST be HSL.
     overflow: hidden;
     font-weight: 600;
     transition: all 0.3s ease;
+    animation: demo-pulse 2s ease-in-out infinite;
   }
 
   .demo-button::before {
@@ -301,6 +302,45 @@ All colors MUST be HSL.
 
   .demo-button:hover::before {
     width: 100%;
+  }
+
+  .demo-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    opacity: 0;
+    z-index: -1;
+    filter: blur(8px);
+    animation: demo-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes demo-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 4px 20px hsla(var(--primary) / 0.3),
+        0 0 20px hsla(var(--accent) / 0.2);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 
+        0 6px 25px hsla(var(--primary) / 0.4),
+        0 0 30px hsla(var(--accent) / 0.3);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes demo-glow {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.3;
+    }
   }
 
   .coming-soon-badge {
