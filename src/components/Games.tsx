@@ -97,12 +97,12 @@ const Games = () => {
                 
                 <div className="mt-auto pt-6 border-t border-border/50">
                   {game.title === "Keno" ? (
-                    <a 
-                      href="#contact"
+                    <button 
+                      onClick={() => setIsKenoModalOpen(true)}
                       className="demo-button w-full py-3 px-4 rounded-lg text-center block"
                     >
                       Демо версия
-                    </a>
+                    </button>
                   ) : (
                     <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
                       <Clock className="w-4 h-4" />
