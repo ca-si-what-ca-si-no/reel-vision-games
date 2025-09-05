@@ -67,6 +67,10 @@ const About = () => {
           className="w-full max-w-5xl mx-auto"
           onMouseEnter={stopAutoScroll}
           onMouseLeave={startAutoScroll}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {features.map((feature, index) => (
