@@ -77,22 +77,18 @@ const Integrators = () => {
         
 
         {/* CTA Section */}
-        <div className="absolute left-0 right-0 w-full bg-white/10 backdrop-blur-md">
-          <div className="container mx-auto px-6">
-            <div className="p-12 text-center">
-              <h3 className="text-3xl font-bold mb-6 text-foreground">
-                Готовы начать интеграцию?
-              </h3>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Все игры поставляются с инструментами управления и настраиваемым RTP. 
-                Начните тестирование прямо сейчас!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="accent-gradient glow-effect font-semibold" asChild>
-                  <a href="#contact">Демо доступ</a>
-                </Button>
-              </div>
-            </div>
+        <div className="p-12 text-center">
+          <h3 className="text-3xl font-bold mb-6 text-foreground">
+            Готовы начать интеграцию?
+          </h3>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Все игры поставляются с инструментами управления и настраиваемым RTP. 
+            Начните тестирование прямо сейчас!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="accent-gradient glow-effect font-semibold" asChild>
+              <a href="#contact">Демо доступ</a>
+            </Button>
           </div>
         </div>
       </div>
