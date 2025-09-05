@@ -99,7 +99,7 @@ const Games = () => {
                   {game.title === "Keno" ? (
                     <a 
                       href="#contact"
-                      className="demo-button w-full py-3 px-4 rounded-lg text-center block transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                      className="demo-button w-full py-3 px-4 rounded-lg text-center block"
                     >
                       Демо версия
                     </a>
