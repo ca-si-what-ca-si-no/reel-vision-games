@@ -360,6 +360,37 @@ All colors MUST be HSL.
     animation: shimmer 2s infinite;
   }
 
+  .outline-button {
+    background: transparent;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .outline-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    transition: width 0.3s ease;
+  }
+
+  .outline-button:hover {
+    border-color: hsl(var(--primary-glow));
+    color: hsl(var(--primary-glow));
+    box-shadow: 0 0 10px hsla(var(--primary-glow) / 0.3);
+  }
+
+  .outline-button:hover::before {
+    width: 100%;
+  }
+
   @keyframes shimmer {
     0% { left: -100%; }
     100% { left: 100%; }

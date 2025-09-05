@@ -5,6 +5,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
 import { RussiaFlag, USAFlag, GermanyFlag, FranceFlag } from "@/components/ui/flag-icons";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Games = () => {
   const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
@@ -126,9 +127,9 @@ const Games = () => {
                       <button onClick={() => setIsKenoModalOpen(true)} className="demo-button flex-1 py-3 px-4 rounded-lg text-center">
                         Играть!
                       </button>
-                      <button onClick={() => setSelectedGame(game)} className="outline-button py-3 px-4 rounded-lg text-center">
+                      <Link to="/keno" className="outline-button py-3 px-4 rounded-lg text-center">
                         Подробнее
-                      </button>
+                      </Link>
                     </div>
                   ) : (
                     <div className="flex flex-col gap-2">
