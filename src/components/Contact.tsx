@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MessageCircle, Send } from "lucide-react";
-import ParallaxSection from "./ParallaxSection";
 const Contact = () => {
   const contactInfo = [{
     icon: Mail,

@@ -3,7 +3,6 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Trophy, Users, Globe, Zap } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
-import ParallaxSection from "./ParallaxSection";
 
 const About = () => {
   const [api, setApi] = useState<CarouselApi>()

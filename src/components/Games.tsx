@@ -6,7 +6,6 @@ import { Play, Star, TrendingUp, X, Clock } from "lucide-react";
 import { RussiaFlag, USAFlag, GermanyFlag, FranceFlag } from "@/components/ui/flag-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ParallaxSection from "./ParallaxSection";
 const Games = () => {
   const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
