@@ -92,7 +92,7 @@ const Games = () => {
                       <span className="text-muted-foreground">Волатильность:</span>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-primary text-primary' : 'text-muted-foreground'}`} />
+                          <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
                         ))}
                       </div>
                     </div>
@@ -110,7 +110,7 @@ const Games = () => {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <span>Макс. множитель:</span>
-                      <span className="text-primary font-semibold">{game.features.maxMultiplier}</span>
+                      <span className="text-green-400 font-semibold">{game.features.maxMultiplier}</span>
                     </div>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ const Games = () => {
                       <span className="text-sm text-muted-foreground">Волатильность</span>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-primary text-primary' : 'text-muted-foreground'}`} />
+                          <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
                         ))}
                       </div>
                     </div>
@@ -195,7 +195,7 @@ const Games = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Макс. множитель</span>
-                      <span className="text-sm font-semibold text-primary">{selectedGame.features.maxMultiplier}</span>
+                      <span className="text-sm font-semibold text-green-400">{selectedGame.features.maxMultiplier}</span>
                     </div>
                   </div>
                 </div>
