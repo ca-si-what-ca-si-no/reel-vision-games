@@ -34,7 +34,7 @@ const About = () => {
             <span className="text-transparent bg-gradient-accent bg-clip-text">такие</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            GdeNazvanie Studio — это профессиональная игровая студия с глубокой экспертизой 
+            2xWet Studio — это профессиональная игровая студия с глубокой экспертизой 
             в создании высокотехнологичных решений для индустрии онлайн-казино.
           </p>
         </div>

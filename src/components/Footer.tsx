@@ -10,9 +10,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img src={logo} alt="GdeNazvanie Studio Logo" className="w-10 h-10" />
+              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10" />
               <span className="text-2xl font-bold text-foreground">
-                GdeNazvanie <span className="text-accent">Studio</span>
+                2xWet <span className="text-accent">Studio</span>
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>business@gdeNazvanie-studio.com</span>
+                <span>business@2xwet-studio.com</span>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-muted-foreground text-sm">
-              © 2024 GdeNazvanie Studio. Все права защищены.
+              © 2024 2xWet Studio. Все права защищены.
             </div>
             <div className="flex items-center">
               <Button 

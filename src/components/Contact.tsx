@@ -13,13 +13,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "business@gdeNazvanie-studio.com",
+      content: "business@2xwet-studio.com",
       description: "Для деловых предложений"
     },
     {
       icon: MessageCircle,
       title: "Telegram",
-      content: "@gdeNazvanie_support",
+      content: "@2xwet_support",
       description: "Быстрые ответы и поддержка"
     }
   ];
