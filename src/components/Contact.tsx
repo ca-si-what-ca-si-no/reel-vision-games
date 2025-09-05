@@ -142,15 +142,7 @@ const Contact = () => {
               <h4 className="font-semibold text-foreground mb-4">
                 Почему выбирают нас  
               </h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-accent mb-1">
-                    3
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Готовых игры
-                  </div>
-                </div>
+              <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
                     1 день
