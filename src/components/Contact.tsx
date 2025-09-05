@@ -145,34 +145,34 @@ const Contact = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    &lt; 24ч
+                    RTP
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Время ответа
+                    Настраиваемый
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    3
+                    1 день
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Готовых игр
+                    Быстрая интеграция
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    REST
+                    100%
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    API готово
+                    Кастомизация
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    API
+                    24/7
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Простая интеграция
+                    Техподдержка
                   </div>
                 </div>
                 <div className="text-center">
