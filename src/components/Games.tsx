@@ -13,19 +13,22 @@ const Games = () => {
       title: "Keno",
       description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
       features: ["Настраиваемый RTP", "Веб-интерфейс управления", "Реалтайм аналитика"],
-      badge: "Популярное"
+      badge: "Популярное",
+      image: "/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png"
     },
     {
       title: "Hilo",
       description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
       features: ["Быстрые раунды", "Мобильная оптимизация", "Настройка лимитов"],
-      badge: "Топ"
+      badge: "Топ",
+      image: "/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png"
     },
     {
       title: "Crash Games Pack",
       description: "Полный пакет краш-игр с уникальными механиками и дизайном",
       features: ["5 уникальных игр", "Единое управление", "Высокая волатильность"],
-      badge: "Новинка"
+      badge: "Новинка",
+      image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
     }
   ];
 
@@ -43,113 +46,6 @@ const Games = () => {
           </p>
         </div>
 
-        {/* Featured Games Showcase */}
-        <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Keno Game */}
-            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png" 
-                  alt="Keno game interface" 
-                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
-                  Keno
-                </Badge>
-                <Button 
-                  size="sm" 
-                  className="absolute bottom-4 left-4 accent-gradient"
-                  asChild
-                >
-                  <a href="#contact">
-                    <Play className="w-4 h-4 mr-2" />
-                    Демо
-                  </a>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Hilo Game */}
-            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png" 
-                  alt="Hilo card game interface" 
-                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-background/95 text-accent border-accent/50 font-semibold backdrop-blur-sm">
-                  Hilo
-                </Badge>
-                <Badge className="absolute bottom-4 left-4 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Скоро в продаже
-                </Badge>
-              </div>
-            </Card>
-
-            {/* Crash Game */}
-            <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png" 
-                  alt="Crash game interface" 
-                  className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
-                  Crash
-                </Badge>
-                <Badge className="absolute bottom-4 left-4 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Скоро в продаже
-                </Badge>
-              </div>
-            </Card>
-          </div>
-
-          {/* Main Feature Card */}
-          <Card className="gaming-border card-shadow overflow-hidden group hover:shadow-glow smooth-transition mt-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png" 
-                  alt="Featured crash game" 
-                  className="w-full h-80 lg:h-full object-cover group-hover:scale-105 smooth-transition"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <Badge className="absolute bottom-6 left-6 bg-background/95 text-muted-foreground border-border font-semibold backdrop-blur-sm">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Скоро в продаже
-                </Badge>
-              </div>
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <Badge className="w-fit mb-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
-                  Полная коллекция
-                </Badge>
-                <h3 className="text-3xl font-bold mb-4 text-foreground">
-                  Готовые игровые решения
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Keno, Hilo и пакет Crash игр с настраиваемым RTP, 
-                  современным дизайном и полной интеграционной поддержкой.
-                </p>
-                <div className="flex items-center gap-6 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-accent fill-current" />
-                    <span className="text-muted-foreground">RTP 90-99%</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-primary-glow" />
-                    <span className="text-muted-foreground">Готовы к запуску</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
 
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -159,11 +55,19 @@ const Games = () => {
               className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-8 text-center flex flex-col h-full">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={game.image} 
+                  alt={`${game.title} game interface`} 
+                  className="w-full h-48 object-cover group-hover:scale-105 smooth-transition"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-background/95 text-primary-glow border-primary-glow/50 font-semibold backdrop-blur-sm">
+                  {game.badge}
+                </Badge>
+              </div>
+              <CardContent className="p-6 text-center flex flex-col h-full">
                 <div className="flex-1">
-                  <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-                    {game.badge}
-                  </Badge>
                   <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-accent smooth-transition">
                     {game.title}
                   </h3>
