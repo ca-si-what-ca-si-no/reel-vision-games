@@ -187,6 +187,7 @@ const Games = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-border hover:bg-card mt-auto"
+                    onClick={() => setIsKenoModalOpen(true)}
                   >
                     Демо версия
                   </Button>
