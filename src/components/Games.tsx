@@ -10,19 +10,37 @@ const Games = () => {
   const gameTypes = [{
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
-    features: ["Настраиваемый RTP", "Веб-интерфейс управления", "Реалтайм аналитика"],
+    features: {
+      volatility: 3,
+      rtp: "94-97%",
+      platforms: ["Web", "Mobile", "Desktop"],
+      languages: ["RU", "EN", "DE"],
+      maxMultiplier: "1000x"
+    },
     badge: "Популярное",
     image: "/lovable-uploads/255be87f-66e2-49cd-a556-b9ece8de555d.png"
   }, {
     title: "Hilo",
     description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
-    features: ["Быстрые раунды", "Мобильная оптимизация", "Настройка лимитов"],
+    features: {
+      volatility: 4,
+      rtp: "96-98%",
+      platforms: ["Web", "Mobile"],
+      languages: ["RU", "EN"],
+      maxMultiplier: "2500x"
+    },
     badge: "Топ",
     image: "/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png"
   }, {
     title: "Crash Games Pack",
     description: "Полный пакет краш-игр с уникальными механиками и дизайном",
-    features: ["5 уникальных игр", "Единое управление", "Высокая волатильность"],
+    features: {
+      volatility: 5,
+      rtp: "95-99%",
+      platforms: ["Web", "Mobile", "Desktop", "API"],
+      languages: ["RU", "EN", "DE", "FR"],
+      maxMultiplier: "10000x"
+    },
     badge: "Новинка",
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
   }];
@@ -69,13 +87,31 @@ const Games = () => {
                   </div>
                   
                   {/* Features list - показывается при наведении */}
-                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-32 space-y-2">
-                    {game.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        {feature}
+                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 space-y-3">
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="text-muted-foreground">Волатильность:</span>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-primary text-primary' : 'text-muted-foreground'}`} />
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>RTP:</span>
+                      <span className="text-foreground">{game.features.rtp}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>Платформы:</span>
+                      <span className="text-foreground">{game.features.platforms.join(", ")}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>Языки:</span>
+                      <span className="text-foreground">{game.features.languages.join(", ")}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>Макс. множитель:</span>
+                      <span className="text-primary font-semibold">{game.features.maxMultiplier}</span>
+                    </div>
                   </div>
                 </div>
                 
@@ -135,14 +171,32 @@ const Games = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Ключевые особенности</h3>
-                  <div className="grid grid-cols-1 gap-3">
-                    {selectedGame.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-sm">{feature}</span>
+                  <h3 className="text-lg font-semibold mb-3">Характеристики игры</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                      <span className="text-sm text-muted-foreground">Волатильность</span>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-primary text-primary' : 'text-muted-foreground'}`} />
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                      <span className="text-sm text-muted-foreground">RTP</span>
+                      <span className="text-sm font-medium">{selectedGame.features.rtp}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                      <span className="text-sm text-muted-foreground">Платформы</span>
+                      <span className="text-sm font-medium">{selectedGame.features.platforms.join(", ")}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                      <span className="text-sm text-muted-foreground">Языки</span>
+                      <span className="text-sm font-medium">{selectedGame.features.languages.join(", ")}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                      <span className="text-sm text-muted-foreground">Макс. множитель</span>
+                      <span className="text-sm font-semibold text-primary">{selectedGame.features.maxMultiplier}</span>
+                    </div>
                   </div>
                 </div>
                 
