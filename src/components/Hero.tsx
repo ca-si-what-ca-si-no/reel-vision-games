@@ -93,9 +93,9 @@ const Hero = () => {
               <a href="#integrators">Связаться с нами</a>
             </Button>
             
-            {/* CTA-2: Вторичная кнопка - Показать игры */}
+            {/* CTA-2: Вторичная кнопка - Каталог */}
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-primary/30 hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300 min-w-[200px] font-semibold" asChild>
-              <a href="#games">Посмотреть игры</a>
+              <a href="#games">Каталог</a>
             </Button>
           </div>
         </div>
