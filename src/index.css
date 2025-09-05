@@ -393,8 +393,8 @@ All colors MUST be HSL.
 
   /* Device Frames */
   .phone-frame {
-    width: 375px;
-    height: 812px;
+    width: 400px;
+    height: 820px;
     background: linear-gradient(145deg, #1c1c1e, #2c2c2e);
     border-radius: 47px;
     padding: 8px;

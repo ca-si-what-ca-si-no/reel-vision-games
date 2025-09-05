@@ -145,7 +145,7 @@ const Keno = () => {
             </div>
 
             {/* Demo Game */}
-            <div className="lg:sticky lg:top-24 lg:self-start">
+            <div className="lg:sticky lg:top-16 lg:self-start">
               <div className="bg-muted/20 rounded-lg p-6">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
                 
