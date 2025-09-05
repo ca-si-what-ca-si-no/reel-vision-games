@@ -316,7 +316,7 @@ All colors MUST be HSL.
     opacity: 0;
     z-index: -1;
     filter: blur(8px);
-    animation: demo-glow 3s ease-in-out infinite;
+    animation: demo-glow 5s ease-in-out infinite;
   }
 
   @keyframes demo-pulse {
@@ -330,7 +330,7 @@ All colors MUST be HSL.
       box-shadow: 
         0 5px 22px hsla(var(--primary) / 0.25),
         0 0 20px hsla(var(--accent) / 0.2);
-      transform: scale(1.005);
+      transform: scale(1.02);
     }
   }
 
