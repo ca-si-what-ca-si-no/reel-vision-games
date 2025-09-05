@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Star, ArrowLeft } from "lucide-react";
+import { Star, ArrowLeft, Smartphone, Monitor, Tablet } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Keno = () => {
+  const [selectedDevice, setSelectedDevice] = useState('mobile');
+  const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const gameData = {
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
@@ -142,24 +146,92 @@ const Keno = () => {
 
             {/* Demo Game */}
             <div className="lg:sticky lg:top-24 lg:self-start">
-              <div className="bg-muted/20 rounded-lg p-4">
-                <h2 className="text-2xl font-semibold mb-4 text-center">Демо-версия игры</h2>
-                <div className="rounded-lg overflow-hidden bg-background shadow-lg">
-                  <iframe 
-                    src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                    className="w-full h-[600px] border-0" 
-                    title="Keno Demo Game" 
-                    allow="fullscreen"
-                  />
+              <div className="bg-muted/20 rounded-lg p-6">
+                <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
+                
+                {/* Device Selection Buttons */}
+                <div className="flex gap-2 mb-6 p-1 bg-muted/30 rounded-lg">
+                  <button
+                    onClick={() => setSelectedDevice('mobile')}
+                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${
+                      selectedDevice === 'mobile' 
+                        ? 'bg-primary text-primary-foreground shadow-sm' 
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    <Smartphone className="w-4 h-4" />
+                    <span className="text-sm font-medium">Телефон</span>
+                  </button>
+                  <button
+                    onClick={() => setIsDesktopModalOpen(true)}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  >
+                    <Monitor className="w-4 h-4" />
+                    <span className="text-sm font-medium">Десктоп</span>
+                  </button>
+                  <button
+                    onClick={() => setSelectedDevice('tablet')}
+                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${
+                      selectedDevice === 'tablet' 
+                        ? 'bg-primary text-primary-foreground shadow-sm' 
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    <Tablet className="w-4 h-4" />
+                    <span className="text-sm font-medium">Планшет</span>
+                  </button>
                 </div>
+
+                {/* Device Preview */}
+                <div className="flex justify-center">
+                  {selectedDevice === 'mobile' && (
+                    <div className="phone-frame relative">
+                      <div className="phone-screen">
+                        <iframe 
+                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                          className="w-full h-full border-0 rounded-[20px]" 
+                          title="Keno Mobile Demo Game" 
+                          allow="fullscreen"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {selectedDevice === 'tablet' && (
+                    <div className="tablet-frame relative">
+                      <div className="tablet-screen">
+                        <iframe 
+                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                          className="w-full h-full border-0 rounded-[12px]" 
+                          title="Keno Tablet Demo Game" 
+                          allow="fullscreen"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
                 <p className="text-sm text-muted-foreground text-center mt-4">
-                  Попробуйте игру прямо сейчас! Это полнофункциональная демо-версия.
+                  Попробуйте игру на разных устройствах! Это полнофункциональная демо-версия.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </main>
+      
+      {/* Desktop Modal */}
+      <Dialog open={isDesktopModalOpen} onOpenChange={setIsDesktopModalOpen}>
+        <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
+          <iframe 
+            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+            className="w-full h-full rounded-lg border-0" 
+            title="Keno Desktop Demo Game" 
+            allow="fullscreen" 
+          />
+        </DialogContent>
+      </Dialog>
+      
       <Footer />
     </div>
   );
