@@ -153,18 +153,26 @@ const Contact = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    99.9%
+                    3
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Успешных интеграций
+                    Готовых игр
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-accent mb-1">
-                    15+
+                    REST
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Активных партнеров
+                    API готово
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-accent mb-1">
+                    API
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Простая интеграция
                   </div>
                 </div>
                 <div className="text-center">
