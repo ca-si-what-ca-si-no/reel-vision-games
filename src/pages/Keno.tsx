@@ -430,7 +430,7 @@ const Keno = () => {
                       </Button>
                     </Link>
                     <Link to="/#contact" className="flex-1">
-                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-[20px] py-[15px]">
+                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-[20px] py-[15px] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
                         Запросить интеграцию
                       </Button>
                     </Link>

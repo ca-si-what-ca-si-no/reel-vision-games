@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="flex items-center">
               <Button 
                 size="sm" 
-                className="accent-gradient glow-effect font-semibold text-sm"
+                className="accent-gradient glow-effect font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110 group"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
@@ -108,7 +108,7 @@ const Footer = () => {
                 }}
               >
                 Начать сотрудничество
-                <ExternalLink className="w-4 h-4 ml-2" />
+                <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
