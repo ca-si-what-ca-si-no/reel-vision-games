@@ -445,41 +445,41 @@ const Hilo = () => {
                                 </div>
                               </div>
 
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                                    📊 Анализ ситуации:
-                                  </h5>
-                                  <div className="space-y-2 text-sm">
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Карта 7 - практически равные шансы</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Возможный множитель:</span>
-                                      <span className="text-green-400 font-medium">2.0x</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Текущая ставка:</span>
-                                      <span className="text-blue-400 font-medium">100₽</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Риск потерь:</span>
-                                      <span className="text-red-400 font-medium">Средний</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                                    🎮 Элементы интерфейса:
-                                  </h5>
-                                  <div className="space-y-2 text-sm">
-                                    <div className="text-muted-foreground">• Анимированная карта в центре</div>
-                                    <div className="text-muted-foreground">• Интерактивные кнопки выбора</div>
-                                    <div className="text-muted-foreground">• Живая статистика вероятностей</div>
-                                    <div className="text-muted-foreground">• Индикаторы времени на выбор</div>
-                                  </div>
-                                </div>
-                              </div>
+                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                 <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 p-4 rounded-lg">
+                                   <h5 className="font-medium text-foreground mb-4 flex items-center gap-2">
+                                     📊 Анализ ситуации:
+                                   </h5>
+                                   <div className="space-y-3 text-sm">
+                                     <div>
+                                       <span className="text-muted-foreground block">Карта 7 - практически равные шансы</span>
+                                     </div>
+                                     <div className="flex justify-between items-center">
+                                       <span className="text-muted-foreground">Возможный множитель:</span>
+                                       <span className="text-green-400 font-medium">2.0x</span>
+                                     </div>
+                                     <div className="flex justify-between items-center">
+                                       <span className="text-muted-foreground">Текущая ставка:</span>
+                                       <span className="text-blue-400 font-medium">100₽</span>
+                                     </div>
+                                     <div className="flex justify-between items-center">
+                                       <span className="text-muted-foreground">Риск потерь:</span>
+                                       <span className="text-red-400 font-medium">Средний</span>
+                                     </div>
+                                   </div>
+                                 </div>
+                                 <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 p-4 rounded-lg">
+                                   <h5 className="font-medium text-foreground mb-4 flex items-center gap-2">
+                                     🎮 Элементы интерфейса:
+                                   </h5>
+                                   <div className="space-y-3 text-sm">
+                                     <div className="text-muted-foreground">• Анимированная карта в центре</div>
+                                     <div className="text-muted-foreground">• Интерактивные кнопки выбора</div>
+                                     <div className="text-muted-foreground">• Живая статистика вероятностей</div>
+                                     <div className="text-muted-foreground">• Индикаторы времени на выбор</div>
+                                   </div>
+                                 </div>
+                               </div>
                             </div>
                           </div>
                         </div>
@@ -556,15 +556,19 @@ const Hilo = () => {
                                </div>
 
                                <div className="bg-gradient-to-r from-red-500/10 to-yellow-500/10 border border-red-500/20 p-4 rounded-lg">
-                                 <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                 <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
                                    ⚡ Особенности момента:
                                  </h5>
-                                 <ul className="text-sm text-muted-foreground space-y-1">
-                                   <li>• Асимметричные шансы на выигрыш</li>
-                                   <li>• Динамические коэффициенты выплат</li>
-                                   <li>• Психологическое давление выбора</li>
-                                   <li>• Возможность забрать текущий выигрыш</li>
-                                 </ul>
+                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                                   <div className="space-y-2">
+                                     <div className="text-muted-foreground">• Асимметричные шансы на выигрыш</div>
+                                     <div className="text-muted-foreground">• Динамические коэффициенты выплат</div>
+                                   </div>
+                                   <div className="space-y-2">
+                                     <div className="text-muted-foreground">• Психологическое давление выбора</div>
+                                     <div className="text-muted-foreground">• Возможность забрать текущий выигрыш</div>
+                                   </div>
+                                 </div>
                                </div>
                              </div>
                            </div>
