@@ -425,7 +425,7 @@ const Keno = () => {
                 <div className="pt-6 border-t">
                   <div className="flex gap-4">
                     <Link to="/#games" className="flex-1">
-                      <Button variant="outline" className="w-full bg-slate-50 text-teal-900 px-[20px] py-[20px]">
+                      <Button variant="secondary" className="w-full px-[20px] py-[20px]">
                         Назад к играм
                       </Button>
                     </Link>
