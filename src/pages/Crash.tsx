@@ -483,18 +483,22 @@ const Crash = () => {
                   </div>
                 </div>
                 
-                <div className="pt-6 border-t">
-                  <div className="flex gap-4">
-                    <Link to="/#games" className="flex-1">
-                      <Button variant="outline" className="w-full">
-                        Назад к играм
-                      </Button>
-                    </Link>
-                    <Link to="/#contact" className="flex-1">
-                      <Button className="w-full">
-                        Запросить интеграцию
-                      </Button>
-                    </Link>
+                <div className="pt-6">
+                  <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
+                    <div className="p-6 bg-muted/20">
+                      <div className="flex gap-4">
+                        <Link to="/#games" className="flex-1">
+                          <Button variant="outline" className="w-full h-12 text-lg font-medium">
+                            Назад к играм
+                          </Button>
+                        </Link>
+                        <Link to="/#contact" className="flex-1">
+                          <Button className="w-full h-12 text-lg font-medium">
+                            Запросить интеграцию
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
