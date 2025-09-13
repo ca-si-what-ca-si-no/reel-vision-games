@@ -92,7 +92,7 @@ const Hero = () => {
               <a href="#integrators">Связаться с нами</a>
             </Button>
             
-            <Button variant="outline" className="border-3 border-white text-white hover:bg-white hover:text-black font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-full" asChild>
+            <Button className="bg-gradient-to-r from-accent via-secondary to-primary-glow text-primary-foreground font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" asChild>
               <a href="#games">Каталог</a>
             </Button>
           </div>
