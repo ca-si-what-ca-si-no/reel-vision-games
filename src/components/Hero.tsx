@@ -89,7 +89,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-full" asChild>
-              <a href="#integrators">Связаться с нами</a>
+              <a href="#contact">Связаться с нами</a>
             </Button>
             
             <Button className="bg-gradient-to-r from-accent via-secondary to-primary-glow text-primary-foreground font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" asChild>
