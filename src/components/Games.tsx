@@ -238,7 +238,16 @@ const Games = () => {
                     <Button onClick={() => {
                       setSelectedGame(null);
                       setTimeout(() => {
-                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                        const contactSection = document.querySelector('#contact');
+                        if (contactSection) {
+                          const elementPosition = contactSection.getBoundingClientRect().top;
+                          const offsetPosition = elementPosition + window.pageYOffset - 100;
+                          
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }
                       }, 100);
                     }} className="accent-gradient glow-effect font-semibold flex-1">
                       Запросить интеграцию

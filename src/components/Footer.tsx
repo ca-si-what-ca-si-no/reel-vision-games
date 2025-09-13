@@ -96,7 +96,15 @@ const Footer = () => {
                 className="accent-gradient glow-effect font-semibold text-sm"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  if (contactSection) {
+                    const elementPosition = contactSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - 100;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
               >
                 Начать сотрудничество

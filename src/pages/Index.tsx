@@ -10,13 +10,19 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Handle scrolling to hash on page load
+    // Handle scrolling to hash on page load with header offset
     const hash = window.location.hash;
     if (hash) {
       setTimeout(() => {
         const element = document.querySelector(hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for header
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
     }
