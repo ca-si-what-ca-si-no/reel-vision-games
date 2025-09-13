@@ -52,7 +52,7 @@ const Keno = () => {
         <div className="container mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/#games" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="w-4 h-4" />
               Назад к играм
             </Link>
@@ -237,7 +237,7 @@ const Keno = () => {
                 
                 <div className="pt-6 border-t">
                   <div className="flex gap-4">
-                    <Link to="/" className="flex-1">
+                    <Link to="/#games" className="flex-1">
                       <Button variant="outline" className="w-full">
                         Назад к играм
                       </Button>
