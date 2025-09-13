@@ -88,57 +88,57 @@ const Hero = () => {
           </div>
           
           <div className="space-y-8">
-            {/* Вариант 1: Маленькие кнопки */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="sm" className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-semibold text-sm px-6 py-2 shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[150px]" asChild>
+            {/* Вариант 1: Минимальные отступы */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-2 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
                 <a href="#integrators">Связаться с нами</a>
               </Button>
               
-              <Button size="sm" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-sm px-5 py-2 transition-all duration-300 hover:scale-105 min-w-[120px]" asChild>
+              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-2 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
                 <a href="#games">Каталог</a>
               </Button>
             </div>
 
-            {/* Вариант 2: Средние кнопки */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Button className="bg-primary text-primary-foreground font-semibold text-base px-8 py-3 shadow-lg transition-all duration-300 hover:scale-105 min-w-[180px]" asChild>
+            {/* Вариант 2: Малые отступы */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-4 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
                 <a href="#integrators">Связаться с нами</a>
               </Button>
               
-              <Button variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold text-base px-7 py-3 transition-all duration-300 hover:scale-105 min-w-[150px]" asChild>
+              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-4 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
                 <a href="#games">Каталог</a>
               </Button>
             </div>
 
-            {/* Вариант 3: Большие кнопки (оригинальный размер) */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-semibold text-lg px-10 py-4 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-lg px-8 py-4 transition-all duration-300 hover:scale-105 min-w-[180px]" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 4: Очень большие кнопки */}
-            <div className="flex flex-col sm:flex-row gap-7 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-xl px-12 py-5 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px]" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-xl px-10 py-5 transition-all duration-300 hover:scale-105 min-w-[200px]" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 5: Гигантские кнопки */}
+            {/* Вариант 3: Средние отступы (оригинальные) */}
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-6 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
                 <a href="#integrators">Связаться с нами</a>
               </Button>
               
               <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-6 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 4: Большие отступы */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 5: Максимальные отступы */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-10 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-10 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
                 <a href="#games">Каталог</a>
               </Button>
             </div>
