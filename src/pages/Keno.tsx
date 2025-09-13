@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
-
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -30,9 +29,7 @@ const Keno = () => {
     badge: "Популярное",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -86,12 +83,12 @@ const Keno = () => {
                 </div>
                 
                 <TechnicalSpecs features={{
-                  ...gameData.features,
-                  minBet: "0.25",
-                  maxBet: "500.00",
-                  roundTime: "~15сек",
-                  autoPlay: false
-                }} />
+                ...gameData.features,
+                minBet: "0.25",
+                maxBet: "500.00",
+                roundTime: "~15сек",
+                autoPlay: false
+              }} />
 
                 <div>
                   <h2 className="text-2xl font-semibold mb-4">Особенности</h2>
@@ -125,10 +122,7 @@ const Keno = () => {
                     
                     {/* Джекпот */}
                     <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button 
-                        onClick={() => setActiveScreenshot(activeScreenshot === 'jackpot' ? null : 'jackpot')}
-                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
-                      >
+                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'jackpot' ? null : 'jackpot')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
                           <div className="relative">
                             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-400/20 to-orange-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -153,21 +147,12 @@ const Keno = () => {
                             </div>
                           </div>
                         </div>
-                        {activeScreenshot === 'jackpot' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        )}
+                        {activeScreenshot === 'jackpot' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
                       </button>
-                      {activeScreenshot === 'jackpot' && (
-                        <div className="border-t border-border/50">
+                      {activeScreenshot === 'jackpot' && <div className="border-t border-border/50">
                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
                             <div className="space-y-6">
-                              <img 
-                                src={gameData.image} 
-                                alt="Keno jackpot screen" 
-                                className="w-full h-64 object-cover rounded-lg border border-border/50"
-                              />
+                              <img src={gameData.image} alt="Keno jackpot screen" className="w-full h-64 object-cover rounded-lg border border-border/50" />
                               
                               <div>
                                 <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
@@ -234,16 +219,12 @@ const Keno = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        </div>}
                     </div>
 
                     {/* Частичный выигрыш */}
                     <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button 
-                        onClick={() => setActiveScreenshot(activeScreenshot === 'win' ? null : 'win')}
-                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
-                      >
+                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'win' ? null : 'win')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
                           <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
                             <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
@@ -263,21 +244,12 @@ const Keno = () => {
                             </div>
                           </div>
                         </div>
-                        {activeScreenshot === 'win' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        )}
+                        {activeScreenshot === 'win' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
                       </button>
-                      {activeScreenshot === 'win' && (
-                        <div className="border-t border-border/50">
+                      {activeScreenshot === 'win' && <div className="border-t border-border/50">
                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
                             <div className="space-y-6">
-                              <img 
-                                src={gameData.image} 
-                                alt="Keno winning screen" 
-                                className="w-full h-64 object-cover rounded-lg border border-border/50"
-                              />
+                              <img src={gameData.image} alt="Keno winning screen" className="w-full h-64 object-cover rounded-lg border border-border/50" />
                               
                               <div>
                                 <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
@@ -344,16 +316,12 @@ const Keno = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        </div>}
                     </div>
 
                     {/* Выбор номеров */}
                     <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button 
-                        onClick={() => setActiveScreenshot(activeScreenshot === 'selection' ? null : 'selection')}
-                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
-                      >
+                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'selection' ? null : 'selection')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
                           <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
                             <div className="grid grid-cols-2 gap-1">
@@ -376,21 +344,12 @@ const Keno = () => {
                             </div>
                           </div>
                         </div>
-                        {activeScreenshot === 'selection' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        )}
+                        {activeScreenshot === 'selection' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
                       </button>
-                      {activeScreenshot === 'selection' && (
-                        <div className="border-t border-border/50">
+                      {activeScreenshot === 'selection' && <div className="border-t border-border/50">
                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
                             <div className="space-y-6">
-                              <img 
-                                src={gameData.image} 
-                                alt="Keno number selection screen" 
-                                className="w-full h-64 object-cover rounded-lg border border-border/50"
-                              />
+                              <img src={gameData.image} alt="Keno number selection screen" className="w-full h-64 object-cover rounded-lg border border-border/50" />
                               
                               <div>
                                 <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
@@ -457,8 +416,7 @@ const Keno = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        </div>}
                     </div>
 
                   </div>
@@ -467,12 +425,12 @@ const Keno = () => {
                 <div className="pt-6 border-t">
                   <div className="flex gap-4">
                     <Link to="/#games" className="flex-1">
-                      <Button variant="outline" className="w-full">
+                      <Button variant="outline" className="w-full bg-slate-50 text-teal-900 px-[20px] py-[20px]">
                         Назад к играм
                       </Button>
                     </Link>
                     <Link to="/#contact" className="flex-1">
-                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground">
+                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-[20px] py-[15px]">
                         Запросить интеграцию
                       </Button>
                     </Link>
@@ -488,28 +446,15 @@ const Keno = () => {
                 
                 {/* Device Selection Buttons */}
                 <div className="flex gap-2 mb-6 p-1 bg-muted/30 rounded-lg">
-                  <button
-                    onClick={() => setSelectedDevice('mobile')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${
-                      selectedDevice === 'mobile' 
-                        ? 'bg-primary text-primary-foreground shadow-sm' 
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
+                  <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
                     <Smartphone className="w-4 h-4" />
                     <span className="text-sm font-medium">Телефон</span>
                   </button>
-                  <button
-                    onClick={() => setIsDesktopModalOpen(true)}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                  >
+                  <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50">
                     <Monitor className="w-4 h-4" />
                     <span className="text-sm font-medium">Десктоп</span>
                   </button>
-                  <button
-                    onClick={() => setIsTabletModalOpen(true)}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                  >
+                  <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50">
                     <Tablet className="w-4 h-4" />
                     <span className="text-sm font-medium">Планшет</span>
                   </button>
@@ -519,12 +464,7 @@ const Keno = () => {
                 <div className="flex justify-center">
                   <div className="phone-frame relative">
                     <div className="phone-screen">
-                      <iframe 
-                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                        className="w-full h-full border-0 rounded-[20px]" 
-                        title="Keno Mobile Demo Game" 
-                        allow="fullscreen"
-                      />
+                      <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[20px]" title="Keno Mobile Demo Game" allow="fullscreen" />
                     </div>
                   </div>
                 </div>
@@ -541,12 +481,7 @@ const Keno = () => {
       {/* Desktop Modal */}
       <Dialog open={isDesktopModalOpen} onOpenChange={setIsDesktopModalOpen}>
         <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
-          <iframe 
-            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-            className="w-full h-full rounded-lg border-0" 
-            title="Keno Desktop Demo Game" 
-            allow="fullscreen" 
-          />
+          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Desktop Demo Game" allow="fullscreen" />
         </DialogContent>
       </Dialog>
 
@@ -555,20 +490,13 @@ const Keno = () => {
         <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur">
           <div className="tablet-frame relative mx-auto">
             <div className="tablet-screen">
-              <iframe 
-                src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                className="w-full h-full border-0 rounded-[15px]" 
-                title="Keno Tablet Demo Game" 
-                allow="fullscreen" 
-              />
+              <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[15px]" title="Keno Tablet Demo Game" allow="fullscreen" />
             </div>
           </div>
         </DialogContent>
       </Dialog>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Keno;
