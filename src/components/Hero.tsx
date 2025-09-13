@@ -105,8 +105,10 @@ const Hero = () => {
             </Button>
             
             <div className="flex gap-[10px]">
-              <Button className="bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" asChild>
-                <a href="#games" className="text-transparent bg-gradient-accent bg-clip-text">Каталог</a>
+              <Button className="bg-white hover:bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" asChild>
+                <a href="#games">
+                  <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
+                </a>
               </Button>
               
               <Button className="border border-white/20 font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px] rounded-full" style={{
