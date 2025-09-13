@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { Mail, ExternalLink, MessageCircle } from "lucide-react";
+import { Mail, ExternalLink, Send } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -27,7 +27,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
-                <MessageCircle className="w-4 h-4" />
+                <Send className="w-4 h-4" />
                 <a href="https://t.me/2xwet_support" target="_blank" rel="noopener noreferrer" className="hover:text-accent smooth-transition">
                   @2xwet_support
                 </a>
