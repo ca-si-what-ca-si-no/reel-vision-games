@@ -86,36 +86,38 @@ const Contact = () => {
               Контактная информация
             </h3>
             
-            {contactInfo.map((info, index) => <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 smooth-transition">
-                      <info.icon className="w-6 h-6 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        {info.title}
-                      </h4>
-                      <div className="text-accent font-medium mb-1">
-                        {info.title === "Email" ? (
-                          <a href={`mailto:${info.content}`} className="hover:underline hover:text-accent/80 transition-colors">
+            {contactInfo.map((info, index) => {
+              const href = info.title === "Email" 
+                ? `mailto:${info.content}` 
+                : `https://t.me/${info.content.replace('@', '')}`;
+              const target = info.title === "Telegram" ? "_blank" : undefined;
+              const rel = info.title === "Telegram" ? "noopener noreferrer" : undefined;
+              
+              return (
+                <a key={index} href={href} target={target} rel={rel} className="block">
+                  <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group cursor-pointer">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0 group-hover:scale-110 smooth-transition">
+                          <info.icon className="w-6 h-6 text-accent-foreground" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {info.title}
+                          </h4>
+                          <div className="text-accent font-medium mb-1">
                             {info.content}
-                          </a>
-                        ) : info.title === "Telegram" ? (
-                          <a href={`https://t.me/${info.content.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-accent/80 transition-colors">
-                            {info.content}
-                          </a>
-                        ) : (
-                          info.content
-                        )}
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            {info.description}
+                          </p>
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {info.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>)}
+                    </CardContent>
+                  </Card>
+                </a>
+              );
+            })}
             
             {/* Quick Stats */}
             
