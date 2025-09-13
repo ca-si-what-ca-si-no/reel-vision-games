@@ -87,16 +87,61 @@ const Hero = () => {
             />
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            {/* CTA-1: Основная кнопка - Связаться с нами */}
-            <Button size="lg" className="accent-gradient glow-effect font-semibold text-lg px-10 py-4 shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]" asChild>
-              <a href="#integrators">Связаться с нами</a>
-            </Button>
-            
-            {/* CTA-2: Вторичная кнопка - Каталог */}
-            <Button size="lg" className="accent-gradient glow-effect font-semibold text-lg px-8 py-4 transition-all duration-300 min-w-[200px]" asChild>
-              <a href="#games">Каталог</a>
-            </Button>
+          <div className="space-y-8">
+            {/* Вариант 1: Градиентные кнопки с эффектом свечения */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-semibold text-lg px-10 py-4 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-primary/50 min-w-[200px] border-0" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-lg px-8 py-4 transition-all duration-300 hover:scale-105 min-w-[200px]" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 2: Неоновые кнопки */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-primary text-primary-foreground font-bold text-lg px-10 py-4 shadow-lg border-2 border-primary-glow transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:scale-105 min-w-[200px]" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button size="lg" className="bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-lg px-8 py-4 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 min-w-[200px]" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 3: Минималистичные кнопки */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-foreground text-background font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:bg-foreground/90 hover:scale-105 min-w-[200px]" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button size="lg" variant="ghost" className="border border-border text-foreground hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 min-w-[200px]" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 4: Объемные кнопки с тенями */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-gradient-to-b from-primary to-primary/80 text-primary-foreground font-bold text-lg px-10 py-4 shadow-[0_8px_0_rgb(59,130,246,0.3)] hover:shadow-[0_6px_0_rgb(59,130,246,0.3)] hover:translate-y-[2px] transition-all duration-150 min-w-[200px]" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button size="lg" className="bg-gradient-to-b from-secondary to-secondary/80 text-secondary-foreground font-bold text-lg px-8 py-4 shadow-[0_8px_0_rgb(156,163,175,0.3)] hover:shadow-[0_6px_0_rgb(156,163,175,0.3)] hover:translate-y-[2px] transition-all duration-150 min-w-[200px]" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
+
+            {/* Вариант 5: Стеклянные кнопки */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-white/10 backdrop-blur-md border border-white/20 text-foreground font-semibold text-lg px-10 py-4 transition-all duration-300 hover:bg-white/20 hover:scale-105 min-w-[200px]" asChild>
+                <a href="#integrators">Связаться с нами</a>
+              </Button>
+              
+              <Button size="lg" className="bg-primary/10 backdrop-blur-md border border-primary/30 text-primary font-semibold text-lg px-8 py-4 transition-all duration-300 hover:bg-primary/20 hover:scale-105 min-w-[200px]" asChild>
+                <a href="#games">Каталог</a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
