@@ -132,13 +132,13 @@ const Crash = () => {
                       >
                         <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-400/20 to-orange-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">$</span>
                               </div>
                             </div>
-                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 rounded-full flex items-center justify-center">
-                              <span className="text-xs font-bold text-black">↑</span>
+                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-400 rounded-full flex items-center justify-center">
+                              <span className="text-xs font-bold text-white">↑</span>
                             </div>
                           </div>
                           <div className="text-left">
@@ -148,8 +148,8 @@ const Crash = () => {
                             <div className="flex items-center gap-4 mt-1">
                               <span className="text-sm text-muted-foreground">Множитель 5847x перед крашем</span>
                               <div className="flex items-center gap-1">
-                                <span className="text-xs bg-yellow-400/20 text-yellow-400 px-2 py-1 rounded">Множитель: 5847x</span>
-                                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Вероятность: 0.017%</span>
+                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Множитель: 5847x</span>
+                                <span className="text-xs bg-cyan-400/20 text-cyan-400 px-2 py-1 rounded">Вероятность: 0.017%</span>
                               </div>
                             </div>
                           </div>
@@ -180,10 +180,10 @@ const Crash = () => {
                               </div>
 
                               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div className="bg-yellow-500/10 border border-yellow-500/20 p-4 rounded-lg">
-                                  <span className="text-yellow-400 block mb-1 text-sm">Множитель</span>
-                                  <span className="text-2xl font-bold text-yellow-400">5,847x</span>
-                                  <div className="text-xs text-yellow-400/70 mt-1">+584,600% от ставки</div>
+                                <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
+                                  <span className="text-blue-400 block mb-1 text-sm">Множитель</span>
+                                  <span className="text-2xl font-bold text-blue-400">5,847x</span>
+                                  <div className="text-xs text-blue-400/70 mt-1">+584,600% от ставки</div>
                                 </div>
                                 <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg">
                                   <span className="text-green-400 block mb-1 text-sm">Выигрыш</span>
@@ -198,14 +198,14 @@ const Crash = () => {
                               </div>
 
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 p-4 rounded-lg">
+                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-4 rounded-lg">
                                   <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
                                     🚀 Статистика полета:
                                   </h5>
                                   <div className="space-y-2 text-sm">
                                     <div className="flex justify-between items-center">
                                       <span className="text-muted-foreground">Вероятность 5000x+:</span>
-                                      <span className="text-yellow-400 font-medium">0.02%</span>
+                                      <span className="text-blue-400 font-medium">0.02%</span>
                                     </div>
                                     <div className="flex justify-between items-center">
                                       <span className="text-muted-foreground">Средний краш:</span>
