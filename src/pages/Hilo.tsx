@@ -264,42 +264,44 @@ const Hilo = () => {
                       {activeScreenshot === 'streak' && (
                         <div className="border-t border-border/50">
                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                              <div className="space-y-4">
-                                <img 
-                                  src={gameData.image} 
-                                  alt="Hilo winning streak screen" 
-                                  className="w-full h-48 object-cover rounded-lg border border-border/50"
-                                />
-                                <div className="grid grid-cols-2 gap-3 text-sm">
-                                  <div className="bg-muted/30 p-3 rounded-lg">
-                                    <span className="text-muted-foreground block">Текущий множитель</span>
-                                    <span className="text-lg font-bold text-green-400">32.00x</span>
-                                  </div>
-                                  <div className="bg-muted/30 p-3 rounded-lg">
-                                    <span className="text-muted-foreground block">Потенциальный выигрыш</span>
-                                    <span className="text-lg font-bold text-accent">3,200₽</span>
-                                  </div>
+                            <div className="space-y-6">
+                              {/* Full-width screenshot */}
+                              <img 
+                                src={gameData.image} 
+                                alt="Hilo winning streak screen" 
+                                className="w-full h-64 object-cover rounded-lg border border-border/50"
+                              />
+                              
+                              {/* Description */}
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                  Игрок находится на пике выигрышной серии из 5 правильных предсказаний. 
+                                  Каждое угаданное направление карты удваивает множитель. Сейчас критический 
+                                  момент - забрать выигрыш или рискнуть ради еще большего множителя.
+                                </p>
+                              </div>
+
+                              {/* Specific blocks */}
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-muted/30 p-4 rounded-lg">
+                                  <span className="text-muted-foreground block mb-1">Текущий множитель</span>
+                                  <span className="text-2xl font-bold text-green-400">32.00x</span>
+                                </div>
+                                <div className="bg-muted/30 p-4 rounded-lg">
+                                  <span className="text-muted-foreground block mb-1">Потенциальный выигрыш</span>
+                                  <span className="text-2xl font-bold text-accent">3,200₽</span>
                                 </div>
                               </div>
-                              <div className="space-y-4">
-                                <div>
-                                  <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
-                                  <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Игрок находится на пике выигрышной серии из 5 правильных предсказаний. 
-                                    Каждое угаданное направление карты удваивает множитель. Сейчас критический 
-                                    момент - забрать выигрыш или рискнуть ради еще большего множителя.
-                                  </p>
-                                </div>
-                                <div className="bg-muted/20 p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2">Ключевые элементы интерфейса:</h5>
-                                  <ul className="text-sm text-muted-foreground space-y-1">
-                                    <li>• Индикатор текущей серии выигрышей</li>
-                                    <li>• Динамический множитель в реальном времени</li>
-                                    <li>• Кнопки "Забрать" и "Продолжить"</li>
-                                    <li>• История предыдущих карт</li>
-                                  </ul>
-                                </div>
+
+                              <div className="bg-muted/20 p-4 rounded-lg">
+                                <h5 className="font-medium text-foreground mb-2">Ключевые элементы интерфейса:</h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Индикатор текущей серии выигрышей</li>
+                                  <li>• Динамический множитель в реальном времени</li>
+                                  <li>• Кнопки "Забрать" и "Продолжить"</li>
+                                  <li>• История предыдущих карт</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -341,42 +343,44 @@ const Hilo = () => {
                       {activeScreenshot === 'gameplay' && (
                         <div className="border-t border-border/50">
                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                              <div className="space-y-4">
-                                <img 
-                                  src={gameData.image} 
-                                  alt="Hilo gameplay screen" 
-                                  className="w-full h-48 object-cover rounded-lg border border-border/50"
-                                />
-                                <div className="grid grid-cols-2 gap-3 text-sm">
-                                  <div className="bg-muted/30 p-3 rounded-lg">
-                                    <span className="text-muted-foreground block">Текущая карта</span>
-                                    <span className="text-lg font-bold text-foreground">7 ♠</span>
-                                  </div>
-                                  <div className="bg-muted/30 p-3 rounded-lg">
-                                    <span className="text-muted-foreground block">Баланс</span>
-                                    <span className="text-lg font-bold text-foreground">1,250₽</span>
-                                  </div>
+                            <div className="space-y-6">
+                              {/* Full-width screenshot */}
+                              <img 
+                                src={gameData.image} 
+                                alt="Hilo gameplay screen" 
+                                className="w-full h-64 object-cover rounded-lg border border-border/50"
+                              />
+                              
+                              {/* Description */}
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-2">Игровая ситуация</h4>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                  Основной экран игры с открытой картой "7 пик". Игроку необходимо предсказать, 
+                                  будет ли следующая карта выше или ниже. С картой 7 шансы примерно равны, 
+                                  что делает выбор особенно интересным.
+                                </p>
+                              </div>
+
+                              {/* Specific blocks */}
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-muted/30 p-4 rounded-lg">
+                                  <span className="text-muted-foreground block mb-1">Текущая карта</span>
+                                  <span className="text-2xl font-bold text-foreground">7 ♠</span>
+                                </div>
+                                <div className="bg-muted/30 p-4 rounded-lg">
+                                  <span className="text-muted-foreground block mb-1">Баланс</span>
+                                  <span className="text-2xl font-bold text-foreground">1,250₽</span>
                                 </div>
                               </div>
-                              <div className="space-y-4">
-                                <div>
-                                  <h4 className="font-semibold text-foreground mb-2">Игровая ситуация</h4>
-                                  <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Основной экран игры с открытой картой "7 пик". Игроку необходимо предсказать, 
-                                    будет ли следующая карта выше или ниже. С картой 7 шансы примерно равны, 
-                                    что делает выбор особенно интересным.
-                                  </p>
-                                </div>
-                                <div className="bg-muted/20 p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2">Элементы интерфейса:</h5>
-                                  <ul className="text-sm text-muted-foreground space-y-1">
-                                    <li>• Текущая открытая карта в центре</li>
-                                    <li>• Кнопки "Выше" и "Ниже"</li>
-                                    <li>• Индикатор баланса и ставки</li>
-                                    <li>• Статистика вероятностей</li>
-                                  </ul>
-                                </div>
+
+                              <div className="bg-muted/20 p-4 rounded-lg">
+                                <h5 className="font-medium text-foreground mb-2">Элементы интерфейса:</h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Текущая открытая карта в центре</li>
+                                  <li>• Кнопки "Выше" и "Ниже"</li>
+                                  <li>• Индикатор баланса и ставки</li>
+                                  <li>• Статистика вероятностей</li>
+                                </ul>
                               </div>
                             </div>
                           </div>
@@ -423,44 +427,46 @@ const Hilo = () => {
                        {activeScreenshot === 'choice' && (
                          <div className="border-t border-border/50">
                            <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                               <div className="space-y-4">
-                                 <img 
-                                   src={gameData.image} 
-                                   alt="Hilo critical choice screen" 
-                                   className="w-full h-48 object-cover rounded-lg border border-border/50"
-                                 />
-                                 <div className="grid grid-cols-2 gap-3 text-sm">
-                                   <div className="bg-red-500/10 border border-red-500/20 p-3 rounded-lg">
-                                     <span className="text-red-400 block text-xs">Шанс на "Выше"</span>
-                                     <span className="text-lg font-bold text-red-400">7.7%</span>
-                                   </div>
-                                   <div className="bg-blue-500/10 border border-blue-500/20 p-3 rounded-lg">
-                                     <span className="text-blue-400 block text-xs">Шанс на "Ниже"</span>
-                                     <span className="text-lg font-bold text-blue-400">84.6%</span>
-                                   </div>
+                             <div className="space-y-6">
+                               {/* Full-width screenshot */}
+                               <img 
+                                 src={gameData.image} 
+                                 alt="Hilo critical choice screen" 
+                                 className="w-full h-64 object-cover rounded-lg border border-border/50"
+                               />
+                               
+                               {/* Description */}
+                               <div>
+                                 <h4 className="font-semibold text-foreground mb-2">Критическая ситуация</h4>
+                                 <p className="text-muted-foreground text-sm leading-relaxed">
+                                   На экране Король - одна из самых высоких карт в колоде. Выбор "Выше" крайне 
+                                   рискован (только Туз), но дает огромный множитель. Выбор "Ниже" более безопасен, 
+                                   но множитель будет значительно меньше.
+                                 </p>
+                               </div>
+
+                               {/* Specific blocks */}
+                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                 <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-lg">
+                                   <span className="text-red-400 block mb-1">Шанс на "Выше"</span>
+                                   <span className="text-2xl font-bold text-red-400">7.7%</span>
+                                 </div>
+                                 <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
+                                   <span className="text-blue-400 block mb-1">Шанс на "Ниже"</span>
+                                   <span className="text-2xl font-bold text-blue-400">84.6%</span>
                                  </div>
                                </div>
-                               <div className="space-y-4">
-                                 <div>
-                                   <h4 className="font-semibold text-foreground mb-2">Критическая ситуация</h4>
-                                   <p className="text-muted-foreground text-sm leading-relaxed">
-                                     На экране Король - одна из самых высоких карт в колоде. Выбор "Выше" крайне 
-                                     рискован (только Туз), но дает огромный множитель. Выбор "Ниже" более безопасен, 
-                                     но множитель будет значительно меньше.
-                                   </p>
-                                 </div>
-                                 <div className="bg-gradient-to-r from-red-500/10 to-yellow-500/10 border border-red-500/20 p-4 rounded-lg">
-                                   <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
-                                     ⚡ Особенности момента:
-                                   </h5>
-                                   <ul className="text-sm text-muted-foreground space-y-1">
-                                     <li>• Асимметричные шансы на выигрыш</li>
-                                     <li>• Динамические коэффициенты выплат</li>
-                                     <li>• Психологическое давление выбора</li>
-                                     <li>• Возможность забрать текущий выигрыш</li>
-                                   </ul>
-                                 </div>
+
+                               <div className="bg-gradient-to-r from-red-500/10 to-yellow-500/10 border border-red-500/20 p-4 rounded-lg">
+                                 <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                   ⚡ Особенности момента:
+                                 </h5>
+                                 <ul className="text-sm text-muted-foreground space-y-1">
+                                   <li>• Асимметричные шансы на выигрыш</li>
+                                   <li>• Динамические коэффициенты выплат</li>
+                                   <li>• Психологическое давление выбора</li>
+                                   <li>• Возможность забрать текущий выигрыш</li>
+                                 </ul>
                                </div>
                              </div>
                            </div>
