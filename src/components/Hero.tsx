@@ -92,7 +92,11 @@ const Hero = () => {
               <a href="#contact">Связаться с нами</a>
             </Button>
             
-            <Button className="bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-white min-w-[240px] rounded-full !bg-white" asChild>
+            <Button 
+              className="border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" 
+              style={{ backgroundColor: 'white', '--tw-bg-opacity': '1' } as React.CSSProperties}
+              asChild
+            >
               <a href="#games" className="text-transparent bg-gradient-accent bg-clip-text">Каталог</a>
             </Button>
           </div>
