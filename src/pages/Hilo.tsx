@@ -222,6 +222,32 @@ const Hilo = () => {
                 </div>
 
                 <div>
+                  <h2 className="text-2xl font-semibold mb-4">Особенности</h2>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Высокий RTP от 96% до 98%</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Простые и понятные правила</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Быстрый и динамичный геймплей</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Адаптивный дизайн для мобильных устройств</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Множители до 2500x</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
                   <h2 className="text-2xl font-semibold mb-6">Ключевые игровые моменты</h2>
                   <div className="space-y-4">
                     
