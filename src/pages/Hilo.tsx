@@ -86,31 +86,111 @@ const Hilo = () => {
                 </div>
                 
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4">Характеристики игры</h2>
-                  <div className="grid grid-cols-1 gap-4">
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Волатильность</span>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-5 h-5 ${i < gameData.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
-                        ))}
+                  <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
+                  
+                  {/* Основные показатели */}
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="gaming-border card-shadow p-6 rounded-lg">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400/20 to-orange-500/20 flex items-center justify-center">
+                            <Star className="w-5 h-5 text-yellow-400" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground">Волатильность</h3>
+                            <p className="text-xs text-muted-foreground">Средне-высокая</p>
+                          </div>
+                        </div>
+                        <div className="flex gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className={`w-6 h-6 ${i < gameData.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground/30'}`} />
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="gaming-border card-shadow p-6 rounded-lg">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center">
+                            <span className="text-lg font-bold text-green-400">%</span>
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-foreground">RTP</h3>
+                            <p className="text-xs text-muted-foreground">Возврат игроку</p>
+                          </div>
+                        </div>
+                        <div className="text-2xl font-bold text-green-400">{gameData.features.rtp}</div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">RTP</span>
-                      <span className="font-medium text-lg">{gameData.features.rtp}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Платформы</span>
-                      <span className="font-medium">{gameData.features.platforms.join(", ")}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Языки</span>
-                      <span className="font-medium">{gameData.features.languages.join(", ")}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Макс. множитель</span>
-                      <span className="font-semibold text-green-400 text-lg">{gameData.features.maxMultiplier}</span>
+
+                    {/* Детальная информация */}
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="gaming-border card-shadow p-5 rounded-lg">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-medium text-foreground mb-1">Максимальный множитель</h4>
+                            <p className="text-sm text-muted-foreground">Потенциальный выигрыш</p>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-xl font-bold text-green-400">{gameData.features.maxMultiplier}</div>
+                            <div className="text-xs text-muted-foreground">от ставки</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="gaming-border card-shadow p-5 rounded-lg">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-medium text-foreground mb-1">Платформы</h4>
+                            <p className="text-sm text-muted-foreground">Поддерживаемые устройства</p>
+                          </div>
+                          <div className="flex gap-2">
+                            {gameData.features.platforms.map((platform, i) => (
+                              <span key={i} className="px-2 py-1 text-xs bg-accent/20 text-accent rounded-md">
+                                {platform}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="gaming-border card-shadow p-5 rounded-lg">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-medium text-foreground mb-1">Локализация</h4>
+                            <p className="text-sm text-muted-foreground">Доступные языки</p>
+                          </div>
+                          <div className="flex gap-2">
+                            {gameData.features.languages.map((lang, i) => (
+                              <span key={i} className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full font-medium">
+                                {lang}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Дополнительные характеристики */}
+                      <div className="gaming-border card-shadow p-5 rounded-lg">
+                        <h4 className="font-medium text-foreground mb-3">Дополнительные параметры</h4>
+                        <div className="grid grid-cols-2 gap-4 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Минимальная ставка:</span>
+                            <span className="text-foreground font-medium">0.10</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Максимальная ставка:</span>
+                            <span className="text-foreground font-medium">100.00</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Время раунда:</span>
+                            <span className="text-foreground font-medium">~30сек</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Автоигра:</span>
+                            <span className="text-green-400 font-medium">✓ Да</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
