@@ -222,94 +222,248 @@ const Hilo = () => {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4">Скриншоты игры</h2>
-                  <div className="space-y-3">
+                  <h2 className="text-2xl font-semibold mb-6">Ключевые игровые моменты</h2>
+                  <div className="space-y-4">
+                    
                     {/* Выигрышная серия */}
-                    <div className="border border-border rounded-lg overflow-hidden">
+                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
                       <button 
                         onClick={() => setActiveScreenshot(activeScreenshot === 'streak' ? null : 'streak')}
-                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"></div>
-                          <span className="font-medium text-lg">Выигрышная серия</span>
+                        <div className="flex items-center gap-4">
+                          <div className="relative">
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
+                                <span className="text-white text-xs font-bold">W</span>
+                              </div>
+                            </div>
+                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                              <span className="text-xs font-bold text-black">5</span>
+                            </div>
+                          </div>
+                          <div className="text-left">
+                            <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                              Выигрышная серия
+                            </h3>
+                            <div className="flex items-center gap-4 mt-1">
+                              <span className="text-sm text-muted-foreground">5 правильных предсказаний подряд</span>
+                              <div className="flex items-center gap-1">
+                                <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">Множитель: 32x</span>
+                                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Вероятность: 3.1%</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         {activeScreenshot === 'streak' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         )}
                       </button>
                       {activeScreenshot === 'streak' && (
-                        <div className="p-4 border-t border-border text-center">
-                          <img 
-                            src={gameData.image} 
-                            alt="Hilo winning streak screen" 
-                            className="w-full h-64 object-cover rounded-lg"
-                          />
-                          <p className="text-base text-muted-foreground mt-3">
-                            Экран с выигрышной серией и растущим множителем
-                          </p>
+                        <div className="border-t border-border/50">
+                          <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                              <div className="space-y-4">
+                                <img 
+                                  src={gameData.image} 
+                                  alt="Hilo winning streak screen" 
+                                  className="w-full h-48 object-cover rounded-lg border border-border/50"
+                                />
+                                <div className="grid grid-cols-2 gap-3 text-sm">
+                                  <div className="bg-muted/30 p-3 rounded-lg">
+                                    <span className="text-muted-foreground block">Текущий множитель</span>
+                                    <span className="text-lg font-bold text-green-400">32.00x</span>
+                                  </div>
+                                  <div className="bg-muted/30 p-3 rounded-lg">
+                                    <span className="text-muted-foreground block">Потенциальный выигрыш</span>
+                                    <span className="text-lg font-bold text-accent">3,200₽</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">Описание момента</h4>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    Игрок находится на пике выигрышной серии из 5 правильных предсказаний. 
+                                    Каждое угаданное направление карты удваивает множитель. Сейчас критический 
+                                    момент - забрать выигрыш или рискнуть ради еще большего множителя.
+                                  </p>
+                                </div>
+                                <div className="bg-muted/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2">Ключевые элементы интерфейса:</h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Индикатор текущей серии выигрышей</li>
+                                    <li>• Динамический множитель в реальном времени</li>
+                                    <li>• Кнопки "Забрать" и "Продолжить"</li>
+                                    <li>• История предыдущих карт</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
 
                     {/* Игровой процесс */}
-                    <div className="border border-border rounded-lg overflow-hidden">
+                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
                       <button 
                         onClick={() => setActiveScreenshot(activeScreenshot === 'gameplay' ? null : 'gameplay')}
-                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500"></div>
-                          <span className="font-medium text-lg">Игровой процесс</span>
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div className="w-8 h-10 bg-gradient-to-b from-blue-400 to-cyan-500 rounded-sm flex items-center justify-center">
+                              <span className="text-white text-xs font-bold">?</span>
+                            </div>
+                          </div>
+                          <div className="text-left">
+                            <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                              Активный игровой процесс
+                            </h3>
+                            <div className="flex items-center gap-4 mt-1">
+                              <span className="text-sm text-muted-foreground">Выбор направления карты</span>
+                              <div className="flex items-center gap-1">
+                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Ставка: 100₽</span>
+                                <span className="text-xs bg-purple-400/20 text-purple-400 px-2 py-1 rounded">Шанс: ~50%</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         {activeScreenshot === 'gameplay' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         )}
                       </button>
                       {activeScreenshot === 'gameplay' && (
-                        <div className="p-4 border-t border-border text-center">
-                          <img 
-                            src={gameData.image} 
-                            alt="Hilo gameplay screen" 
-                            className="w-full h-64 object-cover rounded-lg"
-                          />
-                          <p className="text-base text-muted-foreground mt-3">
-                            Основной игровой интерфейс с картами
-                          </p>
+                        <div className="border-t border-border/50">
+                          <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                              <div className="space-y-4">
+                                <img 
+                                  src={gameData.image} 
+                                  alt="Hilo gameplay screen" 
+                                  className="w-full h-48 object-cover rounded-lg border border-border/50"
+                                />
+                                <div className="grid grid-cols-2 gap-3 text-sm">
+                                  <div className="bg-muted/30 p-3 rounded-lg">
+                                    <span className="text-muted-foreground block">Текущая карта</span>
+                                    <span className="text-lg font-bold text-foreground">7 ♠</span>
+                                  </div>
+                                  <div className="bg-muted/30 p-3 rounded-lg">
+                                    <span className="text-muted-foreground block">Баланс</span>
+                                    <span className="text-lg font-bold text-foreground">1,250₽</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="font-semibold text-foreground mb-2">Игровая ситуация</h4>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    Основной экран игры с открытой картой "7 пик". Игроку необходимо предсказать, 
+                                    будет ли следующая карта выше или ниже. С картой 7 шансы примерно равны, 
+                                    что делает выбор особенно интересным.
+                                  </p>
+                                </div>
+                                <div className="bg-muted/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2">Элементы интерфейса:</h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Текущая открытая карта в центре</li>
+                                    <li>• Кнопки "Выше" и "Ниже"</li>
+                                    <li>• Индикатор баланса и ставки</li>
+                                    <li>• Статистика вероятностей</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
 
-                    {/* Выбор карты */}
-                    <div className="border border-border rounded-lg overflow-hidden">
+                    {/* Критический выбор */}
+                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
                       <button 
                         onClick={() => setActiveScreenshot(activeScreenshot === 'choice' ? null : 'choice')}
-                        className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                        className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-pink-500"></div>
-                          <span className="font-medium text-lg">Выбор карты</span>
+                        <div className="flex items-center gap-4">
+                          <div className="relative">
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                              <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                                <span className="text-white text-xs">⚡</span>
+                              </div>
+                            </div>
+                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-400 rounded-full flex items-center justify-center animate-pulse">
+                              <span className="text-xs font-bold text-white">!</span>
+                            </div>
+                          </div>
+                          <div className="text-left">
+                            <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                              Критический момент выбора
+                            </h3>
+                            <div className="flex items-center gap-4 mt-1">
+                              <span className="text-sm text-muted-foreground">Экстремальная карта - Туз или Король</span>
+                              <div className="flex items-center gap-1">
+                                <span className="text-xs bg-red-400/20 text-red-400 px-2 py-1 rounded">Риск: Высокий</span>
+                                <span className="text-xs bg-yellow-400/20 text-yellow-400 px-2 py-1 rounded">Награда: 2500x</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         {activeScreenshot === 'choice' ? (
-                          <ChevronUp className="w-5 h-5 text-muted-foreground" />
+                          <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                          <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
                         )}
                       </button>
                        {activeScreenshot === 'choice' && (
-                         <div className="p-4 border-t border-border text-center">
-                           <img 
-                             src={gameData.image} 
-                             alt="Hilo card choice screen" 
-                             className="w-full h-64 object-cover rounded-lg"
-                           />
-                           <p className="text-base text-muted-foreground mt-3">
-                             Экран выбора: выше или ниже
-                           </p>
+                         <div className="border-t border-border/50">
+                           <div className="p-6 bg-gradient-to-br from-background via-background to-muted/10">
+                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                               <div className="space-y-4">
+                                 <img 
+                                   src={gameData.image} 
+                                   alt="Hilo critical choice screen" 
+                                   className="w-full h-48 object-cover rounded-lg border border-border/50"
+                                 />
+                                 <div className="grid grid-cols-2 gap-3 text-sm">
+                                   <div className="bg-red-500/10 border border-red-500/20 p-3 rounded-lg">
+                                     <span className="text-red-400 block text-xs">Шанс на "Выше"</span>
+                                     <span className="text-lg font-bold text-red-400">7.7%</span>
+                                   </div>
+                                   <div className="bg-blue-500/10 border border-blue-500/20 p-3 rounded-lg">
+                                     <span className="text-blue-400 block text-xs">Шанс на "Ниже"</span>
+                                     <span className="text-lg font-bold text-blue-400">84.6%</span>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div className="space-y-4">
+                                 <div>
+                                   <h4 className="font-semibold text-foreground mb-2">Критическая ситуация</h4>
+                                   <p className="text-muted-foreground text-sm leading-relaxed">
+                                     На экране Король - одна из самых высоких карт в колоде. Выбор "Выше" крайне 
+                                     рискован (только Туз), но дает огромный множитель. Выбор "Ниже" более безопасен, 
+                                     но множитель будет значительно меньше.
+                                   </p>
+                                 </div>
+                                 <div className="bg-gradient-to-r from-red-500/10 to-yellow-500/10 border border-red-500/20 p-4 rounded-lg">
+                                   <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                     ⚡ Особенности момента:
+                                   </h5>
+                                   <ul className="text-sm text-muted-foreground space-y-1">
+                                     <li>• Асимметричные шансы на выигрыш</li>
+                                     <li>• Динамические коэффициенты выплат</li>
+                                     <li>• Психологическое давление выбора</li>
+                                     <li>• Возможность забрать текущий выигрыш</li>
+                                   </ul>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
                          </div>
                        )}
                     </div>
