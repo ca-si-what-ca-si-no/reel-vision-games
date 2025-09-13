@@ -472,7 +472,7 @@ const Keno = () => {
                       </Button>
                     </Link>
                     <Link to="/#contact" className="flex-1">
-                      <Button className="w-full">
+                      <Button className="w-full bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground">
                         Запросить интеграцию
                       </Button>
                     </Link>
