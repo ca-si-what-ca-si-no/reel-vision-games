@@ -215,7 +215,12 @@ const Games = () => {
                     <Button onClick={() => setSelectedGame(null)} className="accent-gradient glow-effect font-semibold flex-1">
                       Закрыть
                     </Button>
-                    <Button className="accent-gradient glow-effect font-semibold flex-1">
+                    <Button onClick={() => {
+                      setSelectedGame(null);
+                      setTimeout(() => {
+                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }} className="accent-gradient glow-effect font-semibold flex-1">
                       Запросить интеграцию
                     </Button>
                   </div>
