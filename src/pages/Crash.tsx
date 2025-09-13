@@ -485,10 +485,8 @@ const Crash = () => {
                 
                 <div className="pt-6 border-t">
                   <div className="flex gap-4">
-                    <Link to="/#games" className="flex-1">
-                      <Button variant="outline" className="w-full">
-                        Назад к играм
-                      </Button>
+                    <Link to="/#games" className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
+                      Назад к играм
                     </Link>
                     <Link to="/#contact" className="flex-1">
                       <Button className="w-full">
