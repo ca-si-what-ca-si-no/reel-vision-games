@@ -283,25 +283,47 @@ const Hilo = () => {
                               </div>
 
                               {/* Specific blocks */}
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-muted/30 p-4 rounded-lg">
-                                  <span className="text-muted-foreground block mb-1">Текущий множитель</span>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg">
+                                  <span className="text-green-400 block mb-1 text-sm">Текущий множитель</span>
                                   <span className="text-2xl font-bold text-green-400">32.00x</span>
+                                  <div className="text-xs text-green-400/70 mt-1">+3100% от ставки</div>
                                 </div>
-                                <div className="bg-muted/30 p-4 rounded-lg">
-                                  <span className="text-muted-foreground block mb-1">Потенциальный выигрыш</span>
+                                <div className="bg-accent/10 border border-accent/20 p-4 rounded-lg">
+                                  <span className="text-accent block mb-1 text-sm">Потенциальный выигрыш</span>
                                   <span className="text-2xl font-bold text-accent">3,200₽</span>
+                                  <div className="text-xs text-accent/70 mt-1">Ставка: 100₽</div>
+                                </div>
+                                <div className="bg-purple-500/10 border border-purple-500/20 p-4 rounded-lg">
+                                  <span className="text-purple-400 block mb-1 text-sm">Серия побед</span>
+                                  <span className="text-2xl font-bold text-purple-400">5</span>
+                                  <div className="text-xs text-purple-400/70 mt-1">Подряд</div>
                                 </div>
                               </div>
 
-                              <div className="bg-muted/20 p-4 rounded-lg">
-                                <h5 className="font-medium text-foreground mb-2">Ключевые элементы интерфейса:</h5>
-                                <ul className="text-sm text-muted-foreground space-y-1">
-                                  <li>• Индикатор текущей серии выигрышей</li>
-                                  <li>• Динамический множитель в реальном времени</li>
-                                  <li>• Кнопки "Забрать" и "Продолжить"</li>
-                                  <li>• История предыдущих карт</li>
-                                </ul>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                    🎯 Статистика серии:
+                                  </h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Вероятность 5 побед подряд: <span className="text-green-400 font-medium">3.1%</span></li>
+                                    <li>• Следующий множитель: <span className="text-yellow-400 font-medium">64x</span></li>
+                                    <li>• Максимальная серия: <span className="text-purple-400 font-medium">12 побед</span></li>
+                                    <li>• Шанс на 6-ю победу: <span className="text-blue-400 font-medium">~50%</span></li>
+                                  </ul>
+                                </div>
+                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                    ⚡ Ключевые элементы:
+                                  </h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Индикатор прогресса серии</li>
+                                    <li>• Динамический множитель</li>
+                                    <li>• Кнопки "Забрать" и "Продолжить"</li>
+                                    <li>• Анимация нарастания напряжения</li>
+                                  </ul>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -362,25 +384,52 @@ const Hilo = () => {
                               </div>
 
                               {/* Specific blocks */}
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-muted/30 p-4 rounded-lg">
-                                  <span className="text-muted-foreground block mb-1">Текущая карта</span>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div className="bg-foreground/10 border border-foreground/20 p-4 rounded-lg">
+                                  <span className="text-foreground block mb-1 text-sm">Текущая карта</span>
                                   <span className="text-2xl font-bold text-foreground">7 ♠</span>
+                                  <div className="text-xs text-muted-foreground mt-1">Средняя карта</div>
                                 </div>
-                                <div className="bg-muted/30 p-4 rounded-lg">
-                                  <span className="text-muted-foreground block mb-1">Баланс</span>
-                                  <span className="text-2xl font-bold text-foreground">1,250₽</span>
+                                <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
+                                  <span className="text-blue-400 block mb-1 text-sm">Баланс</span>
+                                  <span className="text-2xl font-bold text-blue-400">1,250₽</span>
+                                  <div className="text-xs text-blue-400/70 mt-1">Доступно</div>
+                                </div>
+                                <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg">
+                                  <span className="text-green-400 block mb-1 text-sm">Шанс "Выше"</span>
+                                  <span className="text-2xl font-bold text-green-400">46.2%</span>
+                                  <div className="text-xs text-green-400/70 mt-1">6 карт выше</div>
+                                </div>
+                                <div className="bg-orange-500/10 border border-orange-500/20 p-4 rounded-lg">
+                                  <span className="text-orange-400 block mb-1 text-sm">Шанс "Ниже"</span>
+                                  <span className="text-2xl font-bold text-orange-400">46.2%</span>
+                                  <div className="text-xs text-orange-400/70 mt-1">6 карт ниже</div>
                                 </div>
                               </div>
 
-                              <div className="bg-muted/20 p-4 rounded-lg">
-                                <h5 className="font-medium text-foreground mb-2">Элементы интерфейса:</h5>
-                                <ul className="text-sm text-muted-foreground space-y-1">
-                                  <li>• Текущая открытая карта в центре</li>
-                                  <li>• Кнопки "Выше" и "Ниже"</li>
-                                  <li>• Индикатор баланса и ставки</li>
-                                  <li>• Статистика вероятностей</li>
-                                </ul>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                    📊 Анализ ситуации:
+                                  </h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Карта 7 - практически равные шансы</li>
+                                    <li>• Возможный множитель: <span className="text-green-400 font-medium">2.0x</span></li>
+                                    <li>• Текущая ставка: <span className="text-blue-400 font-medium">100₽</span></li>
+                                    <li>• Риск потерь: <span className="text-red-400 font-medium">Средний</span></li>
+                                  </ul>
+                                </div>
+                                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 p-4 rounded-lg">
+                                  <h5 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                                    🎮 Элементы интерфейса:
+                                  </h5>
+                                  <ul className="text-sm text-muted-foreground space-y-1">
+                                    <li>• Анимированная карта в центре</li>
+                                    <li>• Интерактивные кнопки выбора</li>
+                                    <li>• Живая статистика вероятностей</li>
+                                    <li>• Индикаторы времени на выбор</li>
+                                  </ul>
+                                </div>
                               </div>
                             </div>
                           </div>
