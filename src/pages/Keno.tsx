@@ -5,6 +5,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TechnicalSpecs from "@/components/TechnicalSpecs";
 
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
@@ -84,35 +85,13 @@ const Keno = () => {
                   </p>
                 </div>
                 
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Характеристики игры</h2>
-                  <div className="grid grid-cols-1 gap-4">
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Волатильность</span>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-5 h-5 ${i < gameData.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">RTP</span>
-                      <span className="font-medium text-lg">{gameData.features.rtp}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Платформы</span>
-                      <span className="font-medium">{gameData.features.platforms.join(", ")}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Языки</span>
-                      <span className="font-medium">{gameData.features.languages.join(", ")}</span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
-                      <span className="text-muted-foreground">Макс. множитель</span>
-                      <span className="font-semibold text-green-400 text-lg">{gameData.features.maxMultiplier}</span>
-                    </div>
-                  </div>
-                </div>
+                <TechnicalSpecs features={{
+                  ...gameData.features,
+                  minBet: "0.25",
+                  maxBet: "500.00",
+                  roundTime: "~15сек",
+                  autoPlay: false
+                }} />
 
                 <div>
                   <h2 className="text-2xl font-semibold mb-4">Особенности</h2>
