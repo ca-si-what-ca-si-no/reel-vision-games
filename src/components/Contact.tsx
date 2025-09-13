@@ -52,9 +52,9 @@ const Contact = () => {
               
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
-                  Email
+                  Email <span className="text-red-500">*</span>
                 </label>
-                <Input type="email" placeholder="your@email.com" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+                <Input type="email" placeholder="your@email.com" required className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
               </div>
               
               <div>
@@ -66,9 +66,9 @@ const Contact = () => {
               
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
-                  Сообщение
+                  Сообщение <span className="text-red-500">*</span>
                 </label>
-                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
+                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} required className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
               </div>
               
               <Button className="w-full accent-gradient glow-effect font-semibold">
