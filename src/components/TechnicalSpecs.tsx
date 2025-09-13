@@ -98,7 +98,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
               </div>
               <div className="flex gap-2">
                 {features.languages.map((lang, i) => (
-                  <span key={i} className="px-3 py-1 text-sm bg-primary/20 text-primary rounded-full font-medium">
+                  <span key={i} className="px-3 py-1 text-sm bg-muted/30 text-foreground border border-muted rounded-full font-medium">
                     {lang}
                   </span>
                 ))}
