@@ -242,9 +242,11 @@ const Keno = () => {
                         Назад к играм
                       </Button>
                     </Link>
-                    <Button className="flex-1">
-                      Запросить интеграцию
-                    </Button>
+                    <Link to="/#contact" className="flex-1">
+                      <Button className="w-full">
+                        Запросить интеграцию
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
