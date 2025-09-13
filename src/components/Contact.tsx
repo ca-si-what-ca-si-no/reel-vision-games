@@ -59,6 +59,13 @@ const Contact = () => {
               
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
+                  Тема
+                </label>
+                <Input placeholder="Интеграция игр / Партнерство / Техподдержка" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+              </div>
+              
+              <div>
+                <label className="text-base font-medium text-foreground/80 mb-2 block">
                   Сообщение
                 </label>
                 <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
