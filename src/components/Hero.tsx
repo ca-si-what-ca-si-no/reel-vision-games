@@ -2,27 +2,43 @@ import { Button } from "@/components/ui/button";
 import { Rocket, Zap, Star } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large Floating Orbs */}
-        <div className="absolute w-96 h-96 -top-48 -left-48 bg-gradient-to-r from-primary/20 via-primary-glow/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '4s'}}></div>
-        <div className="absolute w-80 h-80 top-1/4 -right-40 bg-gradient-to-l from-accent/25 via-accent/10 to-transparent rounded-full blur-3xl animate-spin" style={{animationDuration: '5s', animationDirection: 'reverse'}}></div>
-        <div className="absolute w-64 h-64 bottom-1/4 -left-32 bg-gradient-to-r from-secondary/20 via-secondary/10 to-transparent rounded-full blur-3xl animate-bounce" style={{animationDuration: '3s'}}></div>
+        <div className="absolute w-96 h-96 -top-48 -left-48 bg-gradient-to-r from-primary/20 via-primary-glow/10 to-transparent rounded-full blur-3xl animate-spin" style={{
+        animationDuration: '4s'
+      }}></div>
+        <div className="absolute w-80 h-80 top-1/4 -right-40 bg-gradient-to-l from-accent/25 via-accent/10 to-transparent rounded-full blur-3xl animate-spin" style={{
+        animationDuration: '5s',
+        animationDirection: 'reverse'
+      }}></div>
+        <div className="absolute w-64 h-64 bottom-1/4 -left-32 bg-gradient-to-r from-secondary/20 via-secondary/10 to-transparent rounded-full blur-3xl animate-bounce" style={{
+        animationDuration: '3s'
+      }}></div>
         
         {/* Moving Grid Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-20 animate-pulse"></div>
         
         {/* Floating Particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-glow rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-3/4 left-3/4 w-1 h-1 bg-accent rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-secondary rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-primary rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-glow rounded-full animate-ping" style={{
+        animationDelay: '0s'
+      }}></div>
+        <div className="absolute top-3/4 left-3/4 w-1 h-1 bg-accent rounded-full animate-ping" style={{
+        animationDelay: '1s'
+      }}></div>
+        <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-secondary rounded-full animate-ping" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-primary rounded-full animate-ping" style={{
+        animationDelay: '3s'
+      }}></div>
         
         {/* Moving Light Streaks */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-glow/50 to-transparent animate-pulse transform rotate-12"></div>
-        <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-accent/50 to-transparent animate-pulse transform -rotate-12" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-accent/50 to-transparent animate-pulse transform -rotate-12" style={{
+        animationDelay: '2s'
+      }}></div>
       </div>
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-60" style={{
@@ -80,11 +96,7 @@ const Hero = () => {
           </div>
           
           <div className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed min-h-[6rem] flex items-start">
-            <TypewriterText 
-              initialText="Игровая студия "
-              typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией."
-              speed={80}
-            />
+            <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
           </div>
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -93,20 +105,18 @@ const Hero = () => {
             </Button>
             
             <div className="flex gap-[10px]">
-              <Button 
-                className="border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" 
-                style={{ backgroundColor: 'white', '--tw-bg-opacity': '1' } as React.CSSProperties}
-                asChild
-              >
+              <Button className="border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" style={{
+              backgroundColor: 'white',
+              '--tw-bg-opacity': '1'
+            } as React.CSSProperties} asChild>
                 <a href="#games" className="text-transparent bg-gradient-accent bg-clip-text">Каталог</a>
               </Button>
               
-              <Button 
-                className="border border-white/20 font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px] rounded-full" 
-                style={{ backgroundColor: 'white', '--tw-bg-opacity': '1' } as React.CSSProperties}
-                asChild
-              >
-                <a href="#games" className="text-transparent bg-gradient-accent bg-clip-text">Игры</a>
+              <Button className="border border-white/20 font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px] rounded-full" style={{
+              backgroundColor: 'white',
+              '--tw-bg-opacity': '1'
+            } as React.CSSProperties} asChild>
+                
               </Button>
             </div>
           </div>
@@ -119,8 +129,6 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl"></div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
