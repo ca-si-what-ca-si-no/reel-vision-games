@@ -87,61 +87,14 @@ const Hero = () => {
             />
           </div>
           
-          <div className="space-y-8">
-            {/* Вариант 1: Стандартные скругления */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-2xl" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-2xl" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 2: Очень круглые */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-3xl" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-3xl" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 3: Максимально круглые */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-[2rem]" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-[2rem]" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 4: Суперкруглые */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-[3rem]" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-[3rem]" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
-
-            {/* Вариант 5: Полностью круглые (капсула) */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-full" asChild>
-                <a href="#integrators">Связаться с нами</a>
-              </Button>
-              
-              <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-full" asChild>
-                <a href="#games">Каталог</a>
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[280px] rounded-full" asChild>
+              <a href="#integrators">Связаться с нами</a>
+            </Button>
+            
+            <Button variant="outline" className="border-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-2xl px-14 py-8 transition-all duration-300 hover:scale-105 min-w-[240px] rounded-full" asChild>
+              <a href="#games">Каталог</a>
+            </Button>
           </div>
         </div>
       </div>
