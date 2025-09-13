@@ -93,7 +93,7 @@ const Hero = () => {
             </Button>
             
             <Button className="bg-white/90 backdrop-blur-sm border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-white min-w-[240px] rounded-full" asChild>
-              <a href="#games" className="text-transparent bg-gradient-accent bg-clip-text">Каталог</a>
+              <a href="#games" className="text-white bg-white">Каталог</a>
             </Button>
           </div>
         </div>
