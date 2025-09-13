@@ -131,6 +131,26 @@ const Games = () => {
                         Подробнее
                       </Link>
                     </div>
+                  ) : game.title === "Crash Games Pack" ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
+                        <Clock className="w-4 h-4" />
+                        Скоро в продаже
+                      </div>
+                      <Link to="/crash" className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
+                        Подробнее
+                      </Link>
+                    </div>
+                  ) : game.title === "Hilo" ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
+                        <Clock className="w-4 h-4" />
+                        Скоро в продаже
+                      </div>
+                      <Link to="/hilo" className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
+                        Подробнее
+                      </Link>
+                    </div>
                   ) : (
                     <div className="flex flex-col gap-2">
                       <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
