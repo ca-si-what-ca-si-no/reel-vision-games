@@ -97,7 +97,17 @@ const Contact = () => {
                         {info.title}
                       </h4>
                       <div className="text-accent font-medium mb-1">
-                        {info.content}
+                        {info.title === "Email" ? (
+                          <a href={`mailto:${info.content}`} className="hover:underline hover:text-accent/80 transition-colors">
+                            {info.content}
+                          </a>
+                        ) : info.title === "Telegram" ? (
+                          <a href={`https://t.me/${info.content.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-accent/80 transition-colors">
+                            {info.content}
+                          </a>
+                        ) : (
+                          info.content
+                        )}
                       </div>
                       <p className="text-sm text-muted-foreground">
                         {info.description}
