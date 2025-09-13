@@ -82,7 +82,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
               </div>
               <div className="flex gap-2">
                 {features.platforms.map((platform, i) => (
-                  <span key={i} className="px-2 py-1 text-xs bg-accent/20 text-accent rounded-md">
+                  <span key={i} className="px-2 py-1 text-xs bg-blue-400/20 text-blue-400 rounded-md">
                     {platform}
                   </span>
                 ))}
