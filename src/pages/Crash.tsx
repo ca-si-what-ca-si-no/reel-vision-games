@@ -488,10 +488,8 @@ const Crash = () => {
                     <Link to="/#games" className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
                       Назад к играм
                     </Link>
-                    <Link to="/#contact" className="flex-1">
-                      <Button className="w-full">
-                        Запросить интеграцию
-                      </Button>
+                    <Link to="/#contact" className="accent-gradient glow-effect font-semibold flex-1 py-3 px-4 rounded-lg text-center text-accent-foreground">
+                      Запросить интеграцию
                     </Link>
                   </div>
                 </div>
