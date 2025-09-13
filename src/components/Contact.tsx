@@ -68,7 +68,7 @@ const Contact = () => {
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
                   Сообщение <span className="text-red-500">*</span>
                 </label>
-                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} required className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
+                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} required minLength={10} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
               </div>
               
               <Button className="w-full accent-gradient glow-effect font-semibold">
