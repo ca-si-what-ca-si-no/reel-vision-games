@@ -125,8 +125,8 @@ const Keno = () => {
                       <button onClick={() => setActiveScreenshot(activeScreenshot === 'jackpot' ? null : 'jackpot')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-400/20 to-orange-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
                                 <span className="text-white text-xs font-bold">★</span>
                               </div>
                             </div>
@@ -138,13 +138,13 @@ const Keno = () => {
                             <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
                               Джекпот - 15 угаданных номеров
                             </h3>
-                            <div className="flex items-center gap-4 mt-1">
-                              <span className="text-sm text-muted-foreground">15 из 15 номеров угадано!</span>
-                              <div className="flex items-center gap-1">
-                                <span className="text-xs bg-yellow-400/20 text-yellow-400 px-2 py-1 rounded">Множитель: 1000x</span>
-                                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Вероятность: 0.000006%</span>
+                              <div className="flex items-center gap-4 mt-1">
+                                <span className="text-sm text-muted-foreground">15 из 15 номеров угадано!</span>
+                                <div className="flex items-center gap-1">
+                                  <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Множитель: 1000x</span>
+                                  <span className="text-xs bg-cyan-400/20 text-cyan-400 px-2 py-1 rounded">Вероятность: 0.000006%</span>
+                                </div>
                               </div>
-                            </div>
                           </div>
                         </div>
                         {activeScreenshot === 'jackpot' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
@@ -164,10 +164,10 @@ const Keno = () => {
                               </div>
 
                               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div className="bg-yellow-500/10 border border-yellow-500/20 p-4 rounded-lg">
-                                  <span className="text-yellow-400 block mb-1 text-sm">Угадано номеров</span>
-                                  <span className="text-2xl font-bold text-yellow-400">15/15</span>
-                                  <div className="text-xs text-yellow-400/70 mt-1">Полный джекпот!</div>
+                                <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
+                                  <span className="text-blue-400 block mb-1 text-sm">Угадано номеров</span>
+                                  <span className="text-2xl font-bold text-blue-400">15/15</span>
+                                  <div className="text-xs text-blue-400/70 mt-1">Полный джекпот!</div>
                                 </div>
                                 <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg">
                                   <span className="text-green-400 block mb-1 text-sm">Выигрыш</span>
@@ -182,14 +182,14 @@ const Keno = () => {
                               </div>
 
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 p-4 rounded-lg">
+                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-4 rounded-lg">
                                   <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
                                     🎰 Статистика джекпота:
                                   </h5>
                                   <div className="space-y-2 text-sm">
                                     <div className="flex justify-between items-center">
                                       <span className="text-muted-foreground">Вероятность 15/15:</span>
-                                      <span className="text-yellow-400 font-medium">1 к 16M</span>
+                                      <span className="text-blue-400 font-medium">1 к 16M</span>
                                     </div>
                                     <div className="flex justify-between items-center">
                                       <span className="text-muted-foreground">Последний джекпот:</span>
