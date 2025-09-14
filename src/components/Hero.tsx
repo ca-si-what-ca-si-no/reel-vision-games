@@ -74,7 +74,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center mt-8 md:mt-0">
             <span className="text-foreground">Создаем</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
               будущее
