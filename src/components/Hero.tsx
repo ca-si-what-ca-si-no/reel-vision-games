@@ -95,7 +95,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="text-xl text-muted-foreground mb-10 max-w-2xl md:mx-auto leading-relaxed min-h-[6rem] flex items-start">
+          <div className="text-lg text-muted-foreground mb-10 max-w-2xl md:mx-auto leading-tight min-h-[6rem] flex items-start">
             <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
           </div>
           
