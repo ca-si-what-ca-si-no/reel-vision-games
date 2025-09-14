@@ -61,7 +61,7 @@ const Games = () => {
 
 
         {/* Game Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden" style={{
           animationDelay: `${index * 0.15}s`
         }}>
