@@ -71,7 +71,7 @@ const Contact = () => {
                 <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} required minLength={10} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
               </div>
               
-              <Button className="w-full accent-gradient glow-effect font-semibold">
+              <Button className="w-full accent-gradient glow-effect font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Send className="w-5 h-5 mr-2" />
                 Отправить сообщение
               </Button>
