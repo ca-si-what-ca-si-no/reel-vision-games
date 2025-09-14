@@ -22,7 +22,7 @@ const Contact = () => {
             <span className="text-foreground">Свяжитесь</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">с нами</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
             Готовы обсудить ваш проект? Наша команда всегда готова помочь 
             с интеграцией игр и ответить на все ваши вопросы.
           </p>

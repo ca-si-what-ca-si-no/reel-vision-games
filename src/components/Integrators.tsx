@@ -48,7 +48,7 @@ const Integrators = () => {
             <span className="text-foreground">Для</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">интеграторов</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
             Комплексные решения для интеграции игрового контента в ваши платформы. 
             От API до технической поддержки — всё для успешного запуска.
           </p>
@@ -81,7 +81,7 @@ const Integrators = () => {
           <h3 className="text-3xl font-bold mb-6 text-foreground">
             Готовы начать интеграцию?
           </h3>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Все игры поставляются с инструментами управления и настраиваемым RTP. 
             Начните тестирование прямо сейчас!
           </p>
