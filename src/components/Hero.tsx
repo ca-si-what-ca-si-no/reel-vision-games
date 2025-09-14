@@ -83,15 +83,15 @@ const Hero = () => {
             <span className="text-foreground">iGaming</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-4 mb-8 text-lg">
-            <div className="flex items-center gap-2">
-              <Rocket className="w-5 h-5 text-accent" />
-              <span className="text-accent font-semibold">Настраиваемый RTP</span>
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg">
+            <div className="flex items-center gap-1 md:gap-2">
+              <Rocket className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+              <span className="text-accent font-semibold text-sm md:text-base">Настраиваемый RTP</span>
             </div>
-            <div className="w-2 h-2 rounded-full bg-muted-foreground/50"></div>
-            <div className="flex items-center gap-2">
-              <Star className="w-5 h-5 text-primary-glow" />
-              <span className="text-muted-foreground">Топовые предложения</span>
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-muted-foreground/50"></div>
+            <div className="flex items-center gap-1 md:gap-2">
+              <Star className="w-4 h-4 md:w-5 md:h-5 text-primary-glow" />
+              <span className="text-muted-foreground text-sm md:text-base">Топовые предложения</span>
             </div>
           </div>
           
