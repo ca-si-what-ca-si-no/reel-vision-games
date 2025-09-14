@@ -72,9 +72,9 @@ const Hero = () => {
         <Zap className="w-6 h-6 text-primary-glow/35" />
       </div>
       
-      <div className="container mx-auto px-6 text-left md:text-center relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center">
             <span className="text-foreground">Создаем</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
               будущее
