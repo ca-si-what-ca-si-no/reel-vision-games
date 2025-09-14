@@ -53,7 +53,7 @@ const Games = () => {
             <span className="text-foreground">Наши</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">решения</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Портфолио готовых игровых продуктов с современными технологиями 
             и гибкими настройками для каждого оператора.
           </p>
