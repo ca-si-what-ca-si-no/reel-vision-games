@@ -72,7 +72,7 @@ const Hero = () => {
         <Zap className="w-6 h-6 text-primary-glow/35" />
       </div>
       
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-left md:text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-foreground">Создаем</span>{" "}
@@ -83,7 +83,7 @@ const Hero = () => {
             <span className="text-foreground">iGaming</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-4 mb-8 text-lg">
+          <div className="flex items-center justify-start md:justify-center gap-4 mb-8 text-lg">
             <div className="flex items-center gap-2">
               <Rocket className="w-5 h-5 text-accent" />
               <span className="text-accent font-semibold">Настраиваемый RTP</span>
@@ -95,7 +95,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed min-h-[6rem] flex items-start">
+          <div className="text-xl text-muted-foreground mb-10 max-w-2xl md:mx-auto leading-relaxed min-h-[6rem] flex items-start">
             <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
           </div>
           
