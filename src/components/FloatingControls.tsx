@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Volume2, VolumeX } from 'lucide-react';
+import { X, RotateCcw } from 'lucide-react';
 
 interface FloatingControlsProps {
   onClose: () => void;
@@ -9,7 +9,6 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
   const [position, setPosition] = useState({ x: 20, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  const [isMuted, setIsMuted] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const controlsRef = useRef<HTMLDivElement>(null);
 
@@ -49,18 +48,15 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
     setIsDragging(false);
   };
 
-  const toggleMute = (e: React.MouseEvent | React.TouchEvent) => {
+  const reloadGame = (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
     
-    // Отправляем сообщение в iframe для управления звуком игры
+    // Перезагружаем игру, добавляя timestamp для принудительной перезагрузки
     const gameIframe = document.querySelector('iframe[title="Keno Mobile Demo Game"]') as HTMLIFrameElement;
-    if (gameIframe && gameIframe.contentWindow) {
-      gameIframe.contentWindow.postMessage({
-        type: 'TOGGLE_SOUND',
-        muted: newMutedState
-      }, '*');
+    if (gameIframe) {
+      const baseUrl = 'https://dev-dot-casino-games-462502.lm.r.appspot.com/keno';
+      const timestamp = new Date().getTime();
+      gameIframe.src = `${baseUrl}?reload=${timestamp}`;
     }
   };
 
@@ -111,15 +107,11 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
           // Развернутое состояние - все кнопки
           <div className="flex items-center justify-around w-full h-full px-2">
             <button
-              onClick={toggleMute}
-              onTouchEnd={toggleMute}
+              onClick={reloadGame}
+              onTouchEnd={reloadGame}
               className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-400/30 flex items-center justify-center hover:bg-blue-500/30 transition-colors"
             >
-              {isMuted ? (
-                <VolumeX className="w-4 h-4 text-blue-400" />
-              ) : (
-                <Volume2 className="w-4 h-4 text-blue-400" />
-              )}
+              <RotateCcw className="w-4 h-4 text-blue-400" />
             </button>
             
             <button
