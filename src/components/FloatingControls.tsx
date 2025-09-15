@@ -51,12 +51,19 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
   const reloadGame = (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
     
-    // Перезагружаем игру, добавляя timestamp для принудительной перезагрузки
+    // Перезагружаем только содержимое iframe
     const gameIframe = document.querySelector('iframe[title="Keno Mobile Demo Game"]') as HTMLIFrameElement;
     if (gameIframe) {
-      const baseUrl = 'https://dev-dot-casino-games-462502.lm.r.appspot.com/keno';
-      const timestamp = new Date().getTime();
-      gameIframe.src = `${baseUrl}?reload=${timestamp}`;
+      // Сохраняем исходный URL и перезагружаем iframe
+      const currentSrc = gameIframe.src;
+      gameIframe.src = 'about:blank';
+      
+      // Небольшая задержка перед загрузкой нового контента
+      setTimeout(() => {
+        const baseUrl = 'https://dev-dot-casino-games-462502.lm.r.appspot.com/keno';
+        const timestamp = Date.now();
+        gameIframe.src = `${baseUrl}?t=${timestamp}`;
+      }, 100);
     }
   };
 
