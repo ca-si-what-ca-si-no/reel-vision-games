@@ -463,12 +463,16 @@ const Crash = () => {
                 </div>
                 
                 <div className="pt-6 border-t">
-                  <div className="flex gap-4">
-                    <Link to="/#games" className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
-                      Назад к играм
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Link to="/#games" className="flex-1">
+                      <Button className="w-full bg-muted hover:bg-muted/80 text-foreground px-6 py-3 sm:px-5 sm:py-4 text-sm sm:text-base">
+                        Назад к играм
+                      </Button>
                     </Link>
-                    <Link to="/#contact" className="accent-gradient glow-effect font-semibold flex-1 py-3 px-4 rounded-lg text-center text-white">
-                      Запросить интеграцию
+                    <Link to="/#contact" className="flex-1">
+                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-3 sm:px-5 sm:py-4 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
+                        Запросить интеграцию
+                      </Button>
                     </Link>
                   </div>
                 </div>
