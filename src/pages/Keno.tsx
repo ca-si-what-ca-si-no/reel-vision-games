@@ -10,6 +10,7 @@ const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
+  const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
   const [activeScreenshot, setActiveScreenshot] = useState<string | null>(null);
 
   // Прокручиваем страницу наверх при загрузке
@@ -444,8 +445,18 @@ const Keno = () => {
               <div className="bg-muted/20 rounded-lg p-6">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
                 
-                {/* Device Selection Buttons */}
-                <div className="flex gap-2 mb-6 p-1 bg-muted/30 rounded-lg">
+                {/* Mobile Play Button - Only visible on mobile */}
+                <div className="block md:hidden mb-6">
+                  <Button 
+                    onClick={() => setIsMobileModalOpen(true)}
+                    className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
+                  >
+                    Играть
+                  </Button>
+                </div>
+                
+                {/* Device Selection Buttons - Hidden on mobile */}
+                <div className="hidden md:flex gap-2 mb-6 p-1 bg-muted/30 rounded-lg">
                   <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
                     <Smartphone className="w-4 h-4" />
                     <span className="text-sm font-medium">Телефон</span>
@@ -460,8 +471,8 @@ const Keno = () => {
                   </button>
                 </div>
 
-                {/* Device Preview */}
-                <div className="flex justify-center">
+                {/* Device Preview - Hidden on mobile */}
+                <div className="hidden md:flex justify-center">
                   <div className="phone-frame relative">
                     <div className="phone-screen">
                       <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[20px]" title="Keno Mobile Demo Game" allow="fullscreen" />
@@ -469,8 +480,12 @@ const Keno = () => {
                   </div>
                 </div>
                 
-                <p className="text-sm text-muted-foreground text-center mt-4">
+                <p className="text-sm text-muted-foreground text-center mt-4 hidden md:block">
                   Попробуйте игру на разных устройствах! Это полнофункциональная демо-версия.
+                </p>
+                
+                <p className="text-sm text-muted-foreground text-center mt-4 block md:hidden">
+                  Нажмите "Играть" чтобы протестировать полнофункциональную демо-версию!
                 </p>
               </div>
             </div>
@@ -478,16 +493,23 @@ const Keno = () => {
         </div>
       </main>
       
+      {/* Mobile Modal */}
+      <Dialog open={isMobileModalOpen} onOpenChange={setIsMobileModalOpen}>
+        <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
+        </DialogContent>
+      </Dialog>
+      
       {/* Desktop Modal */}
       <Dialog open={isDesktopModalOpen} onOpenChange={setIsDesktopModalOpen}>
-        <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
+        <DialogContent className="max-w-7xl w-full h-[95vh] p-0 [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
           <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Desktop Demo Game" allow="fullscreen" />
         </DialogContent>
       </Dialog>
 
       {/* Tablet Modal */}
       <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
-        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur">
+        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
           <div className="tablet-frame relative mx-auto">
             <div className="tablet-screen">
               <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[15px]" title="Keno Tablet Demo Game" allow="fullscreen" />
