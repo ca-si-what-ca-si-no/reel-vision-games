@@ -325,7 +325,7 @@ const Keno = () => {
                     <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
                       <button onClick={() => setActiveScreenshot(activeScreenshot === 'selection' ? null : 'selection')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
-                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
                             <div className="grid grid-cols-2 gap-1">
                               <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
                               <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
