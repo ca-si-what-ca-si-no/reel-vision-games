@@ -10,33 +10,55 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const controlsRef = useRef<HTMLDivElement>(null);
+  const wasDraggingRef = useRef(false);
+
+  const DRAG_THRESHOLD = 8;
+  const TAP_MAX_MS = 250;
+  const [touchStartTime, setTouchStartTime] = useState<number>(0);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!controlsRef.current) return;
-    
+
     const rect = controlsRef.current.getBoundingClientRect();
     const touch = e.touches[0];
-    
+
     setDragOffset({
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top
     });
-    setIsDragging(true);
+    setStartPos({ x: touch.clientX, y: touch.clientY });
+    setTouchStartTime(Date.now());
+    setIsDragging(false);
     e.preventDefault();
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    
+    if (!controlsRef.current) return;
+
     const touch = e.touches[0];
+    const dx = touch.clientX - startPos.x;
+    const dy = touch.clientY - startPos.y;
+    const hasMoved = Math.hypot(dx, dy) > DRAG_THRESHOLD;
+
+    if (!isDragging && hasMoved) {
+      setIsDragging(true);
+      wasDraggingRef.current = true;
+    }
+
+    if (!isDragging && !hasMoved) {
+      e.preventDefault();
+      return;
+    }
+
     const newX = touch.clientX - dragOffset.x;
     const newY = touch.clientY - dragOffset.y;
-    
+
     // Ограничиваем движение в пределах экрана
     const buttonSize = 48; // размер кнопки
     const maxX = window.innerWidth - buttonSize;
     const maxY = window.innerHeight - buttonSize;
-    
+
     setPosition({
       x: Math.max(0, Math.min(newX, maxX)),
       y: Math.max(0, Math.min(newY, maxY))
@@ -77,7 +99,10 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
     
     setPosition({ x: finalX, y: finalY });
     setIsDragging(false);
-  };
+    window.setTimeout(() => {
+      wasDraggingRef.current = false;
+    }, 300);
+  }; 
 
   const handleClose = (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
@@ -99,8 +124,14 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
       onTouchEnd={handleTouchEnd}
     >
       <button
-        onClick={handleClose}
-        onTouchEnd={handleClose}
+        onClick={(e) => {
+          if (isDragging || wasDraggingRef.current) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          handleClose(e);
+        }}
         className={`
           w-12 h-12 rounded-full 
           bg-black/80 backdrop-blur-md border border-white/30
