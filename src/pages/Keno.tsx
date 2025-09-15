@@ -138,10 +138,10 @@ const Keno = () => {
                           </div>
                           <div className="text-left">
                             <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Джекпот - 15 угаданных номеров
+                              Джекпот
                             </h3>
                               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                                <span className="text-xs sm:text-sm text-muted-foreground">15 из 15 номеров угадано!</span>
+                                <span className="text-xs sm:text-sm text-muted-foreground">15-й угаданных моментов</span>
                                 <div className="flex items-center gap-1">
                                   <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Множитель: 1000x</span>
                                   <span className="text-xs bg-cyan-400/20 text-cyan-400 px-2 py-1 rounded">Вероятность: 0.000006%</span>
@@ -235,10 +235,10 @@ const Keno = () => {
                           </div>
                           <div className="text-left">
                             <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Хороший выигрыш - 9 совпадений
+                              Хороший выигрыш
                             </h3>
                             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                              <span className="text-xs sm:text-sm text-muted-foreground">9 из 10 номеров угадано</span>
+                              <span className="text-xs sm:text-sm text-muted-foreground">девять совпадений множители</span>
                               <div className="flex items-center gap-1">
                                 <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">Множитель: 25x</span>
                                 <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Вероятность: 0.16%</span>
@@ -334,14 +334,14 @@ const Keno = () => {
                             </div>
                           </div>
                           <div className="text-left">
-                            <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Стратегический выбор номеров
+                            <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+                              Стратегически выбор номеров
                             </h3>
-                            <div className="flex items-center gap-4 mt-1">
-                              <span className="text-sm text-muted-foreground">Выбор 12 номеров из 80</span>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
+                              <span className="text-xs sm:text-sm text-muted-foreground">Выбор 12 номеров из 80</span>
                               <div className="flex items-center gap-1">
-                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Выбрано: 12</span>
-                                <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">Ставка: 200₽</span>
+                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">выбрано</span>
+                                <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">ставкой</span>
                               </div>
                             </div>
                           </div>
