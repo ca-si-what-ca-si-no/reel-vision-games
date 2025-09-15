@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
+import FloatingControls from "@/components/FloatingControls";
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -495,8 +496,9 @@ const Keno = () => {
       
       {/* Mobile Modal */}
       <Dialog open={isMobileModalOpen} onOpenChange={setIsMobileModalOpen}>
-        <DialogContent className="max-w-[100vw] w-full h-[100vh] p-0 border-0 rounded-none [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+        <DialogContent className="max-w-[100vw] w-full h-[100vh] p-0 border-0 rounded-none [&>button]:hidden">
           <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
+          <FloatingControls onClose={() => setIsMobileModalOpen(false)} />
         </DialogContent>
       </Dialog>
       
