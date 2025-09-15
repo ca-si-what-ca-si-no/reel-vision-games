@@ -495,8 +495,8 @@ const Keno = () => {
       
       {/* Mobile Modal */}
       <Dialog open={isMobileModalOpen} onOpenChange={setIsMobileModalOpen}>
-        <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
-          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
+        <DialogContent className="max-w-[100vw] w-full h-[100vh] p-0 border-0 rounded-none [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
         </DialogContent>
       </Dialog>
       
