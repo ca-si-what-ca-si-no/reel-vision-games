@@ -110,7 +110,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
           {(features.minBet || features.maxBet || features.roundTime || features.autoPlay !== undefined) && (
             <div className="gaming-border card-shadow p-5 rounded-lg">
               <h4 className="font-medium text-foreground mb-3">Дополнительные параметры</h4>
-              <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 {features.minBet && (
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Минимальная ставка:</span>
