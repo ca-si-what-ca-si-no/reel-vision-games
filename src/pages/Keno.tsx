@@ -326,11 +326,13 @@ const Keno = () => {
                       <button onClick={() => setActiveScreenshot(activeScreenshot === 'selection' ? null : 'selection')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
                         <div className="flex items-center gap-4">
                           <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div className="grid grid-cols-2 gap-1">
-                              <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                              <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                              <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                              <div className="w-2 h-2 rounded-sm bg-muted-foreground/30"></div>
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
+                              <div className="grid grid-cols-2 gap-1">
+                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
+                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
+                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
+                                <div className="w-2 h-2 rounded-sm bg-muted-foreground/30"></div>
+                              </div>
                             </div>
                           </div>
                           <div className="text-left">
