@@ -499,7 +499,14 @@ const Keno = () => {
         <DialogContent className="max-w-[100vw] w-full h-[100vh] p-0 border-0 rounded-none [&>button]:hidden">
           <DialogTitle className="sr-only">Keno Mobile Game</DialogTitle>
           <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для мобильных устройств</DialogDescription>
-          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
+          <div className="w-full h-full pt-12 pb-8 px-2 bg-black">
+            <iframe 
+              src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+              className="w-full h-full border-0 rounded-lg" 
+              title="Keno Mobile Demo Game" 
+              allow="fullscreen" 
+            />
+          </div>
           <FloatingControls onClose={() => setIsMobileModalOpen(false)} />
         </DialogContent>
       </Dialog>
