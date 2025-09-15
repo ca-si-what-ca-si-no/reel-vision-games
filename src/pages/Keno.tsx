@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Star, ArrowLeft, Smartphone, Monitor, Tablet, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -497,6 +497,8 @@ const Keno = () => {
       {/* Mobile Modal */}
       <Dialog open={isMobileModalOpen} onOpenChange={setIsMobileModalOpen}>
         <DialogContent className="max-w-[100vw] w-full h-[100vh] p-0 border-0 rounded-none [&>button]:hidden">
+          <DialogTitle className="sr-only">Keno Mobile Game</DialogTitle>
+          <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для мобильных устройств</DialogDescription>
           <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0" title="Keno Mobile Demo Game" allow="fullscreen" />
           <FloatingControls onClose={() => setIsMobileModalOpen(false)} />
         </DialogContent>
@@ -505,6 +507,8 @@ const Keno = () => {
       {/* Desktop Modal */}
       <Dialog open={isDesktopModalOpen} onOpenChange={setIsDesktopModalOpen}>
         <DialogContent className="max-w-7xl w-full h-[95vh] p-0 [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+          <DialogTitle className="sr-only">Keno Desktop Game</DialogTitle>
+          <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для десктопа</DialogDescription>
           <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Desktop Demo Game" allow="fullscreen" />
         </DialogContent>
       </Dialog>
@@ -512,6 +516,8 @@ const Keno = () => {
       {/* Tablet Modal */}
       <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
         <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+          <DialogTitle className="sr-only">Keno Tablet Game</DialogTitle>
+          <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для планшета</DialogDescription>
           <div className="tablet-frame relative mx-auto">
             <div className="tablet-screen">
               <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[15px]" title="Keno Tablet Demo Game" allow="fullscreen" />

@@ -51,8 +51,17 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({ onClose }) => {
 
   const toggleMute = (e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();
-    setIsMuted(!isMuted);
-    // Здесь можно добавить логику отправки сообщения в iframe для управления звуком
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    // Отправляем сообщение в iframe для управления звуком игры
+    const gameIframe = document.querySelector('iframe[title="Keno Mobile Demo Game"]') as HTMLIFrameElement;
+    if (gameIframe && gameIframe.contentWindow) {
+      gameIframe.contentWindow.postMessage({
+        type: 'TOGGLE_SOUND',
+        muted: newMutedState
+      }, '*');
+    }
   };
 
   const handleClose = (e: React.MouseEvent | React.TouchEvent) => {
