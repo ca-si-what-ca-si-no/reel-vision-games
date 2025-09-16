@@ -77,7 +77,7 @@ const Games = () => {
               </div>
               
               {/* Content section */}
-              <div className="p-6 flex flex-col flex-1 transition-all duration-500 transform-gpu group-hover:-translate-y-56">
+              <div className="p-6 flex flex-col flex-1 transition-all duration-500 transform-gpu">
                 <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
@@ -89,7 +89,7 @@ const Games = () => {
                   </div>
                   
                   {/* Features list - показывается при наведении */}
-                  <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-6 top-32 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-6 top-32 z-10 pointer-events-none group-hover:pointer-events-auto">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Волатильность:</span>
                       <div className="flex gap-1">
@@ -121,7 +121,7 @@ const Games = () => {
                   </div>
                 </div>
                 
-                <div className="mt-auto pt-6 border-t border-border/50">
+                <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 pointer-events-none">
                   {game.title === "Keno" ? (
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
