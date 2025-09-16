@@ -44,7 +44,7 @@ const Games = () => {
       maxMultiplier: "x50000"
     },
     badge: "Скоро в продаже",
-    image: "/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png"
+    image: "/lovable-uploads/arrow-shot-game.png"
   }, {
     title: "Hilo",
     description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
