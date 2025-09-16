@@ -56,7 +56,7 @@ const About = () => {
     <section id="about" className="min-h-screen flex items-center justify-center relative snap-section">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-foreground">Кто мы</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">такие</span>
           </h2>
@@ -72,9 +72,9 @@ const About = () => {
             loop: true,
           }}
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4">
             {features.map((feature, index) => (
-              <CarouselItem key={index} className="pl-4 basis-1/3">
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <Card 
                   className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
@@ -99,7 +99,7 @@ const About = () => {
         </Carousel>
         
         <div className="mt-20 text-center">
-          <div className="grid grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="text-4xl font-bold text-accent mb-2">3+</div>
               <div className="text-muted-foreground">Готовых продукта</div>

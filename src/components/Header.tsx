@@ -13,7 +13,7 @@ const Header = () => {
             </a>
           </div>
           
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <a href="#about" className="text-muted-foreground hover:text-foreground smooth-transition">
               О нас
             </a>

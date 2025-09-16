@@ -37,7 +37,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-8xl font-bold mb-6 leading-tight text-center">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center mt-8 md:mt-0">
             <span className="text-foreground">Создаем</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
               будущее
@@ -46,23 +46,23 @@ const Hero = () => {
             <span className="text-foreground">iGaming</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-4 mb-8 text-lg">
-            <div className="flex items-center gap-2">
-              <Rocket className="w-5 h-5 text-accent" />
-              <span className="text-accent font-semibold">Настраиваемый RTP</span>
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg">
+            <div className="flex items-center gap-1 md:gap-2">
+              <Rocket className="w-4 h-4 md:w-5 md:h-5 text-accent" />
+              <span className="text-accent font-semibold text-sm md:text-base">Настраиваемый RTP</span>
             </div>
-            <div className="w-2 h-2 rounded-full bg-muted-foreground/50"></div>
-            <div className="flex items-center gap-2">
-              <Star className="w-5 h-5 text-primary-glow" />
-              <span className="text-muted-foreground">Топовые предложения</span>
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-muted-foreground/50"></div>
+            <div className="flex items-center gap-1 md:gap-2">
+              <Star className="w-4 h-4 md:w-5 md:h-5 text-primary-glow" />
+              <span className="text-muted-foreground text-sm md:text-base">Топовые предложения</span>
             </div>
           </div>
           
-          <div className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
+          <div className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
             <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
           </div>
           
-          <div className="flex flex-row gap-8 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 min-w-[280px] rounded-full" asChild>
               <a href="#contact">Связаться с нами</a>
             </Button>

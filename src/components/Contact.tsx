@@ -15,27 +15,27 @@ const Contact = () => {
     content: "@gdeNazvanie_support",
     description: "Быстрые ответы и поддержка"
   }];
-  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section">
+  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section-last">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Свяжитесь</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">с нами</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
             Готовы обсудить ваш проект? Наша команда всегда готова помочь 
             с интеграцией игр и ответить на все ваши вопросы.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="gaming-border card-shadow p-8 animate-slide-in">
             <h3 className="text-2xl font-bold mb-6 text-foreground">
               Отправить сообщение
             </h3>
             <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-base font-medium text-foreground/80 mb-2 block">
                     Имя

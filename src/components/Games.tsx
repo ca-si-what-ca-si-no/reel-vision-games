@@ -49,11 +49,11 @@ const Games = () => {
   return <section id="games" className="min-h-screen flex items-center justify-center relative snap-section">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Наши</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">решения</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
             Портфолио готовых игровых продуктов с современными технологиями 
             и гибкими настройками для каждого оператора.
           </p>
@@ -61,7 +61,7 @@ const Games = () => {
 
 
         {/* Game Categories */}
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden relative will-change-transform" style={{
           animationDelay: `${index * 0.15}s`
         }}>
@@ -126,29 +126,29 @@ const Games = () => {
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? (
-                    <div className="flex flex-row gap-2">
-                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-3 px-4 rounded-lg text-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Играть!
                       </button>
-                      <Link to="/keno" className="outline-button py-3 px-4 rounded-lg text-center whitespace-nowrap">
+                      <Link to="/keno" className="outline-button py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap">
                         Подробнее
                       </Link>
                     </div>
                   ) : game.title === "Crash Games Pack" ? (
-                    <div className="flex flex-row gap-2">
-                      <Link to="/crash" className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <Link to="/crash" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </Link>
                     </div>
                   ) : game.title === "Hilo" ? (
-                    <div className="flex flex-row gap-2">
-                      <Link to="/hilo" className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <Link to="/hilo" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </Link>
                     </div>
                   ) : (
-                    <div className="flex flex-row gap-2">
-                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-3 px-4 rounded-lg text-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </button>
                     </div>

@@ -101,33 +101,30 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     background: var(--gradient-hero);
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Scalable Container */
-  .scalable-container {
-    width: 1920px;
-    height: auto;
-    min-height: 1080px;
-    transform-origin: top left;
-    transition: transform 0.3s ease;
+  /* Snap Scrolling */
+  .snap-scroll-container {
+    scroll-snap-type: y mandatory;
   }
 
   .snap-section {
     scroll-snap-align: center;
     scroll-snap-stop: always;
+  }
+
+  .snap-section-last {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding-bottom: 100px; /* Allow scrolling to footer */
+    scroll-margin-bottom: 50px;
   }
 
   .hero-gradient {
