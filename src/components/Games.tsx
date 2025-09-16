@@ -22,17 +22,29 @@ const Games = () => {
     badge: "Популярное",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   }, {
-    title: "Crash Games Pack",
-    description: "Полный пакет краш-игр с уникальными механиками и дизайном",
+    title: "Space Ball",
+    description: "Crash-игра с уникальным дизайном и механиками",
     features: {
       volatility: 5,
-      rtp: "95-99%",
-      platforms: ["Web", "Mobile", "Desktop", "API"],
-      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />, <GermanyFlag size={20} />, <FranceFlag size={20} />],
-      maxMultiplier: "10000x"
+      rtp: "98%",
+      platforms: ["Web", "Mobile"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
+      maxMultiplier: "x50000"
     },
     badge: "Скоро в продаже",
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
+  }, {
+    title: "Arrow Shot",
+    description: "Crash-игра с уникальным дизайном и механиками",
+    features: {
+      volatility: 5,
+      rtp: "98%",
+      platforms: ["Web", "Mobile"],
+      languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
+      maxMultiplier: "x50000"
+    },
+    badge: "Скоро в продаже",
+    image: "/lovable-uploads/bf859430-c5c0-4373-aafa-f3290eb90cc3.png"
   }, {
     title: "Hilo",
     description: "Увлекательная карточная игра с простыми правилами и высокой отдачей",
@@ -134,11 +146,11 @@ const Games = () => {
                         Подробнее
                       </Link>
                     </div>
-                  ) : game.title === "Crash Games Pack" ? (
+                  ) : game.title === "Space Ball" || game.title === "Arrow Shot" ? (
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <Link to="/crash" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
-                      </Link>
+                      </button>
                     </div>
                   ) : game.title === "Hilo" ? (
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
