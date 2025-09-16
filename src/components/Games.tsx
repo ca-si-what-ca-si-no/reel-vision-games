@@ -78,7 +78,7 @@ const Games = () => {
               
               {/* Content section */}
               <div className="p-6 flex flex-col flex-1">
-                <div className="flex-1 space-y-4">
+                <div className="flex-1 space-y-4 pb-6">
                   {/* Upper content that moves up on hover */}
                   <div className="relative transition-all duration-500 transform-gpu will-change-transform group-hover:-translate-y-56">
                     <div>
