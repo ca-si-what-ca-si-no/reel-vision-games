@@ -44,18 +44,18 @@ const Integrators = () => {
   return <section id="integrators" className="min-h-screen flex items-center justify-center relative snap-section">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-6">
             <span className="text-foreground">Для</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">интеграторов</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
             Комплексные решения для интеграции игрового контента в ваши платформы. 
             От API до технической поддержки — всё для успешного запуска.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-3 gap-8 mb-20">
           {benefits.map((benefit, index) => <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in" style={{
           animationDelay: `${index * 0.1}s`
         }}>
@@ -81,11 +81,11 @@ const Integrators = () => {
           <h3 className="text-3xl font-bold mb-6 text-foreground">
             Готовы начать интеграцию?
           </h3>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Все игры поставляются с инструментами управления и настраиваемым RTP. 
             Начните тестирование прямо сейчас!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-4 justify-center">
             <Button size="lg" className="accent-gradient glow-effect font-semibold" asChild>
               <a href="#contact">Демо доступ</a>
             </Button>
