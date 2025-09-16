@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageCircle, Send } from "lucide-react";
+import { Mail, MessageCircle, Send, Linkedin } from "lucide-react";
 const Contact = () => {
   const contactInfo = [{
     icon: Mail,
@@ -14,6 +14,11 @@ const Contact = () => {
     title: "Telegram",
     content: "@gdeNazvanie_support",
     description: "Быстрые ответы и поддержка"
+  }, {
+    icon: Linkedin,
+    title: "LinkedIn",
+    content: "2xWet Studio",
+    description: "Профессиональная сеть и новости"
   }];
   return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section-last">
       <div className="container mx-auto px-6 w-full">
@@ -89,9 +94,11 @@ const Contact = () => {
             {contactInfo.map((info, index) => {
               const href = info.title === "Email" 
                 ? `mailto:${info.content}` 
-                : `https://t.me/${info.content.replace('@', '')}`;
-              const target = info.title === "Telegram" ? "_blank" : undefined;
-              const rel = info.title === "Telegram" ? "noopener noreferrer" : undefined;
+                : info.title === "Telegram"
+                ? `https://t.me/${info.content.replace('@', '')}`
+                : `https://linkedin.com/company/2xwet-studio`;
+              const target = info.title === "Telegram" || info.title === "LinkedIn" ? "_blank" : undefined;
+              const rel = info.title === "Telegram" || info.title === "LinkedIn" ? "noopener noreferrer" : undefined;
               
               return (
                 <a key={index} href={href} target={target} rel={rel} className="block">
