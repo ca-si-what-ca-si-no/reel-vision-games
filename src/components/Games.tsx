@@ -77,7 +77,7 @@ const Games = () => {
               </div>
               
               {/* Content section */}
-              <div className="p-6 flex flex-col flex-1 transition-all duration-500 transform-gpu">
+              <div className="p-6 flex flex-col flex-1 transition-all duration-500 transform-gpu group-hover:-translate-y-56">
                 <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
