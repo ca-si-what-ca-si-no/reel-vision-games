@@ -31,7 +31,7 @@ const Games = () => {
       languages: [<RussiaFlag size={20} />, <USAFlag size={20} />, <GermanyFlag size={20} />, <FranceFlag size={20} />],
       maxMultiplier: "10000x"
     },
-    badge: "Новинка",
+    badge: "Скоро в продаже",
     image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"
   }, {
     title: "Hilo",
@@ -43,7 +43,7 @@ const Games = () => {
       languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
       maxMultiplier: "2500x"
     },
-    badge: "Топ",
+    badge: "Скоро в продаже",
     image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"
   }];
   return <section id="games" className="py-20 relative">
@@ -132,35 +132,17 @@ const Games = () => {
                       </Link>
                     </div>
                   ) : game.title === "Crash Games Pack" ? (
-                    <div className="flex flex-col gap-2">
-                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
-                        <Clock className="w-4 h-4" />
-                        Скоро в продаже
-                      </div>
-                      <Link to="/crash" className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
-                        Подробнее
-                      </Link>
-                    </div>
+                    <Link to="/crash" className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                      Подробнее
+                    </Link>
                   ) : game.title === "Hilo" ? (
-                    <div className="flex flex-col gap-2">
-                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
-                        <Clock className="w-4 h-4" />
-                        Скоро в продаже
-                      </div>
-                      <Link to="/hilo" className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
-                        Подробнее
-                      </Link>
-                    </div>
+                    <Link to="/hilo" className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                      Подробнее
+                    </Link>
                   ) : (
-                    <div className="flex flex-col gap-2">
-                      <div className="coming-soon-badge w-full py-3 px-4 rounded-lg text-center flex items-center justify-center gap-2 text-sm">
-                        <Clock className="w-4 h-4" />
-                        Скоро в продаже
-                      </div>
-                      <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-2 px-4 rounded-lg text-center text-sm">
-                        Подробнее
-                      </button>
-                    </div>
+                    <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                      Подробнее
+                    </button>
                   )}
                 </div>
               </div>
