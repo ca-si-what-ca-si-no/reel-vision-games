@@ -113,10 +113,11 @@ All colors MUST be HSL.
   /* Snap Scrolling */
   .snap-scroll-container {
     scroll-snap-type: y mandatory;
+    scroll-padding-top: 72px;
   }
 
   .snap-section {
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
