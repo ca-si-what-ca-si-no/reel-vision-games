@@ -135,17 +135,23 @@ const Games = () => {
                       </Link>
                     </div>
                   ) : game.title === "Crash Games Pack" ? (
-                    <Link to="/crash" className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                      Подробнее
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <Link to="/crash" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                        Подробнее
+                      </Link>
+                    </div>
                   ) : game.title === "Hilo" ? (
-                    <Link to="/hilo" className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                      Подробнее
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <Link to="/hilo" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                        Подробнее
+                      </Link>
+                    </div>
                   ) : (
-                    <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                      Подробнее
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                        Подробнее
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
