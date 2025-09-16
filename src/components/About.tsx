@@ -53,7 +53,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center relative snap-section pt-20">
+    <section id="about" className="min-h-screen flex items-center justify-center relative snap-section">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
