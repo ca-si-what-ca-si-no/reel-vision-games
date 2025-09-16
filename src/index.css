@@ -113,11 +113,35 @@ All colors MUST be HSL.
   /* Snap Scrolling */
   .snap-scroll-container {
     scroll-snap-type: y mandatory;
+    scroll-padding-top: 4rem; /* Mobile header compensation */
   }
 
   .snap-section {
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
+  }
+
+  .snap-section-mobile {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding-block: 2rem;
+  }
+
+  /* Desktop snap scrolling */
+  @media (min-width: 768px) {
+    .snap-scroll-container {
+      scroll-padding-top: 5rem;
+    }
+    
+    .snap-section {
+      scroll-snap-align: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .snap-scroll-container {
+      scroll-padding-top: 6rem;
+    }
   }
 
   .hero-gradient {

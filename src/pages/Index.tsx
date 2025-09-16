@@ -15,7 +15,11 @@ const Index = () => {
       setTimeout(() => {
         const el = document.querySelector(hash) as HTMLElement | null;
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const isMobile = window.innerWidth < 768;
+          el.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: isMobile ? 'start' : 'center' 
+          });
         }
       }, 100);
     }
