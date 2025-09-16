@@ -46,8 +46,8 @@ const Games = () => {
     badge: "Скоро в продаже",
     image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"
   }];
-  return <section id="games" className="py-20 relative">
-      <div className="container mx-auto px-6">
+  return <section id="games" className="min-h-screen flex items-center justify-center relative snap-section pt-20">
+      <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Наши</span>{" "}

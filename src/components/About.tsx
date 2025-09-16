@@ -53,8 +53,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="min-h-screen flex items-center justify-center relative snap-section pt-20">
+      <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-foreground">Кто мы</span>{" "}
