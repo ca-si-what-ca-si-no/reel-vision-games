@@ -62,11 +62,11 @@ const Games = () => {
 
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden" style={{
+          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden relative will-change-transform" style={{
           animationDelay: `${index * 0.15}s`
         }}>
               {/* Image section */}
-              <div className="game-image relative h-56 transition-all duration-500 group-hover:h-0 group-hover:opacity-0">
+              <div className="game-image relative h-56 transition-all duration-500 transform-gpu group-hover:scale-y-0 group-hover:opacity-0 origin-top">
                 <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
                 <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0">
@@ -77,7 +77,7 @@ const Games = () => {
               </div>
               
               {/* Content section */}
-              <div className="p-6 flex flex-col flex-1 transition-all duration-500 group-hover:pt-12">
+              <div className="p-6 flex flex-col flex-1 transition-all duration-500 transform-gpu group-hover:-translate-y-56">
                 <div className="flex-1 space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
@@ -89,7 +89,7 @@ const Games = () => {
                   </div>
                   
                   {/* Features list - показывается при наведении */}
-                  <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 space-y-3">
+                  <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-6 top-32 pointer-events-none group-hover:pointer-events-auto">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-muted-foreground">Волатильность:</span>
                       <div className="flex gap-1">
