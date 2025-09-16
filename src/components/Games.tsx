@@ -80,7 +80,7 @@ const Games = () => {
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex-1 space-y-4">
                   {/* Upper content that moves up on hover */}
-                  <div className="relative transition-all duration-500 transform-gpu group-hover:-translate-y-32">
+                  <div className="relative transition-all duration-500 transform-gpu will-change-transform group-hover:-translate-y-56">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
                         {game.title}
@@ -91,7 +91,7 @@ const Games = () => {
                     </div>
                     
                     {/* Features list - показывается при наведении */}
-                    <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-20 z-10 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-24 z-10 pointer-events-none group-hover:pointer-events-auto">
                       <div className="flex items-center gap-2 text-sm">
                         <span className="text-muted-foreground">Волатильность:</span>
                         <div className="flex gap-1">
