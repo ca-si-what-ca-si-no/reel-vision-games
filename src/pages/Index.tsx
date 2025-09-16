@@ -10,26 +10,19 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Handle scrolling to hash on page load with header offset
     const hash = window.location.hash;
     if (hash) {
       setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for header
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+        const el = document.querySelector(hash) as HTMLElement | null;
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 100);
     }
   }, []);
 
   return (
-    <div className="min-h-screen snap-scroll-container">
+    <div className="h-screen overflow-y-auto snap-scroll-container">
       <ParticlesBackground />
       {/* Animated Background */}
       <div className="animated-background">
