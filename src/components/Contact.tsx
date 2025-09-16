@@ -15,7 +15,7 @@ const Contact = () => {
     content: "@gdeNazvanie_support",
     description: "Быстрые ответы и поддержка"
   }];
-  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section">
+  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section-last">
       <div className="container mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
