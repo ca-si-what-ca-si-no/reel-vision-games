@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
 const Integrators = () => {
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   const benefits = [{
     icon: Code,
     title: "Простое API",
@@ -86,8 +89,12 @@ const Integrators = () => {
             Начните тестирование прямо сейчас!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="accent-gradient glow-effect font-semibold" asChild>
-              <a href="#contact">Демо доступ</a>
+            <Button 
+              size="lg" 
+              className="accent-gradient glow-effect font-semibold" 
+              onClick={() => scrollToSection('contact')}
+            >
+              Демо доступ
             </Button>
           </div>
         </div>
