@@ -10,6 +10,7 @@ interface GameFeatures {
   maxBet?: string;
   roundTime?: string;
   autoPlay?: boolean;
+  provablyFair?: boolean;
 }
 
 interface TechnicalSpecsProps {
@@ -32,9 +33,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
               <div>
                 <h3 className="font-semibold text-foreground">Волатильность</h3>
                 <p className="text-xs text-muted-foreground">
-                  {features.volatility <= 2 ? 'Низкая' : 
-                   features.volatility <= 3 ? 'Средняя' : 
-                   features.volatility <= 4 ? 'Средне-высокая' : 'Высокая'}
+                  От 1 до 5 звезд
                 </p>
               </div>
             </div>
@@ -77,7 +76,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
           <div className="gaming-border card-shadow p-5 rounded-lg">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h4 className="font-medium text-foreground mb-1">Платформы</h4>
+                <h4 className="font-medium text-foreground mb-1">Адаптивный дизайн</h4>
                 <p className="text-sm text-muted-foreground">Поддерживаемые устройства</p>
               </div>
               <div className="flex gap-2">
@@ -107,7 +106,7 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
           </div>
 
           {/* Дополнительные характеристики */}
-          {(features.minBet || features.maxBet || features.roundTime || features.autoPlay !== undefined) && (
+          {(features.minBet || features.maxBet || features.roundTime || features.autoPlay !== undefined || features.provablyFair !== undefined) && (
             <div className="gaming-border card-shadow p-5 rounded-lg">
               <h4 className="font-medium text-foreground mb-3">Дополнительные параметры</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -134,6 +133,14 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
                     <span className="text-muted-foreground">Автоигра:</span>
                     <span className={`font-medium ${features.autoPlay ? 'text-green-400' : 'text-red-400'}`}>
                       {features.autoPlay ? '✓ Да' : '✗ Нет'}
+                    </span>
+                  </div>
+                )}
+                {features.provablyFair !== undefined && (
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Provably Fair:</span>
+                    <span className={`font-medium ${features.provablyFair ? 'text-green-400' : 'text-red-400'}`}>
+                      {features.provablyFair ? '✓ Поддерживается' : '✗ Не поддерживается'}
                     </span>
                   </div>
                 )}

@@ -22,11 +22,12 @@ const Keno = () => {
     title: "Keno",
     description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
     features: {
-      volatility: 3,
-      rtp: "94-97%",
-      platforms: ["Web", "Mobile", "Desktop"],
-      languages: ["RU", "EN", "DE"],
-      maxMultiplier: "1000x"
+      volatility: 5,
+      rtp: "98%",
+      platforms: ["Адаптивный дизайн: Web · Mobile"],
+      languages: ["RU", "EN"],
+      maxMultiplier: "x750",
+      provablyFair: true
     },
     badge: "Популярное",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
@@ -97,7 +98,11 @@ const Keno = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Настраиваемый RTP от 94% до 97%</span>
+                      <span>Настраиваемый RTP до 98%</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Волатильность от 1 до 5 звезд</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
@@ -105,15 +110,15 @@ const Keno = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Поддержка всех основных платформ</span>
+                      <span>Адаптивный дизайн для всех устройств</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Мультиязычная поддержка</span>
+                      <span>Поддержка Provably Fair</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1">•</span>
-                      <span>Высокие множители до 1000x</span>
+                      <span>Высокие множители до x750</span>
                     </li>
                   </ul>
                 </div>
