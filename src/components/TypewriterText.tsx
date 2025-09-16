@@ -7,7 +7,7 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-const TypewriterText = ({ initialText, typeText, speed = 50, className = "" }: TypewriterTextProps) => {
+const TypewriterText = ({ initialText, typeText, speed = 25, className = "" }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState(initialText);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
@@ -16,7 +16,7 @@ const TypewriterText = ({ initialText, typeText, speed = 50, className = "" }: T
     // Начинаем печатать после небольшой задержки
     const startDelay = setTimeout(() => {
       setIsTyping(true);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(startDelay);
   }, []);
