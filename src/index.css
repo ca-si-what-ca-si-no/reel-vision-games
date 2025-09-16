@@ -120,13 +120,6 @@ All colors MUST be HSL.
     scroll-snap-stop: always;
   }
 
-  .snap-section-last {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    padding-bottom: 100px; /* Allow scrolling to footer */
-    scroll-margin-bottom: 50px;
-  }
-
   .hero-gradient {
     background: var(--gradient-hero);
   }
