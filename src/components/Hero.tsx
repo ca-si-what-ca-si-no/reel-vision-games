@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Rocket, Zap, Star } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 const Hero = () => {
-  return <section className="min-h-screen flex items-center justify-center relative pt-20 snap-section">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20 snap-section">
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-60 z-10" style={{
       animationDelay: '0s'
@@ -63,15 +63,23 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 min-w-[280px] rounded-full" asChild>
-              <a href="#contact">Связаться с нами</a>
+            <Button 
+              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 min-w-[280px] rounded-full"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              Связаться с нами
             </Button>
             
             <div className="flex gap-[10px]">
-              <Button className="bg-white hover:bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full" asChild>
-                <a href="#games">
-                  <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
-                </a>
+              <Button 
+                className="bg-white hover:bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full"
+                onClick={() => {
+                  document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
               </Button>
               
               <Button className="border border-white/20 font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px] rounded-full" style={{
