@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-
 const Header = () => {
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <a href="/" className="flex items-center space-x-3 hover:opacity-80 smooth-transition">
-              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10 animate-float" />
+              
               <span className="text-2xl font-bold text-foreground">
                 2xWet <span className="text-accent">Studio</span>
               </span>
@@ -35,8 +33,6 @@ const Header = () => {
           </Button>
         </nav>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
