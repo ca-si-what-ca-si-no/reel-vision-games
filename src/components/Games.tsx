@@ -123,24 +123,24 @@ const Games = () => {
                 
                 <div className="mt-auto pt-6 border-t border-border/50">
                   {game.title === "Keno" ? (
-                    <div className="flex gap-2">
-                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-3 px-4 rounded-lg text-center">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Играть!
                       </button>
-                      <Link to="/keno" className="outline-button py-3 px-4 rounded-lg text-center">
+                      <Link to="/keno" className="outline-button py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap">
                         Подробнее
                       </Link>
                     </div>
                   ) : game.title === "Crash Games Pack" ? (
-                    <Link to="/crash" className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                    <Link to="/crash" className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                       Подробнее
                     </Link>
                   ) : game.title === "Hilo" ? (
-                    <Link to="/hilo" className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                    <Link to="/hilo" className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                       Подробнее
                     </Link>
                   ) : (
-                    <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-3 px-4 rounded-lg text-center">
+                    <button onClick={() => setSelectedGame(game)} className="outline-button w-full py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                       Подробнее
                     </button>
                   )}
