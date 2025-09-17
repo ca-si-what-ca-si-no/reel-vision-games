@@ -32,6 +32,7 @@ export const COMMON_NUMBERS = {
   MIN_SCROLL_VELOCITY: 0.1,
   MAX_SCROLL_VELOCITY: 2,
   SCROLL_END_VELOCITY: 0.05,
+  FOOTER_AREA_THRESHOLD: 0.9, // Last 10% of page
 
   // Retry and connection limits
   MAX_RETRIES: 3,

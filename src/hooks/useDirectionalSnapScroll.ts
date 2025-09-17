@@ -65,15 +65,22 @@ export function useDirectionalSnapScroll() {
           isScrollingDown.current = scrollDirection === 'down';
         }
 
+        // Check if we're near the bottom (in footer area)
+        const containerHeight = container.scrollHeight;
+        const visibleHeight = container.clientHeight;
+        const scrollProgress = (currentScrollTop + visibleHeight) / containerHeight;
+        const isInFooterArea = scrollProgress > COMMON_NUMBERS.FOOTER_AREA_THRESHOLD;
+
         lastScrollTop.current = currentScrollTop;
         lastScrollTime = currentTime;
 
         // Clear existing timeout
         clearTimeout(scrollTimeout);
 
-        // Only apply snap scrolling on deliberate downward scrolling with reasonable velocity
+        // Apply snap scrolling only on downward scrolling, but disable in footer area
         if (
           isScrollingDown.current &&
+          !isInFooterArea &&
           scrollVelocity.current > COMMON_NUMBERS.MIN_SCROLL_VELOCITY &&
           scrollVelocity.current < COMMON_NUMBERS.MAX_SCROLL_VELOCITY
         ) {
@@ -86,6 +93,7 @@ export function useDirectionalSnapScroll() {
         scrollTimeout = setTimeout(() => {
           if (
             !isScrollingDown.current ||
+            isInFooterArea ||
             scrollVelocity.current < COMMON_NUMBERS.SCROLL_END_VELOCITY
           ) {
             disableSnapScrolling();
