@@ -1,7 +1,7 @@
-import { render, fireEvent, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import DeviceSelector from '../DeviceSelector';
-import { DeviceType } from '@/types';
 
 describe('DeviceSelector', () => {
   const mockOnDeviceChange = vi.fn();
@@ -11,12 +11,7 @@ describe('DeviceSelector', () => {
   });
 
   it('renders all device options', () => {
-    render(
-      <DeviceSelector
-        selectedDevice="mobile"
-        onDeviceChange={mockOnDeviceChange}
-      />
-    );
+    render(<DeviceSelector selectedDevice="mobile" onDeviceChange={mockOnDeviceChange} />);
 
     expect(screen.getByText('Мобильный')).toBeInTheDocument();
     expect(screen.getByText('Планшет')).toBeInTheDocument();
@@ -24,12 +19,7 @@ describe('DeviceSelector', () => {
   });
 
   it('highlights selected device', () => {
-    render(
-      <DeviceSelector
-        selectedDevice="tablet"
-        onDeviceChange={mockOnDeviceChange}
-      />
-    );
+    render(<DeviceSelector selectedDevice="tablet" onDeviceChange={mockOnDeviceChange} />);
 
     const tabletButton = screen.getByText('Планшет').closest('button');
     expect(tabletButton).toHaveClass('border-primary');
@@ -37,12 +27,7 @@ describe('DeviceSelector', () => {
   });
 
   it('calls onDeviceChange when device is clicked', () => {
-    render(
-      <DeviceSelector
-        selectedDevice="mobile"
-        onDeviceChange={mockOnDeviceChange}
-      />
-    );
+    render(<DeviceSelector selectedDevice="mobile" onDeviceChange={mockOnDeviceChange} />);
 
     const desktopButton = screen.getByText('Компьютер');
     fireEvent.click(desktopButton);
@@ -64,16 +49,11 @@ describe('DeviceSelector', () => {
   });
 
   it('renders icons for each device type', () => {
-    render(
-      <DeviceSelector
-        selectedDevice="mobile"
-        onDeviceChange={mockOnDeviceChange}
-      />
-    );
+    render(<DeviceSelector selectedDevice="mobile" onDeviceChange={mockOnDeviceChange} />);
 
     // Check that each button contains an SVG icon
     const buttons = screen.getAllByRole('button');
-    buttons.forEach(button => {
+    buttons.forEach((button) => {
       const icon = button.querySelector('svg');
       expect(icon).toBeInTheDocument();
     });

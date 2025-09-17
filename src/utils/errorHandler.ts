@@ -49,11 +49,11 @@ class ErrorHandler {
     }
 
     // Notify listeners
-    this.errorListeners.forEach(listener => {
+    this.errorListeners.forEach((listener) => {
       try {
         listener(errorInfo);
-      } catch (err) {
-        console.error('Error in error listener:', err);
+      } catch (error_) {
+        console.error('Error in error listener:', error_);
       }
     });
 
@@ -64,7 +64,10 @@ class ErrorHandler {
   /**
    * Normalize error to ErrorInfo
    */
-  private normalizeError(error: Error | ErrorInfo | unknown, context?: Record<string, unknown>): ErrorInfo {
+  private normalizeError(
+    error: Error | ErrorInfo | unknown,
+    context?: Record<string, unknown>
+  ): ErrorInfo {
     if (this.isErrorInfo(error)) {
       return { ...error, context: { ...error.context, ...context } };
     }
@@ -72,7 +75,7 @@ class ErrorHandler {
     if (error instanceof Error) {
       return {
         message: error.message,
-        code: (error as any).code,
+        code: (error as { code?: string }).code,
         stack: error.stack,
         severity: ErrorSeverity.MEDIUM,
         context,
@@ -96,7 +99,7 @@ class ErrorHandler {
       typeof error === 'object' &&
       error !== null &&
       'message' in error &&
-      typeof (error as any).message === 'string'
+      typeof (error as { message?: string }).message === 'string'
     );
   }
 
@@ -168,8 +171,10 @@ import { useEffect } from 'react';
 
 export function useErrorHandler(handler?: (error: ErrorInfo) => void) {
   useEffect(() => {
-    if (!handler) return;
-    return errorHandler.addListener(handler);
+    if (handler) {
+      return errorHandler.addListener(handler);
+    }
+    return () => {};
   }, [handler]);
 
   return {

@@ -1,7 +1,16 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component, type ErrorInfo, type ReactNode } from 'react';
+
 import { AlertTriangle, RefreshCw } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 interface Props {
   children?: ReactNode;
@@ -26,14 +35,14 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   private handleReset = () => {
-    this.setState({ hasError: false, error: undefined });
+    this.setState({ hasError: false, error: null });
     window.location.reload();
   };
 
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="flex min-h-screen items-center justify-center p-4">
           <Card className="w-full max-w-md">
             <CardHeader>
               <div className="flex items-center gap-2">

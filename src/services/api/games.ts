@@ -1,4 +1,10 @@
-import { useQuery, useMutation, UseQueryResult, UseMutationResult } from '@tanstack/react-query';
+import {
+  type UseMutationResult,
+  type UseQueryResult,
+  useMutation,
+  useQuery,
+} from '@tanstack/react-query';
+
 import { apiClient } from './client';
 
 // Types
@@ -51,18 +57,18 @@ const gamesApi = {
 };
 
 // React Query hooks
-export function useGames(): UseQueryResult<Game[], Error> {
+export function useGames(): UseQueryResult<Game[]> {
   return useQuery({
     queryKey: ['games'],
     queryFn: gamesApi.getAll,
   });
 }
 
-export function useGame(id: string): UseQueryResult<Game, Error> {
+export function useGame(id: string): UseQueryResult<Game> {
   return useQuery({
     queryKey: ['games', id],
     queryFn: () => gamesApi.getById(id),
-    enabled: !!id,
+    enabled: Boolean(id),
   });
 }
 
@@ -72,7 +78,7 @@ export function usePlayGame(): UseMutationResult<PlayGameResponse, Error, PlayGa
   });
 }
 
-export function useGameHistory(gameId?: string): UseQueryResult<GameResult[], Error> {
+export function useGameHistory(gameId?: string): UseQueryResult<GameResult[]> {
   return useQuery({
     queryKey: ['gameHistory', gameId],
     queryFn: () => gamesApi.getHistory(gameId),

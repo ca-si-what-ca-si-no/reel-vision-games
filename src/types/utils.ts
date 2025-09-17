@@ -72,10 +72,10 @@ export type Merge<A, B> = Omit<A, keyof B> & B;
 /**
  * Create a discriminated union type
  */
-export type DiscriminatedUnion<
-  T extends Record<string, unknown>,
-  K extends keyof T
-> = T[K] extends string | number | boolean
+export type DiscriminatedUnion<T extends Record<string, unknown>, K extends keyof T> = T[K] extends
+  | string
+  | number
+  | boolean
   ? {
       [V in T[K] as string]: T & { [P in K]: V };
     }[string]
@@ -89,8 +89,11 @@ export type Awaited<T> = T extends Promise<infer U> ? U : T;
 /**
  * Get the return type of an async function
  */
-export type AsyncReturnType<T extends (...args: any[]) => Promise<any>> =
-  T extends (...args: any[]) => Promise<infer R> ? R : never;
+export type AsyncReturnType<T extends (...args: unknown[]) => Promise<unknown>> = T extends (
+  ...args: unknown[]
+) => Promise<infer R>
+  ? R
+  : never;
 
 /**
  * Prettify complex types for better IDE display

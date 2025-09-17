@@ -1,6 +1,15 @@
 import { QueryClient } from '@tanstack/react-query';
 
-export const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+export const API_BASE_URL = String(
+  (import.meta.env as Record<string, any>)?.VITE_API_URL || '/api'
+);
+
+// Query configuration constants
+const QUERY_RETRY_COUNT = 3;
+const QUERY_STALE_TIME_MINUTES = 5;
+const QUERY_GC_TIME_MINUTES = 10;
+const MUTATION_RETRY_COUNT = 1;
+const MILLISECONDS_PER_MINUTE = 60 * 1000;
 
 export interface ApiError {
   message: string;
@@ -17,7 +26,7 @@ export interface ApiResponse<T> {
 
 class ApiClient {
   private baseUrl: string;
-  private defaultHeaders: HeadersInit;
+  private defaultHeaders: Record<string, string>;
 
   constructor(baseUrl = API_BASE_URL) {
     this.baseUrl = baseUrl;
@@ -34,7 +43,11 @@ class ApiClient {
       };
 
       try {
-        const errorData = await response.json();
+        const errorData = (await response.json()) as {
+          message?: string;
+          code?: string;
+          details?: unknown;
+        };
         error.message = errorData.message || error.message;
         error.code = errorData.code;
         error.details = errorData.details;
@@ -42,11 +55,11 @@ class ApiClient {
         // Use default error message if parsing fails
       }
 
-      throw error;
+      throw new Error(error.message);
     }
 
     try {
-      return await response.json();
+      return (await response.json()) as T;
     } catch {
       return {} as T;
     }
@@ -57,59 +70,55 @@ class ApiClient {
   }
 
   async get<T>(endpoint: string, options?: RequestInit): Promise<T> {
+    const { headers, ...otherOptions } = options || {};
     const response = await fetch(this.getFullUrl(endpoint), {
-      ...options,
       method: 'GET',
       headers: {
         ...this.defaultHeaders,
-        ...options?.headers,
+        ...(headers ? (headers as Record<string, string>) : {}),
       },
+      ...otherOptions,
     });
     return this.handleResponse<T>(response);
   }
 
-  async post<T, D = unknown>(
-    endpoint: string,
-    data?: D,
-    options?: RequestInit
-  ): Promise<T> {
+  async post<T>(endpoint: string, data?: unknown, options?: RequestInit): Promise<T> {
+    const { headers, ...otherOptions } = options || {};
     const response = await fetch(this.getFullUrl(endpoint), {
-      ...options,
       method: 'POST',
       headers: {
         ...this.defaultHeaders,
-        ...options?.headers,
+        ...(headers ? (headers as Record<string, string>) : {}),
       },
-      body: data ? JSON.stringify(data) : undefined,
+      body: data ? JSON.stringify(data) : '',
+      ...otherOptions,
     });
     return this.handleResponse<T>(response);
   }
 
-  async put<T, D = unknown>(
-    endpoint: string,
-    data?: D,
-    options?: RequestInit
-  ): Promise<T> {
+  async put<T>(endpoint: string, data?: unknown, options?: RequestInit): Promise<T> {
+    const { headers, ...otherOptions } = options || {};
     const response = await fetch(this.getFullUrl(endpoint), {
-      ...options,
       method: 'PUT',
       headers: {
         ...this.defaultHeaders,
-        ...options?.headers,
+        ...(headers ? (headers as Record<string, string>) : {}),
       },
-      body: data ? JSON.stringify(data) : undefined,
+      body: data ? JSON.stringify(data) : '',
+      ...otherOptions,
     });
     return this.handleResponse<T>(response);
   }
 
   async delete<T>(endpoint: string, options?: RequestInit): Promise<T> {
+    const { headers, ...otherOptions } = options || {};
     const response = await fetch(this.getFullUrl(endpoint), {
-      ...options,
       method: 'DELETE',
       headers: {
         ...this.defaultHeaders,
-        ...options?.headers,
+        ...(headers ? (headers as Record<string, string>) : {}),
       },
+      ...otherOptions,
     });
     return this.handleResponse<T>(response);
   }
@@ -122,7 +131,7 @@ class ApiClient {
   }
 
   clearAuthToken() {
-    const { Authorization, ...headers } = this.defaultHeaders as Record<string, string>;
+    const { Authorization: _Authorization, ...headers } = this.defaultHeaders;
     this.defaultHeaders = headers;
   }
 }
@@ -133,13 +142,13 @@ export const apiClient = new ApiClient();
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      retry: 3,
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
+      retry: QUERY_RETRY_COUNT,
+      staleTime: QUERY_STALE_TIME_MINUTES * MILLISECONDS_PER_MINUTE,
+      gcTime: QUERY_GC_TIME_MINUTES * MILLISECONDS_PER_MINUTE,
       refetchOnWindowFocus: false,
     },
     mutations: {
-      retry: 1,
+      retry: MUTATION_RETRY_COUNT,
     },
   },
 });

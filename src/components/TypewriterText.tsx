@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface TypewriterTextProps {
   initialText: string;
@@ -7,7 +7,12 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-const TypewriterText = ({ initialText, typeText, speed = 25, className = "" }: TypewriterTextProps) => {
+const TypewriterText = ({
+  initialText,
+  typeText,
+  speed = 25,
+  className = '',
+}: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState(initialText);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
@@ -22,7 +27,9 @@ const TypewriterText = ({ initialText, typeText, speed = 25, className = "" }: T
   }, []);
 
   useEffect(() => {
-    if (!isTyping || currentIndex >= typeText.length) return;
+    if (!isTyping || currentIndex >= typeText.length) {
+      return () => {};
+    }
 
     const timer = setTimeout(() => {
       setDisplayText(initialText + typeText.slice(0, currentIndex + 1));

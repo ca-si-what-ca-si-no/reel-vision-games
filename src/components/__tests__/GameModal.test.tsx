@@ -1,5 +1,6 @@
-import { render, fireEvent, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import GameModal from '../GameModal';
 
 describe('GameModal', () => {
@@ -10,13 +11,9 @@ describe('GameModal', () => {
     isOpen: true,
     onClose: mockOnClose,
     title: 'Test Game',
-    screenshots: [
-      '/screenshot1.jpg',
-      '/screenshot2.jpg',
-      '/screenshot3.jpg'
-    ],
+    screenshots: ['/screenshot1.jpg', '/screenshot2.jpg', '/screenshot3.jpg'],
     activeScreenshot: '/screenshot1.jpg',
-    onScreenshotChange: mockOnScreenshotChange
+    onScreenshotChange: mockOnScreenshotChange,
   };
 
   beforeEach(() => {
@@ -55,12 +52,7 @@ describe('GameModal', () => {
   });
 
   it('does not render navigation buttons with single screenshot', () => {
-    render(
-      <GameModal
-        {...defaultProps}
-        screenshots={['/screenshot1.jpg']}
-      />
-    );
+    render(<GameModal {...defaultProps} screenshots={['/screenshot1.jpg']} />);
 
     expect(screen.queryByRole('button', { name: /previous/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /next/i })).not.toBeInTheDocument();
@@ -85,12 +77,7 @@ describe('GameModal', () => {
   });
 
   it('navigates to previous screenshot correctly', () => {
-    render(
-      <GameModal
-        {...defaultProps}
-        activeScreenshot="/screenshot2.jpg"
-      />
-    );
+    render(<GameModal {...defaultProps} activeScreenshot="/screenshot2.jpg" />);
 
     const prevButton = screen.getByRole('button', { name: /previous/i });
     fireEvent.click(prevButton);
@@ -99,12 +86,7 @@ describe('GameModal', () => {
   });
 
   it('wraps around when navigating past boundaries', () => {
-    render(
-      <GameModal
-        {...defaultProps}
-        activeScreenshot="/screenshot3.jpg"
-      />
-    );
+    render(<GameModal {...defaultProps} activeScreenshot="/screenshot3.jpg" />);
 
     const nextButton = screen.getByRole('button', { name: /next/i });
     fireEvent.click(nextButton);

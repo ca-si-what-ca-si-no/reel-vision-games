@@ -1,16 +1,19 @@
-import { useCallback, useEffect, useMemo } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import type { Container, Engine } from "@tsparticles/engine";
+import { useCallback, useEffect, useMemo } from 'react';
+
+import type { Container, Engine } from '@tsparticles/engine';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 const ParticlesBackground = () => {
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+  const particlesLoaded = useCallback((container: Container | undefined) => {
     console.log(container);
   }, []);
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
       await loadSlim(engine);
+    }).catch((error: unknown) => {
+      console.error('Failed to initialize particles:', error);
     });
   }, []);
 
@@ -18,7 +21,7 @@ const ParticlesBackground = () => {
     () => ({
       background: {
         color: {
-          value: "transparent",
+          value: 'transparent',
         },
       },
       fpsLimit: 120,
@@ -26,11 +29,11 @@ const ParticlesBackground = () => {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: 'push',
           },
           onHover: {
             enable: true,
-            mode: "repulse",
+            mode: 'repulse',
           },
         },
         modes: {
@@ -45,10 +48,10 @@ const ParticlesBackground = () => {
       },
       particles: {
         color: {
-          value: ["#8B5CF6", "#A855F7", "#C084FC", "#DDD6FE", "#EDE9FE"],
+          value: ['#8B5CF6', '#A855F7', '#C084FC', '#DDD6FE', '#EDE9FE'],
         },
         links: {
-          color: "#8B5CF6",
+          color: '#8B5CF6',
           distance: 150,
           enable: true,
           opacity: 0.3,
@@ -72,7 +75,7 @@ const ParticlesBackground = () => {
           },
         },
         shape: {
-          type: "circle",
+          type: 'circle',
         },
         size: {
           value: 3,
@@ -93,11 +96,11 @@ const ParticlesBackground = () => {
       particlesLoaded={particlesLoaded}
       options={options}
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
+        width: '100%',
+        height: '100%',
         zIndex: -2,
       }}
     />

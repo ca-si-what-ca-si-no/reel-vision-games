@@ -6,7 +6,7 @@ interface AsyncState<T> {
   loading: boolean;
 }
 
-export function useAsync<T = any>(
+export function useAsync<T = unknown>(
   asyncFunction: () => Promise<T>,
   immediate = true
 ): AsyncState<T> & { execute: () => Promise<void> } {
@@ -26,7 +26,9 @@ export function useAsync<T = any>(
 
   useEffect(() => {
     if (immediate) {
-      execute();
+      execute().catch(() => {
+        // Error is handled by the execute function itself
+      });
     }
   }, [execute, immediate]);
 

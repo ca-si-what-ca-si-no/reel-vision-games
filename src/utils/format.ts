@@ -38,10 +38,7 @@ export function formatDate(
 /**
  * Format a relative time (e.g., "2 hours ago")
  */
-export function formatRelativeTime(
-  date: Date | string | number,
-  locale: string = 'en-US'
-): string {
+export function formatRelativeTime(date: Date | string | number, locale: string = 'en-US'): string {
   const d = typeof date === 'string' || typeof date === 'number' ? new Date(date) : date;
   const now = new Date();
   const diff = now.getTime() - d.getTime();
@@ -52,9 +49,15 @@ export function formatRelativeTime(
 
   const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
 
-  if (days > 0) return rtf.format(-days, 'day');
-  if (hours > 0) return rtf.format(-hours, 'hour');
-  if (minutes > 0) return rtf.format(-minutes, 'minute');
+  if (days > 0) {
+    return rtf.format(-days, 'day');
+  }
+  if (hours > 0) {
+    return rtf.format(-hours, 'hour');
+  }
+  if (minutes > 0) {
+    return rtf.format(-minutes, 'minute');
+  }
   return rtf.format(-seconds, 'second');
 }
 
@@ -77,7 +80,9 @@ export function formatPercent(
  * Truncate a string to a specified length
  */
 export function truncate(str: string, length: number, suffix: string = '...'): string {
-  if (str.length <= length) return str;
+  if (str.length <= length) {
+    return str;
+  }
   return str.slice(0, length - suffix.length) + suffix;
 }
 
@@ -85,10 +90,7 @@ export function truncate(str: string, length: number, suffix: string = '...'): s
  * Convert a string to title case
  */
 export function toTitleCase(str: string): string {
-  return str.replace(
-    /\w\S*/g,
-    (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
-  );
+  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase());
 }
 
 /**
@@ -98,7 +100,7 @@ export function toSlug(str: string): string {
   return str
     .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '')
+    .replace(/[^\s\w-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }

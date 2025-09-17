@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface WebSocketMessage<T = unknown> {
   type: string;
@@ -41,7 +41,7 @@ export function useWebSocket({
   const reconnectTimeout = useRef<NodeJS.Timeout>();
 
   const connect = useCallback(() => {
-    if (ws.current?.readyState === ReadyState.OPEN) {
+    if (ws.current?.readyState === WebSocket.OPEN) {
       return;
     }
 
@@ -73,7 +73,7 @@ export function useWebSocket({
 
       ws.current.onmessage = (event) => {
         try {
-          const message = JSON.parse(event.data) as WebSocketMessage;
+          const message = JSON.parse(event.data as string) as WebSocketMessage;
           setLastMessage(message);
           onMessage?.(message);
         } catch (error) {
@@ -98,7 +98,7 @@ export function useWebSocket({
   }, []);
 
   const sendMessage = useCallback(<T = unknown>(message: WebSocketMessage<T>) => {
-    if (ws.current?.readyState === ReadyState.OPEN) {
+    if (ws.current?.readyState === WebSocket.OPEN) {
       ws.current.send(JSON.stringify(message));
       return true;
     }
