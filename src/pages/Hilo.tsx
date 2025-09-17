@@ -1,60 +1,33 @@
-import { useEffect, useState } from 'react';
-
-import DeviceSelector from '@/components/DeviceSelector';
+import GameDescription from '@/components/game/GameDescription';
+import GamePreviewSection from '@/components/game/GamePreviewSection';
 import GameFeatureList from '@/components/GameFeatureList';
 import GameLayout from '@/components/GameLayout';
 import GameModal from '@/components/GameModal';
-import TechnicalSpecs from '@/components/TechnicalSpecs';
+import { useGameConfiguration } from '@/hooks/game/useGameConfiguration';
+import { useGamePageState } from '@/hooks/game/useGamePageState';
 import { hiloGameData } from '@/services/gameDataService';
-import { type DeviceType } from '@/types';
 
 const Hilo = () => {
-  const [selectedDevice, setSelectedDevice] = useState<DeviceType>('mobile');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeScreenshot, setActiveScreenshot] = useState<string | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const gameFeatures = [
-    { label: 'Высокий RTP до 97%', value: '97%' },
-    { label: 'Средне-высокая волатильность', value: '4 stars' },
-    { label: 'Простые и понятные правила', value: 'Easy' },
-    { label: 'Быстрые раунды', value: 'Fast' },
-    { label: 'Стратегические элементы', value: 'Strategy' },
-    { label: 'Множители до x500', value: 'x500' },
-    { label: 'Карточная механика', value: 'Cards' },
-    { label: 'Мобильная оптимизация', value: 'Mobile' },
-  ];
-
-  const handleDeviceModalOpen = (device: DeviceType) => {
-    setSelectedDevice(device);
-    setActiveScreenshot(hiloGameData.screenshots?.[device]?.[0] || null);
-    setIsModalOpen(true);
-  };
+  const gameConfig = useGameConfiguration('hilo');
+  const {
+    selectedDevice,
+    setSelectedDevice,
+    isModalOpen,
+    activeScreenshot,
+    setActiveScreenshot,
+    handleDeviceModalOpen,
+    handleModalClose,
+  } = useGamePageState({ gameData: hiloGameData });
 
   return (
     <GameLayout gameData={hiloGameData}>
-      <div className="rounded-lg border border-border bg-card p-6">
-        <p className="mb-6 leading-relaxed text-muted-foreground">
-          HiLo Games Pack - это захватывающие игры с элементами стратегии и удачи. Угадывайте, будет
-          ли следующая карта выше или ниже текущей, и стройте цепочки правильных предсказаний для
-          увеличения множителя!
-        </p>
+      <GameDescription
+        gameData={hiloGameData}
+        description={gameConfig.description}
+        technicalFeatures={gameConfig.technicalFeatures}
+      />
 
-        <TechnicalSpecs
-          features={{
-            ...hiloGameData.features,
-            minBet: '0.50',
-            maxBet: '250.00',
-            roundTime: '~10сек',
-            autoPlay: false,
-          }}
-        />
-      </div>
-
-      <GameFeatureList features={gameFeatures} />
+      <GameFeatureList features={gameConfig.features} />
 
       <div>
         <h2 className="mb-4 text-xl font-semibold sm:mb-6 sm:text-2xl">Механика игры</h2>
@@ -81,62 +54,16 @@ const Hilo = () => {
         </div>
       </div>
 
-      <div>
-        <h2 className="mb-4 text-xl font-semibold sm:mb-6 sm:text-2xl">Превью игры</h2>
-        <DeviceSelector
-          selectedDevice={selectedDevice}
-          onDeviceChange={setSelectedDevice}
-          className="mb-6"
-        />
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <button
-            onClick={() => handleDeviceModalOpen('mobile')}
-            className="group rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-primary/50"
-          >
-            <div className="mb-3 aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-background to-muted">
-              <img
-                src={hiloGameData.image}
-                alt="Mobile preview"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <span className="text-sm font-medium">Мобильная версия</span>
-          </button>
-
-          <button
-            onClick={() => handleDeviceModalOpen('tablet')}
-            className="group rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-primary/50"
-          >
-            <div className="mb-3 aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-background to-muted">
-              <img
-                src={hiloGameData.image}
-                alt="Tablet preview"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <span className="text-sm font-medium">Планшетная версия</span>
-          </button>
-
-          <button
-            onClick={() => handleDeviceModalOpen('desktop')}
-            className="group rounded-lg border border-border bg-card p-4 transition-all duration-200 hover:border-primary/50"
-          >
-            <div className="mb-3 aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-background to-muted">
-              <img
-                src={hiloGameData.image}
-                alt="Desktop preview"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <span className="text-sm font-medium">Десктопная версия</span>
-          </button>
-        </div>
-      </div>
+      <GamePreviewSection
+        selectedDevice={selectedDevice}
+        onDeviceChange={setSelectedDevice}
+        onDeviceModalOpen={handleDeviceModalOpen}
+        gameData={hiloGameData}
+      />
 
       <GameModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleModalClose}
         title={hiloGameData.title}
         screenshots={hiloGameData.screenshots?.[selectedDevice] || []}
         activeScreenshot={activeScreenshot}
