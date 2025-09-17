@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: process.env.NODE_ENV === 'production' ? '/reel-vision-games/' : '/',
   server: {
     host: '::',
     port: 8080,
