@@ -26,9 +26,7 @@ export function useDirectionalSnapScroll() {
         const sections = container.querySelectorAll('.snap-section, .snap-section-last');
         sections.forEach((section) => {
           const element = section as HTMLElement;
-          element.style.scrollSnapAlign = section.classList.contains('snap-section-last')
-            ? 'start'
-            : 'center';
+          element.style.scrollSnapAlign = 'start';
           element.style.scrollSnapStop = 'always';
         });
       };

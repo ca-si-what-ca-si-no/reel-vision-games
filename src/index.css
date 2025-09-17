@@ -123,6 +123,7 @@ All colors MUST be HSL.
   .snap-section {
     scroll-snap-align: none; /* Initially disabled, controlled by JS */
     scroll-snap-stop: normal; /* Initially disabled, controlled by JS */
+    scroll-margin-top: 120px; /* Ensure section headers are visible */
   }
 
   .snap-section-last {
