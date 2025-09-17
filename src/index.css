@@ -115,38 +115,21 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Snap Scrolling - Only on desktop */
+  /* Directional Snap Scrolling - Controlled by JavaScript */
   .snap-scroll-container {
-    scroll-snap-type: none;
+    scroll-snap-type: none; /* Initially disabled, controlled by JS */
   }
 
   .snap-section {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
+    scroll-snap-align: none; /* Initially disabled, controlled by JS */
+    scroll-snap-stop: normal; /* Initially disabled, controlled by JS */
   }
 
   .snap-section-last {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
+    scroll-snap-align: none; /* Initially disabled, controlled by JS */
+    scroll-snap-stop: normal; /* Initially disabled, controlled by JS */
     padding-bottom: 100px; /* Allow scrolling to footer */
     scroll-margin-bottom: 50px;
-  }
-
-  /* Enable snap scrolling only on desktop */
-  @media (min-width: 1024px) and (orientation: landscape) {
-    .snap-scroll-container {
-      scroll-snap-type: y mandatory;
-    }
-
-    .snap-section {
-      scroll-snap-align: center;
-      scroll-snap-stop: always;
-    }
-
-    .snap-section-last {
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    }
   }
 
   .hero-gradient {

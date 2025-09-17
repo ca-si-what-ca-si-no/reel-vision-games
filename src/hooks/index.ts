@@ -1,5 +1,6 @@
 export { useAsync } from './useAsync';
 export { useDebounce } from './useDebounce';
+export { useDirectionalSnapScroll } from './useDirectionalSnapScroll';
 export { useLocalStorage } from './useLocalStorage';
 export { useMediaQuery } from './useMediaQuery';
 export { useMobile } from './use-mobile';

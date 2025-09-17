@@ -8,8 +8,11 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Integrators from '@/components/Integrators';
 import ParticlesBackground from '@/components/ParticlesBackground';
+import { useDirectionalSnapScroll } from '@/hooks';
 
 const Index = () => {
+  const containerRef = useDirectionalSnapScroll();
+
   useEffect(() => {
     const { hash } = window.location;
     if (hash) {
@@ -23,7 +26,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="snap-scroll-container h-screen overflow-y-auto">
+    <div ref={containerRef} className="snap-scroll-container h-screen overflow-y-auto">
       <ParticlesBackground />
       {/* Animated Background */}
       <div className="animated-background">
