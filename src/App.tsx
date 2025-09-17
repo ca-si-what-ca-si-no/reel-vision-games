@@ -11,7 +11,7 @@ function AppRoutes() {
 const App = () => (
   <ErrorBoundary>
     <AppProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/reel-vision-games' : ''}>
         <AppRoutes />
       </BrowserRouter>
     </AppProvider>
