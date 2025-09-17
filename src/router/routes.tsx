@@ -18,7 +18,7 @@ const PageLoader = () => (
 );
 
 // Wrap component with Suspense
-const withSuspense = (Component: React.LazyExoticComponent<() => JSX.Element>) => (
+const withSuspense = (Component: React.LazyExoticComponent<() => React.JSX.Element>) => (
   <Suspense fallback={<PageLoader />}>
     <Component />
   </Suspense>

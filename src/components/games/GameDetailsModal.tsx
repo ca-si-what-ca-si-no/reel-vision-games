@@ -1,6 +1,7 @@
 import { Star } from 'lucide-react';
 
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { COMMON_NUMBERS } from '@/constants/numbers';
 
 import { type GameCardData } from './GameCard';
 
@@ -36,7 +37,13 @@ export default function GameDetailsModal({ isOpen, onClose, game }: GameDetailsM
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">Волатильность:</span>
                   <div className="flex space-x-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
+                    {[
+                      COMMON_NUMBERS.STAR_RATING_1,
+                      COMMON_NUMBERS.STAR_RATING_2,
+                      COMMON_NUMBERS.STAR_RATING_3,
+                      COMMON_NUMBERS.STAR_RATING_4,
+                      COMMON_NUMBERS.STAR_RATING_5,
+                    ].map((star) => (
                       <Star
                         key={star}
                         className={`h-4 w-4 ${

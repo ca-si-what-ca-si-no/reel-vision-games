@@ -9,15 +9,9 @@ export function useMediaQuery(query: string): boolean {
     const updateMatch = () => setMatches(media.matches);
     updateMatch();
 
-    // Use the newer addEventListener if available, fallback to addListener
-    if (media.addEventListener) {
-      media.addEventListener('change', updateMatch);
-      return () => media.removeEventListener('change', updateMatch);
-    }
-    // @ts-expect-error - for older browsers
-    media.addListener(updateMatch);
-    // @ts-expect-error - for older browsers
-    return () => media.removeListener(updateMatch);
+    // Use modern addEventListener
+    media.addEventListener('change', updateMatch);
+    return () => media.removeEventListener('change', updateMatch);
   }, [query]);
 
   return matches;

@@ -6,13 +6,14 @@ import GameModal from '../GameModal';
 describe('GameModal', () => {
   const mockOnClose = vi.fn();
   const mockOnScreenshotChange = vi.fn();
+  const TEST_SCREENSHOT = '/screenshot1.jpg';
 
   const defaultProps = {
     isOpen: true,
     onClose: mockOnClose,
     title: 'Test Game',
-    screenshots: ['/screenshot1.jpg', '/screenshot2.jpg', '/screenshot3.jpg'],
-    activeScreenshot: '/screenshot1.jpg',
+    screenshots: [TEST_SCREENSHOT, '/screenshot2.jpg', '/screenshot3.jpg'],
+    activeScreenshot: TEST_SCREENSHOT,
     onScreenshotChange: mockOnScreenshotChange,
   };
 
@@ -38,7 +39,7 @@ describe('GameModal', () => {
     render(<GameModal {...defaultProps} />);
 
     const mainImage = screen.getByAltText('Test Game screenshot');
-    expect(mainImage).toHaveAttribute('src', '/screenshot1.jpg');
+    expect(mainImage).toHaveAttribute('src', TEST_SCREENSHOT);
   });
 
   it('renders navigation buttons when multiple screenshots', () => {
@@ -52,7 +53,7 @@ describe('GameModal', () => {
   });
 
   it('does not render navigation buttons with single screenshot', () => {
-    render(<GameModal {...defaultProps} screenshots={['/screenshot1.jpg']} />);
+    render(<GameModal {...defaultProps} screenshots={[TEST_SCREENSHOT]} />);
 
     expect(screen.queryByRole('button', { name: /previous/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /next/i })).not.toBeInTheDocument();
@@ -82,7 +83,7 @@ describe('GameModal', () => {
     const prevButton = screen.getByRole('button', { name: /previous/i });
     fireEvent.click(prevButton);
 
-    expect(mockOnScreenshotChange).toHaveBeenCalledWith('/screenshot1.jpg');
+    expect(mockOnScreenshotChange).toHaveBeenCalledWith(TEST_SCREENSHOT);
   });
 
   it('wraps around when navigating past boundaries', () => {
@@ -91,6 +92,6 @@ describe('GameModal', () => {
     const nextButton = screen.getByRole('button', { name: /next/i });
     fireEvent.click(nextButton);
 
-    expect(mockOnScreenshotChange).toHaveBeenCalledWith('/screenshot1.jpg');
+    expect(mockOnScreenshotChange).toHaveBeenCalledWith(TEST_SCREENSHOT);
   });
 });

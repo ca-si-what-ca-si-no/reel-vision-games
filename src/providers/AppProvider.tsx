@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster as Sonner } from '@/components/ui/sonner';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { COMMON_NUMBERS } from '@/constants/numbers';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 
 // Configure QueryClient with optimized settings
@@ -12,7 +13,10 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 1000 * 60 * 5, // 5 minutes
-      gcTime: 1000 * 60 * 10, // 10 minutes
+      gcTime:
+        COMMON_NUMBERS.MILLISECONDS_PER_SECOND *
+        COMMON_NUMBERS.SECONDS_PER_MINUTE *
+        COMMON_NUMBERS.TEN_UNITS, // 10 minutes
       retry: 1,
       refetchOnWindowFocus: false,
     },

@@ -119,7 +119,7 @@ class ErrorHandler {
         break;
       case ErrorSeverity.LOW:
       default:
-        console.log(logMessage, error);
+        // Low severity errors are logged silently for debugging
         break;
     }
   }

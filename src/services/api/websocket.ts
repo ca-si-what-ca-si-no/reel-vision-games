@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 export interface WebSocketMessage<T = unknown> {
   type: string;
   payload?: T;
@@ -27,8 +29,8 @@ export enum ReadyState {
 export function useWebSocket({
   url,
   reconnect = true,
-  reconnectInterval = 3000,
-  reconnectAttempts = 10,
+  reconnectInterval = COMMON_NUMBERS.WEBSOCKET_RETRY_DELAY,
+  reconnectAttempts = COMMON_NUMBERS.MAX_RECONNECT_ATTEMPTS,
   onOpen,
   onClose,
   onError,

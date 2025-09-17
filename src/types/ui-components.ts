@@ -2,7 +2,7 @@
  * UI component prop types and interfaces
  */
 
-import { type DeviceType } from './game-data';
+import type { DeviceType, GameData } from './game-data';
 
 // Game Modal component props
 export interface GameModalProps {
@@ -32,14 +32,14 @@ export interface GamePreviewSectionProps {
   selectedDevice: DeviceType;
   onDeviceChange: (device: DeviceType) => void;
   onDeviceModalOpen: (device: DeviceType) => void;
-  gameData: import('./game-data').GameData;
+  gameData: GameData;
   title?: string;
   className?: string;
 }
 
 // Game Description component props
 export interface GameDescriptionProps {
-  gameData: import('./game-data').GameData;
+  gameData: GameData;
   description: string;
   technicalFeatures?: Record<string, string | boolean | number>;
   className?: string;

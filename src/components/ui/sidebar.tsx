@@ -10,15 +10,21 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { COMMON_NUMBERS } from '@/constants/numbers';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
-const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
+const SIDEBAR_COOKIE_MAX_AGE =
+  COMMON_NUMBERS.SECONDS_PER_MINUTE *
+  COMMON_NUMBERS.MINUTES_PER_HOUR *
+  COMMON_NUMBERS.HOURS_PER_DAY *
+  COMMON_NUMBERS.DAYS_PER_WEEK;
 const SIDEBAR_WIDTH = '16rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
 const SIDEBAR_WIDTH_ICON = '3rem';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
+const COLLAPSIBLE_ICON_HIDDEN = 'group-data-[collapsible=icon]:hidden';
 
 type SidebarContext = {
   state: 'expanded' | 'collapsed';
@@ -446,7 +452,7 @@ const SidebarGroupAction = React.forwardRef<
         'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground absolute right-3 top-3.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-none transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
         // Increases the hit area of the button on mobile.
         'after:absolute after:-inset-2 after:md:hidden',
-        'group-data-[collapsible=icon]:hidden',
+        COLLAPSIBLE_ICON_HIDDEN,
         className
       )}
       {...props}
@@ -588,7 +594,7 @@ const SidebarMenuAction = React.forwardRef<
         'peer-data-[size=sm]/menu-button:top-1',
         'peer-data-[size=default]/menu-button:top-1.5',
         'peer-data-[size=lg]/menu-button:top-2.5',
-        'group-data-[collapsible=icon]:hidden',
+        COLLAPSIBLE_ICON_HIDDEN,
         showOnHover &&
           'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 md:opacity-0',
         className
@@ -610,7 +616,7 @@ const SidebarMenuBadge = React.forwardRef<HTMLDivElement, React.ComponentProps<'
         'peer-data-[size=sm]/menu-button:top-1',
         'peer-data-[size=default]/menu-button:top-1.5',
         'peer-data-[size=lg]/menu-button:top-2.5',
-        'group-data-[collapsible=icon]:hidden',
+        COLLAPSIBLE_ICON_HIDDEN,
         className
       )}
       {...props}
@@ -627,7 +633,7 @@ const SidebarMenuSkeleton = React.forwardRef<
 >(({ className, showIcon = false, ...props }, ref) => {
   // Random width between 50 to 90%.
   const width = React.useMemo(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`;
+    return `${Math.floor(Math.random() * COMMON_NUMBERS.PERCENTAGE_40) + COMMON_NUMBERS.PERCENTAGE_50}%`;
   }, []);
 
   return (
@@ -659,7 +665,7 @@ const SidebarMenuSub = React.forwardRef<HTMLUListElement, React.ComponentProps<'
       data-sidebar="menu-sub"
       className={cn(
         'border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l px-2.5 py-0.5',
-        'group-data-[collapsible=icon]:hidden',
+        COLLAPSIBLE_ICON_HIDDEN,
         className
       )}
       {...props}
@@ -694,7 +700,7 @@ const SidebarMenuSubButton = React.forwardRef<
         'data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground',
         size === 'sm' && 'text-xs',
         size === 'md' && 'text-sm',
-        'group-data-[collapsible=icon]:hidden',
+        COLLAPSIBLE_ICON_HIDDEN,
         className
       )}
       {...props}

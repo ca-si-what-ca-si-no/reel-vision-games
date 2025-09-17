@@ -17,7 +17,8 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "prepare": "husky",
-    "check-all": "npm run type-check && npm run lint && npm run format:check && npm test run",
+    "check-all": "npm run type-check && npm run lint -- --max-warnings 0 && npm run format:check && npm test run",
+    "pre-commit-check": "npm run type-check && npm run lint -- --max-warnings 0 && npm test run",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -119,11 +120,10 @@
     "vitest": "^3.2.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
+    "*.{ts,tsx,js,jsx}": [
       "prettier --write"
     ],
-    "*.{json,css,md}": [
+    "*.{json,css,md,yaml,yml}": [
       "prettier --write"
     ]
   }

@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 import AnimatedBackground from '../AnimatedBackground';
 
 describe('AnimatedBackground', () => {
@@ -11,13 +13,13 @@ describe('AnimatedBackground', () => {
     expect(background).toBeInTheDocument();
 
     const orbs = container.querySelectorAll('.floating-orb');
-    expect(orbs).toHaveLength(4);
+    expect(orbs).toHaveLength(COMMON_NUMBERS.GRID_COLUMNS);
 
     const shapes = container.querySelectorAll('.geometric-shape');
-    expect(shapes).toHaveLength(3);
+    expect(shapes).toHaveLength(COMMON_NUMBERS.TEST_COUNT_3);
 
     const particles = container.querySelectorAll('.particle');
-    expect(particles).toHaveLength(4);
+    expect(particles).toHaveLength(COMMON_NUMBERS.GRID_COLUMNS);
 
     const grid = container.querySelector('.animated-grid');
     expect(grid).toBeInTheDocument();

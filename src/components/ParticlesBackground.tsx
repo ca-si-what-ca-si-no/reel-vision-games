@@ -6,7 +6,9 @@ import { loadSlim } from '@tsparticles/slim';
 
 const ParticlesBackground = () => {
   const particlesLoaded = useCallback((container: Container | undefined) => {
-    console.log(container);
+    if (container) {
+      // Particles engine loaded successfully
+    }
   }, []);
 
   useEffect(() => {

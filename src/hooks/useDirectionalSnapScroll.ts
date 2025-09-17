@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 export function useDirectionalSnapScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const lastScrollTop = useRef(0);
@@ -9,101 +11,114 @@ export function useDirectionalSnapScroll() {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (container) {
+      let scrollTimeout: NodeJS.Timeout;
+      let lastScrollTime = Date.now();
 
-    let scrollTimeout: NodeJS.Timeout;
-    let lastScrollTime = Date.now();
-
-    const enableSnapScrolling = () => {
-      if (currentSnapState.current === 'enabled') return;
-
-      currentSnapState.current = 'enabled';
-      container.style.scrollSnapType = 'y mandatory';
-
-      const sections = container.querySelectorAll('.snap-section, .snap-section-last');
-      sections.forEach((section) => {
-        const element = section as HTMLElement;
-        if (section.classList.contains('snap-section-last')) {
-          element.style.scrollSnapAlign = 'start';
-        } else {
-          element.style.scrollSnapAlign = 'center';
+      const enableSnapScrolling = () => {
+        if (currentSnapState.current === 'enabled') {
+          return;
         }
-        element.style.scrollSnapStop = 'always';
-      });
-    };
 
-    const disableSnapScrolling = () => {
-      if (currentSnapState.current === 'disabled') return;
+        currentSnapState.current = 'enabled';
+        container.style.scrollSnapType = 'y mandatory';
 
-      currentSnapState.current = 'disabled';
-      container.style.scrollSnapType = 'none';
+        const sections = container.querySelectorAll('.snap-section, .snap-section-last');
+        sections.forEach((section) => {
+          const element = section as HTMLElement;
+          element.style.scrollSnapAlign = section.classList.contains('snap-section-last')
+            ? 'start'
+            : 'center';
+          element.style.scrollSnapStop = 'always';
+        });
+      };
 
-      const sections = container.querySelectorAll('.snap-section, .snap-section-last');
-      sections.forEach((section) => {
-        const element = section as HTMLElement;
-        element.style.scrollSnapAlign = 'none';
-        element.style.scrollSnapStop = 'normal';
-      });
-    };
+      const disableSnapScrolling = () => {
+        if (currentSnapState.current === 'disabled') {
+          return;
+        }
 
-    const handleScroll = () => {
-      const currentScrollTop = container.scrollTop;
-      const currentTime = Date.now();
-      const timeDelta = currentTime - lastScrollTime;
+        currentSnapState.current = 'disabled';
+        container.style.scrollSnapType = 'none';
 
-      // Calculate scroll velocity
-      scrollVelocity.current = Math.abs(currentScrollTop - lastScrollTop.current) / timeDelta;
+        const sections = container.querySelectorAll('.snap-section, .snap-section-last');
+        sections.forEach((section) => {
+          const element = section as HTMLElement;
+          element.style.scrollSnapAlign = 'none';
+          element.style.scrollSnapStop = 'normal';
+        });
+      };
 
-      const scrollDirection = currentScrollTop > lastScrollTop.current ? 'down' : 'up';
-      const hasScrolledSignificantly = Math.abs(currentScrollTop - lastScrollTop.current) > 5;
+      const handleScroll = () => {
+        const currentScrollTop = container.scrollTop;
+        const currentTime = Date.now();
+        const timeDelta = currentTime - lastScrollTime;
 
-      if (hasScrolledSignificantly) {
-        isScrollingDown.current = scrollDirection === 'down';
-      }
+        // Calculate scroll velocity
+        scrollVelocity.current = Math.abs(currentScrollTop - lastScrollTop.current) / timeDelta;
 
-      lastScrollTop.current = currentScrollTop;
-      lastScrollTime = currentTime;
+        const scrollDirection = currentScrollTop > lastScrollTop.current ? 'down' : 'up';
+        const hasScrolledSignificantly =
+          Math.abs(currentScrollTop - lastScrollTop.current) > COMMON_NUMBERS.SCROLL_THRESHOLD;
 
-      // Clear existing timeout
-      clearTimeout(scrollTimeout);
+        if (hasScrolledSignificantly) {
+          isScrollingDown.current = scrollDirection === 'down';
+        }
 
-      // Only apply snap scrolling on deliberate downward scrolling with reasonable velocity
-      if (isScrollingDown.current && scrollVelocity.current > 0.1 && scrollVelocity.current < 2) {
-        enableSnapScrolling();
-      } else {
-        disableSnapScrolling();
-      }
+        lastScrollTop.current = currentScrollTop;
+        lastScrollTime = currentTime;
 
-      // Disable snap after scroll ends to allow natural scrolling
-      scrollTimeout = setTimeout(() => {
-        if (!isScrollingDown.current || scrollVelocity.current < 0.05) {
+        // Clear existing timeout
+        clearTimeout(scrollTimeout);
+
+        // Only apply snap scrolling on deliberate downward scrolling with reasonable velocity
+        if (
+          isScrollingDown.current &&
+          scrollVelocity.current > COMMON_NUMBERS.MIN_SCROLL_VELOCITY &&
+          scrollVelocity.current < COMMON_NUMBERS.MAX_SCROLL_VELOCITY
+        ) {
+          enableSnapScrolling();
+        } else {
           disableSnapScrolling();
         }
-      }, 100);
-    };
 
-    // Check if we're on desktop with landscape orientation
-    const mediaQuery = window.matchMedia('(min-width: 1024px) and (orientation: landscape)');
+        // Disable snap after scroll ends to allow natural scrolling
+        scrollTimeout = setTimeout(() => {
+          if (
+            !isScrollingDown.current ||
+            scrollVelocity.current < COMMON_NUMBERS.SCROLL_END_VELOCITY
+          ) {
+            disableSnapScrolling();
+          }
+        }, COMMON_NUMBERS.SCROLL_TIMEOUT);
+      };
 
-    const handleMediaChange = () => {
-      if (mediaQuery.matches) {
-        container.addEventListener('scroll', handleScroll, { passive: true });
-        return;
-      }
-      container.removeEventListener('scroll', handleScroll);
-      disableSnapScrolling();
-    };
+      // Check if we're on desktop with landscape orientation
+      const mediaQuery = window.matchMedia('(min-width: 1024px) and (orientation: landscape)');
 
-    // Initial check
-    handleMediaChange();
+      const handleMediaChange = () => {
+        if (mediaQuery.matches) {
+          container.addEventListener('scroll', handleScroll, { passive: true });
+        } else {
+          container.removeEventListener('scroll', handleScroll);
+          disableSnapScrolling();
+        }
+      };
 
-    // Listen for orientation/size changes
-    mediaQuery.addEventListener('change', handleMediaChange);
+      // Initial check
+      handleMediaChange();
 
+      // Listen for orientation/size changes
+      mediaQuery.addEventListener('change', handleMediaChange);
+
+      return () => {
+        container.removeEventListener('scroll', handleScroll);
+        mediaQuery.removeEventListener('change', handleMediaChange);
+        clearTimeout(scrollTimeout);
+      };
+    }
     return () => {
-      container.removeEventListener('scroll', handleScroll);
-      mediaQuery.removeEventListener('change', handleMediaChange);
-      clearTimeout(scrollTimeout);
+      // No cleanup needed when container is not available
     };
   }, []);
 

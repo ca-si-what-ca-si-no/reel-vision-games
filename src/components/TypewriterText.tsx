@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 interface TypewriterTextProps {
   initialText: string;
   typeText: string;
@@ -10,7 +12,7 @@ interface TypewriterTextProps {
 const TypewriterText = ({
   initialText,
   typeText,
-  speed = 25,
+  speed = COMMON_NUMBERS.TYPEWRITER_DELAY,
   className = '',
 }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState(initialText);
@@ -21,22 +23,23 @@ const TypewriterText = ({
     // Начинаем печатать после небольшой задержки
     const startDelay = setTimeout(() => {
       setIsTyping(true);
-    }, 500);
+    }, COMMON_NUMBERS.TYPEWRITER_COMPLETE_DELAY);
 
     return () => clearTimeout(startDelay);
   }, []);
 
   useEffect(() => {
-    if (!isTyping || currentIndex >= typeText.length) {
-      return () => {};
+    if (isTyping && currentIndex < typeText.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(initialText + typeText.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, speed);
+
+      return () => clearTimeout(timer);
     }
-
-    const timer = setTimeout(() => {
-      setDisplayText(initialText + typeText.slice(0, currentIndex + 1));
-      setCurrentIndex(currentIndex + 1);
-    }, speed);
-
-    return () => clearTimeout(timer);
+    return () => {
+      // No cleanup needed when not typing
+    };
   }, [currentIndex, isTyping, initialText, typeText, speed]);
 
   return (

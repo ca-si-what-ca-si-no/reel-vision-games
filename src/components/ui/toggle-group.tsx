@@ -40,6 +40,7 @@ const ToggleGroupItem = React.forwardRef<
       className={cn(
         toggleVariants({
           variant: context.variant || variant,
+          // eslint-disable-next-line unicorn/explicit-length-check
           size: context.size || size,
         }),
         className

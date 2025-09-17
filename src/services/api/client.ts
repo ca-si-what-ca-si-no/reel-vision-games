@@ -1,7 +1,9 @@
 import { QueryClient } from '@tanstack/react-query';
 
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 export const API_BASE_URL = String(
-  (import.meta.env as Record<string, any>)?.VITE_API_URL || '/api'
+  (import.meta.env as Record<string, string>)?.VITE_API_URL || '/api'
 );
 
 // Query configuration constants
@@ -9,7 +11,8 @@ const QUERY_RETRY_COUNT = 3;
 const QUERY_STALE_TIME_MINUTES = 5;
 const QUERY_GC_TIME_MINUTES = 10;
 const MUTATION_RETRY_COUNT = 1;
-const MILLISECONDS_PER_MINUTE = 60 * 1000;
+const MILLISECONDS_PER_MINUTE =
+  COMMON_NUMBERS.SECONDS_PER_MINUTE * COMMON_NUMBERS.MILLISECONDS_PER_SECOND;
 
 export interface ApiError {
   message: string;

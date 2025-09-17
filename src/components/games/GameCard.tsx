@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
+import { COMMON_NUMBERS } from '@/constants/numbers';
 
 interface GameCardFeatures {
   volatility: number;
@@ -41,8 +42,8 @@ const GameBadge = ({ badge }: { badge: string }) => {
 };
 
 const KenoNumbers = () => {
-  const numbers = [1, 2, 4, 6, 7, 8, 13, 13, 20, 25, 28, 39];
-  const selectedNumbers = [2, 4, 25, 39];
+  const numbers = COMMON_NUMBERS.KENO_NUMBERS;
+  const selectedNumbers = COMMON_NUMBERS.KENO_SELECTED;
 
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -55,12 +56,14 @@ const KenoNumbers = () => {
               : 'bg-slate-700/60'
           }`}
           style={{
-            width: index % 3 === 0 ? '48px' : '40px',
-            height: index % 3 === 0 ? '48px' : '40px',
-            top: `${10 + ((index * 12) % 70)}%`,
-            left: `${5 + ((index * 15) % 80)}%`,
-            fontSize: index % 3 === 0 ? '18px' : '16px',
-            zIndex: selectedNumbers.includes(num) ? 10 : 5,
+            width: index % COMMON_NUMBERS.TEST_COUNT_3 === 0 ? '48px' : '40px',
+            height: index % COMMON_NUMBERS.TEST_COUNT_3 === 0 ? '48px' : '40px',
+            top: `${COMMON_NUMBERS.LAYOUT_PERCENTAGE_10 + ((index * COMMON_NUMBERS.LAYOUT_PERCENTAGE_12) % COMMON_NUMBERS.LAYOUT_PERCENTAGE_70)}%`,
+            left: `${COMMON_NUMBERS.SCROLL_THRESHOLD + ((index * COMMON_NUMBERS.LAYOUT_PERCENTAGE_15) % COMMON_NUMBERS.LAYOUT_PERCENTAGE_80)}%`,
+            fontSize: index % COMMON_NUMBERS.TEST_COUNT_3 === 0 ? '18px' : '16px',
+            zIndex: selectedNumbers.includes(num)
+              ? COMMON_NUMBERS.LAYOUT_PERCENTAGE_10
+              : COMMON_NUMBERS.SCROLL_THRESHOLD,
           }}
         >
           {num}
@@ -84,6 +87,51 @@ export default function GameCard({ game, onDetailsClick, onKenoPlayClick }: Game
   };
 
   const isAvailable = game.badge === 'Популярное';
+
+  const renderActionButtons = () => {
+    if (!isAvailable) {
+      return (
+        <Button
+          variant="outline"
+          className="flex-1 rounded-xl border-slate-600 bg-slate-800/50 py-3 text-slate-400"
+          disabled
+        >
+          Скоро в продаже
+        </Button>
+      );
+    }
+
+    if (game.title === 'Keno') {
+      return (
+        <>
+          {onKenoPlayClick && (
+            <Button
+              onClick={onKenoPlayClick}
+              className="flex-1 transform rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
+            >
+              Играть!
+            </Button>
+          )}
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-xl border-slate-600 px-6 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-700 hover:text-white"
+          >
+            <Link to={getGameRoute(game.title)}>Подробнее</Link>
+          </Button>
+        </>
+      );
+    }
+
+    return (
+      <Button
+        asChild
+        className="flex-1 transform rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
+      >
+        <Link to={getGameRoute(game.title)}>Подробнее</Link>
+      </Button>
+    );
+  };
 
   return (
     <div className="hover:shadow-3xl group relative overflow-hidden rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl transition-all duration-300 hover:scale-105">
@@ -118,42 +166,7 @@ export default function GameCard({ game, onDetailsClick, onKenoPlayClick }: Game
 
         {/* Action Buttons */}
         <div className="flex gap-3">
-          {isAvailable ? (
-            game.title === 'Keno' ? (
-              <>
-                {onKenoPlayClick && (
-                  <Button
-                    onClick={onKenoPlayClick}
-                    className="flex-1 transform rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
-                  >
-                    Играть!
-                  </Button>
-                )}
-                <Button
-                  asChild
-                  variant="outline"
-                  className="rounded-xl border-slate-600 px-6 py-3 text-slate-300 transition-all duration-300 hover:bg-slate-700 hover:text-white"
-                >
-                  <Link to={getGameRoute(game.title)}>Подробнее</Link>
-                </Button>
-              </>
-            ) : (
-              <Button
-                asChild
-                className="flex-1 transform rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
-              >
-                <Link to={getGameRoute(game.title)}>Подробнее</Link>
-              </Button>
-            )
-          ) : (
-            <Button
-              variant="outline"
-              className="flex-1 rounded-xl border-slate-600 bg-slate-800/50 py-3 text-slate-400"
-              disabled
-            >
-              Скоро в продаже
-            </Button>
-          )}
+          {renderActionButtons()}
 
           {onDetailsClick && (
             <Button

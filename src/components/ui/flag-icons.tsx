@@ -1,9 +1,11 @@
+import { COMMON_NUMBERS } from '@/constants/numbers';
+
 interface FlagIconProps {
   className?: string;
   size?: number;
 }
 
-export const RussiaFlag = ({ className = '', size = 16 }: FlagIconProps) => (
+export const RussiaFlag = ({ className = '', size = COMMON_NUMBERS.ICON_SIZE }: FlagIconProps) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 16" fill="none">
     <rect width="24" height="16" rx="2" fill="#ffffff" />
     <rect width="24" height="5.33" fill="#ffffff" />
@@ -12,7 +14,7 @@ export const RussiaFlag = ({ className = '', size = 16 }: FlagIconProps) => (
   </svg>
 );
 
-export const USAFlag = ({ className = '', size = 16 }: FlagIconProps) => (
+export const USAFlag = ({ className = '', size = COMMON_NUMBERS.ICON_SIZE }: FlagIconProps) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 16" fill="none">
     <rect width="24" height="16" rx="2" fill="#b22234" />
     <rect y="1.23" width="24" height="1.23" fill="#ffffff" />
@@ -34,7 +36,7 @@ export const USAFlag = ({ className = '', size = 16 }: FlagIconProps) => (
   </svg>
 );
 
-export const GermanyFlag = ({ className = '', size = 16 }: FlagIconProps) => (
+export const GermanyFlag = ({ className = '', size = COMMON_NUMBERS.ICON_SIZE }: FlagIconProps) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 16" fill="none">
     <rect width="24" height="16" rx="2" fill="#ffce00" />
     <rect width="24" height="5.33" fill="#000000" />
@@ -43,7 +45,7 @@ export const GermanyFlag = ({ className = '', size = 16 }: FlagIconProps) => (
   </svg>
 );
 
-export const FranceFlag = ({ className = '', size = 16 }: FlagIconProps) => (
+export const FranceFlag = ({ className = '', size = COMMON_NUMBERS.ICON_SIZE }: FlagIconProps) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 16" fill="none">
     <rect width="24" height="16" rx="2" fill="#ffffff" />
     <rect width="8" height="16" fill="#0055a4" />

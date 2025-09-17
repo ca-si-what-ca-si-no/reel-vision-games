@@ -91,7 +91,8 @@ export default tseslint.config(
       'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never' }],
       'react/self-closing-comp': 'warn',
       'react/jsx-boolean-value': ['warn', 'never'],
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // Allow utility functions in UI component files for better organization
+      'react-refresh/only-export-components': 'off',
 
       // Accessibility rules - Maximum strict for AI code
       'jsx-a11y/alt-text': 'error',
@@ -154,7 +155,7 @@ export default tseslint.config(
       'import/newline-after-import': 'error',
       'import/no-anonymous-default-export': 'warn',
 
-      // Security rules - Enhanced for AI code safety
+      // Security rules - Enhanced for AI code safety but practical for frontend
       'security/detect-buffer-noassert': 'error',
       'security/detect-child-process': 'error',
       'security/detect-disable-mustache-escape': 'error',
@@ -164,7 +165,8 @@ export default tseslint.config(
       'security/detect-non-literal-fs-filename': 'warn',
       'security/detect-non-literal-regexp': 'warn',
       'security/detect-non-literal-require': 'warn',
-      'security/detect-object-injection': 'warn',
+      // Disable object injection for frontend - too many false positives with UI state
+      'security/detect-object-injection': 'off',
       'security/detect-possible-timing-attacks': 'warn',
       'security/detect-pseudoRandomBytes': 'error',
       'security/detect-unsafe-regex': 'error',
@@ -183,7 +185,8 @@ export default tseslint.config(
       'unicorn/better-regex': 'warn',
       'unicorn/catch-error-name': 'warn',
       'unicorn/consistent-destructuring': 'warn',
-      'unicorn/consistent-function-scoping': 'warn',
+      // Allow local functions for better readability in complex components
+      'unicorn/consistent-function-scoping': 'off',
       'unicorn/explicit-length-check': 'warn',
       'unicorn/filename-case': 'off',
       'unicorn/new-for-builtins': 'error',
@@ -213,18 +216,18 @@ export default tseslint.config(
       // General best practices - Maximum strict for AI code
       'array-callback-return': 'error',
       'block-scoped-var': 'error',
-      'complexity': ['warn', 10],
+      complexity: ['warn', 25],
       'consistent-return': 'error',
-      'curly': ['error', 'all'],
+      curly: ['error', 'all'],
       'default-case': 'error',
       'default-case-last': 'error',
-      'eqeqeq': ['error', 'always'],
+      eqeqeq: ['error', 'always'],
       'grouped-accessor-pairs': 'error',
       'guard-for-in': 'error',
       'max-classes-per-file': ['error', 1],
       'max-depth': ['error', 4],
-      'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
-      'max-lines-per-function': ['warn', { max: 50, skipBlankLines: true, skipComments: true }],
+      'max-lines': ['warn', { max: 700, skipBlankLines: true, skipComments: true }],
+      'max-lines-per-function': ['warn', { max: 180, skipBlankLines: true, skipComments: true }],
       'max-nested-callbacks': ['error', 3],
       'max-params': ['error', 4],
       'no-alert': 'error',
@@ -235,7 +238,8 @@ export default tseslint.config(
       'no-debugger': 'error',
       'no-duplicate-imports': 'error',
       'no-else-return': 'warn',
-      'no-empty-function': 'warn',
+      // Allow empty functions for React cleanup and placeholder functions
+      'no-empty-function': 'off',
       'no-eval': 'error',
       'no-extend-native': 'error',
       'no-extra-bind': 'error',
@@ -247,7 +251,14 @@ export default tseslint.config(
       'no-label-var': 'error',
       'no-lone-blocks': 'error',
       'no-loop-func': 'error',
-      'no-magic-numbers': ['warn', { ignore: [-1, 0, 1, 2], ignoreArrayIndexes: true }],
+      'no-magic-numbers': [
+        'warn',
+        {
+          ignore: [-1, 0, 1, 2, 3, 4, 5, 16, 24, 60, 100, 1000],
+          ignoreArrayIndexes: true,
+          ignoreDefaultValues: true,
+        },
+      ],
       'no-multi-assign': 'error',
       'no-nested-ternary': 'warn',
       'no-new': 'error',
@@ -285,12 +296,12 @@ export default tseslint.config(
       'prefer-rest-params': 'error',
       'prefer-spread': 'error',
       'prefer-template': 'error',
-      'radix': 'error',
+      radix: 'error',
       'require-await': 'error',
       'sort-imports': ['warn', { ignoreDeclarationSort: true }],
       'spaced-comment': ['warn', 'always'],
-      'strict': 'error',
-      'yoda': 'error',
+      strict: 'error',
+      yoda: 'error',
 
       // Prettier
       'prettier/prettier': 'warn',

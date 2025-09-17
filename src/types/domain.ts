@@ -1,6 +1,7 @@
 /**
  * Business domain types - core business logic and domain concepts
  */
+import type { GameType } from './game-data';
 
 // User and authentication domain
 export interface User {
@@ -39,7 +40,7 @@ export interface GameUserSettings {
 // Game session and betting domain
 export interface GameSession {
   id: string;
-  gameType: import('./game-data').GameType;
+  gameType: GameType;
   userId: string;
   startTime: string;
   endTime?: string;

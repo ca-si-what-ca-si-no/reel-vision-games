@@ -2,6 +2,7 @@ import { BarChart3, Code, Globe, HeadphonesIcon, Shield, Zap } from 'lucide-reac
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { COMMON_NUMBERS } from '@/constants/numbers';
 
 const Integrators = () => {
   const scrollToSection = (sectionId: string) => {
@@ -98,7 +99,7 @@ const Integrators = () => {
               key={index}
               className="gaming-border card-shadow smooth-transition group animate-slide-in hover:shadow-glow"
               style={{
-                animationDelay: `${index * 0.1}s`,
+                animationDelay: `${index * COMMON_NUMBERS.DECIMAL_PRECISION}s`,
               }}
             >
               <CardContent className="p-6">
