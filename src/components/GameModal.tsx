@@ -46,6 +46,7 @@ const GameModal = ({
                 size="icon"
                 className="absolute left-2 top-1/2 -translate-y-1/2 transform bg-background/80 backdrop-blur-sm"
                 onClick={handlePrevious}
+                aria-label="Previous screenshot"
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -54,6 +55,7 @@ const GameModal = ({
                 size="icon"
                 className="absolute right-2 top-1/2 -translate-y-1/2 transform bg-background/80 backdrop-blur-sm"
                 onClick={handleNext}
+                aria-label="Next screenshot"
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -67,6 +69,7 @@ const GameModal = ({
               <button
                 key={index}
                 onClick={() => onScreenshotChange(screenshot)}
+                aria-label={`Screenshot ${index + 1}`}
                 className={`h-12 w-20 flex-shrink-0 rounded border-2 transition-all ${
                   activeScreenshot === screenshot
                     ? 'border-primary'
