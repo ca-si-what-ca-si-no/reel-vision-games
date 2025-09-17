@@ -1,33 +1,21 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Keno from "./pages/Keno";
-import Crash from "./pages/Crash";
-import Hilo from "./pages/Hilo";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { AppProvider } from '@/providers/AppProvider';
+import { routes } from '@/router/routes';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
-const queryClient = new QueryClient();
+function AppRoutes() {
+  const element = useRoutes(routes);
+  return element;
+}
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+  <ErrorBoundary>
+    <AppProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/keno" element={<Keno />} />
-          <Route path="/crash" element={<Crash />} />
-          <Route path="/hilo" element={<Hilo />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    </AppProvider>
+  </ErrorBoundary>
 );
 
 export default App;
