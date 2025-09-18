@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { Star } from "lucide-react";
 
 interface GameFeatures {
   volatility: number;
@@ -10,7 +10,6 @@ interface GameFeatures {
   maxBet?: string;
   roundTime?: string;
   autoPlay?: boolean;
-  provablyFair?: boolean;
 }
 
 interface TechnicalSpecsProps {
@@ -20,34 +19,35 @@ interface TechnicalSpecsProps {
 const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
   return (
     <div>
-      <h2 className="mb-6 text-2xl font-semibold">Технические характеристики</h2>
-
+      <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
+      
       {/* Основные показатели */}
       <div className="space-y-6">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="gaming-border card-shadow rounded-lg p-6">
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-yellow-400/20 to-orange-500/20">
-                <Star className="h-5 w-5 text-yellow-400" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="gaming-border card-shadow p-6 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400/20 to-orange-500/20 flex items-center justify-center">
+                <Star className="w-5 h-5 text-yellow-400" />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">Волатильность</h3>
-                <p className="text-xs text-muted-foreground">От 1 до 5 звезд</p>
+                <p className="text-xs text-muted-foreground">
+                  {features.volatility <= 2 ? 'Низкая' : 
+                   features.volatility <= 3 ? 'Средняя' : 
+                   features.volatility <= 4 ? 'Средне-высокая' : 'Высокая'}
+                </p>
               </div>
             </div>
             <div className="flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-6 w-6 ${i < features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground/30'}`}
-                />
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`w-6 h-6 ${i < features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground/30'}`} />
               ))}
             </div>
           </div>
 
-          <div className="gaming-border card-shadow rounded-lg p-6">
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-green-400/20 to-emerald-500/20">
+          <div className="gaming-border card-shadow p-6 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center">
                 <span className="text-lg font-bold text-green-400">%</span>
               </div>
               <div>
@@ -61,10 +61,10 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
 
         {/* Детальная информация */}
         <div className="grid grid-cols-1 gap-4">
-          <div className="gaming-border card-shadow rounded-lg p-5">
+          <div className="gaming-border card-shadow p-5 rounded-lg">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h4 className="mb-1 font-medium text-foreground">Максимальный множитель</h4>
+                <h4 className="font-medium text-foreground mb-1">Максимальный множитель</h4>
                 <p className="text-sm text-muted-foreground">Потенциальный выигрыш</p>
               </div>
               <div className="text-right">
@@ -74,18 +74,15 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
             </div>
           </div>
 
-          <div className="gaming-border card-shadow rounded-lg p-5">
+          <div className="gaming-border card-shadow p-5 rounded-lg">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h4 className="mb-1 font-medium text-foreground">Адаптивный дизайн</h4>
+                <h4 className="font-medium text-foreground mb-1">Платформы</h4>
                 <p className="text-sm text-muted-foreground">Поддерживаемые устройства</p>
               </div>
               <div className="flex gap-2">
                 {features.platforms.map((platform, i) => (
-                  <span
-                    key={i}
-                    className="rounded-md bg-blue-400/20 px-2 py-1 text-xs text-blue-400"
-                  >
+                  <span key={i} className="px-2 py-1 text-xs bg-blue-400/20 text-blue-400 rounded-md">
                     {platform}
                   </span>
                 ))}
@@ -93,18 +90,15 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
             </div>
           </div>
 
-          <div className="gaming-border card-shadow rounded-lg p-5">
+          <div className="gaming-border card-shadow p-5 rounded-lg">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h4 className="mb-1 font-medium text-foreground">Локализация</h4>
+                <h4 className="font-medium text-foreground mb-1">Локализация</h4>
                 <p className="text-sm text-muted-foreground">Доступные языки</p>
               </div>
               <div className="flex gap-2">
                 {features.languages.map((lang, i) => (
-                  <span
-                    key={i}
-                    className="rounded-md bg-green-400/20 px-2 py-1 text-xs text-green-400"
-                  >
+                  <span key={i} className="px-2 py-1 text-xs bg-green-400/20 text-green-400 rounded-md">
                     {lang}
                   </span>
                 ))}
@@ -113,49 +107,33 @@ const TechnicalSpecs = ({ features }: TechnicalSpecsProps) => {
           </div>
 
           {/* Дополнительные характеристики */}
-          {(features.minBet ||
-            features.maxBet ||
-            features.roundTime ||
-            features.autoPlay !== null ||
-            features.provablyFair !== null) && (
-            <div className="gaming-border card-shadow rounded-lg p-5">
-              <h4 className="mb-3 font-medium text-foreground">Дополнительные параметры</h4>
-              <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+          {(features.minBet || features.maxBet || features.roundTime || features.autoPlay !== undefined) && (
+            <div className="gaming-border card-shadow p-5 rounded-lg">
+              <h4 className="font-medium text-foreground mb-3">Дополнительные параметры</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 {features.minBet && (
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Минимальная ставка:</span>
-                    <span className="font-medium text-foreground">{features.minBet}</span>
+                    <span className="text-foreground font-medium">{features.minBet}</span>
                   </div>
                 )}
                 {features.maxBet && (
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Максимальная ставка:</span>
-                    <span className="font-medium text-foreground">{features.maxBet}</span>
+                    <span className="text-foreground font-medium">{features.maxBet}</span>
                   </div>
                 )}
                 {features.roundTime && (
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Время раунда:</span>
-                    <span className="font-medium text-foreground">{features.roundTime}</span>
+                    <span className="text-foreground font-medium">{features.roundTime}</span>
                   </div>
                 )}
-                {features.autoPlay !== null && (
+                {features.autoPlay !== undefined && (
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Автоигра:</span>
-                    <span
-                      className={`font-medium ${features.autoPlay ? 'text-green-400' : 'text-red-400'}`}
-                    >
+                    <span className={`font-medium ${features.autoPlay ? 'text-green-400' : 'text-red-400'}`}>
                       {features.autoPlay ? '✓ Да' : '✗ Нет'}
-                    </span>
-                  </div>
-                )}
-                {features.provablyFair !== null && (
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Provably Fair:</span>
-                    <span
-                      className={`font-medium ${features.provablyFair ? 'text-green-400' : 'text-red-400'}`}
-                    >
-                      {features.provablyFair ? '✓ Поддерживается' : '✗ Не поддерживается'}
                     </span>
                   </div>
                 )}

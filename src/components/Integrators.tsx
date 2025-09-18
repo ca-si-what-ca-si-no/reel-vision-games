@@ -1,131 +1,97 @@
-import { BarChart3, Code, Globe, HeadphonesIcon, Shield, Zap } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { COMMON_NUMBERS } from '@/constants/numbers';
-
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
 const Integrators = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-  const benefits = [
-    {
-      icon: Code,
-      title: 'Простое API',
-      description: 'Интуитивное API для быстрой интеграции игр в вашу платформу',
-    },
-    {
-      icon: Shield,
-      title: 'Настраиваемый RTP',
-      description: 'Полный контроль над RTP от 90% до 99% для каждой игры',
-    },
-    {
-      icon: Zap,
-      title: 'Быстрый запуск',
-      description: 'Интеграция новых игр за 24-48 часов',
-    },
-    {
-      icon: HeadphonesIcon,
-      title: 'Управление играми',
-      description: 'Удобные инструменты для настройки и мониторинга игрового процесса',
-    },
-    {
-      icon: BarChart3,
-      title: 'Реалтайм аналитика',
-      description: 'Подробная статистика и отчеты по производительности игр в реальном времени',
-    },
-    {
-      icon: Globe,
-      title: 'Готовые решения',
-      description: 'Keno, Hilo и пакет Crash игр готовы к немедленной интеграции',
-    },
-  ];
-  const _gamePackages = [
-    {
-      title: 'Keno',
-      description: 'Классическая лотерейная игра',
-      features: [
-        'Настраиваемый RTP 90-99%',
-        'Управление через API',
-        'Мобильная версия',
-        'Реалтайм статистика',
-        'Полная документация API',
-      ],
-    },
-    {
-      title: 'Hilo',
-      description: 'Карточная игра с высокой отдачей',
-      features: [
-        'Быстрые раунды игры',
-        'Настройка лимитов ставок',
-        'Адаптивный дизайн',
-        'Встроенная аналитика',
-        'Детальная статистика',
-      ],
-    },
-    {
-      title: 'Crash Games Pack',
-      description: 'Пакет из 5 crash игр',
-      features: [
-        '5 уникальных crash игр',
-        'Единая панель управления',
-        'Высокая волатильность',
-        'Настраиваемые параметры',
-        '24/7 техподдержка',
-      ],
-    },
-  ];
-  return (
-    <section
-      id="integrators"
-      className="snap-section relative flex min-h-screen items-center justify-center"
-    >
-      <div className="container mx-auto w-full px-6">
-        <div className="mb-16 animate-fade-in text-center">
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            <span className="text-foreground">Для</span>{' '}
-            <span className="bg-gradient-accent bg-clip-text text-transparent">интеграторов</span>
+  const benefits = [{
+    icon: Code,
+    title: "Простое API",
+    description: "Интуитивное API для быстрой интеграции игр в вашу платформу"
+  }, {
+    icon: Shield,
+    title: "Настраиваемый RTP",
+    description: "Полный контроль над RTP от 90% до 99% для каждой игры"
+  }, {
+    icon: Zap,
+    title: "Быстрый запуск",
+    description: "Интеграция новых игр за 24-48 часов"
+  }, {
+    icon: HeadphonesIcon,
+    title: "Управление играми",
+    description: "Удобные инструменты для настройки и мониторинга игрового процесса"
+  }, {
+    icon: BarChart3,
+    title: "Реалтайм аналитика",
+    description: "Подробная статистика и отчеты по производительности игр в реальном времени"
+  }, {
+    icon: Globe,
+    title: "Готовые решения",
+    description: "Keno, Hilo и пакет Crash игр готовы к немедленной интеграции"
+  }];
+  const gamePackages = [{
+    title: "Keno",
+    description: "Классическая лотерейная игра",
+    features: ["Настраиваемый RTP 90-99%", "Управление через API", "Мобильная версия", "Реалтайм статистика", "Полная документация API"]
+  }, {
+    title: "Hilo",
+    description: "Карточная игра с высокой отдачей",
+    features: ["Быстрые раунды игры", "Настройка лимитов ставок", "Адаптивный дизайн", "Встроенная аналитика", "Детальная статистика"]
+  }, {
+    title: "Crash Games Pack",
+    description: "Пакет из 5 crash игр",
+    features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
+  }];
+  return <section id="integrators" className="min-h-screen flex items-center justify-center relative snap-section">
+      <div className="container mx-auto px-6 w-full">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-foreground">Для</span>{" "}
+            <span className="text-transparent bg-gradient-accent bg-clip-text">интеграторов</span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg leading-tight text-muted-foreground md:text-xl">
-            Комплексные решения для интеграции игрового контента в ваши платформы. От API до
-            технической поддержки — всё для успешного запуска.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
+            Комплексные решения для интеграции игрового контента в ваши платформы. 
+            От API до технической поддержки — всё для успешного запуска.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="mb-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => (
-            <Card
-              key={index}
-              className="gaming-border card-shadow smooth-transition group animate-slide-in hover:shadow-glow"
-              style={{
-                animationDelay: `${index * COMMON_NUMBERS.DECIMAL_PRECISION}s`,
-              }}
-            >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {benefits.map((benefit, index) => <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in" style={{
+          animationDelay: `${index * 0.1}s`
+        }}>
               <CardContent className="p-6">
-                <div className="smooth-transition mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-accent group-hover:scale-110">
-                  <benefit.icon className="h-6 w-6 text-accent-foreground" />
+                <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
+                  <benefit.icon className="w-6 h-6 text-accent-foreground" />
                 </div>
-                <h3 className="mb-3 text-xl font-semibold text-foreground">{benefit.title}</h3>
-                <p className="leading-relaxed text-muted-foreground">{benefit.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">
+                  {benefit.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {benefit.description}
+                </p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Game Packages */}
+        
 
         {/* CTA Section */}
-        <div className="border border-border/50 bg-background/20 p-12 text-center backdrop-blur-sm">
-          <h3 className="mb-6 text-3xl font-bold text-foreground">Готовы начать интеграцию?</h3>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Все игры поставляются с инструментами управления и настраиваемым RTP. Начните
-            тестирование прямо сейчас!
+        <div className="p-12 text-center backdrop-blur-sm bg-background/20 border border-border/50">
+          <h3 className="text-3xl font-bold mb-6 text-foreground">
+            Готовы начать интеграцию?
+          </h3>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Все игры поставляются с инструментами управления и настраиваемым RTP. 
+            Начните тестирование прямо сейчас!
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button
-              size="lg"
-              className="accent-gradient glow-effect font-semibold"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="accent-gradient glow-effect font-semibold" 
               onClick={() => scrollToSection('contact')}
             >
               Демо доступ
@@ -133,7 +99,6 @@ const Integrators = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Integrators;

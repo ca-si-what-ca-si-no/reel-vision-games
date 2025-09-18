@@ -1,8 +1,3 @@
-/* Import Design System Modules */
-@import './styles/design-system.css';
-@import './styles/animations.css';
-@import './styles/components.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,7 +46,7 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(250 40% 15%), hsl(240 50% 18%), hsl(250 30% 12%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 16%), hsl(240 15% 20%));
     --gradient-accent: linear-gradient(135deg, hsl(180 60% 40%), hsl(250 60% 35%));
-
+    
     /* Softer Effects */
     --shadow-glow: 0 0 30px hsla(250, 50%, 45%, 0.25);
     --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.4);
@@ -115,20 +110,19 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Directional Snap Scrolling - Controlled by JavaScript */
+  /* Snap Scrolling */
   .snap-scroll-container {
-    scroll-snap-type: none; /* Initially disabled, controlled by JS */
+    scroll-snap-type: y mandatory;
   }
 
   .snap-section {
-    scroll-snap-align: none; /* Initially disabled, controlled by JS */
-    scroll-snap-stop: normal; /* Initially disabled, controlled by JS */
-    scroll-margin-top: 120px; /* Ensure section headers are visible */
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .snap-section-last {
-    scroll-snap-align: none; /* Initially disabled, controlled by JS */
-    scroll-snap-stop: normal; /* Initially disabled, controlled by JS */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     padding-bottom: 100px; /* Allow scrolling to footer */
     scroll-margin-bottom: 50px;
   }
@@ -136,30 +130,33 @@ All colors MUST be HSL.
   .hero-gradient {
     background: var(--gradient-hero);
   }
-
+  
   .card-gradient {
     background: var(--gradient-card);
   }
-
+  
   .accent-gradient {
     background: var(--gradient-accent);
   }
-
+  
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
-
+  
   .card-shadow {
     box-shadow: var(--shadow-card);
   }
-
+  
   .smooth-transition {
     transition: var(--transition-smooth);
   }
-
+  
   .gaming-border {
     border: 1px solid hsl(var(--border));
-    background: linear-gradient(135deg, hsl(var(--card)), hsl(0 0% 10%));
+    background: linear-gradient(135deg, 
+      hsl(var(--card)), 
+      hsl(0 0% 10%)
+    );
   }
 
   .background-pattern {
@@ -174,7 +171,7 @@ All colors MUST be HSL.
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
+    background-image: 
       radial-gradient(circle at 25% 25%, hsl(var(--primary-glow) / 0.1) 0%, transparent 50%),
       radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.08) 0%, transparent 50%),
       radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.05) 0%, transparent 70%);
@@ -182,19 +179,225 @@ All colors MUST be HSL.
     animation: float-bg 4s ease-in-out infinite;
   }
 
-  /* Duplicate animation styles removed - now in components.css and animations.css */
+  /* Animated Background Elements */
+  .animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float-orb 3s ease-in-out infinite;
+  }
+
+  .floating-orb:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, hsl(var(--primary-glow) / 0.4), transparent);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 4s;
+  }
+
+  .floating-orb:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, hsl(var(--accent) / 0.3), transparent);
+    top: 60%;
+    right: 15%;
+    animation-delay: -5s;
+    animation-duration: 5s;
+  }
+
+  .floating-orb:nth-child(3) {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.2), transparent);
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -10s;
+    animation-duration: 6s;
+  }
+
+  .floating-orb:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, hsl(var(--secondary) / 0.4), transparent);
+    top: 30%;
+    right: 30%;
+    animation-delay: -15s;
+    animation-duration: 3.6s;
+  }
+
+  /* Geometric Shapes */
+  .geometric-shape {
+    position: absolute;
+    opacity: 0.1;
+    border: 1px solid hsl(var(--primary-glow) / 0.3);
+    animation: rotate-float 5s linear infinite;
+  }
+
+  .geometric-shape:nth-child(5) {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    right: 10%;
+    animation-delay: 0s;
+    transform-origin: center;
+  }
+
+  .geometric-shape:nth-child(6) {
+    width: 60px;
+    height: 60px;
+    bottom: 30%;
+    left: 15%;
+    animation-delay: -8s;
+    border-radius: 30%;
+  }
+
+  .geometric-shape:nth-child(7) {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 5%;
+    animation-delay: -16s;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border: none;
+    background: linear-gradient(45deg, hsl(var(--accent) / 0.1), transparent);
+  }
+
+  /* Grid Animation */
+  .animated-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.2) 1px, transparent 1px);
+    background-size: 100px 100px;
+    animation: grid-move 40s linear infinite;
+    opacity: 0.6;
+  }
+
+  /* Particle System */
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: hsl(var(--primary-glow));
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-float 8s ease-in-out infinite;
+  }
+
+  .particle:nth-child(8) {
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  .particle:nth-child(9) {
+    left: 40%;
+    animation-delay: -2s;
+  }
+
+  .particle:nth-child(10) {
+    left: 60%;
+    animation-delay: -4s;
+  }
+
+  .particle:nth-child(11) {
+    left: 80%;
+    animation-delay: -6s;
+  }
+
+  /* Keyframe Animations */
+  @keyframes float-bg {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+      filter: blur(40px);
+    }
+    50% { 
+      transform: translateY(-100px) rotate(180deg);
+      filter: blur(60px);
+    }
+  }
+
+  @keyframes float-orb {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(150px, -150px) scale(1.5);
+    }
+    50% {
+      transform: translate(-100px, -300px) scale(0.5);
+    }
+    75% {
+      transform: translate(-200px, 100px) scale(1.25);
+    }
+  }
+
+  @keyframes rotate-float {
+    0% {
+      transform: rotate(0deg) translateY(0px);
+    }
+    25% {
+      transform: rotate(90deg) translateY(-100px);
+    }
+    50% {
+      transform: rotate(180deg) translateY(-50px);
+    }
+    75% {
+      transform: rotate(270deg) translateY(-150px);
+    }
+    100% {
+      transform: rotate(360deg) translateY(0px);
+    }
+  }
+
+  @keyframes grid-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(100px, 100px);
+    }
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(100vh) scale(0);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(90vh) scale(1);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(-10vh) scale(1);
+    }
+  }
 
   .background-dots {
-    background-image: radial-gradient(
-      circle at 1px 1px,
-      hsl(var(--muted-foreground) / 0.15) 1px,
-      transparent 0
-    );
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--muted-foreground) / 0.15) 1px, transparent 0);
     background-size: 20px 20px;
   }
 
   .background-grid {
-    background-image:
+    background-image: 
       linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -202,7 +405,7 @@ All colors MUST be HSL.
 
   /* Additional grid pattern for more variety */
   .bg-grid-pattern {
-    background-image:
+    background-image: 
       linear-gradient(hsl(var(--primary-glow) / 0.1) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--accent) / 0.1) 1px, transparent 1px);
     background-size: 60px 60px;
@@ -243,7 +446,7 @@ All colors MUST be HSL.
 
   .game-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow:
+    box-shadow: 
       0 20px 40px -10px hsla(0, 0%, 0%, 0.3),
       0 0 30px hsla(var(--primary-glow) / 0.3),
       inset 0 1px 0 hsla(255, 255%, 255%, 0.1);
@@ -309,18 +512,10 @@ All colors MUST be HSL.
     animation: slide-in 0.3s ease forwards;
   }
 
-  .feature-item:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .feature-item:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .feature-item:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .feature-item:nth-child(4) {
-    animation-delay: 0.4s;
-  }
+  .feature-item:nth-child(1) { animation-delay: 0.1s; }
+  .feature-item:nth-child(2) { animation-delay: 0.2s; }
+  .feature-item:nth-child(3) { animation-delay: 0.3s; }
+  .feature-item:nth-child(4) { animation-delay: 0.4s; }
 
   .feature-icon {
     position: absolute;
@@ -372,15 +567,14 @@ All colors MUST be HSL.
   }
 
   @keyframes demo-pulse {
-    0%,
-    100% {
-      box-shadow:
+    0%, 100% {
+      box-shadow: 
         0 4px 20px hsla(var(--primary) / 0.2),
         0 0 15px hsla(var(--accent) / 0.15);
       transform: scale(1);
     }
     50% {
-      box-shadow:
+      box-shadow: 
         0 5px 22px hsla(var(--primary) / 0.25),
         0 0 20px hsla(var(--accent) / 0.2);
       transform: scale(1.02);
@@ -388,8 +582,7 @@ All colors MUST be HSL.
   }
 
   @keyframes demo-glow {
-    0%,
-    100% {
+    0%, 100% {
       opacity: 0;
     }
     50% {
@@ -411,12 +604,7 @@ All colors MUST be HSL.
     left: -100%;
     width: 100%;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      hsl(var(--muted-foreground) / 0.5),
-      transparent
-    );
+    background: linear-gradient(90deg, transparent, hsl(var(--muted-foreground) / 0.5), transparent);
     animation: shimmer 2s infinite;
   }
 
@@ -458,7 +646,7 @@ All colors MUST be HSL.
     background: linear-gradient(145deg, #1c1c1e, #2c2c2e);
     border-radius: 47px;
     padding: 8px;
-    box-shadow:
+    box-shadow: 
       0 0 0 1px #3a3a3c,
       0 0 0 2px #1c1c1e,
       0 20px 40px rgba(0, 0, 0, 0.6),
@@ -498,7 +686,7 @@ All colors MUST be HSL.
     background: #000;
     border-radius: 39px;
     overflow: hidden;
-    box-shadow:
+    box-shadow: 
       inset 0 0 0 1px rgba(255, 255, 255, 0.05),
       inset 0 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
@@ -523,7 +711,7 @@ All colors MUST be HSL.
     background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
     border-radius: 35px;
     padding: 30px;
-    box-shadow:
+    box-shadow: 
       0 0 0 3px #333,
       0 0 0 4px #666,
       0 12px 35px rgba(0, 0, 0, 0.5),
@@ -554,12 +742,8 @@ All colors MUST be HSL.
   }
 
   @keyframes shimmer {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 100%;
-    }
+    0% { left: -100%; }
+    100% { left: 100%; }
   }
 
   /* Interactive Button Animations */
@@ -569,7 +753,7 @@ All colors MUST be HSL.
 
   .interactive-hover:hover {
     transform: translateY(-2px);
-    box-shadow:
+    box-shadow: 
       0 10px 25px -5px rgba(0, 0, 0, 0.3),
       0 0 20px hsla(var(--primary-glow) / 0.4);
   }
@@ -580,8 +764,7 @@ All colors MUST be HSL.
   }
 
   @keyframes float-gentle {
-    0%,
-    100% {
+    0%, 100% {
       transform: translateY(0px);
     }
     50% {
@@ -605,9 +788,7 @@ All colors MUST be HSL.
     border-radius: 50%;
     background: hsla(var(--primary-glow) / 0.3);
     transform: translate(-50%, -50%);
-    transition:
-      width 0.6s ease,
-      height 0.6s ease;
+    transition: width 0.6s ease, height 0.6s ease;
     z-index: 0;
   }
 

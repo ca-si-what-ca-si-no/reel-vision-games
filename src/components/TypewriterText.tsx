@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-
-import { COMMON_NUMBERS } from '@/constants/numbers';
+import { useState, useEffect } from 'react';
 
 interface TypewriterTextProps {
   initialText: string;
@@ -9,12 +7,7 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-const TypewriterText = ({
-  initialText,
-  typeText,
-  speed = COMMON_NUMBERS.TYPEWRITER_DELAY,
-  className = '',
-}: TypewriterTextProps) => {
+const TypewriterText = ({ initialText, typeText, speed = 25, className = "" }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState(initialText);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
@@ -23,23 +16,20 @@ const TypewriterText = ({
     // Начинаем печатать после небольшой задержки
     const startDelay = setTimeout(() => {
       setIsTyping(true);
-    }, COMMON_NUMBERS.TYPEWRITER_COMPLETE_DELAY);
+    }, 500);
 
     return () => clearTimeout(startDelay);
   }, []);
 
   useEffect(() => {
-    if (isTyping && currentIndex < typeText.length) {
-      const timer = setTimeout(() => {
-        setDisplayText(initialText + typeText.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, speed);
+    if (!isTyping || currentIndex >= typeText.length) return;
 
-      return () => clearTimeout(timer);
-    }
-    return () => {
-      // No cleanup needed when not typing
-    };
+    const timer = setTimeout(() => {
+      setDisplayText(initialText + typeText.slice(0, currentIndex + 1));
+      setCurrentIndex(currentIndex + 1);
+    }, speed);
+
+    return () => clearTimeout(timer);
   }, [currentIndex, isTyping, initialText, typeText, speed]);
 
   return (

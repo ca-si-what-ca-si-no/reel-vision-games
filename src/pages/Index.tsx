@@ -1,23 +1,19 @@
-import { useEffect } from 'react';
-
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import Games from '@/components/Games';
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Integrators from '@/components/Integrators';
-import ParticlesBackground from '@/components/ParticlesBackground';
-import { useDirectionalSnapScroll } from '@/hooks';
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Games from "@/components/Games";
+import Integrators from "@/components/Integrators";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/ParticlesBackground";
+import { useEffect } from "react";
 
 const Index = () => {
-  const containerRef = useDirectionalSnapScroll();
-
   useEffect(() => {
-    const { hash } = window.location;
+    const hash = window.location.hash;
     if (hash) {
       setTimeout(() => {
-        const el = document.querySelector(hash);
+        const el = document.querySelector(hash) as HTMLElement | null;
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -26,22 +22,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="snap-scroll-container h-screen overflow-y-auto">
+    <div className="h-screen overflow-y-auto snap-scroll-container">
       <ParticlesBackground />
       {/* Animated Background */}
       <div className="animated-background">
-        <div className="floating-orb" />
-        <div className="floating-orb" />
-        <div className="floating-orb" />
-        <div className="floating-orb" />
-        <div className="geometric-shape" />
-        <div className="geometric-shape" />
-        <div className="geometric-shape" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="particle" />
-        <div className="animated-grid" />
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="geometric-shape"></div>
+        <div className="geometric-shape"></div>
+        <div className="geometric-shape"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="animated-grid"></div>
       </div>
       <Header />
       <main>
