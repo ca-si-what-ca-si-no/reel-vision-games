@@ -37,7 +37,7 @@ export function useGamesData() {
         maxMultiplier: 'x50000',
       },
       badge: 'Скоро в продаже',
-      image: '/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png',
+      image: '/space-ball-chrome.svg',
     },
     {
       title: 'Arrow Shot',
