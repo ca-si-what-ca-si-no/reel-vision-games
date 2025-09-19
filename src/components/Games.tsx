@@ -136,17 +136,9 @@ const Games = () => {
                            Играть!
                          </Button>
                        </Link>
-                    </div> : game.title === "Space Ball" || game.title === "Arrow Shot" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                        Подробнее
-                      </button>
-                    </div> : game.title === "Hilo" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <Link to="/hilo" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                        Подробнее
-                      </Link>
                     </div> : <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
-                        Подробнее
+                      <button disabled className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base opacity-50 cursor-not-allowed">
+                        Скоро в продаже
                       </button>
                     </div>}
                 </div>
