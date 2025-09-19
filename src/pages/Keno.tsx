@@ -327,7 +327,7 @@ const Keno = () => {
             {/* Right Side - Demo (40%) */}
             <div className="xl:col-span-2 space-y-6">
               {/* Demo Section */}
-              <div className="sticky top-8">
+              <div>
                 <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
                 
                 {/* Mobile Play Button - Only visible on mobile */}
