@@ -472,22 +472,12 @@ All colors MUST be HSL.
     overflow: hidden;
   }
 
-  .game-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 60px 60px 0 0;
-    border-color: hsl(var(--primary-glow) / 0.2) transparent transparent transparent;
-    transition: all 0.3s ease;
+.game-image::after {
+    content: none;
   }
 
-  .game-card:hover .game-image::after {
-    border-width: 80px 80px 0 0;
-    border-color: hsl(var(--primary-glow) / 0.4) transparent transparent transparent;
+.game-card:hover .game-image::after {
+    content: none;
   }
 
   .game-badge {
