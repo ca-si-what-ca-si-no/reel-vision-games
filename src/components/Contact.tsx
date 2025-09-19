@@ -20,7 +20,7 @@ const Contact = () => {
     content: "2xWet Studio",
     description: "Профессиональная сеть и новости"
   }];
-  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section">
+  return <section id="contact" className="min-h-screen flex items-center justify-center relative snap-section py-24">
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
