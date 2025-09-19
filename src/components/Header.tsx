@@ -34,12 +34,6 @@ const Header = () => {
           
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <button 
-              onClick={() => scrollToSection('about')} 
-              className="text-muted-foreground hover:text-foreground smooth-transition bg-transparent border-none cursor-pointer"
-            >
-              О нас
-            </button>
-            <button 
               onClick={() => scrollToSection('games')} 
               className="text-muted-foreground hover:text-foreground smooth-transition bg-transparent border-none cursor-pointer"
             >
