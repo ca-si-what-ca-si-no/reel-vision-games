@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border">
       <div className="max-w-[1200px] mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
@@ -16,7 +16,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Профессиональная игровая студия, создающая инновационные решения для казино. 
+              Профессиональная игровая студия, создающая инновационные решения для казино.
               Экспертиза в разработке, интеграции и поддержке игрового контента.
             </p>
             <div className="space-y-3">
@@ -33,28 +33,6 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* Navigation */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Навигация</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#games" className="text-muted-foreground hover:text-accent smooth-transition">
-                  Наши игры
-                </a>
-              </li>
-              <li>
-                <a href="#integrators" className="text-muted-foreground hover:text-accent smooth-transition">
-                  Интеграторам
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-muted-foreground hover:text-accent smooth-transition">
-                  Контакты
-                </a>
-              </li>
-            </ul>
           </div>
 
           {/* Services */}
