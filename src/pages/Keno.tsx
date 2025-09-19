@@ -104,7 +104,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-green-400 font-bold text-lg flex items-center justify-center">
                       %
                     </div>
-                    <div className="font-semibold text-green-400">Любой по запросу</div>
+                    <div className="font-semibold text-green-400">Zero effort интеграция</div>
                     
                   </div>
 
