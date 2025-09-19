@@ -139,7 +139,7 @@ const Games = () => {
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? (
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                      <button onClick={() => setIsKenoModalOpen(true)} className="bg-gradient-to-r from-primary/90 via-primary-glow/90 to-accent/90 text-primary-foreground font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base border border-primary-glow/30 shadow-lg hover:shadow-xl hover:from-primary hover:via-primary-glow hover:to-accent transition-all duration-300 hover:scale-[1.02]">
                         Играть!
                       </button>
                       <Link to="/keno" className="outline-button py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap">
