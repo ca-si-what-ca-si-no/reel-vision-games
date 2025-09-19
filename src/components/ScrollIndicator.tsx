@@ -12,6 +12,8 @@ const ScrollIndicator = () => {
   ];
 
   useEffect(() => {
+    let ticking = false;
+
     const updateScrollProgress = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollTop = window.scrollY;
@@ -20,28 +22,58 @@ const ScrollIndicator = () => {
     };
 
     const updateActiveSection = () => {
-      const sectionElements = sections.map(section => ({
-        id: section.id,
-        element: document.getElementById(section.id),
-        offset: document.getElementById(section.id)?.getBoundingClientRect().top || 0
-      }));
+      const triggerPoint = window.innerHeight * 0.3; // Триггер на 30% высоты экрана сверху
 
-      // Находим секцию, которая ближе всего к центру экрана
-      const centerY = window.innerHeight / 2;
-      const activeEl = sectionElements.reduce((prev, current) => {
-        const prevDistance = Math.abs(prev.offset - centerY);
-        const currentDistance = Math.abs(current.offset - centerY);
-        return currentDistance < prevDistance ? current : prev;
-      });
+      // Находим все секции с их позициями
+      const sectionElements = sections.map(section => {
+        const element = document.getElementById(section.id);
+        return {
+          id: section.id,
+          element,
+          top: element?.getBoundingClientRect().top || 0,
+          bottom: element?.getBoundingClientRect().bottom || 0
+        };
+      }).filter(section => section.element); // Убираем секции без элементов
 
-      if (activeEl && activeEl.id !== activeSection) {
-        setActiveSection(activeEl.id);
+      // Ищем активную секцию - первую секцию, чей верх находится выше триггера,
+      // но низ находится ниже триггера (секция пересекает триггерную линию)
+      let newActiveSection = activeSection;
+
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const section = sectionElements[i];
+        if (section.top <= triggerPoint && section.bottom > triggerPoint) {
+          newActiveSection = section.id;
+          break;
+        }
+      }
+
+      // Если ни одна секция не пересекает триггер, берем ближайшую сверху
+      if (newActiveSection === activeSection) {
+        for (let i = 0; i < sectionElements.length; i++) {
+          const section = sectionElements[i];
+          if (section.top > triggerPoint) {
+            if (i > 0) {
+              newActiveSection = sectionElements[i - 1].id;
+            }
+            break;
+          }
+        }
+      }
+
+      if (newActiveSection !== activeSection) {
+        setActiveSection(newActiveSection);
       }
     };
 
     const handleScroll = () => {
-      updateScrollProgress();
-      updateActiveSection();
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateScrollProgress();
+          updateActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
