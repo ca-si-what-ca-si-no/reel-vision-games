@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { FloatingBall1, FloatingBall2, FloatingBall3 } from "@/components/FloatingBall";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -37,6 +38,9 @@ const Index = () => {
         <div className="particle"></div>
         <div className="particle"></div>
         <div className="particle"></div>
+        <FloatingBall1 />
+        <FloatingBall2 />
+        <FloatingBall3 />
         <div className="animated-grid"></div>
       </div>
       <Header />

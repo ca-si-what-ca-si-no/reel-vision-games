@@ -318,6 +318,34 @@ All colors MUST be HSL.
     animation-delay: -6s;
   }
 
+  /* Анимированный мяч */
+  .floating-ball {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+    animation: ball-float 12s linear infinite;
+    pointer-events: none;
+  }
+
+  .floating-ball:nth-child(12) {
+    top: 20%;
+    animation-delay: 0s;
+    animation-duration: 15s;
+  }
+
+  .floating-ball:nth-child(13) {
+    top: 60%;
+    animation-delay: -8s;
+    animation-duration: 18s;
+  }
+
+  .floating-ball:nth-child(14) {
+    top: 40%;
+    animation-delay: -12s;
+    animation-duration: 20s;
+  }
+
   /* Keyframe Animations */
   @keyframes float-bg {
     0%, 100% { 
@@ -384,6 +412,26 @@ All colors MUST be HSL.
     90% {
       opacity: 1;
       transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  @keyframes ball-float {
+    0% {
+      left: -100px;
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-50px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-30px) rotate(270deg);
+    }
+    100% {
+      left: calc(100vw + 100px);
+      transform: translateY(0px) rotate(360deg);
     }
   }
 

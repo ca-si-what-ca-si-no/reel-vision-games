@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingControls from "@/components/FloatingControls";
 import CallToActionCard from "@/components/CallToActionCard";
+import { FloatingBall1, FloatingBall2 } from "@/components/FloatingBall";
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -36,6 +37,8 @@ const Keno = () => {
         <div className="particle"></div>
         <div className="particle"></div>
         <div className="particle"></div>
+        <FloatingBall1 />
+        <FloatingBall2 />
         <div className="animated-grid"></div>
       </div>
       <Header />
