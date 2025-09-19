@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Smartphone, Monitor, TabletSmartphone, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
+import { ArrowLeft, Smartphone, Monitor, TabletSmartphone, CheckCircle, Settings, Zap, Globe, Shield, Plug } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
@@ -101,8 +101,8 @@ const Keno = () => {
                   </div>
                   
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-green-400 font-bold text-lg flex items-center justify-center">
-                      %
+                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+                      <Plug className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-green-400">Zero effort интеграция</div>
                     
