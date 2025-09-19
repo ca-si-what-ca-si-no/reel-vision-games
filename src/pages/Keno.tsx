@@ -234,34 +234,47 @@ const Keno = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Что мы настраиваем</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span>RTP - любое значение по вашему запросу</span>
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h3 className="text-lg font-semibold text-blue-400 mb-2 flex items-center gap-2">
+                        🎯 Математическая модель
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        RTP без ограничений — хоть 50%, хоть 99%. Каждый коэффициент выплат настраивается отдельно. Полный контроль над волатильностью на каждом уровне выбора.
+                      </p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span>Коэффициенты выплат - полная кастомизация</span>
+
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h3 className="text-lg font-semibold text-green-400 mb-2 flex items-center gap-2">
+                        💸 Экономические параметры
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        Любые лимиты ставок — подстроим под вашу аудиторию. Ограничение максимального выигрыша для контроля рисков. Работа со всеми валютами вашей платформы.
+                      </p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span>Лимиты ставок - любые значения</span>
+
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h3 className="text-lg font-semibold text-purple-400 mb-2 flex items-center gap-2">
+                        🏢 Брендирование
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        Ваш логотип прямо на игровом поле — игроки видят ваш бренд. Планируем: цветовые схемы, кастомные звуки, уникальные темы.
+                      </p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span>Максимальный выигрыш - по вашим требованиям</span>
+
+                    <div className="border-l-4 border-yellow-500 pl-4">
+                      <h3 className="text-lg font-semibold text-yellow-400 mb-2 flex items-center gap-2">
+                        🔜 Скоро запустим
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        Бэк-офис для самостоятельной настройки параметров. Расширенная визуальная кастомизация. A/B тестирование разных конфигураций.
+                      </p>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span>Логотип казино на игровом поле</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-muted-foreground">
-                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
-                      <span>Полная кастомизация дизайна (в разработке)</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-muted-foreground md:col-span-2">
-                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
-                      <span>Бэк-офис для операторов (Q1 2025)</span>
+
+                    <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg mt-6">
+                      <p className="text-primary font-medium">
+                        Главное: вы говорите — мы настраиваем. Никаких ограничений.
+                      </p>
                     </div>
                   </div>
                 </div>
