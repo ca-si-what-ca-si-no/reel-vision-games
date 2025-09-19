@@ -68,7 +68,7 @@ const Integrators = () => {
     description: "Пакет из 5 crash игр",
     features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
   }];
-  return <section id="integrators" className="min-h-screen flex items-center justify-center relative snap-section pt-20">
+  return <section id="integrators" className="min-h-screen flex items-center justify-center relative snap-section">
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -82,7 +82,7 @@ const Integrators = () => {
         </div>
 
         {/* Benefits - Mobile Carousel, Desktop Grid */}
-        <div className="mb-20">
+        <div className="mb-12">
           {/* Mobile Carousel */}
           <div className="md:hidden">
             <Carousel 
@@ -145,7 +145,7 @@ const Integrators = () => {
         
 
         {/* CTA Section */}
-        <div className="p-12 text-center backdrop-blur-sm bg-background/20 border border-border/50">
+        <div className="p-12 text-center backdrop-blur-sm bg-background/20 border border-border/50 mt-12">
           <h3 className="text-3xl font-bold mb-6 text-foreground">
             Готовы начать интеграцию?
           </h3>

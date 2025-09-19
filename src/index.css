@@ -131,8 +131,9 @@ All colors MUST be HSL.
     }
 
     .snap-section {
-      scroll-snap-align: center;
+      scroll-snap-align: start;
       scroll-snap-stop: always;
+      scroll-margin-top: 80px;
     }
 
     .snap-section-last {
@@ -792,5 +793,18 @@ All colors MUST be HSL.
   .ripple:active::before {
     width: 300px;
     height: 300px;
+  }
+
+  /* Стандартные отступы для логических блоков */
+  .section-spacing {
+    margin-bottom: 3rem; /* 48px - между секциями */
+  }
+
+  .block-spacing {
+    margin-bottom: 1.5rem; /* 24px - между блоками внутри секции */
+  }
+
+  .element-spacing {
+    margin-bottom: 0.75rem; /* 12px - между элементами внутри блока */
   }
 }

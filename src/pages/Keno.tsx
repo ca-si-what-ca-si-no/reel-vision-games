@@ -52,7 +52,7 @@ const Keno = () => {
           {/* 60/40 Layout */}
           <div className="grid grid-cols-1 xl:grid-cols-5 gap-12">
             {/* Left Side - Information (60%) */}
-            <div className="xl:col-span-3 space-y-10">
+            <div className="xl:col-span-3 space-y-12">
               {/* Header */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
