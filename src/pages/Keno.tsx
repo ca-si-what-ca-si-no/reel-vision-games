@@ -466,6 +466,20 @@ const Keno = () => {
                     Играть
                   </Button>
                 </div>
+
+                {/* Phone Preview */}
+                {selectedDevice === 'mobile' && (
+                  <div className="phone-frame mx-auto mb-6">
+                    <div className="phone-screen">
+                      <iframe 
+                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                        className="w-full h-full border-0 rounded-[28px]"
+                        title="Keno Mobile Demo Game"
+                        allow="fullscreen"
+                      />
+                    </div>
+                  </div>
+                )}
                 
                 {/* Device Selection Buttons - Hidden on mobile */}
                 <div className="hidden md:block mb-6">
@@ -486,20 +500,6 @@ const Keno = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Phone Preview */}
-                {selectedDevice === 'mobile' && (
-                  <div className="phone-frame mx-auto">
-                    <div className="phone-screen">
-                      <iframe 
-                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                        className="w-full h-full border-0 rounded-[28px]"
-                        title="Keno Mobile Demo Game"
-                        allow="fullscreen"
-                      />
-                    </div>
-                  </div>
-                )}
 
                 {/* Call to Action */}
                 <div className="mt-8 space-y-4">
