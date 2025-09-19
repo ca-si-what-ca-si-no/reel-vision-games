@@ -71,13 +71,13 @@ const Hero = () => {
             </Button>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
-              <Button className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full" onClick={() => {
+              <Button className="bg-gradient-to-r from-background/80 via-background/90 to-background/80 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl hover:shadow-glow transition-all duration-300 transform hover:scale-105 hover:brightness-110 w-full sm:min-w-[240px] sm:w-auto rounded-full group" onClick={() => {
               document.getElementById('games')?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
             }}>
-                <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
+                <span className="text-transparent bg-gradient-accent bg-clip-text group-hover:bg-gradient-primary group-hover:bg-clip-text transition-all duration-300">Каталог игр</span>
               </Button>
               
               <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
