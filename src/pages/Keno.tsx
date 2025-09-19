@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield, TrendingUp, Trophy } from "lucide-react";
+import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingControls from "@/components/FloatingControls";
-
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -17,15 +16,12 @@ const Keno = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   const gameData = {
     title: "Keno",
     badge: "Лотерея",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -85,152 +81,83 @@ const Keno = () => {
               {/* Technical Specifications */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Волатильность */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
-                          <TrendingUp className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">Волатильность</h4>
-                          <p className="text-xs text-muted-foreground truncate">Настройки риска</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 text-lg font-bold text-primary">Настраиваемая</div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
+                      <Settings className="w-full h-full" />
                     </div>
+                    <div className="font-semibold text-primary">Полностью настраиваемая</div>
+                    <div className="text-sm text-muted-foreground">Волатильность</div>
                   </div>
                   
-                  {/* RTP */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                          <div className="text-xl font-bold text-accent">%</div>
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">RTP</h4>
-                          <p className="text-xs text-muted-foreground truncate">Без ограничений</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 text-lg font-bold text-accent">Любой</div>
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-green-400 font-bold text-lg flex items-center justify-center">
+                      %
                     </div>
+                    <div className="font-semibold text-green-400">Любой по запросу</div>
+                    <div className="text-sm text-muted-foreground">Без ограничений</div>
                   </div>
 
-                  {/* Макс. множитель */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
-                          <Trophy className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">Макс. множитель</h4>
-                          <p className="text-xs text-muted-foreground truncate">Настраиваемый</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 text-lg font-bold text-primary">x750</div>
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-yellow-400">
+                      <Zap className="w-full h-full" />
                     </div>
+                    <div className="font-semibold text-yellow-400">До x750</div>
+                    <div className="text-sm text-muted-foreground">Настраиваемый</div>
                   </div>
 
-                  {/* Платформы */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
-                          <Monitor className="w-6 h-6 text-secondary" />
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">Платформы</h4>
-                          <p className="text-xs text-muted-foreground truncate">Все устройства</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 flex items-center gap-2 text-secondary"><Smartphone className="w-5 h-5" /><Monitor className="w-5 h-5" /><Tablet className="w-5 h-5" /></div>
-                    </div>
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="text-lg mb-2">📱💻📱</div>
+                    <div className="font-semibold text-blue-400">Все устройства</div>
+                    <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
                   </div>
 
-                  {/* Локализация */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
-                          <Globe className="w-6 h-6 text-secondary" />
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">Локализация</h4>
-                          <p className="text-xs text-muted-foreground truncate">Расширяемая</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 text-lg font-bold text-secondary">RU • EN +</div>
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
+                      <Globe className="w-full h-full" />
                     </div>
+                    <div className="font-semibold text-cyan-400">RU • EN +</div>
+                    <div className="text-sm text-muted-foreground">Расширяемая</div>
                   </div>
 
-                  {/* Provably Fair */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg h-full overflow-hidden transition-transform duration-200 hover:-translate-y-1">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                          <Shield className="w-6 h-6 text-accent" />
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-foreground truncate">Provably Fair</h4>
-                          <p className="text-xs text-muted-foreground truncate">Проверяемая честность</p>
-                        </div>
-                      </div>
-                      <div className="shrink-0 text-lg font-bold text-accent">✓</div>
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+                      <Shield className="w-full h-full" />
                     </div>
+                    <div className="font-semibold text-green-400">✓</div>
+                    <div className="text-sm text-muted-foreground">Provably Fair</div>
                   </div>
                 </div>
+              </div>
 
-                {/* Detailed Parameters */}
-                <div className="mt-8">
-                  <h3 className="text-xl font-semibold mb-4">Детальные параметры игры</h3>
-                  <div className="gaming-border card-shadow p-6 rounded-lg">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      
-                      {/* Left Column - Gameplay */}
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-accent border-b border-border pb-2">
-                          Игровой процесс
-                        </h4>
-                        <div className="space-y-3 text-sm">
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Поле:</span>
-                            <span className="text-foreground font-medium">40 клеток</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Выигрышных чисел:</span>
-                            <span className="text-foreground font-medium">10</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Выбор игрока:</span>
-                            <span className="text-foreground font-medium">от 1 до 10 чисел</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Right Column - Platform Features */}
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold text-accent border-b border-border pb-2">
-                          Возможности платформы
-                        </h4>
-                        <div className="space-y-3 text-sm">
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Время раунда:</span>
-                            <span className="text-foreground font-medium">~15 секунд</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">История игр:</span>
-                            <span className="text-accent font-medium">✓ Встроенная</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">Поддержка валют:</span>
-                            <span className="text-foreground font-medium">Все валюты казино</span>
-                          </div>
-                        </div>
-                      </div>
-
+              {/* Main Parameters */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Основные параметры</h2>
+                <div className="gaming-border card-shadow p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Поле:</span>
+                      <span className="text-foreground font-medium">40 клеток</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Выигрышных чисел:</span>
+                      <span className="text-foreground font-medium">10</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Выбор игрока:</span>
+                      <span className="text-foreground font-medium">от 1 до 10 чисел</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Время раунда:</span>
+                      <span className="text-foreground font-medium">~15 секунд</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">История игр:</span>
+                      <span className="text-green-400 font-medium">✓ Встроенная</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Поддержка валют:</span>
+                      <span className="text-foreground font-medium">Все валюты казино</span>
                     </div>
                   </div>
                 </div>
@@ -259,7 +186,7 @@ const Keno = () => {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Все транзакции через API казино</span>
+                      
                     </li>
                   </ul>
                 </div>
@@ -284,25 +211,25 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-3">1</td>
                           <td className="p-3">1</td>
-                          <td className="p-3 text-accent font-medium">3.6x</td>
+                          <td className="p-3 text-green-400 font-medium">3.6x</td>
                           <td className="p-3 text-muted-foreground">25%</td>
                         </tr>
                         <tr className="border-b border-border/50">
                           <td className="p-3">5</td>
                           <td className="p-3">5</td>
-                          <td className="p-3 text-accent font-medium">142x</td>
+                          <td className="p-3 text-green-400 font-medium">142x</td>
                           <td className="p-3 text-muted-foreground">0.77%</td>
                         </tr>
                         <tr className="border-b border-border/50">
                           <td className="p-3">10</td>
                           <td className="p-3">6</td>
-                          <td className="p-3 text-accent font-medium">12x</td>
+                          <td className="p-3 text-green-400 font-medium">12x</td>
                           <td className="p-3 text-muted-foreground">11.36%</td>
                         </tr>
                         <tr>
                           <td className="p-3">10</td>
                           <td className="p-3">10</td>
-                          <td className="p-3 text-primary font-medium">750x</td>
+                          <td className="p-3 text-yellow-400 font-medium">750x</td>
                           <td className="p-3 text-muted-foreground">0.0001%</td>
                         </tr>
                       </tbody>
@@ -320,31 +247,31 @@ const Keno = () => {
                 <div className="gaming-border card-shadow p-6 rounded-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
+                      <CheckCircle className="w-5 h-5 text-green-400" />
                       <span>RTP - любое значение по вашему запросу</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
+                      <CheckCircle className="w-5 h-5 text-green-400" />
                       <span>Коэффициенты выплат - полная кастомизация</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
+                      <CheckCircle className="w-5 h-5 text-green-400" />
                       <span>Лимиты ставок - любые значения</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
+                      <CheckCircle className="w-5 h-5 text-green-400" />
                       <span>Максимальный выигрыш - по вашим требованиям</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
+                      <CheckCircle className="w-5 h-5 text-green-400" />
                       <span>Логотип казино на игровом поле</span>
                     </div>
                     <div className="flex items-center gap-3 text-muted-foreground">
-                      <div className="w-5 h-5 flex items-center justify-center text-primary">⏳</div>
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
                       <span>Полная кастомизация дизайна (в разработке)</span>
                     </div>
                     <div className="flex items-center gap-3 text-muted-foreground md:col-span-2">
-                      <div className="w-5 h-5 flex items-center justify-center text-primary">⏳</div>
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
                       <span>Бэк-офис для операторов (Q1 2025)</span>
                     </div>
                   </div>
@@ -396,15 +323,12 @@ const Keno = () => {
             {/* Right Side - Demo (40%) */}
             <div className="xl:col-span-2 space-y-6">
               {/* Demo Section */}
-              <div>
+              <div className="sticky top-8">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
                 
                 {/* Mobile Play Button - Only visible on mobile */}
                 <div className="block md:hidden mb-6">
-                  <Button 
-                    onClick={() => setIsMobileModalOpen(true)}
-                    className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
-                  >
+                  <Button onClick={() => setIsMobileModalOpen(true)} className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
                     Играть
                   </Button>
                 </div>
@@ -458,12 +382,7 @@ const Keno = () => {
           <DialogTitle className="sr-only">Keno Mobile Game</DialogTitle>
           <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для мобильных устройств</DialogDescription>
           <div className="w-full h-full pt-12 pb-8 px-2 bg-black">
-            <iframe 
-              src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-              className="w-full h-full border-0 rounded-lg" 
-              title="Keno Mobile Demo Game" 
-              allow="fullscreen" 
-            />
+            <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-lg" title="Keno Mobile Demo Game" allow="fullscreen" />
           </div>
           <FloatingControls onClose={() => setIsMobileModalOpen(false)} />
         </DialogContent>
@@ -480,7 +399,7 @@ const Keno = () => {
 
       {/* Tablet Modal */}
       <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
-        <DialogContent className="max-w-fit p-8 bg-transparent border-none shadow-none [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
           <DialogTitle className="sr-only">Keno Tablet Game</DialogTitle>
           <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для планшета</DialogDescription>
           <div className="tablet-frame relative mx-auto">
@@ -492,8 +411,6 @@ const Keno = () => {
       </Dialog>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Keno;
