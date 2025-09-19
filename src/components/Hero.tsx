@@ -126,7 +126,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-8 md:bottom-8 bottom-16 left-1/2 transform -translate-x-1/2 z-20">
         <div
           className="flex flex-col items-center cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
           onClick={() => {
