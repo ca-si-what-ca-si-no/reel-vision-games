@@ -467,7 +467,7 @@ const Keno = () => {
                   {/* Left side - Phone and CTA aligned */}
                   <div className="flex flex-col items-start">
                     {/* Phone Preview */}
-                    {selectedDevice === 'mobile' && <div className="phone-frame">
+                    {selectedDevice === 'mobile' && <div className="phone-frame hidden md:block">
                         <div className="phone-screen">
                           <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[28px]" title="Keno Mobile Demo Game" allow="fullscreen" />
                         </div>
