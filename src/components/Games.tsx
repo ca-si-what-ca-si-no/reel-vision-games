@@ -79,7 +79,6 @@ const Games = () => {
               {/* Image section */}
               <div className="game-image relative h-56 transition-all duration-500 transform-gpu group-hover:scale-y-0 group-hover:opacity-0 origin-top">
                 <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/60"></div>
                 <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0">
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
                     {game.badge}
