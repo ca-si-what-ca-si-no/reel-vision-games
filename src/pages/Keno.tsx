@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingControls from "@/components/FloatingControls";
+import CallToActionCard from "@/components/CallToActionCard";
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -474,25 +475,16 @@ const Keno = () => {
                         </div>
                       </div>}
                     
-                    {/* Call to Action */}
-                    <div className="mt-8 w-[400px] space-y-4">
-                       <div className="gaming-border card-shadow p-6 rounded-lg text-center">
-                        <h3 className="text-base font-semibold mb-2">Готовы интегрировать Keno?</h3>
-                        <p className="text-muted-foreground text-xs mb-3">
-                          Получите полнофункциональную демо-версию с документацией API
-                        </p>
-                        <div className="flex items-center justify-center gap-2 text-green-400 mb-3">
-                          <CheckCircle className="w-3 h-3" />
-                          <span className="text-xs">На связи 24/7</span>
-                        </div>
-                      </div>
-                      
-                      <Link to="/#contact" className="block">
-                        <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground">
-                          Запросить интеграцию
-                        </Button>
-                      </Link>
-                    </div>
+                     {/* Call to Action */}
+                     <div className="mt-8 w-[400px]">
+                       <CallToActionCard
+                         title="Готовы интегрировать Keno?"
+                         description="Получите полнофункциональную демо-версию с документацией API"
+                         statusText="На связи 24/7"
+                         buttonText="Запросить интеграцию"
+                         buttonLink="/#contact"
+                       />
+                     </div>
                   </div>
                   
                   {/* Device Selection Buttons - Hidden on mobile */}
