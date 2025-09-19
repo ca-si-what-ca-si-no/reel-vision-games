@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingControls from "@/components/FloatingControls";
-
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -17,15 +16,12 @@ const Keno = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   const gameData = {
     title: "Keno",
     badge: "Лотерея",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -100,8 +96,8 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-primary">Полностью настраиваемая</div>
-                    <div className="text-sm text-muted-foreground">Волатильность</div>
+                    <div className="font-semibold text-primary">Кастомизация</div>
+                    
                   </div>
                   
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
@@ -109,7 +105,7 @@ const Keno = () => {
                       %
                     </div>
                     <div className="font-semibold text-green-400">Любой по запросу</div>
-                    <div className="text-sm text-muted-foreground">Без ограничений</div>
+                    
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
@@ -117,13 +113,13 @@ const Keno = () => {
                       <Zap className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-yellow-400">До x750</div>
-                    <div className="text-sm text-muted-foreground">Настраиваемый</div>
+                    
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="text-lg mb-2">📱💻📱</div>
                     <div className="font-semibold text-blue-400">Адаптивный дизайн</div>
-                    <div className="text-sm text-muted-foreground">Все устройства</div>
+                    
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
@@ -131,7 +127,7 @@ const Keno = () => {
                       <Globe className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-cyan-400">Мультиязычность</div>
-                    <div className="text-sm text-muted-foreground">Расширяемая</div>
+                    
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
@@ -139,7 +135,7 @@ const Keno = () => {
                       <Shield className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-green-400">Provably Fair ✓</div>
-                    <div className="text-sm text-muted-foreground">Честная игра</div>
+                    
                   </div>
                 </div>
               </div>
@@ -472,18 +468,11 @@ const Keno = () => {
                   {/* Left side - Phone and CTA aligned */}
                   <div className="flex flex-col items-start">
                     {/* Phone Preview */}
-                    {selectedDevice === 'mobile' && (
-                      <div className="phone-frame">
+                    {selectedDevice === 'mobile' && <div className="phone-frame">
                         <div className="phone-screen">
-                          <iframe 
-                            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                            className="w-full h-full border-0 rounded-[28px]"
-                            title="Keno Mobile Demo Game"
-                            allow="fullscreen"
-                          />
+                          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[28px]" title="Keno Mobile Demo Game" allow="fullscreen" />
                         </div>
-                      </div>
-                    )}
+                      </div>}
                     
                     {/* Call to Action */}
                     <div className="mt-8 w-[400px] space-y-4">
@@ -509,25 +498,13 @@ const Keno = () => {
                   {/* Device Selection Buttons - Hidden on mobile */}
                   <div className="hidden md:flex flex-col gap-2">
                     <div className="gaming-border card-shadow p-2 rounded-lg">
-                      <button 
-                        onClick={() => setSelectedDevice('mobile')} 
-                        className={`flex items-center justify-center p-3 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}
-                        title="Телефон"
-                      >
+                      <button onClick={() => setSelectedDevice('mobile')} className={`flex items-center justify-center p-3 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`} title="Телефон">
                         <Smartphone className="w-5 h-5" />
                       </button>
-                      <button 
-                        onClick={() => setIsDesktopModalOpen(true)} 
-                        className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
-                        title="Десктоп"
-                      >
+                      <button onClick={() => setIsDesktopModalOpen(true)} className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2" title="Десктоп">
                         <Monitor className="w-5 h-5" />
                       </button>
-                      <button 
-                        onClick={() => setIsTabletModalOpen(true)} 
-                        className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
-                        title="Планшет"
-                      >
+                      <button onClick={() => setIsTabletModalOpen(true)} className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2" title="Планшет">
                         <TabletSmartphone className="w-5 h-5" />
                       </button>
                     </div>
@@ -574,8 +551,6 @@ const Keno = () => {
       </Dialog>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Keno;
