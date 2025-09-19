@@ -130,7 +130,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
                       <Globe className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-cyan-400">RU • EN +</div>
+                    <div className="font-semibold text-cyan-400">Мультиязычность</div>
                     <div className="text-sm text-muted-foreground">Расширяемая</div>
                   </div>
 
