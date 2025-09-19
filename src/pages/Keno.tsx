@@ -189,7 +189,7 @@ const Keno = () => {
               {/* Payout Table */}
               <div>
                 <h2 className="text-2xl font-semibold mb-2">Полная таблица выплат для всех комбинаций</h2>
-                <p className="text-sm text-muted-foreground mb-4">Коэффициенты для каждого количества выбранных и угаданных чисел</p>
+                <p className="text-sm text-muted-foreground mb-4">Коэффициенты для каждого количества выбранных и угаданных чисел (RTP 98%)</p>
                 <div className="gaming-border card-shadow rounded-lg overflow-hidden">
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs">
@@ -255,10 +255,10 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">4</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.7</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.7</td>
                           <td className="p-2 text-center text-green-400 font-medium">x2</td>
                           <td className="p-2 text-center text-green-400 font-medium">x6</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x12</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x12</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
@@ -269,11 +269,11 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">5</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.4</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.4</td>
                           <td className="p-2 text-center text-green-400 font-medium">x1.3</td>
                           <td className="p-2 text-center text-green-400 font-medium">x3.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x11.8</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x30</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x11.8</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x30</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
@@ -283,12 +283,12 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">6</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.3</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.9</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.3</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.9</td>
                           <td className="p-2 text-center text-green-400 font-medium">x2.7</td>
                           <td className="p-2 text-center text-green-400 font-medium">x8.1</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x24.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x50</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x24.1</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x50</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
@@ -297,13 +297,13 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">7</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.2</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.6</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.2</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.6</td>
                           <td className="p-2 text-center text-green-400 font-medium">x1.9</td>
                           <td className="p-2 text-center text-green-400 font-medium">x5.6</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x16.8</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x50.3</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x100</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x16.8</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x50.3</td>
+                          <td className="p-2 text-center text-red-400 font-bold">x100</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
@@ -311,13 +311,13 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">8</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.4</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.4</td>
                           <td className="p-2 text-center text-green-400 font-medium">x1.3</td>
                           <td className="p-2 text-center text-green-400 font-medium">x3.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x11.8</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x35.4</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x106.2</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x11.8</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x35.4</td>
+                          <td className="p-2 text-center text-red-400 font-bold">x106.2</td>
                           <td className="p-2 text-center text-red-400 font-bold">x250</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
@@ -325,28 +325,28 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">9</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.3</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.9</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.3</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.9</td>
                           <td className="p-2 text-center text-green-400 font-medium">x2.8</td>
                           <td className="p-2 text-center text-green-400 font-medium">x8.4</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x25.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x75.4</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x226.2</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x25.1</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x75.4</td>
+                          <td className="p-2 text-center text-red-400 font-bold">x226.2</td>
                           <td className="p-2 text-center text-red-400 font-bold">x600</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
                         </tr>
                         <tr>
                           <td className="p-2 font-medium">10</td>
                           <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.2</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x0.7</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.2</td>
+                          <td className="p-2 text-center text-red-300 font-medium">x0.7</td>
                           <td className="p-2 text-center text-green-400 font-medium">x2</td>
                           <td className="p-2 text-center text-green-400 font-medium">x6</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x18</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x54</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x162.1</td>
+                          <td className="p-2 text-center text-yellow-400 font-medium">x18</td>
+                          <td className="p-2 text-center text-orange-400 font-medium">x54</td>
+                          <td className="p-2 text-center text-red-400 font-bold">x162.1</td>
                           <td className="p-2 text-center text-red-400 font-bold">x486.4</td>
                           <td className="p-2 text-center text-red-400 font-bold text-primary">x750</td>
                         </tr>
@@ -355,7 +355,7 @@ const Keno = () => {
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  * Полная таблица коэффициентов для всех возможных комбинаций. Любые настройки по запросу.
+                  * Полная таблица коэффициентов для RTP 98%. Любые настройки по запросу.
                 </p>
               </div>
 
