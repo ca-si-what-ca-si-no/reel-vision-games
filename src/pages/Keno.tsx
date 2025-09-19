@@ -473,7 +473,7 @@ const Keno = () => {
                       </div>}
                     
                      {/* Call to Action */}
-                     <div className="mt-8 w-[400px]">
+                     <div className="mt-8 w-full max-w-[400px]">
                        <CallToActionCard title="Готовы интегрировать Keno?" description="Получите полнофункциональную демо-версию с документацией API" statusText="На связи 24/7" buttonText="Запросить интеграцию" buttonLink="/#contact" />
                      </div>
                   </div>
