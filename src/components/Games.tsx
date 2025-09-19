@@ -105,13 +105,12 @@ const Games = () => {
                     {/* Features list - показывается при наведении */}
                     <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-24 z-10 pointer-events-none group-hover:pointer-events-auto">
                       <div className="flex items-center gap-2 text-sm">
-                        <span className="text-muted-foreground">Настраиваемая волатильность:</span>
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />)}
-                        </div>
+                        <span className="text-muted-foreground">Настраиваемая волатильность</span>
+                        
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Настраиваемый RTP</span>
+                        <span>RTP:</span>
+                        <span className="text-foreground">{game.features.rtp}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Адаптивный дизайн</span>
@@ -185,13 +184,14 @@ const Games = () => {
                   <h3 className="text-lg font-semibold mb-3">Характеристики игры</h3>
                   <div className="grid grid-cols-1 gap-4">
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <span className="text-sm text-muted-foreground">Настраиваемая волатильность</span>
+                      <span className="text-sm text-muted-foreground">Волатильность</span>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />)}
                       </div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <span className="text-sm text-muted-foreground">Настраиваемый RTP</span>
+                      <span className="text-sm text-muted-foreground">RTP</span>
+                      <span className="text-sm font-medium">{selectedGame.features.rtp}</span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Платформы</span>
