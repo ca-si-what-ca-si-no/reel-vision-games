@@ -46,45 +46,51 @@ const Hero = () => {
             <span className="text-foreground">iGaming</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg">
-            <div className="flex items-center gap-1 md:gap-2">
-              <Rocket className="w-4 h-4 md:w-5 md:h-5 text-accent" />
-              <span className="text-accent font-semibold text-sm md:text-base">Настраиваемый RTP</span>
-            </div>
-            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-muted-foreground/50"></div>
-            <div className="flex items-center gap-1 md:gap-2">
-              <Star className="w-4 h-4 md:w-5 md:h-5 text-primary-glow" />
-              <span className="text-muted-foreground text-sm md:text-base">Топовые предложения</span>
-            </div>
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg flex-wrap">
+            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              🎯 Любой RTP
+            </span>
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              ⚡ Быстрая интеграция
+            </span>
+            <span className="bg-primary-glow/10 text-primary-glow px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              🎮 5+ игр
+            </span>
+            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              ✓ Provably Fair
+            </span>
           </div>
           
+          <div className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
+            <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
+          </div>
           
-          
-          <div className="flex flex-row gap-4 sm:gap-8 justify-center items-center w-full mx-auto">
-            <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full" onClick={() => {
-            document.getElementById('contact')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
+            <Button 
+              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
               Связаться с нами
             </Button>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
-              <Button className="bg-gradient-to-r from-background/80 via-background/90 to-background/80 backdrop-blur-sm border-2 border-primary/30 hover:border-primary/60 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl hover:shadow-glow transition-all duration-300 transform hover:scale-105 hover:brightness-110 w-full sm:min-w-[240px] sm:w-auto rounded-full group" onClick={() => {
-              document.getElementById('games')?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }}>
-                <span className="text-transparent bg-gradient-accent bg-clip-text group-hover:bg-gradient-primary group-hover:bg-clip-text transition-all duration-300">Каталог игр</span>
+              <Button 
+                className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full"
+                onClick={() => {
+                  document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
               </Button>
               
               <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
               backgroundColor: 'white',
               '--tw-bg-opacity': '1'
             } as React.CSSProperties} asChild>
-            </Button>
+                
+              </Button>
             </div>
           </div>
         </div>
