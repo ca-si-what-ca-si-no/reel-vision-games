@@ -4,7 +4,7 @@ import { Mail, ExternalLink, Send } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border snap-section-last">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -39,11 +39,6 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Навигация</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#about" className="text-muted-foreground hover:text-accent smooth-transition">
-                  О нас
-                </a>
-              </li>
               <li>
                 <a href="#games" className="text-muted-foreground hover:text-accent smooth-transition">
                   Наши игры
