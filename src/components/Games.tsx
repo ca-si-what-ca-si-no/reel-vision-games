@@ -116,7 +116,7 @@ const Games = () => {
                         <span>RTP:</span>
                         <span className="text-foreground">{game.features.rtp}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground flex-wrap">
                         <span>Платформы:</span>
                         <span className="text-foreground">{game.features.platforms.join(", ")}</span>
                       </div>
