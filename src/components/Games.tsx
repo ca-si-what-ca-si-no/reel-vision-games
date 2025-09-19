@@ -73,7 +73,7 @@ const Games = () => {
 
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col group overflow-hidden relative will-change-transform" style={{
+          {gameTypes.map((game, index) => <div key={index} className={`game-card animate-fade-in rounded-xl flex flex-col ${game.badge !== "Скоро в продаже" ? "group" : ""} overflow-hidden relative will-change-transform`} style={{
           animationDelay: `${index * 0.15}s`
         }}>
               {/* Image section */}
