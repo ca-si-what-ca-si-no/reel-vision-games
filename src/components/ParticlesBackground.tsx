@@ -92,6 +92,7 @@ const ParticlesBackground = () => {
       id="tsparticles"
       particlesLoaded={particlesLoaded}
       options={options}
+      className="particles-blur"
       style={{
         position: "fixed",
         top: 0,

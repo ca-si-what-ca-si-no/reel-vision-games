@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Games from "@/components/Games";
 import Integrators from "@/components/Integrators";
@@ -6,6 +5,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import MobileMenu from "@/components/MobileMenu";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -39,7 +39,7 @@ const Index = () => {
         <div className="particle"></div>
         <div className="animated-grid"></div>
       </div>
-      <Header />
+      <MobileMenu />
       <main>
         <Hero />
         <Games />

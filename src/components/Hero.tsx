@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Rocket, Zap, Star } from "lucide-react";
+import { Rocket, Zap, Star, ChevronDown } from "lucide-react";
 import TypewriterText from "./TypewriterText";
+import logo from "@/assets/logo.svg";
 const Hero = () => {
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative">
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-60 z-10" style={{
       animationDelay: '0s'
@@ -76,61 +77,65 @@ const Hero = () => {
       
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center mt-8 md:mt-0">
-            <span className="text-foreground">Создаем</span>{" "}
+          {/* Logo */}
+          <div className="flex items-center justify-center mb-10 md:mb-12">
+            <span className="text-xl font-bold text-foreground mr-3">
+              2xWet
+            </span>
+            <img src={logo} alt="2xWet Studio Logo" className="w-8 h-8 mx-2" />
+            <span className="text-xl font-bold text-accent ml-3">
+              Studio
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 md:mb-8 leading-tight text-center">
             <span className="text-transparent bg-gradient-accent bg-clip-text">
-              будущее
+              Zero-effort
             </span>
             <br />
-            <span className="text-foreground">iGaming</span>
+            <span className="text-foreground">игровые решения</span>
           </h1>
-          
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg flex-wrap">
-            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-12 md:mb-16 text-base md:text-lg flex-wrap">
+            <span className="bg-accent/30 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
               🎯 Любой RTP
             </span>
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm md:text-base font-medium">
+            <span className="bg-primary/30 text-primary px-3 py-1 rounded-full text-sm md:text-base font-medium">
               ⚡ Быстрая интеграция
             </span>
-            <span className="bg-primary-glow/10 text-primary-glow px-3 py-1 rounded-full text-sm md:text-base font-medium">
+            <span className="bg-primary-glow/30 text-primary-glow px-3 py-1 rounded-full text-sm md:text-base font-medium">
               🎮 5+ игр
             </span>
-            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+            <span className="bg-accent/30 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
               ✓ Provably Fair
             </span>
           </div>
-          
-          <div className="text-lg md:text-xl font-poppins font-medium bg-gradient-to-r from-foreground/90 via-foreground/70 via-primary/80 via-primary-glow/90 to-accent/80 bg-clip-text text-transparent mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
-            <TypewriterText initialText="Новые игры " typeText="без головной боли" speed={80} />
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
-            <Button 
-              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full"
+
+
+          <div className="flex justify-center w-full mb-32 md:mb-40">
+            <Button
+              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-base sm:text-lg px-12 py-4 shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-glow hover:brightness-110 rounded-full"
               onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
             >
               Связаться с нами
             </Button>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
-              <Button 
-                className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full"
-                onClick={() => {
-                  document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
-              </Button>
-              
-              <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
-              backgroundColor: 'white',
-              '--tw-bg-opacity': '1'
-            } as React.CSSProperties} asChild>
-                
-              </Button>
-            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div
+          className="flex flex-col items-center cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300"
+          onClick={() => {
+            document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        >
+          <span className="text-foreground/70 text-sm mb-2 font-medium">Наши игры</span>
+          <div className="animate-bounce">
+            <ChevronDown className="w-6 h-6 text-foreground/70" />
           </div>
         </div>
       </div>

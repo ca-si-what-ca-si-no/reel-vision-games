@@ -241,6 +241,14 @@ All colors MUST be HSL.
     animation-duration: 3.6s;
   }
 
+  /* Particles blur */
+  .particles-blur,
+  .particles-blur canvas,
+  #tsparticles,
+  #tsparticles canvas {
+    opacity: 0.6 !important;
+  }
+
   /* Geometric Shapes */
   .geometric-shape {
     position: absolute;

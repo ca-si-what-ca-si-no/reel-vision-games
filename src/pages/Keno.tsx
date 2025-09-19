@@ -1,7 +1,7 @@
 import CallToActionCard from "@/components/CallToActionCard";
 import FloatingControls from "@/components/FloatingControls";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import MobileMenu from "@/components/MobileMenu";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -54,8 +54,8 @@ const Keno = () => {
         <div className="particle"></div>
         <div className="animated-grid"></div>
       </div>
-      <Header />
-      <main className="pt-20">
+      <MobileMenu />
+      <main>
         <div className="max-w-[1200px] mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -87,7 +87,7 @@ const Keno = () => {
               {/* Game Description */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">
-                  Классика, которая работает всегда.
+                  Классика, которая работает всегда
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
@@ -295,7 +295,7 @@ const Keno = () => {
                       <tbody>
                         <tr className="border-b border-border/50">
                           <td className="p-2 font-medium">1</td>
-                          <td className="p-2 text-center text-green-500 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x3.8
                           </td>
                         </tr>
@@ -304,7 +304,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x1.9
                           </td>
-                          <td className="p-2 text-center text-green-500 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x4
                           </td>
                         </tr>
@@ -313,10 +313,10 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x1
                           </td>
-                          <td className="p-2 text-center text-green-500 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x3.1
                           </td>
-                          <td className="p-2 text-center text-green-600 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x8
                           </td>
                         </tr>
@@ -346,7 +346,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x3.9
                           </td>
-                          <td className="p-2 text-center text-green-600 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium">
                             x11.8
                           </td>
                           <td className="p-2 text-center text-yellow-400 font-medium">
@@ -364,7 +364,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x2.7
                           </td>
-                          <td className="p-2 text-center text-green-600 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x8.1
                           </td>
                           <td className="p-2 text-center text-yellow-400 font-medium">
@@ -385,7 +385,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x1.9
                           </td>
-                          <td className="p-2 text-center text-green-500 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium">
                             x5.6
                           </td>
                           <td className="p-2 text-center text-yellow-400 font-medium">
@@ -412,7 +412,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-green-400 font-medium">
                             x3.9
                           </td>
-                          <td className="p-2 text-center text-green-600 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium">
                             x11.8
                           </td>
                           <td className="p-2 text-center text-yellow-400 font-medium">
@@ -571,10 +571,9 @@ const Keno = () => {
                       <h3 className="text-lg font-semibold text-green-400 mb-2">
                         Что делаете вы:
                       </h3>
-                      <p className="text-muted-foreground">
-                        Отправляете доступ к вашему API.{" "}
-                        <span className="text-green-400 font-medium">Всё.</span>
-                      </p>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Отправляете доступ к вашему API</li>
+                      </ul>
                     </div>
 
                     {/* What we do */}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 import { Mail, ExternalLink, Send } from "lucide-react";
 
 const Footer = () => {
@@ -9,10 +9,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10" />
-              <span className="text-2xl font-bold text-foreground">
-                2xWet <span className="text-accent">Studio</span>
+            <div className="flex items-center mb-6">
+              <span className="text-2xl font-bold text-foreground mr-3">
+                2xWet
+              </span>
+              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10 mx-2" />
+              <span className="text-2xl font-bold text-accent ml-3">
+                Studio
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
