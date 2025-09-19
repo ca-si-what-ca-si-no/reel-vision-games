@@ -101,7 +101,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-primary">Кастомизация</div>
+                    <div className="font-semibold text-primary whitespace-nowrap">Кастомизация</div>
                     
                   </div>
                   
@@ -109,7 +109,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-green-400">
                       <Plug className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">Zero-effort интеграция</div>
+                    <div className="font-semibold text-green-400 whitespace-nowrap">Zero-effort интеграция</div>
                     
                   </div>
 
@@ -117,13 +117,13 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-yellow-400">
                       <Zap className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-yellow-400">До x750</div>
+                    <div className="font-semibold text-yellow-400 whitespace-nowrap">До x750</div>
                     
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="text-lg mb-2">📱💻📱</div>
-                    <div className="font-semibold text-blue-400">Адаптивный дизайн</div>
+                    <div className="font-semibold text-blue-400 whitespace-nowrap">Адаптивный дизайн</div>
                     
                   </div>
 
@@ -131,7 +131,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
                       <Globe className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-cyan-400 w-full">Мультиязычность</div>
+                    <div className="font-semibold text-cyan-400 w-full whitespace-nowrap">Мультиязычность</div>
                     
                   </div>
 
@@ -139,7 +139,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-green-400">
                       <Shield className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">Provably Fair ✓</div>
+                    <div className="font-semibold text-green-400 whitespace-nowrap">Provably Fair ✓</div>
                     
                   </div>
                 </div>
