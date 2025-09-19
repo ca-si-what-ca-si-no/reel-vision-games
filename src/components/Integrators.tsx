@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
@@ -57,23 +58,55 @@ const Integrators = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {benefits.map((benefit, index) => <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
-                  <benefit.icon className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">
-                  {benefit.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
-              </CardContent>
-            </Card>)}
+        {/* Benefits - Mobile Carousel, Desktop Grid */}
+        <div className="mb-20">
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <Carousel className="w-full max-w-sm mx-auto">
+              <CarouselContent>
+                {benefits.map((benefit, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in">
+                      <CardContent className="p-6">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
+                          <benefit.icon className="w-6 h-6 text-accent-foreground" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-foreground">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+          
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in" style={{
+                animationDelay: `${index * 0.1}s`
+              }}>
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
+                    <benefit.icon className="w-6 h-6 text-accent-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Game Packages */}
