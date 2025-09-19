@@ -187,31 +187,50 @@ const Keno = () => {
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold mb-4">Детальные параметры игры</h3>
                   <div className="gaming-border card-shadow p-6 rounded-lg">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Поле:</span>
-                        <span className="text-foreground font-medium">40 клеток</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      
+                      {/* Left Column - Gameplay */}
+                      <div className="space-y-4">
+                        <h4 className="text-lg font-semibold text-accent border-b border-border pb-2">
+                          Игровой процесс
+                        </h4>
+                        <div className="space-y-3 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Поле:</span>
+                            <span className="text-foreground font-medium">40 клеток</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Выигрышных чисел:</span>
+                            <span className="text-foreground font-medium">10</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Выбор игрока:</span>
+                            <span className="text-foreground font-medium">от 1 до 10 чисел</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Выигрышных чисел:</span>
-                        <span className="text-foreground font-medium">10</span>
+
+                      {/* Right Column - Platform Features */}
+                      <div className="space-y-4">
+                        <h4 className="text-lg font-semibold text-accent border-b border-border pb-2">
+                          Возможности платформы
+                        </h4>
+                        <div className="space-y-3 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Время раунда:</span>
+                            <span className="text-foreground font-medium">~15 секунд</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">История игр:</span>
+                            <span className="text-accent font-medium">✓ Встроенная</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Поддержка валют:</span>
+                            <span className="text-foreground font-medium">Все валюты казино</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Выбор игрока:</span>
-                        <span className="text-foreground font-medium">от 1 до 10 чисел</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Время раунда:</span>
-                        <span className="text-foreground font-medium">~15 секунд</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">История игр:</span>
-                        <span className="text-accent font-medium">✓ Встроенная</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Поддержка валют:</span>
-                        <span className="text-foreground font-medium">Все валюты казино</span>
-                      </div>
+
                     </div>
                   </div>
                 </div>
