@@ -3,7 +3,30 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
 const Integrators = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const intervalRef = useRef<NodeJS.Timeout>();
+
+  const startAutoScroll = useCallback(() => {
+    if (!api) return;
+    intervalRef.current = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+  }, [api]);
+
+  const stopAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!api) return;
+    startAutoScroll();
+    return stopAutoScroll;
+  }, [api, startAutoScroll, stopAutoScroll]);
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -62,19 +85,28 @@ const Integrators = () => {
         <div className="mb-20">
           {/* Mobile Carousel */}
           <div className="md:hidden">
-            <Carousel className="w-full max-w-sm mx-auto">
+            <Carousel 
+              className="w-full max-w-sm mx-auto"
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              onMouseEnter={stopAutoScroll}
+              onMouseLeave={startAutoScroll}
+            >
               <CarouselContent>
                 {benefits.map((benefit, index) => (
                   <CarouselItem key={index}>
-                    <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in">
-                      <CardContent className="p-6">
+                    <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in h-64">
+                      <CardContent className="p-6 h-full flex flex-col">
                         <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
                           <benefit.icon className="w-6 h-6 text-accent-foreground" />
                         </div>
                         <h3 className="text-xl font-semibold mb-3 text-foreground">
                           {benefit.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed flex-1">
                           {benefit.description}
                         </p>
                       </CardContent>
