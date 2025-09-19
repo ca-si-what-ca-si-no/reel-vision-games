@@ -96,51 +96,45 @@ const Keno = () => {
               {/* Technical Specifications */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Преимущества</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-3 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-primary">Кастомизация</div>
-                    
+                    <div className="font-semibold text-primary text-sm md:text-base">Кастомизация</div>
                   </div>
-                  
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-3 text-green-400">
                       <Plug className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">Zero-effort интеграция</div>
-                    
+                    <div className="font-semibold text-green-400 text-sm md:text-base leading-tight">Zero-effort<br className="sm:hidden" /> интеграция</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-yellow-400">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-3 text-yellow-400">
                       <Zap className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-yellow-400">До x750</div>
-                    
+                    <div className="font-semibold text-yellow-400 text-sm md:text-base">До x750</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="text-lg mb-2">📱💻📱</div>
-                    <div className="font-semibold text-blue-400">Адаптивный дизайн</div>
-                    
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="text-lg mb-3">📱💻📱</div>
+                    <div className="font-semibold text-blue-400 text-sm md:text-base leading-tight">Адаптивный<br className="sm:hidden" /> дизайн</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-3 text-cyan-400">
                       <Globe className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-cyan-400 w-full">Мультиязычность</div>
-                    
+                    <div className="font-semibold text-cyan-400 text-sm md:text-base">Мультиязычность</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-3 text-green-400">
                       <Shield className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">Provably Fair ✓</div>
-                    
+                    <div className="font-semibold text-green-400 text-sm md:text-base">Provably Fair ✓</div>
                   </div>
                 </div>
               </div>
