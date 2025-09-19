@@ -138,8 +138,8 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-green-400">
                       <Shield className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">✓</div>
-                    <div className="text-sm text-muted-foreground">Provably Fair</div>
+                    <div className="font-semibold text-green-400">Provably Fair ✓</div>
+                    <div className="text-sm text-muted-foreground">Честная игра</div>
                   </div>
                 </div>
               </div>
