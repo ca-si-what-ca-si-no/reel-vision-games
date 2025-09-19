@@ -139,7 +139,7 @@ const Keno = () => {
                         <p className="text-xs text-muted-foreground">Все устройства</p>
                       </div>
                     </div>
-                    <div className="text-lg font-bold text-secondary">📱💻📱</div>
+                    <div className="text-lg font-bold text-secondary">Все устройства</div>
                   </div>
 
                   {/* Локализация */}
