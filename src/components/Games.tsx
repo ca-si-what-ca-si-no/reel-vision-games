@@ -102,7 +102,7 @@ const Games = () => {
                     </div>
                     
                     {/* Features list - показывается при наведении */}
-                    <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-24 z-10 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none group-hover:pointer-events-auto">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Волатильность:</span>
                         <span className="text-foreground">Гибкая</span>
