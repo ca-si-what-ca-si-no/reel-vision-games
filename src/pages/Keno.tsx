@@ -132,7 +132,7 @@ const Keno = () => {
                   <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
-                        <div className="text-lg">📱💻📱</div>
+                        <Monitor className="w-6 h-6 text-secondary" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground">Платформы</h4>
