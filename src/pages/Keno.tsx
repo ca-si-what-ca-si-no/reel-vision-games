@@ -492,7 +492,7 @@ const Keno = () => {
                 </p>
 
                 {/* Integration Button */}
-                <div className="text-center">
+                <div className="text-center mt-8">
                   <Link to="/#contact">
                     <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
                       Запросить интеграцию
