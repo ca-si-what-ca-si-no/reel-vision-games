@@ -29,6 +29,13 @@ const TypewriterText = ({
     }, speed);
     return () => clearTimeout(timer);
   }, [currentIndex, isTyping, initialText, typeText, speed]);
-  return;
+  return (
+    <span className={className}>
+      {displayText}
+      {isTyping && currentIndex < typeText.length && (
+        <span className="animate-pulse">|</span>
+      )}
+    </span>
+  );
 };
 export default TypewriterText;
