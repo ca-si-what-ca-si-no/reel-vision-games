@@ -86,50 +86,88 @@ const Keno = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
-                      <TrendingUp className="w-full h-full" />
+                  {/* Волатильность */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Волатильность</h4>
+                        <p className="text-xs text-muted-foreground">Настройки риска</p>
+                      </div>
                     </div>
-                    <div className="font-semibold text-primary">Полностью настраиваемая</div>
-                    <div className="text-sm text-muted-foreground">Волатильность</div>
+                    <div className="text-lg font-bold text-primary">Полностью настраиваемая</div>
                   </div>
                   
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-accent flex items-center justify-center">
-                      <div className="text-2xl font-bold">%</div>
+                  {/* RTP */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
+                        <div className="text-xl font-bold text-accent">%</div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">RTP</h4>
+                        <p className="text-xs text-muted-foreground">Без ограничений</p>
+                      </div>
                     </div>
-                    <div className="font-semibold text-accent">Любой по запросу</div>
-                    <div className="text-sm text-muted-foreground">Без ограничений</div>
+                    <div className="text-lg font-bold text-accent">Любой по запросу</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
-                      <Trophy className="w-full h-full" />
+                  {/* Макс. множитель */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                        <Trophy className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Макс. множитель</h4>
+                        <p className="text-xs text-muted-foreground">Настраиваемый</p>
+                      </div>
                     </div>
-                    <div className="font-semibold text-primary">До x750</div>
-                    <div className="text-sm text-muted-foreground">Настраиваемый</div>
+                    <div className="text-lg font-bold text-primary">До x750</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="text-2xl mb-2">📱💻📱</div>
-                    <div className="font-semibold text-secondary">Все устройства</div>
-                    <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
+                  {/* Платформы */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
+                        <div className="text-lg">📱💻📱</div>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Платформы</h4>
+                        <p className="text-xs text-muted-foreground">Все устройства</p>
+                      </div>
+                    </div>
+                    <div className="text-lg font-bold text-secondary">📱💻📱</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-accent">
-                      <Globe className="w-full h-full" />
+                  {/* Локализация */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
+                        <Globe className="w-6 h-6 text-secondary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Локализация</h4>
+                        <p className="text-xs text-muted-foreground">Расширяемая</p>
+                      </div>
                     </div>
-                    <div className="font-semibold text-accent">RU • EN +</div>
-                    <div className="text-sm text-muted-foreground">Расширяемая</div>
+                    <div className="text-lg font-bold text-secondary">RU • EN +</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-accent">
-                      <Shield className="w-full h-full" />
+                  {/* Provably Fair */}
+                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
+                        <Shield className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Provably Fair</h4>
+                        <p className="text-xs text-muted-foreground">Проверяемая честность</p>
+                      </div>
                     </div>
-                    <div className="font-semibold text-accent">✓</div>
-                    <div className="text-sm text-muted-foreground">Проверяемая честность</div>
+                    <div className="text-lg font-bold text-accent">✓</div>
                   </div>
                 </div>
               </div>
