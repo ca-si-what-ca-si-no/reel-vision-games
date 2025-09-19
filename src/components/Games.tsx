@@ -103,8 +103,8 @@ const Games = () => {
                   </div>
                 </div>
               
-              {/* Features overlay - показывается по центру при наведении */}
-              <div className="absolute inset-0 flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 z-10 pointer-events-none group-hover:pointer-events-auto transition-all duration-500 transform-gpu">
+              {/* Features overlay - показывается по центру при наведении, не закрывает кнопки */}
+              <div className="absolute inset-x-0 top-0 bottom-20 flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 z-10 pointer-events-none transition-all duration-500 transform-gpu">
                 <div className="space-y-3 text-center">
                   <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                     <span>Волатильность:</span>
