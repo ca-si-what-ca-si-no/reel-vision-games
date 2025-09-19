@@ -1,37 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { Star, ArrowLeft, Smartphone, Monitor, Tablet, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TechnicalSpecs from "@/components/TechnicalSpecs";
 import FloatingControls from "@/components/FloatingControls";
+
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
-  const [activeScreenshot, setActiveScreenshot] = useState<string | null>(null);
 
   // Прокручиваем страницу наверх при загрузке
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const gameData = {
     title: "Keno",
-    description: "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
-    features: {
-      volatility: 3,
-      rtp: "94-97%",
-      platforms: ["Web", "Mobile", "Desktop"],
-      languages: ["RU", "EN", "DE"],
-      maxMultiplier: "1000x"
-    },
-    badge: "Популярное",
+    badge: "Лотерея",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
-  return <div className="min-h-screen">
+
+  return (
+    <div className="min-h-screen">
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -58,394 +52,282 @@ const Keno = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Game Information */}
-            <div className="space-y-8">
+          {/* 60/40 Layout */}
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-12">
+            {/* Left Side - Information (60%) */}
+            <div className="xl:col-span-3 space-y-10">
+              {/* Header */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <h1 className="text-4xl font-bold text-foreground">{gameData.title}</h1>
-                  <div className="game-badge px-3 py-1 rounded-full text-sm">
+                  <div className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
                     {gameData.badge}
                   </div>
                 </div>
               </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Описание игры</h2>
-                  <p className="text-muted-foreground leading-relaxed text-lg">
-                    {gameData.description}
+
+              {/* Game Description */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Описание игры</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Современная интерпретация классической лотереи Keno. 40 клеток на поле, система генерирует 10 выигрышных чисел. Игрок выбирает от 1 до 10 чисел.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed mt-4">
-                    Keno - это захватывающая лотерейная игра, которая сочетает в себе простоту классической лотереи 
-                    с современными игровыми механиками. Игроки выбирают числа из сетки, а затем наблюдают, 
-                    как система случайным образом определяет выигрышные номера. Чем больше совпадений, 
-                    тем выше выигрыш!
+                  <p>
+                    Коэффициенты выплат меняются в зависимости от количества выбранных чисел - чем больше чисел, тем выше потенциальный выигрыш, но ниже вероятность.
+                  </p>
+                  <p>
+                    Простая механика, прозрачная математика с Provably Fair, быстрые раунды.
                   </p>
                 </div>
-                
-                <TechnicalSpecs features={{
-                ...gameData.features,
-                minBet: "0.25",
-                maxBet: "500.00",
-                roundTime: "~15сек",
-                autoPlay: false
-              }} />
+              </div>
 
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Особенности</h2>
+              {/* Technical Specifications */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
+                      <Settings className="w-full h-full" />
+                    </div>
+                    <div className="font-semibold text-primary">Полностью настраиваемая</div>
+                    <div className="text-sm text-muted-foreground">Волатильность</div>
+                  </div>
+                  
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-green-400 font-bold text-lg flex items-center justify-center">
+                      %
+                    </div>
+                    <div className="font-semibold text-green-400">Любой по запросу</div>
+                    <div className="text-sm text-muted-foreground">Без ограничений</div>
+                  </div>
+
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-yellow-400">
+                      <Zap className="w-full h-full" />
+                    </div>
+                    <div className="font-semibold text-yellow-400">До x750</div>
+                    <div className="text-sm text-muted-foreground">Настраиваемый</div>
+                  </div>
+
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="text-lg mb-2">📱💻📱</div>
+                    <div className="font-semibold text-blue-400">Все устройства</div>
+                    <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
+                  </div>
+
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
+                      <Globe className="w-full h-full" />
+                    </div>
+                    <div className="font-semibold text-cyan-400">RU • EN +</div>
+                    <div className="text-sm text-muted-foreground">Расширяемая</div>
+                  </div>
+
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+                      <Shield className="w-full h-full" />
+                    </div>
+                    <div className="font-semibold text-green-400">✓</div>
+                    <div className="text-sm text-muted-foreground">Provably Fair</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Main Parameters */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Основные параметры</h2>
+                <div className="gaming-border card-shadow p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Поле:</span>
+                      <span className="text-foreground font-medium">40 клеток</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Выигрышных чисел:</span>
+                      <span className="text-foreground font-medium">10</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Выбор игрока:</span>
+                      <span className="text-foreground font-medium">от 1 до 10 чисел</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Время раунда:</span>
+                      <span className="text-foreground font-medium">~15 секунд</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">История игр:</span>
+                      <span className="text-green-400 font-medium">✓ Встроенная</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Поддержка валют:</span>
+                      <span className="text-foreground font-medium">Все валюты казино</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Game Mechanics */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Как это работает</h2>
+                <div className="gaming-border card-shadow p-6 rounded-lg">
                   <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Настраиваемый RTP от 94% до 97%</span>
+                      <span>Игрок выбирает от 1 до 10 чисел из 40</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Современный и интуитивно понятный интерфейс</span>
+                      <span>Система генерирует 10 случайных выигрышных чисел</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Поддержка всех основных платформ</span>
+                      <span>Выплаты зависят от количества совпадений</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Мультиязычная поддержка</span>
+                      <span>Каждый раунд проверяем через Provably Fair</span>
                     </li>
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-3">
                       <span className="text-primary mt-1">•</span>
-                      <span>Высокие множители до 1000x</span>
+                      <span>Все транзакции через API казино</span>
                     </li>
                   </ul>
                 </div>
+              </div>
 
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Ключевые игровые моменты</h2>
-                  <div className="space-y-3 sm:space-y-4">
-                    
-                    {/* Джекпот */}
-                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'jackpot' ? null : 'jackpot')} className="w-full flex items-center justify-between p-4 sm:p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
-                        <div className="flex items-center gap-3 sm:gap-4">
-                          <div className="relative">
-                            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
-                                <span className="text-white text-xs font-bold">★</span>
-                              </div>
-                            </div>
-                            <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-400 rounded-full flex items-center justify-center">
-                              <span className="text-xs font-bold text-white">15</span>
-                            </div>
-                          </div>
-                          <div className="text-left">
-                            <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Джекпот
-                            </h3>
-                              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                                <span className="text-xs sm:text-sm text-muted-foreground">15-й угаданных моментов</span>
-                                <div className="flex items-center gap-1">
-                                  <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Множитель: 1000x</span>
-                                  <span className="text-xs bg-cyan-400/20 text-cyan-400 px-2 py-1 rounded">Вероятность: 0.000006%</span>
-                                </div>
-                              </div>
-                          </div>
-                        </div>
-                        {activeScreenshot === 'jackpot' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
-                      </button>
-                      {activeScreenshot === 'jackpot' && <div className="border-t border-border/50">
-                          <div className="p-4 sm:p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                            <div className="space-y-4 sm:space-y-6">
-                              <img src={gameData.image} alt="Keno jackpot screen" className="w-full h-40 sm:h-64 object-cover rounded-lg border border-border/50" />
-                              
-                              <div>
-                                <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Описание момента</h4>
-                                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                                  Невероятно редкий случай! Игрок угадал все 15 выбранных номеров из 20 возможных. 
-                                  Это событие происходит раз в несколько миллионов игр. Максимальный множитель 1000x 
-                                  превратил небольшую ставку в огромный выигрыш!
-                                </p>
-                              </div>
-
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                <div className="bg-blue-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-blue-400 block mb-1 text-xs sm:text-sm">Угадано номеров</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-blue-400">15/15</span>
-                                  <div className="text-xs text-blue-400/70 mt-1">Полный джекпот!</div>
-                                </div>
-                                <div className="bg-green-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-green-400 block mb-1 text-xs sm:text-sm">Выигрыш</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-green-400">250,000₽</span>
-                                  <div className="text-xs text-green-400/70 mt-1">Ставка: 250₽</div>
-                                </div>
-                                <div className="bg-purple-500/10 border border-purple-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-purple-400 block mb-1 text-xs sm:text-sm">Множитель</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-purple-400">1,000x</span>
-                                  <div className="text-xs text-purple-400/70 mt-1">Максимальный!</div>
-                                </div>
-                              </div>
-
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
-                                    🎰 Статистика джекпота:
-                                  </h5>
-                                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Вероятность 15/15:</span>
-                                      <span className="text-blue-400 font-medium">1 к 16M</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Последний джекпот:</span>
-                                      <span className="text-purple-400 font-medium">8 мес. назад</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Всего номеров вышло:</span>
-                                      <span className="text-blue-400 font-medium">20 из 80</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">RTP раунда:</span>
-                                      <span className="text-green-400 font-medium">97%</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                                    🎮 Элементы интерфейса:
-                                  </h5>
-                                  <div className="space-y-2 text-sm">
-                                    <div className="text-muted-foreground">• Вспышки на всех угаданных номерах</div>
-                                    <div className="text-muted-foreground">• Анимация золотого дождя</div>
-                                    <div className="text-muted-foreground">• Звук фанфар джекпота</div>
-                                    <div className="text-muted-foreground">• Таблица выплат с подсветкой</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>}
-                    </div>
-
-                    {/* Частичный выигрыш */}
-                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'win' ? null : 'win')} className="w-full flex items-center justify-between p-4 sm:p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
-                        <div className="flex items-center gap-3 sm:gap-4">
-                          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
-                              <span className="text-white text-xs font-bold">9</span>
-                            </div>
-                          </div>
-                          <div className="text-left">
-                            <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Хороший выигрыш
-                            </h3>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                              <span className="text-xs sm:text-sm text-muted-foreground">девять совпадений множители</span>
-                              <div className="flex items-center gap-1">
-                                <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">Множитель: 25x</span>
-                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">Вероятность: 0.16%</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {activeScreenshot === 'win' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
-                      </button>
-                      {activeScreenshot === 'win' && <div className="border-t border-border/50">
-                          <div className="p-4 sm:p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                            <div className="space-y-4 sm:space-y-6">
-                              <img src={gameData.image} alt="Keno winning screen" className="w-full h-40 sm:h-64 object-cover rounded-lg border border-border/50" />
-                              
-                              <div>
-                                <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Описание момента</h4>
-                                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                                  Отличный результат! Игрок выбрал 10 номеров и угадал 9 из них. Это очень хороший 
-                                  результат, который встречается примерно в одной игре из 600. Множитель 25x дает 
-                                  солидный выигрыш и хорошее настроение!
-                                </p>
-                              </div>
-
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                <div className="bg-green-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-green-400 block mb-1 text-xs sm:text-sm">Угадано номеров</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-green-400">9/10</span>
-                                  <div className="text-xs text-green-400/70 mt-1">Почти идеально!</div>
-                                </div>
-                                <div className="bg-blue-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-blue-400 block mb-1 text-xs sm:text-sm">Выигрыш</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-blue-400">3,750₽</span>
-                                  <div className="text-xs text-blue-400/70 mt-1">Ставка: 150₽</div>
-                                </div>
-                                <div className="bg-purple-500/10 border border-purple-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-purple-400 block mb-1 text-xs sm:text-sm">Множитель</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-purple-400">25x</span>
-                                  <div className="text-xs text-purple-400/70 mt-1">Отличный результат</div>
-                                </div>
-                              </div>
-
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
-                                    📊 Анализ результата:
-                                  </h5>
-                                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Вероятность 9/10:</span>
-                                      <span className="text-green-400 font-medium">0.16%</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Следующий уровень (10/10):</span>
-                                      <span className="text-yellow-400 font-medium">100x</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Промах номера:</span>
-                                      <span className="text-red-400 font-medium">№47</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Процент от джекпота:</span>
-                                      <span className="text-cyan-400 font-medium">2.5%</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
-                                    ✨ Элементы интерфейса:
-                                  </h5>
-                                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                                    <div className="text-muted-foreground">• Зеленая подсветка угаданных номеров</div>
-                                    <div className="text-muted-foreground">• Анимация подсчета выигрыша</div>
-                                    <div className="text-muted-foreground">• Звук успешного совпадения</div>
-                                    <div className="text-muted-foreground">• Увеличенная таблица выплат</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>}
-                    </div>
-
-                    {/* Выбор номеров */}
-                    <div className="gaming-border card-shadow rounded-lg overflow-hidden smooth-transition hover:shadow-glow">
-                      <button onClick={() => setActiveScreenshot(activeScreenshot === 'selection' ? null : 'selection')} className="w-full flex items-center justify-between p-6 bg-muted/20 hover:bg-muted/30 transition-all duration-300 group">
-                        <div className="flex items-center gap-3 sm:gap-4">
-                          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
-                              <div className="grid grid-cols-2 gap-1">
-                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                                <div className="w-2 h-2 rounded-sm bg-gradient-to-br from-blue-400 to-cyan-500"></div>
-                                <div className="w-2 h-2 rounded-sm bg-muted-foreground/30"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="text-left">
-                            <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Стратегически выбор номеров
-                            </h3>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
-                              <span className="text-xs sm:text-sm text-muted-foreground">Выбор 12 номеров из 80</span>
-                              <div className="flex items-center gap-1">
-                                <span className="text-xs bg-blue-400/20 text-blue-400 px-2 py-1 rounded">выбрано</span>
-                                <span className="text-xs bg-green-400/20 text-green-400 px-2 py-1 rounded">ставкой</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {activeScreenshot === 'selection' ? <ChevronUp className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" /> : <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />}
-                      </button>
-                      {activeScreenshot === 'selection' && <div className="border-t border-border/50">
-                          <div className="p-4 sm:p-6 bg-gradient-to-br from-background via-background to-muted/10">
-                            <div className="space-y-4 sm:space-y-6">
-                              <img src={gameData.image} alt="Keno number selection screen" className="w-full h-40 sm:h-64 object-cover rounded-lg border border-border/50" />
-                              
-                              <div>
-                                <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Описание момента</h4>
-                                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                                  Ключевой момент любой игры в Keno - выбор номеров! Игрок выбрал сбалансированную 
-                                  стратегию с 12 номерами, что дает хорошее соотношение риска и потенциального выигрыша. 
-                                  Номера распределены по всему полю для максимального покрытия.
-                                </p>
-                              </div>
-
-                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                <div className="bg-blue-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-blue-400 block mb-1 text-xs sm:text-sm">Выбрано номеров</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-blue-400">12/80</span>
-                                  <div className="text-xs text-blue-400/70 mt-1">Сбалансированная стратегия</div>
-                                </div>
-                                <div className="bg-green-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-green-400 block mb-1 text-xs sm:text-sm">Размер ставки</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-green-400">200₽</span>
-                                  <div className="text-xs text-green-400/70 mt-1">Средний размер</div>
-                                </div>
-                                <div className="bg-purple-500/10 border border-purple-500/20 p-3 sm:p-4 rounded-lg">
-                                  <span className="text-purple-400 block mb-1 text-xs sm:text-sm">Макс. выигрыш</span>
-                                  <span className="text-xl sm:text-2xl font-bold text-purple-400">200,000₽</span>
-                                  <div className="text-xs text-purple-400/70 mt-1">При 12/12</div>
-                                </div>
-                              </div>
-
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 p-3 sm:p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
-                                    🎯 Выбранная стратегия:
-                                  </h5>
-                                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Вероятность выигрыша:</span>
-                                      <span className="text-blue-400 font-medium">74.5%</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Мин. для выигрыша:</span>
-                                      <span className="text-green-400 font-medium">4 номера</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">Покрытие поля:</span>
-                                      <span className="text-purple-400 font-medium">15%</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                      <span className="text-muted-foreground">RTP стратегии:</span>
-                                      <span className="text-cyan-400 font-medium">95.2%</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-                                  <h5 className="font-medium text-foreground mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
-                                    🎮 Элементы интерфейса:
-                                  </h5>
-                                  <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-                                    <div className="text-muted-foreground">• Интерактивная сетка 8x10 номеров</div>
-                                    <div className="text-muted-foreground">• Счетчик выбранных номеров</div>
-                                    <div className="text-muted-foreground">• Динамическая таблица выплат</div>
-                                    <div className="text-muted-foreground">• Кнопки быстрого выбора</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>}
-                    </div>
-
+              {/* Payout Table */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-2">Пример коэффициентов</h2>
+                <p className="text-sm text-muted-foreground mb-4">(Конфигурация с RTP 98%)</p>
+                <div className="gaming-border card-shadow rounded-lg overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-muted/30">
+                        <tr>
+                          <th className="p-3 text-left">Выбрано</th>
+                          <th className="p-3 text-left">Угадано</th>
+                          <th className="p-3 text-left">Коэффициент</th>
+                          <th className="p-3 text-left">Вероятность</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-border/50">
+                          <td className="p-3">1</td>
+                          <td className="p-3">1</td>
+                          <td className="p-3 text-green-400 font-medium">3.6x</td>
+                          <td className="p-3 text-muted-foreground">25%</td>
+                        </tr>
+                        <tr className="border-b border-border/50">
+                          <td className="p-3">5</td>
+                          <td className="p-3">5</td>
+                          <td className="p-3 text-green-400 font-medium">142x</td>
+                          <td className="p-3 text-muted-foreground">0.77%</td>
+                        </tr>
+                        <tr className="border-b border-border/50">
+                          <td className="p-3">10</td>
+                          <td className="p-3">6</td>
+                          <td className="p-3 text-green-400 font-medium">12x</td>
+                          <td className="p-3 text-muted-foreground">11.36%</td>
+                        </tr>
+                        <tr>
+                          <td className="p-3">10</td>
+                          <td className="p-3">10</td>
+                          <td className="p-3 text-yellow-400 font-medium">750x</td>
+                          <td className="p-3 text-muted-foreground">0.0001%</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                
-                <div className="pt-6 border-t">
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <Link to="/#games" className="flex-1">
-                      <Button className="w-full bg-muted hover:bg-muted/80 text-foreground px-6 py-3 sm:px-5 sm:py-4 text-sm sm:text-base">
-                        Назад к играм
-                      </Button>
-                    </Link>
-                    <Link to="/#contact" className="flex-1">
-                      <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-3 sm:px-5 sm:py-4 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
-                        Запросить интеграцию
-                      </Button>
-                    </Link>
+                <p className="text-xs text-muted-foreground mt-3">
+                  * Любые коэффициенты по запросу казино. RTP настраивается без ограничений.
+                </p>
+              </div>
+
+              {/* For Operators */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Что мы настраиваем</h2>
+                <div className="gaming-border card-shadow p-6 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>RTP - любое значение по вашему запросу</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Коэффициенты выплат - полная кастомизация</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Лимиты ставок - любые значения</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Максимальный выигрыш - по вашим требованиям</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Логотип казино на игровом поле</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-muted-foreground">
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <span>Полная кастомизация дизайна (в разработке)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-muted-foreground md:col-span-2">
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <span>Бэк-офис для операторов (Q1 2025)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Integration */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Zero-effort интеграция</h2>
+                <div className="gaming-border card-shadow p-6 rounded-lg">
+                  <p className="text-lg font-medium text-foreground mb-4">
+                    Вам не нужно ничего делать:
+                  </p>
+                  <ul className="space-y-3 text-muted-foreground mb-6">
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Предоставьте API вашего казино</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Мы сами всё интегрируем за 3-5 дней</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Игра управляет транзакциями через ваш API</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Балансы остаются на вашей стороне</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Готовый iframe для встраивания</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Полная техподдержка</span>
+                    </li>
+                  </ul>
+                  <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
+                    <p className="text-primary font-medium">
+                      Ключевое преимущество: Мы берем на себя всю техническую интеграцию. Вам нужно только предоставить доступ к API.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Demo Game */}
-            <div className="lg:sticky lg:top-16 lg:self-start">
-              <div className="bg-muted/20 rounded-lg p-6">
+            {/* Right Side - Demo (40%) */}
+            <div className="xl:col-span-2 space-y-6">
+              {/* Demo Section */}
+              <div className="sticky top-8">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
                 
                 {/* Mobile Play Button - Only visible on mobile */}
@@ -483,13 +365,18 @@ const Keno = () => {
                   </div>
                 </div>
                 
-                <p className="text-sm text-muted-foreground text-center mt-4 hidden md:block">
-                  Попробуйте игру на разных устройствах! Это полнофункциональная демо-версия.
+                <p className="text-sm text-muted-foreground text-center mt-4 mb-6">
+                  Демо-версия с Provably Fair
                 </p>
-                
-                <p className="text-sm text-muted-foreground text-center mt-4 block md:hidden">
-                  Нажмите "Играть" чтобы протестировать полнофункциональную демо-версию!
-                </p>
+
+                {/* Integration Button */}
+                <div className="text-center">
+                  <Link to="/#contact">
+                    <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                      Запросить интеграцию
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -536,6 +423,8 @@ const Keno = () => {
       </Dialog>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Keno;
