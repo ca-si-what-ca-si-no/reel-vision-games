@@ -469,19 +469,42 @@ const Keno = () => {
 
                 {/* Device Preview with Side Controls */}
                 <div className="flex items-start justify-center gap-4 mb-6">
-                  {/* Phone Preview */}
-                  {selectedDevice === 'mobile' && (
-                    <div className="phone-frame">
-                      <div className="phone-screen">
-                        <iframe 
-                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                          className="w-full h-full border-0 rounded-[28px]"
-                          title="Keno Mobile Demo Game"
-                          allow="fullscreen"
-                        />
+                  {/* Left side - Phone and CTA aligned */}
+                  <div className="flex flex-col items-start">
+                    {/* Phone Preview */}
+                    {selectedDevice === 'mobile' && (
+                      <div className="phone-frame">
+                        <div className="phone-screen">
+                          <iframe 
+                            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                            className="w-full h-full border-0 rounded-[28px]"
+                            title="Keno Mobile Demo Game"
+                            allow="fullscreen"
+                          />
+                        </div>
                       </div>
+                    )}
+                    
+                    {/* Call to Action */}
+                    <div className="mt-8 w-[400px] space-y-4">
+                      <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                        <h3 className="text-base font-semibold mb-2">Готовы интегрировать Keno?</h3>
+                        <p className="text-muted-foreground text-xs mb-3">
+                          Получите полнофункциональную демо-версию с документацией API
+                        </p>
+                        <div className="flex items-center justify-center gap-2 text-green-400 mb-3">
+                          <CheckCircle className="w-3 h-3" />
+                          <span className="text-xs">Готова к интеграции</span>
+                        </div>
+                      </div>
+                      
+                      <Link to="/#contact" className="block">
+                        <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground">
+                          Запросить интеграцию
+                        </Button>
+                      </Link>
                     </div>
-                  )}
+                  </div>
                   
                   {/* Device Selection Buttons - Hidden on mobile */}
                   <div className="hidden md:flex flex-col gap-2">
@@ -509,26 +532,6 @@ const Keno = () => {
                       </button>
                     </div>
                   </div>
-                </div>
-
-                {/* Call to Action */}
-                <div className="mt-8 w-[400px] space-y-4">
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <h3 className="text-base font-semibold mb-2">Готовы интегрировать Keno?</h3>
-                    <p className="text-muted-foreground text-xs mb-3">
-                      Получите полнофункциональную демо-версию с документацией API
-                    </p>
-                    <div className="flex items-center justify-center gap-2 text-green-400 mb-3">
-                      <CheckCircle className="w-3 h-3" />
-                      <span className="text-xs">Готова к интеграции</span>
-                    </div>
-                  </div>
-                  
-                  <Link to="/#contact" className="block">
-                    <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground">
-                      Запросить интеграцию
-                    </Button>
-                  </Link>
                 </div>
               </div>
             </div>
