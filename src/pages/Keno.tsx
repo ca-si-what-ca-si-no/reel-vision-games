@@ -101,16 +101,18 @@ const Keno = () => {
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="text-lg mb-2">📱💻📱</div>
-                    
-                    <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
+                    <div className="w-8 h-8 mx-auto mb-2 text-blue-400">
+                      <Smartphone className="w-full h-full" />
+                    </div>
+                    <div className="font-semibold text-blue-400">Адаптивный дизайн</div>
+                    <div className="text-sm text-muted-foreground">Все устройства</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
                       <Globe className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-cyan-400">RU • EN +</div>
+                    <div className="font-semibold text-cyan-400">Мультиязычность</div>
                     <div className="text-sm text-muted-foreground">Расширяемая</div>
                   </div>
 
@@ -118,8 +120,8 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-green-400">
                       <Shield className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">✓</div>
-                    <div className="text-sm text-muted-foreground">Provably Fair</div>
+                    <div className="font-semibold text-green-400">Provably Fair ✓</div>
+                    <div className="text-sm text-muted-foreground">Честная игра</div>
                   </div>
                 </div>
               </div>
@@ -308,26 +310,28 @@ const Keno = () => {
                   </button>
                 </div>
 
-                {/* Device Preview - Hidden on mobile */}
-                <div className="hidden md:flex justify-center">
-                  <div className="phone-frame relative">
-                    <div className="phone-screen">
-                      <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[20px]" title="Keno Mobile Demo Game" allow="fullscreen" />
+                {/* Device Preview and CTA - Hidden on mobile */}
+                <div className="hidden md:block">
+                  <div className="flex justify-start">
+                    <div className="phone-frame relative">
+                      <div className="phone-screen">
+                        <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[20px]" title="Keno Mobile Demo Game" allow="fullscreen" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <p className="text-sm text-muted-foreground text-center mt-4 mb-6">
-                  Демо-версия с Provably Fair
-                </p>
+                  
+                  <p className="text-sm text-muted-foreground mt-4 mb-6">
+                    Демо-версия с Provably Fair
+                  </p>
 
-                {/* Integration Button */}
-                <div className="text-center">
-                  <Link to="/#contact">
-                    <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                      Запросить интеграцию
-                    </Button>
-                  </Link>
+                  {/* Integration Button */}
+                  <div>
+                    <Link to="/#contact">
+                      <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        Запросить интеграцию
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
