@@ -64,7 +64,7 @@ const Keno = () => {
 
               {/* Game Description */}
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Описание игры</h2>
+                <h2 className="text-2xl font-semibold mb-6">Классика, которая работает всегда.</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     Игроки понимают её с первого взгляда — выбираешь числа, получаешь результат. 
