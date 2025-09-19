@@ -65,58 +65,26 @@ const Keno = () => {
               {/* Game Description */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Описание игры</h2>
-                <div className="space-y-6">
-                  {/* Simplicity Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-primary text-2xl">🎯</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Лотерея без лишних сложностей
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Игроки понимают её с первого взгляда — <span className="text-primary font-medium">выбираешь числа, получаешь результат</span>. Никаких туториалов, никакой путаницы с правилами.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Efficiency Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-accent transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-accent text-2xl">📈</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Эффективность для вашего казино
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          <span className="text-accent font-medium">Поддержка почти не получает вопросов</span> благодаря простоте правил. Игроки возвращаются день за днем за честным и прозрачным геймплеем. <span className="text-accent font-medium">Охват аудитории максимальный</span> — от студентов до пенсионеров, от новичков до опытных игроков.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Reliability Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-secondary text-2xl">⚡</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Надежный инструмент для дохода
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Это не революция в гейминге. Это <span className="text-secondary font-medium">надежный инструмент, который приносит предсказуемый доход</span> без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Final Statement */}
-                  <div className="text-center p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/20">
-                    <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      💎 Классика, которая работает всегда
-                    </p>
-                  </div>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Игроки понимают её с первого взгляда — выбираешь числа, получаешь результат. 
+                    Никаких туториалов, никакой путаницы с правилами.
+                  </p>
+                  
+                  <p>
+                    Поддержка почти не получает вопросов благодаря простоте правил. 
+                    Игроки возвращаются день за днем за честным и прозрачным геймплеем. 
+                    Охват аудитории максимальный — от студентов до пенсионеров, от новичков до опытных игроков.
+                  </p>
+                  
+                  <p>
+                    Это не революция в гейминге. Это надежный инструмент, который приносит предсказуемый доход 
+                    без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.
+                  </p>
+                  
+                  <p className="text-foreground font-medium pt-2">
+                    Классика, которая работает всегда.
+                  </p>
                 </div>
               </div>
 
