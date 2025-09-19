@@ -133,32 +133,56 @@ const Keno = () => {
               {/* Main Parameters */}
               
 
-              {/* Game Mechanics */}
+              {/* Game Process */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Как это работает</h2>
+                <h2 className="text-2xl font-semibold mb-4">Процесс игры</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Игрок выбирает от 1 до 10 чисел из 40</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Система генерирует 10 случайных выигрышных чисел</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Выплаты зависят от количества совпадений</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Каждый раунд проверяем через Provably Fair</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      
-                    </li>
-                  </ul>
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h3 className="text-lg font-semibold text-blue-400 mb-2">1. Инициализация раунда</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Игрок выбирает 1-10 чисел из 40</li>
+                        <li>• Система генерирует seed для Provably Fair</li>
+                        <li>• Отображается хеш будущего результата</li>
+                      </ul>
+                    </div>
+
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h3 className="text-lg font-semibold text-green-400 mb-2">2. Транзакция ставки</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Запрос на списание через API казино</li>
+                        <li>• Подтверждение баланса</li>
+                        <li>• Фиксация ставки в системе</li>
+                      </ul>
+                    </div>
+
+                    <div className="border-l-4 border-purple-500 pl-4">
+                      <h3 className="text-lg font-semibold text-purple-400 mb-2">3. Генерация результата</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• RNG генерирует 10 чисел из 40</li>
+                        <li>• Использование seed + server seed</li>
+                        <li>• Результат неизменяем после генерации</li>
+                      </ul>
+                    </div>
+
+                    <div className="border-l-4 border-yellow-500 pl-4">
+                      <h3 className="text-lg font-semibold text-yellow-400 mb-2">4. Расчет выигрыша</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Сравнение выборов игрока с результатом</li>
+                        <li>• Применение коэффициента из таблицы выплат</li>
+                        <li>• Формирование суммы выигрыша</li>
+                      </ul>
+                    </div>
+
+                    <div className="border-l-4 border-orange-500 pl-4">
+                      <h3 className="text-lg font-semibold text-orange-400 mb-2">5. Завершение раунда</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Начисление выигрыша через API</li>
+                        <li>• Сохранение истории раунда</li>
+                        <li>• Раскрытие server seed для проверки</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
 
