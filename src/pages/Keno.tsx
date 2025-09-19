@@ -512,7 +512,7 @@ const Keno = () => {
                 </div>
 
                 {/* Call to Action */}
-                <div className="mt-8 w-[400px] mx-auto space-y-4">
+                <div className="mt-8 w-[400px] space-y-4">
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <h3 className="text-base font-semibold mb-2">Готовы интегрировать Keno?</h3>
                     <p className="text-muted-foreground text-xs mb-3">
