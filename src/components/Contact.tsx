@@ -1,62 +1,83 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageCircle, Send, Linkedin, Star, Zap } from "lucide-react";
+import { Linkedin, Mail, MessageCircle, Send, Star, Zap } from "lucide-react";
 const Contact = () => {
-  const contactInfo = [{
-    icon: Mail,
-    title: "Email",
-    content: "business@gdeNazvanie-studio.com",
-    description: "Для деловых предложений"
-  }, {
-    icon: MessageCircle,
-    title: "Telegram",
-    content: "@gdeNazvanie_support",
-    description: "Быстрые ответы и поддержка"
-  }, {
-    icon: Linkedin,
-    title: "LinkedIn",
-    content: "2xWet Studio",
-    description: "Профессиональная сеть и новости"
-  }];
-  return <section id="contact" className="min-h-screen flex items-center justify-center relative py-24">
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email",
+      content: "business@gdeNazvanie-studio.com",
+      description: "Для деловых предложений",
+    },
+    {
+      icon: MessageCircle,
+      title: "Telegram",
+      content: "@gdeNazvanie_support",
+      description: "Быстрые ответы и поддержка",
+    },
+    {
+      icon: Linkedin,
+      title: "LinkedIn",
+      content: "2xWet Studio",
+      description: "Профессиональная сеть и новости",
+    },
+  ];
+  return (
+    <section
+      id="contact"
+      className="min-h-screen flex items-center justify-center relative py-24"
+    >
       {/* Floating decorative elements */}
-      <div className="absolute top-24 left-20 animate-float opacity-35 z-10" style={{
-        animationDelay: '0.8s'
-      }}>
+      <div
+        className="absolute top-24 left-20 animate-float opacity-35 z-10"
+        style={{
+          animationDelay: "0.8s",
+        }}
+      >
         <Star className="w-5 h-5 text-accent/35" />
       </div>
-      <div className="absolute top-1/3 right-20 animate-float opacity-40 z-10" style={{
-        animationDelay: '1.8s'
-      }}>
+      <div
+        className="absolute top-1/3 right-20 animate-float opacity-40 z-10"
+        style={{
+          animationDelay: "1.8s",
+        }}
+      >
         <Zap className="w-6 h-6 text-primary-glow/40" />
       </div>
-      <div className="absolute bottom-1/4 left-1/3 animate-float opacity-30 z-10" style={{
-        animationDelay: '2.8s'
-      }}>
+      <div
+        className="absolute bottom-1/4 left-1/3 animate-float opacity-30 z-10"
+        style={{
+          animationDelay: "2.8s",
+        }}
+      >
         <Star className="w-4 h-4 text-primary/30" />
       </div>
-      <div className="absolute top-20 right-1/4 animate-float opacity-25 z-10" style={{
-        animationDelay: '3.8s'
-      }}>
+      <div
+        className="absolute top-20 right-1/4 animate-float opacity-25 z-10"
+        style={{
+          animationDelay: "3.8s",
+        }}
+      >
         <Star className="w-6 h-6 text-accent/25" />
       </div>
-      <div className="absolute bottom-16 right-12 animate-float opacity-40 z-10" style={{
-        animationDelay: '4.8s'
-      }}>
+      <div
+        className="absolute bottom-16 right-12 animate-float opacity-40 z-10"
+        style={{
+          animationDelay: "4.8s",
+        }}
+      >
         <Zap className="w-5 h-5 text-primary/40" />
       </div>
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Свяжитесь</span>{" "}
-            <span className="text-transparent bg-gradient-accent bg-clip-text">с нами</span>
+            <span className="text-transparent bg-gradient-accent bg-clip-text">
+              с нами
+            </span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-tight">
-            Готовы обсудить ваш проект? Наша команда всегда готова помочь 
-            с интеграцией игр и ответить на все ваши вопросы.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -71,37 +92,57 @@ const Contact = () => {
                   <label className="text-base font-medium text-foreground/80 mb-2 block">
                     Имя
                   </label>
-                  <Input placeholder="Ваше имя" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+                  <Input
+                    placeholder="Ваше имя"
+                    className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
+                  />
                 </div>
                 <div>
                   <label className="text-base font-medium text-foreground/80 mb-2 block">
                     Компания
                   </label>
-                  <Input placeholder="Название компании" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+                  <Input
+                    placeholder="Название компании"
+                    className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
+                  />
                 </div>
               </div>
-              
+
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
                   Email <span className="text-red-500">*</span>
                 </label>
-                <Input type="email" placeholder="your@email.com" required className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+                <Input
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
+                />
               </div>
-              
+
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
                   Тема
                 </label>
-                <Input placeholder="Интеграция игр / Партнерство / Техподдержка" className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60" />
+                <Input
+                  placeholder="Интеграция игр / Партнерство / Техподдержка"
+                  className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
+                />
               </div>
-              
+
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
                   Сообщение <span className="text-red-500">*</span>
                 </label>
-                <Textarea placeholder="Расскажите подробнее о вашем проекте..." rows={3} required minLength={10} className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60" />
+                <Textarea
+                  placeholder="Расскажите подробнее о вашем проекте..."
+                  rows={3}
+                  required
+                  minLength={10}
+                  className="bg-input border-border focus:border-accent resize-none placeholder:text-muted-foreground/60"
+                />
               </div>
-              
+
               <Button className="w-full accent-gradient glow-effect font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Send className="w-5 h-5 mr-2" />
                 Отправить сообщение
@@ -110,24 +151,40 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6 animate-slide-in" style={{
-          animationDelay: '0.2s'
-        }}>
+          <div
+            className="space-y-6 animate-slide-in"
+            style={{
+              animationDelay: "0.2s",
+            }}
+          >
             <h3 className="text-2xl font-bold mb-6 text-foreground">
               Контактная информация
             </h3>
-            
+
             {contactInfo.map((info, index) => {
-              const href = info.title === "Email" 
-                ? `mailto:${info.content}` 
-                : info.title === "Telegram"
-                ? `https://t.me/${info.content.replace('@', '')}`
-                : `https://linkedin.com/company/2xwet-studio`;
-              const target = info.title === "Telegram" || info.title === "LinkedIn" ? "_blank" : undefined;
-              const rel = info.title === "Telegram" || info.title === "LinkedIn" ? "noopener noreferrer" : undefined;
-              
+              const href =
+                info.title === "Email"
+                  ? `mailto:${info.content}`
+                  : info.title === "Telegram"
+                    ? `https://t.me/${info.content.replace("@", "")}`
+                    : `https://linkedin.com/company/2xwet-studio`;
+              const target =
+                info.title === "Telegram" || info.title === "LinkedIn"
+                  ? "_blank"
+                  : undefined;
+              const rel =
+                info.title === "Telegram" || info.title === "LinkedIn"
+                  ? "noopener noreferrer"
+                  : undefined;
+
               return (
-                <a key={index} href={href} target={target} rel={rel} className="block">
+                <a
+                  key={index}
+                  href={href}
+                  target={target}
+                  rel={rel}
+                  className="block"
+                >
                   <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group cursor-pointer">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
@@ -151,12 +208,12 @@ const Contact = () => {
                 </a>
               );
             })}
-            
+
             {/* Quick Stats */}
-            
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Contact;
