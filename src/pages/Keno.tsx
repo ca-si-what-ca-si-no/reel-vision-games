@@ -40,7 +40,7 @@ const Keno = () => {
       </div>
       <Header />
       <main className="pt-20">
-        <div className="container mx-auto px-6 py-12">
+        <div className="max-w-[1200px] mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <div className="mb-8">
             <Link to="/#games" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">

@@ -35,7 +35,7 @@ const Hero = () => {
         <Zap className="w-6 h-6 text-primary-glow/35" />
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight text-center mt-8 md:mt-0">
             <span className="text-foreground">Создаем</span>{" "}
