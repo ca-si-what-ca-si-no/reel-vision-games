@@ -82,7 +82,7 @@ const Hero = () => {
                   document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >
-                <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
+                <span className="text-transparent bg-gradient-accent bg-clip-text">Смотреть каталог →</span>
               </Button>
               
               <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
