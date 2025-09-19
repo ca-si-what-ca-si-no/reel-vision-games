@@ -46,16 +46,19 @@ const Hero = () => {
             <span className="text-foreground">iGaming</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg">
-            <div className="flex items-center gap-1 md:gap-2">
-              <Rocket className="w-4 h-4 md:w-5 md:h-5 text-accent" />
-              <span className="text-accent font-semibold text-sm md:text-base">Настраиваемый RTP</span>
-            </div>
-            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-muted-foreground/50"></div>
-            <div className="flex items-center gap-1 md:gap-2">
-              <Star className="w-4 h-4 md:w-5 md:h-5 text-primary-glow" />
-              <span className="text-muted-foreground text-sm md:text-base">Топовые предложения</span>
-            </div>
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8 text-base md:text-lg flex-wrap">
+            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              🎯 Любой RTP
+            </span>
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              ⚡ Быстрая интеграция
+            </span>
+            <span className="bg-primary-glow/10 text-primary-glow px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              🎮 5+ игр
+            </span>
+            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
+              ✓ Provably Fair
+            </span>
           </div>
           
           <div className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
