@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
+import { ArrowLeft, Smartphone, Monitor, TabletSmartphone, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
@@ -505,7 +505,7 @@ const Keno = () => {
                         className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
                         title="Планшет"
                       >
-                        <Tablet className="w-5 h-5" />
+                        <TabletSmartphone className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
