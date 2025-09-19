@@ -77,22 +77,15 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto justify-center">
               <div 
-                className="flex items-center justify-center cursor-pointer animate-bounce hover:animate-none transition-all duration-300"
+                className="flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105"
                 onClick={() => {
                   document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >
-                <div className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors">
-                  <span className="text-sm font-medium">Смотреть каталог</span>
-                  <div className="w-6 h-6 border-2 border-white/60 rounded-full flex items-center justify-center">
-                    <svg 
-                      className="w-3 h-3" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
+                <div className="flex flex-col items-center gap-3 text-white/90 hover:text-white transition-colors">
+                  <span className="text-base font-medium">Смотреть каталог</span>
+                  <div className="w-8 h-12 border-2 border-white/30 rounded-full flex items-end justify-center pb-2 hover:border-white/50 transition-colors">
+                    <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse"></div>
                   </div>
                 </div>
               </div>
