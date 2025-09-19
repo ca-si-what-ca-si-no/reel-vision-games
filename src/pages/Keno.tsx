@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingControls from "@/components/FloatingControls";
+
 const Keno = () => {
   const [selectedDevice, setSelectedDevice] = useState('mobile');
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
@@ -16,12 +17,15 @@ const Keno = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const gameData = {
     title: "Keno",
     badge: "Лотерея",
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"
   };
-  return <div className="min-h-screen">
+
+  return (
+    <div className="min-h-screen">
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -139,9 +143,6 @@ const Keno = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Main Parameters */}
-              
 
               {/* Game Process */}
               <div>
@@ -457,11 +458,8 @@ const Keno = () => {
             </div>
 
             {/* Right Side - Demo (40%) */}
-            <div className="xl:col-span-2 space-y-6">
-              {/* Demo Section */}
-              <div className="sticky top-8">
-                <h2 className="text-2xl font-semibold mb-6 text-center">Демо-версия игры</h2>
-                
+            <div className="xl:col-span-2">
+              <div className="sticky top-24">
                 {/* Mobile Play Button - Only visible on mobile */}
                 <div className="block md:hidden mb-6">
                   <Button onClick={() => setIsMobileModalOpen(true)} className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
@@ -470,38 +468,54 @@ const Keno = () => {
                 </div>
                 
                 {/* Device Selection Buttons - Hidden on mobile */}
-                <div className="hidden md:flex gap-2 mb-6 p-2 bg-muted border rounded-lg">
-                  <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}>
-                    <Smartphone className="w-4 h-4" />
-                    <span className="text-sm font-medium">Телефон</span>
-                  </button>
-                  <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
-                    <Monitor className="w-4 h-4" />
-                    <span className="text-sm font-medium">Десктоп</span>
-                  </button>
-                  <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
-                    <Tablet className="w-4 h-4" />
-                    <span className="text-sm font-medium">Планшет</span>
-                  </button>
-                </div>
-
-                {/* Device Preview - Hidden on mobile */}
-                <div className="hidden md:flex justify-center">
-                  <div className="phone-frame relative">
-                    <div className="phone-screen">
-                      <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full border-0 rounded-[20px]" title="Keno Mobile Demo Game" allow="fullscreen" />
+                <div className="hidden md:block mb-6">
+                  <div className="gaming-border card-shadow p-4 rounded-lg">
+                    <div className="flex gap-2">
+                      <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}>
+                        <Smartphone className="w-4 h-4" />
+                        <span className="text-sm font-medium">Телефон</span>
+                      </button>
+                      <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
+                        <Monitor className="w-4 h-4" />
+                        <span className="text-sm font-medium">Десктоп</span>
+                      </button>
+                      <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
+                        <Tablet className="w-4 h-4" />
+                        <span className="text-sm font-medium">Планшет</span>
+                      </button>
                     </div>
                   </div>
                 </div>
-                
-                <p className="text-sm text-muted-foreground text-center mt-4 mb-6">
-                  Демо-версия с Provably Fair
-                </p>
 
-                {/* Integration Button */}
-                <div className="text-center mt-8">
-                  <Link to="/#contact">
-                    <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                {/* Phone Preview */}
+                {selectedDevice === 'mobile' && (
+                  <div className="phone-frame mx-auto">
+                    <div className="phone-screen">
+                      <iframe 
+                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                        className="w-full h-full border-0 rounded-[28px]"
+                        title="Keno Mobile Demo Game"
+                        allow="fullscreen"
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* Call to Action */}
+                <div className="mt-8 space-y-4">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center">
+                    <h3 className="text-lg font-semibold mb-3">Готовы интегрировать Keno?</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Получите полнофункциональную демо-версию с документацией API
+                    </p>
+                    <div className="flex items-center justify-center gap-2 text-green-400 mb-4">
+                      <CheckCircle className="w-4 h-4" />
+                      <span className="text-sm">Готова к интеграции</span>
+                    </div>
+                  </div>
+                  
+                  <Link to="/#contact" className="block">
+                    <Button className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground">
                       Запросить интеграцию
                     </Button>
                   </Link>
@@ -547,6 +561,8 @@ const Keno = () => {
       </Dialog>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Keno;
