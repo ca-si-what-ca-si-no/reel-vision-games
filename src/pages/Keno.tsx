@@ -95,40 +95,40 @@ const Keno = () => {
                   </div>
                   
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-green-400 font-bold text-lg flex items-center justify-center">
+                    <div className="w-8 h-8 mx-auto mb-2 text-accent font-bold text-lg flex items-center justify-center">
                       %
                     </div>
-                    <div className="font-semibold text-green-400">Любой по запросу</div>
+                    <div className="font-semibold text-accent">Любой по запросу</div>
                     <div className="text-sm text-muted-foreground">Без ограничений</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-yellow-400">
+                    <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Zap className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-yellow-400">До x750</div>
+                    <div className="font-semibold text-primary">До x750</div>
                     <div className="text-sm text-muted-foreground">Настраиваемый</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="text-lg mb-2">📱💻📱</div>
-                    <div className="font-semibold text-blue-400">Все устройства</div>
+                    <div className="font-semibold text-secondary">Все устройства</div>
                     <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-cyan-400">
+                    <div className="w-8 h-8 mx-auto mb-2 text-accent">
                       <Globe className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-cyan-400">RU • EN +</div>
+                    <div className="font-semibold text-accent">RU • EN +</div>
                     <div className="text-sm text-muted-foreground">Расширяемая</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
-                    <div className="w-8 h-8 mx-auto mb-2 text-green-400">
+                    <div className="w-8 h-8 mx-auto mb-2 text-accent">
                       <Shield className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-green-400">✓</div>
+                    <div className="font-semibold text-accent">✓</div>
                     <div className="text-sm text-muted-foreground">Provably Fair</div>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ const Keno = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">История игр:</span>
-                      <span className="text-green-400 font-medium">✓ Встроенная</span>
+                      <span className="text-accent font-medium">✓ Встроенная</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Поддержка валют:</span>
@@ -215,25 +215,25 @@ const Keno = () => {
                         <tr className="border-b border-border/50">
                           <td className="p-3">1</td>
                           <td className="p-3">1</td>
-                          <td className="p-3 text-green-400 font-medium">3.6x</td>
+                          <td className="p-3 text-accent font-medium">3.6x</td>
                           <td className="p-3 text-muted-foreground">25%</td>
                         </tr>
                         <tr className="border-b border-border/50">
                           <td className="p-3">5</td>
                           <td className="p-3">5</td>
-                          <td className="p-3 text-green-400 font-medium">142x</td>
+                          <td className="p-3 text-accent font-medium">142x</td>
                           <td className="p-3 text-muted-foreground">0.77%</td>
                         </tr>
                         <tr className="border-b border-border/50">
                           <td className="p-3">10</td>
                           <td className="p-3">6</td>
-                          <td className="p-3 text-green-400 font-medium">12x</td>
+                          <td className="p-3 text-accent font-medium">12x</td>
                           <td className="p-3 text-muted-foreground">11.36%</td>
                         </tr>
                         <tr>
                           <td className="p-3">10</td>
                           <td className="p-3">10</td>
-                          <td className="p-3 text-yellow-400 font-medium">750x</td>
+                          <td className="p-3 text-primary font-medium">750x</td>
                           <td className="p-3 text-muted-foreground">0.0001%</td>
                         </tr>
                       </tbody>
@@ -251,31 +251,31 @@ const Keno = () => {
                 <div className="gaming-border card-shadow p-6 rounded-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <CheckCircle className="w-5 h-5 text-accent" />
                       <span>RTP - любое значение по вашему запросу</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <CheckCircle className="w-5 h-5 text-accent" />
                       <span>Коэффициенты выплат - полная кастомизация</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <CheckCircle className="w-5 h-5 text-accent" />
                       <span>Лимиты ставок - любые значения</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <CheckCircle className="w-5 h-5 text-accent" />
                       <span>Максимальный выигрыш - по вашим требованиям</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <CheckCircle className="w-5 h-5 text-accent" />
                       <span>Логотип казино на игровом поле</span>
                     </div>
                     <div className="flex items-center gap-3 text-muted-foreground">
-                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <div className="w-5 h-5 flex items-center justify-center text-primary">⏳</div>
                       <span>Полная кастомизация дизайна (в разработке)</span>
                     </div>
                     <div className="flex items-center gap-3 text-muted-foreground md:col-span-2">
-                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <div className="w-5 h-5 flex items-center justify-center text-primary">⏳</div>
                       <span>Бэк-офис для операторов (Q1 2025)</span>
                     </div>
                   </div>
