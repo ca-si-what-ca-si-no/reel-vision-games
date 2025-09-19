@@ -60,7 +60,7 @@ const Hero = () => {
           
           
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
+          <div className="flex flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
             <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full" onClick={() => {
             document.getElementById('contact')?.scrollIntoView({
               behavior: 'smooth',
