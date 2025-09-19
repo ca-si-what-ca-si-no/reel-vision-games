@@ -87,7 +87,7 @@ const Keno = () => {
                 <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Волатильность */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
@@ -103,7 +103,7 @@ const Keno = () => {
                   </div>
                   
                   {/* RTP */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
@@ -119,7 +119,7 @@ const Keno = () => {
                   </div>
 
                   {/* Макс. множитель */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
@@ -135,7 +135,7 @@ const Keno = () => {
                   </div>
 
                   {/* Платформы */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
@@ -146,12 +146,12 @@ const Keno = () => {
                           <p className="text-xs text-muted-foreground">Все устройства</p>
                         </div>
                       </div>
-                      <div className="text-lg font-bold text-secondary">📱💻📱</div>
+                      <div className="flex items-center gap-2 text-secondary"><Smartphone className="w-5 h-5" /><Monitor className="w-5 h-5" /><Tablet className="w-5 h-5" /></div>
                     </div>
                   </div>
 
                   {/* Локализация */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center">
@@ -167,7 +167,7 @@ const Keno = () => {
                   </div>
 
                   {/* Provably Fair */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg hover:scale-105 transition-transform duration-200">
+                  <div className="gaming-border card-shadow p-6 rounded-lg h-full hover:scale-105 transition-transform duration-200">
                     <div className="flex items-center gap-4 justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
