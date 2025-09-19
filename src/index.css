@@ -124,21 +124,23 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Snap Scrolling */
-  .snap-scroll-container {
-    scroll-snap-type: y mandatory;
-  }
+  /* Snap Scrolling - только для десктопа */
+  @media (min-width: 1024px) {
+    .snap-scroll-container {
+      scroll-snap-type: y mandatory;
+    }
 
-  .snap-section {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-  }
+    .snap-section {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
 
-  .snap-section-last {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    padding-bottom: 100px; /* Allow scrolling to footer */
-    scroll-margin-bottom: 50px;
+    .snap-section-last {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      padding-bottom: 100px; /* Allow scrolling to footer */
+      scroll-margin-bottom: 50px;
+    }
   }
 
   .hero-gradient {
