@@ -7,7 +7,6 @@ import { RussiaFlag, USAFlag, GermanyFlag, FranceFlag } from "@/components/ui/fl
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Games = () => {
-  const [isKenoModalOpen, setIsKenoModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
   const gameTypes = [{
     title: "Keno",
@@ -132,11 +131,10 @@ const Games = () => {
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 items-stretch">
-                       <Button variant="gaming" className="flex-1 h-10 sm:h-12 px-3 sm:px-4 rounded-lg text-sm sm:text-base" onClick={() => setIsKenoModalOpen(true)}>
-                         Играть!
-                       </Button>
-                       <Link to="/keno" className="outline-button h-10 sm:h-12 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap flex items-center justify-center">
-                         Подробнее
+                       <Link to="/keno" className="w-full">
+                         <Button variant="gaming" className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg text-sm sm:text-base">
+                           Играть!
+                         </Button>
                        </Link>
                     </div> : game.title === "Space Ball" || game.title === "Arrow Shot" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
@@ -238,12 +236,6 @@ const Games = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Keno Demo Modal */}
-      <Dialog open={isKenoModalOpen} onOpenChange={setIsKenoModalOpen}>
-        <DialogContent className="max-w-7xl w-full h-[95vh] p-0">
-          <iframe src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" className="w-full h-full rounded-lg border-0" title="Keno Demo Game" allow="fullscreen" />
-        </DialogContent>
-      </Dialog>
     </section>;
 };
 export default Games;
