@@ -470,16 +470,16 @@ const Keno = () => {
                 </div>
                 
                 {/* Device Selection Buttons - Hidden on mobile */}
-                <div className="hidden md:flex gap-2 mb-6 p-1 bg-muted/30 rounded-lg">
-                  <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>
+                <div className="hidden md:flex gap-2 mb-6 p-2 bg-muted border rounded-lg">
+                  <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}>
                     <Smartphone className="w-4 h-4" />
                     <span className="text-sm font-medium">Телефон</span>
                   </button>
-                  <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50">
+                  <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
                     <Monitor className="w-4 h-4" />
                     <span className="text-sm font-medium">Десктоп</span>
                   </button>
-                  <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md transition-all text-muted-foreground hover:text-foreground hover:bg-muted/50">
+                  <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
                     <Tablet className="w-4 h-4" />
                     <span className="text-sm font-medium">Планшет</span>
                   </button>
