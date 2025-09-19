@@ -75,22 +75,27 @@ const Hero = () => {
               Связаться с нами
             </Button>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
-              <Button 
-                className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full"
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto justify-center">
+              <div 
+                className="flex items-center justify-center cursor-pointer animate-bounce hover:animate-none transition-all duration-300"
                 onClick={() => {
                   document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >
-                <span className="text-transparent bg-gradient-accent bg-clip-text">Смотреть каталог →</span>
-              </Button>
-              
-              <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
-              backgroundColor: 'white',
-              '--tw-bg-opacity': '1'
-            } as React.CSSProperties} asChild>
-                
-              </Button>
+                <div className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors">
+                  <span className="text-sm font-medium">Смотреть каталог</span>
+                  <div className="w-6 h-6 border-2 border-white/60 rounded-full flex items-center justify-center">
+                    <svg 
+                      className="w-3 h-3" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
