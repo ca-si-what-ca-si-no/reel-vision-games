@@ -467,35 +467,45 @@ const Keno = () => {
                   </Button>
                 </div>
 
-                {/* Phone Preview */}
-                {selectedDevice === 'mobile' && (
-                  <div className="phone-frame mx-auto mb-6">
-                    <div className="phone-screen">
-                      <iframe 
-                        src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
-                        className="w-full h-full border-0 rounded-[28px]"
-                        title="Keno Mobile Demo Game"
-                        allow="fullscreen"
-                      />
+                {/* Device Preview with Side Controls */}
+                <div className="flex items-start justify-center gap-4 mb-6">
+                  {/* Phone Preview */}
+                  {selectedDevice === 'mobile' && (
+                    <div className="phone-frame">
+                      <div className="phone-screen">
+                        <iframe 
+                          src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno" 
+                          className="w-full h-full border-0 rounded-[28px]"
+                          title="Keno Mobile Demo Game"
+                          allow="fullscreen"
+                        />
+                      </div>
                     </div>
-                  </div>
-                )}
-                
-                {/* Device Selection Buttons - Hidden on mobile */}
-                <div className="hidden md:block mb-6">
-                  <div className="gaming-border card-shadow p-4 rounded-lg">
-                    <div className="flex gap-2">
-                      <button onClick={() => setSelectedDevice('mobile')} className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}>
-                        <Smartphone className="w-4 h-4" />
-                        <span className="text-sm font-medium">Телефон</span>
+                  )}
+                  
+                  {/* Device Selection Buttons - Hidden on mobile */}
+                  <div className="hidden md:flex flex-col gap-2">
+                    <div className="gaming-border card-shadow p-2 rounded-lg">
+                      <button 
+                        onClick={() => setSelectedDevice('mobile')} 
+                        className={`flex items-center justify-center p-3 rounded-md transition-all border ${selectedDevice === 'mobile' ? 'bg-primary text-primary-foreground shadow-md border-primary' : 'bg-background text-foreground hover:bg-muted/50 border-border hover:border-muted-foreground'}`}
+                        title="Телефон"
+                      >
+                        <Smartphone className="w-5 h-5" />
                       </button>
-                      <button onClick={() => setIsDesktopModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
-                        <Monitor className="w-4 h-4" />
-                        <span className="text-sm font-medium">Десктоп</span>
+                      <button 
+                        onClick={() => setIsDesktopModalOpen(true)} 
+                        className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
+                        title="Десктоп"
+                      >
+                        <Monitor className="w-5 h-5" />
                       </button>
-                      <button onClick={() => setIsTabletModalOpen(true)} className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground">
-                        <Tablet className="w-4 h-4" />
-                        <span className="text-sm font-medium">Планшет</span>
+                      <button 
+                        onClick={() => setIsTabletModalOpen(true)} 
+                        className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
+                        title="Планшет"
+                      >
+                        <Tablet className="w-5 h-5" />
                       </button>
                     </div>
                   </div>
