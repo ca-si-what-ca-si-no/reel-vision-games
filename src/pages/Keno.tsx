@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield } from "lucide-react";
+import { ArrowLeft, Smartphone, Monitor, Tablet, CheckCircle, Settings, Zap, Globe, Shield, TrendingUp, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
@@ -88,15 +88,15 @@ const Keno = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
-                      <Settings className="w-full h-full" />
+                      <TrendingUp className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-primary">Полностью настраиваемая</div>
                     <div className="text-sm text-muted-foreground">Волатильность</div>
                   </div>
                   
                   <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="w-8 h-8 mx-auto mb-2 text-accent font-bold text-lg flex items-center justify-center">
-                      %
+                    <div className="w-8 h-8 mx-auto mb-2 text-accent flex items-center justify-center">
+                      <div className="text-2xl font-bold">%</div>
                     </div>
                     <div className="font-semibold text-accent">Любой по запросу</div>
                     <div className="text-sm text-muted-foreground">Без ограничений</div>
@@ -104,14 +104,16 @@ const Keno = () => {
 
                   <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
-                      <Zap className="w-full h-full" />
+                      <Trophy className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-primary">До x750</div>
                     <div className="text-sm text-muted-foreground">Настраиваемый</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
-                    <div className="text-lg mb-2">📱💻📱</div>
+                    <div className="w-8 h-8 mx-auto mb-2 text-secondary">
+                      <Monitor className="w-full h-full" />
+                    </div>
                     <div className="font-semibold text-secondary">Все устройства</div>
                     <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
                   </div>
