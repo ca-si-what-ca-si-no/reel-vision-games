@@ -124,23 +124,34 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Snap Scrolling - только для десктопа */
-  @media (min-width: 1024px) {
+  /* Snap Scrolling - только для десктопа с улучшенным UX */
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
     .snap-scroll-container {
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity; /* proximity вместо mandatory для лучшего UX */
     }
 
     .snap-section {
       scroll-snap-align: start;
-      scroll-snap-stop: always;
+      scroll-snap-stop: normal; /* normal вместо always для более естественного поведения */
       scroll-margin-top: 80px;
     }
 
     .snap-section-last {
       scroll-snap-align: start;
-      scroll-snap-stop: always;
-      padding-bottom: 100px; /* Allow scrolling to footer */
+      scroll-snap-stop: normal;
+      padding-bottom: 100px;
       scroll-margin-bottom: 50px;
+    }
+  }
+
+  /* Отключаем snap для пользователей с motion sensitivity */
+  @media (prefers-reduced-motion: reduce) {
+    .snap-scroll-container {
+      scroll-snap-type: none;
+    }
+
+    .snap-section {
+      scroll-snap-align: none;
     }
   }
 
@@ -806,5 +817,57 @@ All colors MUST be HSL.
 
   .element-spacing {
     margin-bottom: 0.75rem; /* 12px - между элементами внутри блока */
+  }
+
+  /* Индикатор прогресса скролла */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    transform-origin: 0%;
+    z-index: 50;
+    opacity: 0.8;
+  }
+
+  /* Индикатор секций */
+  .section-indicator {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .section-indicator {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+
+  .section-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: hsl(var(--muted-foreground) / 0.3);
+    border: 2px solid hsl(var(--background));
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .section-dot.active {
+    background: hsl(var(--primary));
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.2);
+  }
+
+  .section-dot:hover {
+    background: hsl(var(--accent));
+    transform: scale(1.1);
   }
 }

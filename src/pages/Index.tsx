@@ -5,6 +5,7 @@ import Integrators from "@/components/Integrators";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <ScrollIndicator />
     </div>
   );
 };
