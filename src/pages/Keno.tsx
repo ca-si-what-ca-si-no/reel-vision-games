@@ -83,6 +83,12 @@ const Keno = () => {
                     без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.
                   </p>
                   
+                  {/* Mobile Play Button - Moved before advantages */}
+                  <div className="block md:hidden mb-8">
+                    <Button onClick={() => setIsMobileModalOpen(true)} className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
+                      Играть
+                    </Button>
+                  </div>
                   
                 </div>
               </div>
@@ -455,13 +461,6 @@ const Keno = () => {
             {/* Right Side - Demo (40%) */}
             <div className="xl:col-span-2">
               <div className="sticky top-24">
-                {/* Mobile Play Button - Only visible on mobile */}
-                <div className="block md:hidden mb-6">
-                  <Button onClick={() => setIsMobileModalOpen(true)} className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110">
-                    Играть
-                  </Button>
-                </div>
-
                 {/* Device Preview with Side Controls */}
                 <div className="flex items-start justify-center gap-4 mb-6">
                   {/* Left side - Phone and CTA aligned */}
