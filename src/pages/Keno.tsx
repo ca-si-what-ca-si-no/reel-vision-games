@@ -83,9 +83,7 @@ const Keno = () => {
                     без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.
                   </p>
                   
-                  <p className="text-foreground font-medium pt-2">
-                    Классика, которая работает всегда.
-                  </p>
+                  
                 </div>
               </div>
 
@@ -477,13 +475,7 @@ const Keno = () => {
                     
                      {/* Call to Action */}
                      <div className="mt-8 w-[400px]">
-                       <CallToActionCard
-                         title="Готовы интегрировать Keno?"
-                         description="Получите полнофункциональную демо-версию с документацией API"
-                         statusText="На связи 24/7"
-                         buttonText="Запросить интеграцию"
-                         buttonLink="/#contact"
-                       />
+                       <CallToActionCard title="Готовы интегрировать Keno?" description="Получите полнофункциональную демо-версию с документацией API" statusText="На связи 24/7" buttonText="Запросить интеграцию" buttonLink="/#contact" />
                      </div>
                   </div>
                   
