@@ -483,7 +483,7 @@ const Keno = () => {
                         </p>
                         <div className="flex items-center justify-center gap-2 text-green-400 mb-3">
                           <CheckCircle className="w-3 h-3" />
-                          <span className="text-xs">Готова к интеграции</span>
+                          <span className="text-xs">На связи 24/7</span>
                         </div>
                       </div>
                       
