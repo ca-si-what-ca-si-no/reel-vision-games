@@ -411,7 +411,7 @@ const Keno = () => {
 
       {/* Tablet Modal */}
       <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
-        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
+        <DialogContent className="max-w-fit p-8 bg-transparent [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
           <DialogTitle className="sr-only">Keno Tablet Game</DialogTitle>
           <DialogDescription className="sr-only">Полнофункциональная демо-версия игры Keno для планшета</DialogDescription>
           <div className="tablet-frame relative mx-auto">
