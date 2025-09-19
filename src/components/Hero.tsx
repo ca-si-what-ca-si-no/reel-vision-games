@@ -62,9 +62,9 @@ const Hero = () => {
             <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
             <Button 
-              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 min-w-[280px] rounded-full"
+              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full"
               onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
@@ -72,9 +72,9 @@ const Hero = () => {
               Связаться с нами
             </Button>
             
-            <div className="flex gap-[10px]">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
               <Button 
-                className="bg-white hover:bg-white border border-white/20 font-bold text-2xl px-14 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[240px] rounded-full"
+                className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full"
                 onClick={() => {
                   document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
@@ -82,7 +82,7 @@ const Hero = () => {
                 <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
               </Button>
               
-              <Button className="border border-white/20 font-bold text-2xl px-16 py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 min-w-[200px] rounded-full" style={{
+              <Button className="border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[200px] sm:w-auto rounded-full" style={{
               backgroundColor: 'white',
               '--tw-bg-opacity': '1'
             } as React.CSSProperties} asChild>
