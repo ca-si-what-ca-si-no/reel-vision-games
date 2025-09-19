@@ -68,7 +68,7 @@ const Integrators = () => {
     description: "Пакет из 5 crash игр",
     features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
   }];
-  return <section id="integrators" className="min-h-screen flex items-center justify-center relative snap-section py-24">
+  return <section id="integrators" className="min-h-screen flex items-center justify-center relative py-24">
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

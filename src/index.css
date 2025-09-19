@@ -124,36 +124,7 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Snap Scrolling - только для десктопа с улучшенным UX */
-  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-    .snap-scroll-container {
-      scroll-snap-type: y proximity; /* proximity вместо mandatory для лучшего UX */
-    }
-
-    .snap-section {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal; /* normal вместо always для более естественного поведения */
-      scroll-margin-top: 80px;
-    }
-
-    .snap-section-last {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-      padding-bottom: 100px;
-      scroll-margin-bottom: 50px;
-    }
-  }
-
-  /* Отключаем snap для пользователей с motion sensitivity */
-  @media (prefers-reduced-motion: reduce) {
-    .snap-scroll-container {
-      scroll-snap-type: none;
-    }
-
-    .snap-section {
-      scroll-snap-align: none;
-    }
-  }
+  /* Удалили snap-scrolling для естественного поведения */
 
   .hero-gradient {
     background: var(--gradient-hero);

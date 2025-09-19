@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="h-screen overflow-y-auto snap-scroll-container">
+    <div className="min-h-screen">
       <ParticlesBackground />
       {/* Animated Background */}
       <div className="animated-background">

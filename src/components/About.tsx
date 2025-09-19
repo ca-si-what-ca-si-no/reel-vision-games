@@ -39,7 +39,7 @@ const About = () => {
     title: "Быстрая интеграция",
     description: "Простое API и техническая поддержка 24/7"
   }];
-  return <section id="about" className="min-h-screen flex items-center justify-center relative snap-section">
+  return <section id="about" className="min-h-screen flex items-center justify-center relative">
       
     </section>;
 };

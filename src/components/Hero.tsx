@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Rocket, Zap, Star } from "lucide-react";
 import TypewriterText from "./TypewriterText";
 const Hero = () => {
-  return <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20 snap-section">
+  return <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* Enhanced Floating Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-60 z-10" style={{
       animationDelay: '0s'
