@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageCircle, Send, Linkedin } from "lucide-react";
+import { Mail, MessageCircle, Send, Linkedin, Star, Zap } from "lucide-react";
 const Contact = () => {
   const contactInfo = [{
     icon: Mail,
@@ -21,6 +21,32 @@ const Contact = () => {
     description: "Профессиональная сеть и новости"
   }];
   return <section id="contact" className="min-h-screen flex items-center justify-center relative py-24">
+      {/* Floating decorative elements */}
+      <div className="absolute top-24 left-20 animate-float opacity-35 z-10" style={{
+        animationDelay: '0.8s'
+      }}>
+        <Star className="w-5 h-5 text-accent/35" />
+      </div>
+      <div className="absolute top-1/3 right-20 animate-float opacity-40 z-10" style={{
+        animationDelay: '1.8s'
+      }}>
+        <Zap className="w-6 h-6 text-primary-glow/40" />
+      </div>
+      <div className="absolute bottom-1/4 left-1/3 animate-float opacity-30 z-10" style={{
+        animationDelay: '2.8s'
+      }}>
+        <Star className="w-4 h-4 text-primary/30" />
+      </div>
+      <div className="absolute top-20 right-1/4 animate-float opacity-25 z-10" style={{
+        animationDelay: '3.8s'
+      }}>
+        <Star className="w-6 h-6 text-accent/25" />
+      </div>
+      <div className="absolute bottom-16 right-12 animate-float opacity-40 z-10" style={{
+        animationDelay: '4.8s'
+      }}>
+        <Zap className="w-5 h-5 text-primary/40" />
+      </div>
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

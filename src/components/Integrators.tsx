@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle } from "lucide-react";
+import { Code, Shield, Zap, HeadphonesIcon, BarChart3, Globe, CheckCircle, Star } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CarouselApi } from "@/components/ui/carousel";
 const Integrators = () => {
@@ -69,6 +69,37 @@ const Integrators = () => {
     features: ["5 уникальных crash игр", "Единая панель управления", "Высокая волатильность", "Настраиваемые параметры", "24/7 техподдержка"]
   }];
   return <section id="integrators" className="min-h-screen flex items-center justify-center relative py-24">
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-16 animate-float opacity-35 z-10" style={{
+        animationDelay: '0.5s'
+      }}>
+        <Star className="w-6 h-6 text-primary-glow/35" />
+      </div>
+      <div className="absolute top-1/4 right-12 animate-float opacity-40 z-10" style={{
+        animationDelay: '1.5s'
+      }}>
+        <Zap className="w-7 h-7 text-accent/40" />
+      </div>
+      <div className="absolute bottom-1/3 left-1/4 animate-float opacity-30 z-10" style={{
+        animationDelay: '2.5s'
+      }}>
+        <Star className="w-4 h-4 text-primary/30" />
+      </div>
+      <div className="absolute top-1/2 right-1/4 animate-float opacity-25 z-10" style={{
+        animationDelay: '3.5s'
+      }}>
+        <Star className="w-5 h-5 text-accent/25" />
+      </div>
+      <div className="absolute bottom-20 right-16 animate-float opacity-40 z-10" style={{
+        animationDelay: '4s'
+      }}>
+        <Zap className="w-5 h-5 text-primary-glow/40" />
+      </div>
+      <div className="absolute top-16 left-1/3 animate-float opacity-30 z-10" style={{
+        animationDelay: '4.5s'
+      }}>
+        <Star className="w-3 h-3 text-accent/30" />
+      </div>
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
