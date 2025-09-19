@@ -61,7 +61,7 @@ const Hero = () => {
             </span>
           </div>
           
-          <div className="text-lg md:text-xl font-poppins font-medium bg-gradient-to-r from-foreground/90 via-primary to-accent bg-clip-text text-transparent mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
+          <div className="text-lg md:text-xl font-poppins font-medium text-foreground/80 mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
             <TypewriterText initialText="Вы даёте API — " typeText="мы интегрируем игры. Никакого кода с вашей стороны." speed={80} />
           </div>
           
