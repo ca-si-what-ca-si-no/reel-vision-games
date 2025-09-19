@@ -64,59 +64,17 @@ const Keno = () => {
 
               {/* Game Description */}
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Описание игры</h2>
-                <div className="space-y-6">
-                  {/* Simplicity Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-primary text-2xl">🎯</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Лотерея без лишних сложностей
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Игроки понимают её с первого взгляда — <span className="text-primary font-medium">выбираешь числа, получаешь результат</span>. Никаких туториалов, никакой путаницы с правилами.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Efficiency Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-accent transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-accent text-2xl">📈</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Эффективность для вашего казино
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          <span className="text-accent font-medium">Поддержка почти не получает вопросов</span> благодаря простоте правил. Игроки возвращаются день за днем за честным и прозрачным геймплеем. <span className="text-accent font-medium">Охват аудитории максимальный</span> — от студентов до пенсионеров, от новичков до опытных игроков.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Reliability Card */}
-                  <div className="gaming-border card-shadow p-6 rounded-lg border-l-4 border-secondary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-                    <div className="flex items-start gap-3">
-                      <div className="text-secondary text-2xl">⚡</div>
-                      <div>
-                        <p className="text-lg font-medium text-foreground mb-2">
-                          Надежный инструмент для дохода
-                        </p>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Это не революция в гейминге. Это <span className="text-secondary font-medium">надежный инструмент, который приносит предсказуемый доход</span> без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Final Statement */}
-                  <div className="text-center p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg border border-primary/20">
-                    <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      💎 Классика, которая работает всегда
-                    </p>
-                  </div>
+                <h2 className="text-2xl font-semibold mb-4">Описание игры</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Современная интерпретация классической лотереи Keno. 40 клеток на поле, система генерирует 10 выигрышных чисел. Игрок выбирает от 1 до 10 чисел.
+                  </p>
+                  <p>
+                    Коэффициенты выплат меняются в зависимости от количества выбранных чисел - чем больше чисел, тем выше потенциальный выигрыш, но ниже вероятность.
+                  </p>
+                  <p>
+                    Простая механика, прозрачная математика с Provably Fair, быстрые раунды.
+                  </p>
                 </div>
               </div>
 
@@ -128,7 +86,7 @@ const Keno = () => {
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
-                    <div className="font-semibold text-primary">Полностью настраиваемая</div>
+                    <div className="font-semibold text-primary">Поддержка не получает вопросов</div>
                     <div className="text-sm text-muted-foreground">Волатильность</div>
                   </div>
                   
@@ -175,229 +133,76 @@ const Keno = () => {
               {/* Main Parameters */}
               
 
-              {/* Game Process */}
+              {/* Game Mechanics */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Процесс игры</h2>
+                <h2 className="text-2xl font-semibold mb-4">Как это работает</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-blue-500 pl-4">
-                      <h3 className="text-lg font-semibold text-blue-400 mb-2">1. Инициализация раунда</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Игрок выбирает 1-10 чисел из 40</li>
-                        <li>• Система генерирует seed для Provably Fair</li>
-                        <li>• Отображается хеш будущего результата</li>
-                      </ul>
-                    </div>
-
-                    <div className="border-l-4 border-green-500 pl-4">
-                      <h3 className="text-lg font-semibold text-green-400 mb-2">2. Транзакция ставки</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Запрос на списание через API казино</li>
-                        <li>• Подтверждение баланса</li>
-                        <li>• Фиксация ставки в системе</li>
-                      </ul>
-                    </div>
-
-                    <div className="border-l-4 border-purple-500 pl-4">
-                      <h3 className="text-lg font-semibold text-purple-400 mb-2">3. Генерация результата</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• RNG генерирует 10 чисел из 40</li>
-                        <li>• Использование seed + server seed</li>
-                        <li>• Результат неизменяем после генерации</li>
-                      </ul>
-                    </div>
-
-                    <div className="border-l-4 border-yellow-500 pl-4">
-                      <h3 className="text-lg font-semibold text-yellow-400 mb-2">4. Расчет выигрыша</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Сравнение выборов игрока с результатом</li>
-                        <li>• Применение коэффициента из таблицы выплат</li>
-                        <li>• Формирование суммы выигрыша</li>
-                      </ul>
-                    </div>
-
-                    <div className="border-l-4 border-orange-500 pl-4">
-                      <h3 className="text-lg font-semibold text-orange-400 mb-2">5. Завершение раунда</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Начисление выигрыша через API</li>
-                        <li>• Сохранение истории раунда</li>
-                        <li>• Раскрытие server seed для проверки</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Игрок выбирает от 1 до 10 чисел из 40</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Система генерирует 10 случайных выигрышных чисел</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Выплаты зависят от количества совпадений</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Каждый раунд проверяем через Provably Fair</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      
+                    </li>
+                  </ul>
                 </div>
               </div>
 
               {/* Payout Table */}
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Полная таблица выплат для всех комбинаций</h2>
-                <p className="text-sm text-muted-foreground mb-4">Коэффициенты для каждого количества выбранных и угаданных чисел (RTP 98%)</p>
+                <h2 className="text-2xl font-semibold mb-2">Пример коэффициентов</h2>
+                <p className="text-sm text-muted-foreground mb-4">(Конфигурация с RTP 98%)</p>
                 <div className="gaming-border card-shadow rounded-lg overflow-hidden">
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs">
+                    <table className="w-full text-sm">
                       <thead className="bg-muted/30">
                         <tr>
-                          <th className="p-2 text-left font-semibold">Выбрано</th>
-                          <th className="p-2 text-center font-semibold">0 совп.</th>
-                          <th className="p-2 text-center font-semibold">1 совп.</th>
-                          <th className="p-2 text-center font-semibold">2 совп.</th>
-                          <th className="p-2 text-center font-semibold">3 совп.</th>
-                          <th className="p-2 text-center font-semibold">4 совп.</th>
-                          <th className="p-2 text-center font-semibold">5 совп.</th>
-                          <th className="p-2 text-center font-semibold">6 совп.</th>
-                          <th className="p-2 text-center font-semibold">7 совп.</th>
-                          <th className="p-2 text-center font-semibold">8 совп.</th>
-                          <th className="p-2 text-center font-semibold">9 совп.</th>
-                          <th className="p-2 text-center font-semibold">10 совп.</th>
+                          <th className="p-3 text-left">Выбрано</th>
+                          <th className="p-3 text-left">Угадано</th>
+                          <th className="p-3 text-left">Коэффициент</th>
+                          <th className="p-3 text-left">Вероятность</th>
                         </tr>
                       </thead>
                       <tbody>
+                        
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">1</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x3.8</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
+                          <td className="p-3">5</td>
+                          <td className="p-3">5</td>
+                          <td className="p-3 text-green-400 font-medium">142x</td>
+                          <td className="p-3 text-muted-foreground">0.77%</td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">2</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x1.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x4</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">3</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x1</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x3.1</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x8</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">4</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.7</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x2</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x6</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x12</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">5</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.4</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x1.3</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x3.9</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x11.8</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x30</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">6</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.3</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x2.7</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x8.1</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x24.1</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x50</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">7</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.2</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.6</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x1.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x5.6</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x16.8</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x50.3</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x100</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">8</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.4</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x1.3</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x3.9</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x11.8</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x35.4</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x106.2</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x250</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                        </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">9</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.3</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.9</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x2.8</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x8.4</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x25.1</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x75.4</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x226.2</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x600</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
+                          <td className="p-3">10</td>
+                          <td className="p-3">6</td>
+                          <td className="p-3 text-green-400 font-medium">12x</td>
+                          <td className="p-3 text-muted-foreground">11.36%</td>
                         </tr>
                         <tr>
-                          <td className="p-2 font-medium">10</td>
-                          <td className="p-2 text-center text-muted-foreground">-</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.1</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.2</td>
-                          <td className="p-2 text-center text-red-300 font-medium">x0.7</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x2</td>
-                          <td className="p-2 text-center text-green-400 font-medium">x6</td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">x18</td>
-                          <td className="p-2 text-center text-orange-400 font-medium">x54</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x162.1</td>
-                          <td className="p-2 text-center text-red-400 font-bold">x486.4</td>
-                          <td className="p-2 text-center text-red-400 font-bold text-primary">x750</td>
+                          <td className="p-3">10</td>
+                          <td className="p-3">10</td>
+                          <td className="p-3 text-yellow-400 font-medium">750x</td>
+                          <td className="p-3 text-muted-foreground">0.0001%</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  * Полная таблица коэффициентов для RTP 98%. Любые настройки по запросу.
+                  * Любые коэффициенты по запросу казино. RTP настраивается без ограничений.
                 </p>
               </div>
 
@@ -405,47 +210,34 @@ const Keno = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Что мы настраиваем</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-blue-500 pl-4">
-                      <h3 className="text-lg font-semibold text-blue-400 mb-2 flex items-center gap-2">
-                        🎯 Математическая модель
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        RTP без ограничений — хоть 50%, хоть 99%. Каждый коэффициент выплат настраивается отдельно. Полный контроль над волатильностью на каждом уровне выбора.
-                      </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>RTP - любое значение по вашему запросу</span>
                     </div>
-
-                    <div className="border-l-4 border-green-500 pl-4">
-                      <h3 className="text-lg font-semibold text-green-400 mb-2 flex items-center gap-2">
-                        💸 Экономические параметры
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        Любые лимиты ставок — подстроим под вашу аудиторию. Ограничение максимального выигрыша для контроля рисков. Работа со всеми валютами вашей платформы.
-                      </p>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Коэффициенты выплат - полная кастомизация</span>
                     </div>
-
-                    <div className="border-l-4 border-purple-500 pl-4">
-                      <h3 className="text-lg font-semibold text-purple-400 mb-2 flex items-center gap-2">
-                        🏢 Брендирование
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        Ваш логотип прямо на игровом поле — игроки видят ваш бренд. Планируем: цветовые схемы, кастомные звуки, уникальные темы.
-                      </p>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Лимиты ставок - любые значения</span>
                     </div>
-
-                    <div className="border-l-4 border-yellow-500 pl-4">
-                      <h3 className="text-lg font-semibold text-yellow-400 mb-2 flex items-center gap-2">
-                        🔜 Скоро запустим
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        Бэк-офис для самостоятельной настройки параметров. Расширенная визуальная кастомизация. A/B тестирование разных конфигураций.
-                      </p>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Максимальный выигрыш - по вашим требованиям</span>
                     </div>
-
-                    <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg mt-6">
-                      <p className="text-primary font-medium">
-                        Главное: вы говорите — мы настраиваем. Никаких ограничений.
-                      </p>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <span>Логотип казино на игровом поле</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-muted-foreground">
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <span>Полная кастомизация дизайна (в разработке)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-muted-foreground md:col-span-2">
+                      <div className="w-5 h-5 flex items-center justify-center text-yellow-400">⏳</div>
+                      <span>Бэк-офис для операторов (Q1 2025)</span>
                     </div>
                   </div>
                 </div>
@@ -455,34 +247,39 @@ const Keno = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Zero-effort интеграция</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <div className="space-y-6">
-                    {/* What you do */}
-                    <div className="border-l-4 border-green-500 pl-4">
-                      <h3 className="text-lg font-semibold text-green-400 mb-2">Что делаете вы:</h3>
-                      <p className="text-muted-foreground">
-                        Отправляете доступ к вашему API. <span className="text-green-400 font-medium">Всё.</span>
-                      </p>
-                    </div>
-
-                    {/* What we do */}
-                    <div className="border-l-4 border-blue-500 pl-4">
-                      <h3 className="text-lg font-semibold text-blue-400 mb-3">Что делаем мы:</h3>
-                      <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Изучаем документацию вашего API</li>
-                        <li>• Пишем интеграционный слой</li>
-                        <li>• Настраиваем обмен данными</li>
-                        <li>• Тестируем все сценарии</li>
-                        <li>• Запускаем в продакшн</li>
-                      </ul>
-                    </div>
-
-                    {/* Result */}
-                    <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
-                      <h4 className="text-primary font-semibold mb-2">Результат через 3-5 дней:</h4>
-                      <p className="text-primary text-sm">
-                        Готовая игра в iframe, которую остается только встроить на сайт. Никакой работы для ваших разработчиков.
-                      </p>
-                    </div>
+                  <p className="text-lg font-medium text-foreground mb-4">
+                    Вам не нужно ничего делать:
+                  </p>
+                  <ul className="space-y-3 text-muted-foreground mb-6">
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Предоставьте API вашего казино</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Мы сами всё интегрируем за 3-5 дней</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Игра управляет транзакциями через ваш API</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Балансы остаются на вашей стороне</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Готовый iframe для встраивания</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Полная техподдержка</span>
+                    </li>
+                  </ul>
+                  <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
+                    <p className="text-primary font-medium">
+                      Ключевое преимущество: Мы берем на себя всю техническую интеграцию. Вам нужно только предоставить доступ к API.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -531,7 +328,7 @@ const Keno = () => {
                 </p>
 
                 {/* Integration Button */}
-                <div className="text-center mt-8">
+                <div className="text-center">
                   <Link to="/#contact">
                     <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
                       Запросить интеграцию
