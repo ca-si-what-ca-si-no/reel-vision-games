@@ -103,27 +103,25 @@ const Games = () => {
                     
                     {/* Features list - показывается при наведении */}
                     <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-24 z-10 pointer-events-none group-hover:pointer-events-auto">
-                      <div className="flex items-center gap-2 text-sm">
-                        <span className="text-muted-foreground">Настраиваемая волатильность</span>
-                        
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>Волатильность:</span>
+                        <span className="text-foreground">Гибкая</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>RTP:</span>
-                        <span className="text-foreground">{game.features.rtp}</span>
+                        <span className="text-foreground">Без ограничений</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Адаптивный дизайн</span>
-                        
+                        <span>Адаптивность:</span>
+                        <span className="text-green-400">✔</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Языки:</span>
-                        <div className="flex gap-2">
-                          {game.features.languages.map((flag, i) => <span key={i}>{flag}</span>)}
-                        </div>
+                        <span>Мультиязычность:</span>
+                        <span className="text-green-400">✔</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Макс. множитель:</span>
-                        <span className="text-green-400 font-semibold">{game.features.maxMultiplier}</span>
+                        <span>Макс. выигрыш:</span>
+                        <span className="text-green-400 font-semibold">x750</span>
                       </div>
                     </div>
                   </div>
