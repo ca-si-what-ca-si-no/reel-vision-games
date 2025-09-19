@@ -122,8 +122,8 @@ const Keno = () => {
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="text-lg mb-2">📱💻📱</div>
-                    <div className="font-semibold text-blue-400">Все устройства</div>
-                    <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
+                    <div className="font-semibold text-blue-400">Адаптивный дизайн</div>
+                    <div className="text-sm text-muted-foreground">Все устройства</div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
