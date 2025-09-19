@@ -47,7 +47,7 @@ const Integrators = () => {
 
     pauseTimeoutRef.current = setTimeout(() => {
       startAutoScroll();
-    }, 5000);
+    }, 10000);
   }, [startAutoScroll, stopAutoScroll]);
 
   useEffect(() => {

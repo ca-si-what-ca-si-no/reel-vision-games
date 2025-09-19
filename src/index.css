@@ -510,6 +510,11 @@ All colors MUST be HSL.
     left: 100%;
   }
 
+  .game-badge::before,
+  .game-badge.no-animation::before {
+    display: none;
+  }
+
   .feature-list {
     position: relative;
   }
