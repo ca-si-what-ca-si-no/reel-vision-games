@@ -90,7 +90,7 @@ const Keno = () => {
 
               {/* Technical Specifications */}
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
+                <h2 className="text-2xl font-semibold mb-6">Преимущества</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div className="gaming-border card-shadow p-4 rounded-lg text-center">
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
