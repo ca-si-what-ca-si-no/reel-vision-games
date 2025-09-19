@@ -85,8 +85,8 @@ const Keno = () => {
               {/* Technical Specifications */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Технические характеристики</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
@@ -94,7 +94,7 @@ const Keno = () => {
                     <div className="text-sm text-muted-foreground">Волатильность</div>
                   </div>
                   
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-accent font-bold text-lg flex items-center justify-center">
                       %
                     </div>
@@ -102,7 +102,7 @@ const Keno = () => {
                     <div className="text-sm text-muted-foreground">Без ограничений</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-primary">
                       <Zap className="w-full h-full" />
                     </div>
@@ -110,13 +110,13 @@ const Keno = () => {
                     <div className="text-sm text-muted-foreground">Настраиваемый</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="text-lg mb-2">📱💻📱</div>
                     <div className="font-semibold text-secondary">Все устройства</div>
                     <div className="text-sm text-muted-foreground">Адаптивный дизайн</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-accent">
                       <Globe className="w-full h-full" />
                     </div>
@@ -124,7 +124,7 @@ const Keno = () => {
                     <div className="text-sm text-muted-foreground">Расширяемая</div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-6 rounded-lg text-center hover:scale-105 transition-transform duration-200">
                     <div className="w-8 h-8 mx-auto mb-2 text-accent">
                       <Shield className="w-full h-full" />
                     </div>
