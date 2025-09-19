@@ -512,15 +512,15 @@ const Keno = () => {
                 </div>
 
                 {/* Call to Action */}
-                <div className="mt-8 space-y-4">
-                  <div className="gaming-border card-shadow p-6 rounded-lg text-center">
-                    <h3 className="text-lg font-semibold mb-3">Готовы интегрировать Keno?</h3>
-                    <p className="text-muted-foreground text-sm mb-4">
+                <div className="mt-8 max-w-[280px] mx-auto space-y-4">
+                  <div className="gaming-border card-shadow p-4 rounded-lg text-center">
+                    <h3 className="text-base font-semibold mb-2">Готовы интегрировать Keno?</h3>
+                    <p className="text-muted-foreground text-xs mb-3">
                       Получите полнофункциональную демо-версию с документацией API
                     </p>
-                    <div className="flex items-center justify-center gap-2 text-green-400 mb-4">
-                      <CheckCircle className="w-4 h-4" />
-                      <span className="text-sm">Готова к интеграции</span>
+                    <div className="flex items-center justify-center gap-2 text-green-400 mb-3">
+                      <CheckCircle className="w-3 h-3" />
+                      <span className="text-xs">Готова к интеграции</span>
                     </div>
                   </div>
                   
