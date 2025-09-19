@@ -36,7 +36,12 @@ export const USAFlag = ({
 export const GermanyFlag = ({
   className = "",
   size = 16
-}: FlagIconProps) => {};
+}: FlagIconProps) => <svg className={className} width={size} height={size} viewBox="0 0 24 16" fill="none">
+    <rect width="24" height="16" rx="2" fill="#000000" />
+    <rect width="24" height="5.33" fill="#000000" />
+    <rect y="5.33" width="24" height="5.33" fill="#dd0000" />
+    <rect y="10.67" width="24" height="5.33" fill="#ffce00" />
+  </svg>;
 export const FranceFlag = ({
   className = "",
   size = 16

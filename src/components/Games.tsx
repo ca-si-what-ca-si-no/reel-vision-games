@@ -111,8 +111,7 @@ const Games = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>RTP:</span>
-                        <span className="text-foreground">{game.features.rtp}</span>
+                        <span>Настраиваемый RTP</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Адаптивный дизайн</span>
@@ -192,8 +191,7 @@ const Games = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <span className="text-sm text-muted-foreground">RTP</span>
-                      <span className="text-sm font-medium">{selectedGame.features.rtp}</span>
+                      <span className="text-sm text-muted-foreground">Настраиваемый RTP</span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Платформы</span>
