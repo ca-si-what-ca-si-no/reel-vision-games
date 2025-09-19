@@ -58,25 +58,27 @@ const Hero = () => {
             </div>
           </div>
           
-          
+          <div className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
+            <TypewriterText initialText="Игровая студия " typeText="с экспертизой в создании iGaming-решений. Наш актуальный портфолио включает увлекательные игры с гибкой настройкой и полной кастомизацией." speed={80} />
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
-            <Button className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full" onClick={() => {
-            document.getElementById('contact')?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }}>
+            <Button 
+              className="bg-gradient-to-r from-primary via-primary-glow to-accent text-primary-foreground font-bold text-lg sm:text-2xl px-8 sm:px-16 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-glow hover:brightness-110 w-full sm:min-w-[280px] sm:w-auto rounded-full"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
               Связаться с нами
             </Button>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-[10px] w-full sm:w-auto">
-              <Button className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full" onClick={() => {
-              document.getElementById('games')?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }}>
+              <Button 
+                className="bg-white hover:bg-white border border-white/20 font-bold text-lg sm:text-2xl px-6 sm:px-14 py-4 sm:py-8 shadow-2xl transition-all duration-300 transform hover:scale-105 w-full sm:min-w-[240px] sm:w-auto rounded-full"
+                onClick={() => {
+                  document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
                 <span className="text-transparent bg-gradient-accent bg-clip-text">Каталог</span>
               </Button>
               
