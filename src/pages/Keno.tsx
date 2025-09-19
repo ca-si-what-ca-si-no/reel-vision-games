@@ -284,39 +284,34 @@ const Keno = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Zero-effort интеграция</h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
-                  <p className="text-lg font-medium text-foreground mb-4">
-                    Вам не нужно ничего делать:
-                  </p>
-                  <ul className="space-y-3 text-muted-foreground mb-6">
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Предоставьте API вашего казино</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Мы сами всё интегрируем за 3-5 дней</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Игра управляет транзакциями через ваш API</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Балансы остаются на вашей стороне</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Готовый iframe для встраивания</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Полная техподдержка</span>
-                    </li>
-                  </ul>
-                  <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
-                    <p className="text-primary font-medium">
-                      Ключевое преимущество: Мы берем на себя всю техническую интеграцию. Вам нужно только предоставить доступ к API.
-                    </p>
+                  <div className="space-y-6">
+                    {/* What you do */}
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h3 className="text-lg font-semibold text-green-400 mb-2">Что делаете вы:</h3>
+                      <p className="text-muted-foreground">
+                        Отправляете доступ к вашему API. <span className="text-green-400 font-medium">Всё.</span>
+                      </p>
+                    </div>
+
+                    {/* What we do */}
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h3 className="text-lg font-semibold text-blue-400 mb-3">Что делаем мы:</h3>
+                      <ul className="space-y-2 text-muted-foreground text-sm">
+                        <li>• Изучаем документацию вашего API</li>
+                        <li>• Пишем интеграционный слой</li>
+                        <li>• Настраиваем обмен данными</li>
+                        <li>• Тестируем все сценарии</li>
+                        <li>• Запускаем в продакшн</li>
+                      </ul>
+                    </div>
+
+                    {/* Result */}
+                    <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
+                      <h4 className="text-primary font-semibold mb-2">Результат через 3-5 дней:</h4>
+                      <p className="text-primary text-sm">
+                        Готовая игра в iframe, которую остается только встроить на сайт. Никакой работы для ваших разработчиков.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
