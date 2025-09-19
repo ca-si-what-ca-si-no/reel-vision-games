@@ -90,8 +90,8 @@ const Games = () => {
               {/* Content section */}
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex-1 space-y-4 pb-6">
-                  {/* Upper content that moves up on hover */}
-                  <div className="relative transition-all duration-500 transform-gpu will-change-transform group-hover:-translate-y-56">
+                  {/* Upper content that hides on hover */}
+                  <div className="transition-all duration-500 transform-gpu group-hover:opacity-0">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
                         {game.title}
@@ -100,32 +100,34 @@ const Games = () => {
                         {game.description}
                       </p>
                     </div>
-                    
-                    {/* Features list - показывается при наведении */}
-                    <div className="opacity-0 transform-gpu transition-all duration-500 group-hover:opacity-100 space-y-3 absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none group-hover:pointer-events-auto">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Волатильность:</span>
-                        <span className="text-foreground">Гибкая</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>RTP:</span>
-                        <span className="text-foreground">Без ограничений</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Адаптивность:</span>
-                        <span className="text-green-400">✔</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Мультиязычность:</span>
-                        <span className="text-green-400">✔</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Макс. выигрыш:</span>
-                        <span className="text-green-400 font-semibold">x750</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              
+              {/* Features overlay - показывается по центру при наведении */}
+              <div className="absolute inset-0 flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 z-10 pointer-events-none group-hover:pointer-events-auto transition-all duration-500 transform-gpu">
+                <div className="space-y-3 text-center">
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <span>Волатильность:</span>
+                    <span className="text-foreground">Гибкая</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <span>RTP:</span>
+                    <span className="text-foreground">Без ограничений</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <span>Адаптивность:</span>
+                    <span className="text-green-400">✔</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <span>Мультиязычность:</span>
+                    <span className="text-green-400">✔</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <span>Макс. выигрыш:</span>
+                    <span className="text-green-400 font-semibold">x750</span>
+                  </div>
+                </div>
+              </div>
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 items-stretch">
