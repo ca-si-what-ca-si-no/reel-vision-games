@@ -107,25 +107,21 @@ const Games = () => {
                       <div className="flex items-center gap-2 text-sm">
                         <span className="text-muted-foreground">Волатильность:</span>
                         <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
-                          ))}
+                          {[...Array(5)].map((_, i) => <Star key={i} className={`w-3 h-3 ${i < game.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />)}
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>RTP:</span>
                         <span className="text-foreground">{game.features.rtp}</span>
                       </div>
-                      <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground flex-wrap">
-                        <span>Адаптивный дизайн:</span>
-                        <span className="text-foreground">{game.features.platforms.join(", ")}</span>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>Адаптивный дизайн</span>
+                        
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Языки:</span>
                         <div className="flex gap-2">
-                          {game.features.languages.map((flag, i) => (
-                            <span key={i}>{flag}</span>
-                          ))}
+                          {game.features.languages.map((flag, i) => <span key={i}>{flag}</span>)}
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -137,34 +133,26 @@ const Games = () => {
                 </div>
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
-                  {game.title === "Keno" ? (
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <button onClick={() => setIsKenoModalOpen(true)} className="bg-gradient-to-r from-primary/90 via-primary-glow/90 to-accent/90 text-primary-foreground font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base border border-primary-glow/30 shadow-lg hover:shadow-xl hover:from-primary hover:via-primary-glow hover:to-accent transition-all duration-300 hover:scale-[1.02]">
+                  {game.title === "Keno" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Играть!
                       </button>
                       <Link to="/keno" className="outline-button py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap">
                         Подробнее
                       </Link>
-                    </div>
-                  ) : game.title === "Space Ball" || game.title === "Arrow Shot" ? (
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                    </div> : game.title === "Space Ball" || game.title === "Arrow Shot" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </button>
-                    </div>
-                  ) : game.title === "Hilo" ? (
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                    </div> : game.title === "Hilo" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <Link to="/hilo" className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </Link>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+                    </div> : <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <button onClick={() => setSelectedGame(game)} className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
                         Подробнее
                       </button>
-                    </div>
-                  )}
+                    </div>}
                 </div>
               </div>
             </div>)}
@@ -174,8 +162,7 @@ const Games = () => {
       {/* Game Info Modal */}
       <Dialog open={!!selectedGame} onOpenChange={() => setSelectedGame(null)}>
         <DialogContent className="max-w-2xl">
-          {selectedGame && (
-            <div className="space-y-6">
+          {selectedGame && <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-3xl font-bold text-foreground">{selectedGame.title}</h2>
                 <div className="game-badge px-3 py-1 rounded-full text-sm">
@@ -184,11 +171,7 @@ const Games = () => {
               </div>
               
               <div className="rounded-lg overflow-hidden">
-                <img 
-                  src={selectedGame.image} 
-                  alt={`${selectedGame.title} game interface`} 
-                  className="w-full h-64 object-cover"
-                />
+                <img src={selectedGame.image} alt={`${selectedGame.title} game interface`} className="w-full h-64 object-cover" />
               </div>
               
               <div className="space-y-4">
@@ -205,9 +188,7 @@ const Games = () => {
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Волатильность</span>
                       <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />
-                        ))}
+                        {[...Array(5)].map((_, i) => <Star key={i} className={`w-4 h-4 ${i < selectedGame.features.volatility ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}`} />)}
                       </div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
@@ -221,9 +202,7 @@ const Games = () => {
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">Языки</span>
                       <div className="flex gap-2">
-                        {selectedGame.features.languages.map((flag, i) => (
-                          <span key={i}>{flag}</span>
-                        ))}
+                        {selectedGame.features.languages.map((flag, i) => <span key={i}>{flag}</span>)}
                       </div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
@@ -239,27 +218,25 @@ const Games = () => {
                       Закрыть
                     </Button>
                     <Button onClick={() => {
-                      setSelectedGame(null);
-                      setTimeout(() => {
-                        const contactSection = document.querySelector('#contact');
-                        if (contactSection) {
-                          const elementPosition = contactSection.getBoundingClientRect().top;
-                          const offsetPosition = elementPosition + window.pageYOffset - 100;
-                          
-                          window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                          });
-                        }
-                      }, 100);
-                    }} className="accent-gradient glow-effect font-semibold flex-1">
+                  setSelectedGame(null);
+                  setTimeout(() => {
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                      const elementPosition = contactSection.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - 100;
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }, 100);
+                }} className="accent-gradient glow-effect font-semibold flex-1">
                       Запросить интеграцию
                     </Button>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            </div>}
         </DialogContent>
       </Dialog>
 
