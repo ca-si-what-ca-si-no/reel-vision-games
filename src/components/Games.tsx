@@ -73,13 +73,13 @@ const Games = () => {
 
         {/* Game Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {gameTypes.map((game, index) => <div key={index} className={`game-card animate-fade-in rounded-xl flex flex-col ${game.badge !== "Скоро в продаже" ? "group" : ""} overflow-hidden relative will-change-transform`} style={{
+          {gameTypes.map((game, index) => <div key={index} className="game-card animate-fade-in rounded-xl flex flex-col overflow-hidden relative will-change-transform" style={{
           animationDelay: `${index * 0.15}s`
         }}>
               {/* Image section */}
-              <div className="game-image relative h-56 transition-all duration-500 transform-gpu group-hover:scale-y-0 group-hover:opacity-0 origin-top">
+              <div className="game-image relative h-56">
                 <img src={game.image} alt={`${game.title} game interface`} className="w-full h-56 object-cover" />
-                <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0">
+                <div className="absolute top-4 left-4">
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
                     {game.badge}
                   </div>
@@ -89,8 +89,8 @@ const Games = () => {
               {/* Content section */}
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex-1 space-y-4 pb-6">
-                  {/* Upper content that hides on hover */}
-                  <div className="transition-all duration-500 transform-gpu group-hover:opacity-0">
+                  {/* Content always visible */}
+                  <div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
                         {game.title}
@@ -101,32 +101,6 @@ const Games = () => {
                     </div>
                   </div>
                 </div>
-              
-              {/* Features overlay - показывается по центру при наведении, не закрывает кнопки */}
-              <div className="absolute inset-x-0 top-0 bottom-20 flex items-center justify-center px-6 opacity-0 group-hover:opacity-100 z-10 pointer-events-none transition-all duration-500 transform-gpu">
-                <div className="space-y-3 text-center">
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <span>Волатильность:</span>
-                    <span className="text-foreground">Гибкая</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <span>RTP:</span>
-                    <span className="text-foreground">Без ограничений</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <span>Адаптивность:</span>
-                    <span className="text-green-400">✔</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <span>Мультиязычность:</span>
-                    <span className="text-green-400">✔</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <span>Макс. выигрыш:</span>
-                    <span className="text-green-400 font-semibold">x750</span>
-                  </div>
-                </div>
-              </div>
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 items-stretch">
