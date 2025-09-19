@@ -132,9 +132,9 @@ const Games = () => {
                 
                 <div className="mt-auto pt-6 border-t border-border/50 transition-all duration-300">
                   {game.title === "Keno" ? <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
-                      <button onClick={() => setIsKenoModalOpen(true)} className="accent-gradient glow-effect font-semibold flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base">
+                      <Button variant="gaming" className="flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-sm sm:text-base" onClick={() => setIsKenoModalOpen(true)}>
                         Играть!
-                      </button>
+                      </Button>
                       <Link to="/keno" className="outline-button py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap">
                         Подробнее
                       </Link>
