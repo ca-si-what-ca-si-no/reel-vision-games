@@ -62,7 +62,7 @@ const Hero = () => {
           </div>
           
           <div className="text-lg md:text-xl font-poppins font-medium bg-gradient-to-r from-foreground/90 via-primary to-accent bg-clip-text text-transparent mb-10 max-w-2xl mx-auto leading-tight min-h-[6rem] flex items-start justify-center text-center">
-            <TypewriterText initialText="Вы даёте API — " typeText="мы интегрируем игры. Никакого кода с вашей стороны. Полностью настраиваемая математика и готовый iframe для встраивания." speed={80} />
+            <TypewriterText initialText="Вы даёте API — " typeText="мы интегрируем игры. Никакого кода с вашей стороны." speed={80} />
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center w-full max-w-4xl mx-auto">
