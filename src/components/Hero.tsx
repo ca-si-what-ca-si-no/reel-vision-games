@@ -82,10 +82,12 @@ const Hero = () => {
                   document.getElementById('games')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >
-                <div className="flex flex-col items-center gap-3 text-foreground hover:text-primary transition-colors">
+                <div className="flex flex-col items-center gap-3 text-foreground hover:text-primary transition-all duration-300 group">
                   <span className="text-base font-medium">Смотреть каталог</span>
-                  <div className="w-8 h-12 border-2 border-foreground/30 rounded-full flex items-end justify-center pb-2 hover:border-primary/50 transition-colors">
-                    <div className="w-1 h-3 bg-foreground/60 rounded-full animate-pulse"></div>
+                  <div className="relative">
+                    <div className="w-6 h-6 border border-foreground/40 rounded-full flex items-center justify-center group-hover:border-primary/60 transition-colors">
+                      <div className="w-2 h-2 border-r border-b border-foreground/60 rotate-45 group-hover:border-primary transition-colors animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                    </div>
                   </div>
                 </div>
               </div>
