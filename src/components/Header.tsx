@@ -1,7 +1,19 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import { useLocation, useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (sectionId: string) => {
+    // Если мы не на главной странице, переходим на главную с хешем
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`);
+      return;
+    }
+    
+    // Если на главной странице, просто скроллим
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
