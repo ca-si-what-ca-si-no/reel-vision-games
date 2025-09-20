@@ -69,7 +69,7 @@ const Keno = () => {
           </div>
 
           {/* 60/40 Layout */}
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-12 xl:items-start">
             {/* Left Side - Information (60%) */}
             <div className="xl:col-span-3 space-y-12">
               {/* Header */}
@@ -145,7 +145,7 @@ const Keno = () => {
                     </div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-yellow-400">
                       <Zap className="w-full h-full" />
                     </div>
@@ -250,14 +250,14 @@ const Keno = () => {
                 <h2 className="text-2xl font-semibold mb-2">Таблица выплат</h2>
                 <p className="text-sm text-muted-foreground mb-4">
                   Коэффициенты для каждого количества выбранных и угаданных
-                  чисел (RTP 98%)
+                  чисел
                 </p>
                 <div className="gaming-border card-shadow rounded-lg overflow-hidden">
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs">
                       <thead className="bg-muted/30">
                         <tr>
-                          <th className="p-2 text-left font-semibold">
+                          <th className="p-2 text-center font-semibold">
                             Выбрано
                           </th>
                           <th className="p-2 text-center font-semibold">
@@ -294,13 +294,13 @@ const Keno = () => {
                       </thead>
                       <tbody>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">1</td>
+                          <td className="p-2 text-center font-medium">1</td>
                           <td className="p-2 text-center text-green-400 font-medium">
                             x3.8
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">2</td>
+                          <td className="p-2 text-center font-medium">2</td>
                           <td className="p-2 text-center text-green-400 font-medium">
                             x1.9
                           </td>
@@ -309,7 +309,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">3</td>
+                          <td className="p-2 text-center font-medium">3</td>
                           <td className="p-2 text-center text-green-400 font-medium">
                             x1
                           </td>
@@ -321,7 +321,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">4</td>
+                          <td className="p-2 text-center font-medium">4</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.7
                           </td>
@@ -336,7 +336,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">5</td>
+                          <td className="p-2 text-center font-medium">5</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.4
                           </td>
@@ -354,7 +354,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">6</td>
+                          <td className="p-2 text-center font-medium">6</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.3
                           </td>
@@ -375,7 +375,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">7</td>
+                          <td className="p-2 text-center font-medium">7</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.2
                           </td>
@@ -399,7 +399,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">8</td>
+                          <td className="p-2 text-center font-medium">8</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.1
                           </td>
@@ -426,7 +426,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr className="border-b border-border/50">
-                          <td className="p-2 font-medium">9</td>
+                          <td className="p-2 text-center font-medium">9</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.1
                           </td>
@@ -456,7 +456,7 @@ const Keno = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className="p-2 font-medium">10</td>
+                          <td className="p-2 text-center font-medium">10</td>
                           <td className="p-2 text-center text-gray-400 font-medium">
                             x0.1
                           </td>

@@ -1,107 +1,79 @@
 import logo from "@/assets/logo.svg";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Mail, Send } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border">
-      <div className="max-w-[1200px] mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Company Info */}
+      <div className="max-w-[1200px] mx-auto px-6 py-6">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          {/* Left: Logo and Description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold text-foreground mr-3">
+            <div className="flex items-center mb-3">
+              <span className="text-xl font-bold text-foreground mr-3">
                 2xWet
               </span>
               <img
                 src={logo}
                 alt="2xWet Studio Logo"
-                className="w-10 h-10 mx-2"
+                className="w-8 h-8 mx-2"
               />
-              <span className="text-2xl font-bold text-accent ml-3">
-                Studio
-              </span>
+              <span className="text-xl font-bold text-accent ml-3">Studio</span>
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Игры для казино с полной интеграцией под ключ. Вы предоставляете
-              API — мы запускаем игру за 3-5 дней. Настраиваемый RTP, Provably
-              Fair, поддержка 24/7.
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Вы даёте API — мы запускаем игру за 3 дня. Никакого кода с вашей
+              стороны.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <a
-                  href="mailto:business@2xwet-studio.com"
-                  className="hover:text-accent smooth-transition"
-                >
-                  business@2xwet-studio.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Send className="w-4 h-4" />
-                <a
-                  href="https://t.me/2xwet_support"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-accent smooth-transition"
-                >
-                  @2xwet_support
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Услуги</h3>
-            <ul className="space-y-3">
-              <li>
-                <span className="text-muted-foreground">Разработка игр</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground">API интеграция</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground">Техподдержка 24/7</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground">Кастомизация</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground">Аналитика</span>
-              </li>
-            </ul>
+          {/* Right: Contacts and CTA */}
+          <div className="flex flex-col items-start lg:items-end gap-3">
+            <div className="flex flex-row lg:flex-col items-start lg:items-end gap-3 lg:gap-1 text-sm text-muted-foreground">
+              <a
+                href="mailto:business@2xwet.com"
+                className="hover:text-accent smooth-transition"
+              >
+                business@2xwet.com
+              </a>
+              <span className="text-muted-foreground/50 lg:hidden">•</span>
+              <a
+                href="https://t.me/2xwet_support"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent smooth-transition"
+              >
+                @2xwet_support
+              </a>
+            </div>
+            <Button
+              size="sm"
+              className="accent-gradient glow-effect font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110 group mt-2"
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  const elementPosition =
+                    contactSection.getBoundingClientRect().top;
+                  const offsetPosition =
+                    elementPosition + window.pageYOffset - 100;
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Начать сотрудничество
+              <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-muted-foreground text-sm">
-              © 2024 2xWet Studio. Все права защищены.
-            </div>
-            <div className="flex items-center">
-              <Button
-                size="sm"
-                className="accent-gradient glow-effect font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110 group"
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    const elementPosition =
-                      contactSection.getBoundingClientRect().top;
-                    const offsetPosition =
-                      elementPosition + window.pageYOffset - 100;
-
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-              >
-                Начать сотрудничество
-                <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
-            </div>
+        {/* Bottom Copyright */}
+        <div className="mt-6 pt-4 border-t border-border">
+          <div className="text-muted-foreground text-xs text-center">
+            © 2025 2xWet Studio. Все права защищены.
           </div>
         </div>
       </div>
