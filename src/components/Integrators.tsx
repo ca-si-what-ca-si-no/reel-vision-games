@@ -68,37 +68,38 @@ const Integrators = () => {
   const benefits = [
     {
       icon: Code,
-      title: "Простое API",
+      title: "Zero-effort интеграция",
       description:
-        "Интуитивное API для быстрой интеграции игр в вашу платформу",
-    },
-    {
-      icon: Shield,
-      title: "Настраиваемый RTP",
-      description: "Полный контроль над RTP от 90% до 99% для каждой игры",
-    },
-    {
-      icon: Zap,
-      title: "Быстрый запуск",
-      description: "Интеграция новых игр за 24-48 часов",
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "Управление играми",
-      description:
-        "Удобные инструменты для настройки и мониторинга игрового процесса",
+        "Вы даёте API — мы делаем всю интеграцию. Ваши разработчики не тратят ни дня на внедрение наших игр.",
     },
     {
       icon: BarChart3,
-      title: "Реалтайм аналитика",
+      title: "Гибкая математика",
       description:
-        "Подробная статистика и отчеты по производительности игр в реальном времени",
+        "RTP без ограничений, настройка каждого коэффициента, полный контроль над экономикой игр.",
+    },
+    {
+      icon: Zap,
+      title: "Запуск за 3-5 дней",
+      description: "От первого контакта до работающей игры на вашем сайте.",
+    },
+    {
+      icon: Shield,
+      title: "Provably Fair",
+      description:
+        "Встроенная проверка честности в каждую игру. Ваши игроки могут проверить любой раунд — полная прозрачность.",
     },
     {
       icon: Globe,
-      title: "Готовые решения",
+      title: "Гибкая кастомизация",
       description:
-        "Keno, Hilo и пакет Crash игр готовы к немедленной интеграции",
+        "Добавим ваш логотип на игровое поле, адаптируем под ваш бренд.",
+    },
+    {
+      icon: HeadphonesIcon,
+      title: "SLA и поддержка",
+      description:
+        "Гарантированный uptime 99.9%, мониторинг 24/7, помощь на всех этапах и оперативные фиксы.",
     },
   ];
   const gamePackages = [
@@ -219,12 +220,14 @@ const Integrators = () => {
                   <CarouselItem key={index}>
                     <Card className="gaming-border card-shadow smooth-transition hover:shadow-glow group animate-slide-in h-64">
                       <CardContent className="p-6 h-full flex flex-col">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
-                          <benefit.icon className="w-6 h-6 text-accent-foreground" />
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-accent flex items-center justify-center group-hover:scale-110 smooth-transition flex-shrink-0">
+                            <benefit.icon className="w-5 h-5 text-accent-foreground" />
+                          </div>
+                          <h3 className="text-lg font-semibold text-foreground leading-tight">
+                            {benefit.title}
+                          </h3>
                         </div>
-                        <h3 className="text-xl font-semibold mb-3 text-foreground">
-                          {benefit.title}
-                        </h3>
                         <p className="text-muted-foreground leading-relaxed flex-1">
                           {benefit.description}
                         </p>
@@ -249,12 +252,14 @@ const Integrators = () => {
                 }}
               >
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 smooth-transition">
-                    <benefit.icon className="w-6 h-6 text-accent-foreground" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-accent flex items-center justify-center group-hover:scale-110 smooth-transition flex-shrink-0">
+                      <benefit.icon className="w-5 h-5 text-accent-foreground" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground leading-tight">
+                      {benefit.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">
-                    {benefit.title}
-                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
@@ -272,8 +277,8 @@ const Integrators = () => {
             Готовы начать интеграцию?
           </h3>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Все игры поставляются с инструментами управления и настраиваемым
-            RTP. Начните тестирование прямо сейчас!
+            Keno уже готово к интеграции. <br></br>Начните тестирование прямо
+            сейчас!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -281,7 +286,7 @@ const Integrators = () => {
               className="accent-gradient glow-effect font-semibold"
               onClick={() => scrollToSection("contact")}
             >
-              Демо доступ
+              Запросить демо
             </Button>
           </div>
         </div>

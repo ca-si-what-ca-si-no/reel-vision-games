@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.svg";
-import { Mail, ExternalLink, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Mail, Send } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,25 +13,38 @@ const Footer = () => {
               <span className="text-2xl font-bold text-foreground mr-3">
                 2xWet
               </span>
-              <img src={logo} alt="2xWet Studio Logo" className="w-10 h-10 mx-2" />
+              <img
+                src={logo}
+                alt="2xWet Studio Logo"
+                className="w-10 h-10 mx-2"
+              />
               <span className="text-2xl font-bold text-accent ml-3">
                 Studio
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Профессиональная игровая студия, создающая инновационные решения для казино.
-              Экспертиза в разработке, интеграции и поддержке игрового контента.
+              Игры для казино с полной интеграцией под ключ. Вы предоставляете
+              API — мы запускаем игру за 3-5 дней. Настраиваемый RTP, Provably
+              Fair, поддержка 24/7.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:business@2xwet-studio.com" className="hover:text-accent smooth-transition">
+                <a
+                  href="mailto:business@2xwet-studio.com"
+                  className="hover:text-accent smooth-transition"
+                >
                   business@2xwet-studio.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Send className="w-4 h-4" />
-                <a href="https://t.me/2xwet_support" target="_blank" rel="noopener noreferrer" className="hover:text-accent smooth-transition">
+                <a
+                  href="https://t.me/2xwet_support"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent smooth-transition"
+                >
                   @2xwet_support
                 </a>
               </div>
@@ -67,18 +80,20 @@ const Footer = () => {
               © 2024 2xWet Studio. Все права защищены.
             </div>
             <div className="flex items-center">
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="accent-gradient glow-effect font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110 group"
                 onClick={() => {
-                  const contactSection = document.getElementById('contact');
+                  const contactSection = document.getElementById("contact");
                   if (contactSection) {
-                    const elementPosition = contactSection.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - 100;
-                    
+                    const elementPosition =
+                      contactSection.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - 100;
+
                     window.scrollTo({
                       top: offsetPosition,
-                      behavior: 'smooth'
+                      behavior: "smooth",
                     });
                   }
                 }}
