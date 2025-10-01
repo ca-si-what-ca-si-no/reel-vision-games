@@ -647,7 +647,7 @@ const Keno = () => {
                       <div className="phone-frame hidden md:block">
                         <div className="phone-screen">
                           <iframe
-                            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
+                            src="https://v464541.hosted-by-vdsina.com/simple-frontend/keno"
                             className="w-full h-full border-0 rounded-[28px]"
                             title="Keno Mobile Demo Game"
                             allow="fullscreen"
@@ -710,7 +710,7 @@ const Keno = () => {
           </DialogDescription>
           <div className="w-full h-full pt-12 pb-8 px-2 bg-black">
             <iframe
-              src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
+              src="https://v464541.hosted-by-vdsina.com/simple-frontend/keno"
               className="w-full h-full border-0 rounded-lg"
               title="Keno Mobile Demo Game"
               allow="fullscreen"
@@ -728,7 +728,7 @@ const Keno = () => {
             Полнофункциональная демо-версия игры Keno для десктопа
           </DialogDescription>
           <iframe
-            src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
+            src="https://v464541.hosted-by-vdsina.com/simple-frontend/keno"
             className="w-full h-full rounded-lg border-0"
             title="Keno Desktop Demo Game"
             allow="fullscreen"
@@ -746,7 +746,7 @@ const Keno = () => {
           <div className="tablet-frame relative mx-auto">
             <div className="tablet-screen">
               <iframe
-                src="https://dev-dot-casino-games-462502.lm.r.appspot.com/keno"
+                src="https://v464541.hosted-by-vdsina.com/simple-frontend/keno"
                 className="w-full h-full border-0 rounded-[15px]"
                 title="Keno Tablet Demo Game"
                 allow="fullscreen"
