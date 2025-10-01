@@ -198,7 +198,7 @@ const translations = {
     "keno.description.p1":
       "Игроки понимают её с первого взгляда — выбираешь числа, получаешь результат. Никаких туториалов, никакой путаницы с правилами.",
     "keno.description.p2":
-      "Поддержка почти не получает вопросов благодаря простоте правил. Игроки возвращаются день за днем за честным и прозрачным геймплеем. Охват аудитории максимальный — от студентов до пенсионеров, от новичков до опытных игроков.",
+      "Простые правила. Игроки возвращаются день за днем за честным и прозрачным геймплеем. Охват аудитории максимальный — от студентов до пенсионеров, от новичков до опытных игроков.",
     "keno.description.p3":
       "Это не революция в гейминге. Это надежный инструмент, который приносит предсказуемый доход без головной боли. Как швейцарские часы — никаких сюрпризов, просто качественно выполняет свою функцию.",
     "keno.play": "Играть",
@@ -453,7 +453,7 @@ const translations = {
     "keno.description.p1":
       "Players understand it at first glance — pick numbers, get results. No tutorials, no confusion with rules.",
     "keno.description.p2":
-      "Support receives almost no questions thanks to simple rules. Players return day after day for honest and transparent gameplay. Maximum audience coverage — from students to retirees, from beginners to experienced players.",
+      "Simple rules. Players return day after day for honest and transparent gameplay. Maximum audience coverage — from students to retirees, from beginners to experienced players.",
     "keno.description.p3":
       "This is not a revolution in gaming. This is a reliable tool that brings predictable revenue without headaches. Like a Swiss watch — no surprises, just quality performance.",
     "keno.play": "Play",
