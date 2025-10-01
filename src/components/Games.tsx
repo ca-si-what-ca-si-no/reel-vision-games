@@ -170,7 +170,7 @@ const Games = () => {
                           variant="gaming"
                           className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg text-sm sm:text-base"
                         >
-                          {t('games.play')}
+                          {t('games.learn_more')}
                         </Button>
                       </Link>
                     </div>

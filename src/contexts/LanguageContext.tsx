@@ -170,8 +170,8 @@ const translations = {
     // Games Section Extended
     "games.title.our": "Наши",
     "games.title.games": "игры",
-    "games.play": "Играть!",
-    "games.coming_soon": "Скоро в продаже",
+    "games.learn_more": "Подробнее",
+    "games.coming_soon": "Новинка",
     "games.dialog.description": "Описание",
     "games.dialog.features": "Характеристики игры",
     "games.dialog.volatility": "Волатильность",
@@ -424,8 +424,8 @@ const translations = {
     // Games Section Extended
     "games.title.our": "Our",
     "games.title.games": "games",
-    "games.play": "Play!",
-    "games.coming_soon": "Coming Soon",
+    "games.learn_more": "Learn More",
+    "games.coming_soon": "New",
     "games.dialog.description": "Description",
     "games.dialog.features": "Game Features",
     "games.dialog.volatility": "Volatility",
