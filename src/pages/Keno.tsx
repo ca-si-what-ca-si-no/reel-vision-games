@@ -672,7 +672,7 @@ const Keno = () => {
                           <iframe
                             key={language}
                             src={gameUrl}
-                            className="w-full h-full border-0 rounded-[28px]"
+                            className="w-full h-full border-0"
                             title="Keno Mobile Demo Game"
                             allow="fullscreen"
                           />
