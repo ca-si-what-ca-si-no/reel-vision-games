@@ -1,12 +1,20 @@
 import logo from "@/assets/logo.svg";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Rocket, Star, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative"
     >
+      {/* Desktop Language Switcher - Fixed Top Right */}
+      <div className="hidden lg:block fixed top-6 right-6 z-50">
+        <LanguageSwitcher variant="desktop" />
+      </div>
       {/* Enhanced Floating Elements */}
       <div
         className="absolute top-20 left-10 animate-float opacity-60 z-10"
@@ -130,24 +138,24 @@ const Hero = () => {
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 md:mb-8 leading-tight text-center">
             <span className="text-transparent bg-gradient-accent bg-clip-text">
-              Zero-effort
+              {t('hero.title.part1')}
             </span>
             <br />
-            <span className="text-foreground">игровые решения</span>
+            <span className="text-foreground">{t('hero.title.part2')}</span>
           </h1>
 
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-12 md:mb-16 text-base md:text-lg flex-wrap">
             <span className="bg-accent/30 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
-              🎯 Любой RTP
+              {t('hero.badge.any_rtp')}
             </span>
             <span className="bg-primary/30 text-primary px-3 py-1 rounded-full text-sm md:text-base font-medium">
-              ⚡ Быстрая интеграция
+              {t('hero.badge.fast_integration')}
             </span>
             <span className="bg-primary-glow/30 text-primary-glow px-3 py-1 rounded-full text-sm md:text-base font-medium">
-              🎨 Полная кастомизация
+              {t('hero.badge.full_customization')}
             </span>
             <span className="bg-accent/30 text-accent px-3 py-1 rounded-full text-sm md:text-base font-medium">
-              ✓ Provably Fair
+              {t('hero.badge.provably_fair')}
             </span>
           </div>
 
@@ -160,7 +168,7 @@ const Hero = () => {
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
             >
-              Связаться с нами
+              {t('hero.cta')}
             </Button>
           </div>
         </div>
@@ -177,7 +185,7 @@ const Hero = () => {
           }}
         >
           <span className="text-foreground/70 text-sm mb-2 font-medium">
-            Наши игры
+            {t('nav.games')}
           </span>
           <div className="animate-bounce">
             <ChevronDown className="w-6 h-6 text-foreground/70" />

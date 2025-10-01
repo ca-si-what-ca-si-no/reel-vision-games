@@ -18,7 +18,9 @@ import {
   Zap,
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Integrators = () => {
+  const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const intervalRef = useRef<NodeJS.Timeout>();
   const pauseTimeoutRef = useRef<NodeJS.Timeout>();
@@ -68,72 +70,67 @@ const Integrators = () => {
   const benefits = [
     {
       icon: Code,
-      title: "Zero-effort интеграция",
-      description:
-        "Вы даёте API — мы делаем всю интеграцию. Ваши разработчики не тратят ни дня на внедрение наших игр.",
+      title: t('integrators.benefit.zero_effort.title'),
+      description: t('integrators.benefit.zero_effort.description'),
     },
     {
       icon: BarChart3,
-      title: "Гибкая математика",
-      description:
-        "RTP без ограничений, настройка каждого коэффициента, полный контроль над экономикой игр.",
+      title: t('integrators.benefit.flexible_math.title'),
+      description: t('integrators.benefit.flexible_math.description'),
     },
     {
       icon: Zap,
-      title: "Запуск за 3-5 дней",
-      description: "От первого контакта до работающей игры на вашем сайте.",
+      title: t('integrators.benefit.fast_launch.title'),
+      description: t('integrators.benefit.fast_launch.description'),
     },
     {
       icon: Shield,
-      title: "Provably Fair",
-      description:
-        "Встроенная проверка честности в каждую игру. Ваши игроки могут проверить любой раунд — полная прозрачность.",
+      title: t('integrators.benefit.provably_fair.title'),
+      description: t('integrators.benefit.provably_fair.description'),
     },
     {
       icon: Globe,
-      title: "Гибкая кастомизация",
-      description:
-        "Добавим ваш логотип на игровое поле, адаптируем под ваш бренд.",
+      title: t('integrators.benefit.customization.title'),
+      description: t('integrators.benefit.customization.description'),
     },
     {
       icon: HeadphonesIcon,
-      title: "SLA и поддержка",
-      description:
-        "Гарантированный uptime 99.9%, мониторинг 24/7, помощь на всех этапах и оперативные фиксы.",
+      title: t('integrators.benefit.sla.title'),
+      description: t('integrators.benefit.sla.description'),
     },
   ];
   const gamePackages = [
     {
       title: "Keno",
-      description: "Классическая лотерейная игра",
+      description: t('integrators.package.keno.description'),
       features: [
-        "Настраиваемый RTP 90-99%",
-        "Управление через API",
-        "Мобильная версия",
-        "Реалтайм статистика",
-        "Полная документация API",
+        t('integrators.package.keno.feature1'),
+        t('integrators.package.keno.feature2'),
+        t('integrators.package.keno.feature3'),
+        t('integrators.package.keno.feature4'),
+        t('integrators.package.keno.feature5'),
       ],
     },
     {
       title: "Hilo",
-      description: "Карточная игра с высокой отдачей",
+      description: t('integrators.package.hilo.description'),
       features: [
-        "Быстрые раунды игры",
-        "Настройка лимитов ставок",
-        "Адаптивный дизайн",
-        "Встроенная аналитика",
-        "Детальная статистика",
+        t('integrators.package.hilo.feature1'),
+        t('integrators.package.hilo.feature2'),
+        t('integrators.package.hilo.feature3'),
+        t('integrators.package.hilo.feature4'),
+        t('integrators.package.hilo.feature5'),
       ],
     },
     {
       title: "Crash Games Pack",
-      description: "Пакет из 5 crash игр",
+      description: t('integrators.package.crash.description'),
       features: [
-        "5 уникальных crash игр",
-        "Единая панель управления",
-        "Высокая волатильность",
-        "Настраиваемые параметры",
-        "24/7 техподдержка",
+        t('integrators.package.crash.feature1'),
+        t('integrators.package.crash.feature2'),
+        t('integrators.package.crash.feature3'),
+        t('integrators.package.crash.feature4'),
+        t('integrators.package.crash.feature5'),
       ],
     },
   ];
@@ -194,9 +191,9 @@ const Integrators = () => {
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Для</span>{" "}
+            <span className="text-foreground">{t('integrators.title.for')}</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
-              интеграторов
+              {t('integrators.title.integrators')}
             </span>
           </h2>
         </div>
@@ -274,11 +271,10 @@ const Integrators = () => {
         {/* CTA Section */}
         <div className="p-12 text-center backdrop-blur-sm bg-background/20 border border-border/50 mt-12">
           <h3 className="text-3xl font-bold mb-6 text-foreground">
-            Готовы начать интеграцию?
+            {t('integrators.cta.title')}
           </h3>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Keno уже готово к интеграции. <br></br>Начните тестирование прямо
-            сейчас!
+            {t('integrators.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -286,7 +282,7 @@ const Integrators = () => {
               className="accent-gradient glow-effect font-semibold"
               onClick={() => scrollToSection("contact")}
             >
-              Запросить демо
+              {t('integrators.cta.button')}
             </Button>
           </div>
         </div>

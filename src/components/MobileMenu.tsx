@@ -2,9 +2,12 @@ import { Button } from "@/components/ui/button";
 import { X, Menu } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo.svg";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
@@ -45,37 +48,42 @@ const MobileMenu = () => {
             </div>
 
             {/* Menu Items */}
-            <div className="flex-1 flex flex-col justify-center space-y-8 px-6">
+            <div className="flex-1 flex flex-col justify-center space-y-6 px-6 py-4">
               <button
                 onClick={() => scrollToSection('games')}
-                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-4"
+                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-3"
               >
-                Наши игры
+                {t('mobile.menu.games')}
               </button>
 
               <button
                 onClick={() => scrollToSection('integrators')}
-                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-4"
+                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-3"
               >
-                Для интеграторов
+                {t('mobile.menu.integrators')}
               </button>
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-4"
+                className="text-3xl font-semibold text-foreground hover:text-accent transition-colors duration-300 text-center py-3"
               >
-                Контакты
+                {t('mobile.menu.contact')}
               </button>
+
+              {/* Language Switcher - Compact */}
+              <div className="pt-4 border-t border-border/30">
+                <LanguageSwitcher variant="mobile" className="max-w-xs mx-auto" />
+              </div>
             </div>
 
-            {/* Bottom CTA */}
-            <div className="p-6 space-y-4">
+            {/* Bottom CTA - Compact */}
+            <div className="p-6 space-y-2">
               <div className="text-center">
-                <p className="text-orange-400 text-lg font-medium mb-4 transform -rotate-2">
-                  Создаем игры для вашего бренда
+                <p className="text-orange-400 text-base font-medium mb-2 transform -rotate-2">
+                  {t('mobile.menu.cta.text')}
                 </p>
-                <div className="flex justify-center mb-4">
-                  <svg width="60" height="40" viewBox="0 0 60 40" className="text-orange-400">
+                <div className="flex justify-center mb-2">
+                  <svg width="50" height="30" viewBox="0 0 60 40" className="text-orange-400">
                     <path
                       d="M30 5 Q 35 15, 30 25 M 30 25 L 25 20 M 30 25 L 35 20"
                       stroke="currentColor"
@@ -87,9 +95,9 @@ const MobileMenu = () => {
               </div>
               <Button
                 onClick={() => scrollToSection('contact')}
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg py-4 rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-base py-3 rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
               >
-                Связаться с нами
+                {t('mobile.menu.cta.button')}
               </Button>
             </div>
           </div>

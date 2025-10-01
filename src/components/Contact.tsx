@@ -3,19 +3,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Linkedin, Mail, MessageCircle, Send, Star, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Contact = () => {
+  const { t } = useLanguage();
+
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email",
+      title: t('contact.info.email'),
       content: "business@gdeNazvanie-studio.com",
-      description: "Для деловых предложений",
+      description: t('contact.form.email'),
     },
     {
       icon: MessageCircle,
-      title: "Telegram",
+      title: t('contact.info.telegram'),
       content: "@gdeNazvanie_support",
-      description: "Быстрые ответы и поддержка",
+      description: "Fast responses and support",
     },
     {
       icon: Linkedin,
@@ -73,9 +76,8 @@ const Contact = () => {
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Свяжитесь</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
-              с нами
+              {t('contact.title')}
             </span>
           </h2>
         </div>
@@ -84,25 +86,25 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="gaming-border card-shadow p-8 animate-slide-in">
             <h3 className="text-2xl font-bold mb-6 text-foreground">
-              Отправить сообщение
+              {t('contact.form.send')}
             </h3>
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-base font-medium text-foreground/80 mb-2 block">
-                    Имя
+                    {t('contact.form.name')}
                   </label>
                   <Input
-                    placeholder="Ваше имя"
+                    placeholder={t('contact.form.name')}
                     className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
                   />
                 </div>
                 <div>
                   <label className="text-base font-medium text-foreground/80 mb-2 block">
-                    Компания
+                    {t('contact.form.company')}
                   </label>
                   <Input
-                    placeholder="Название компании"
+                    placeholder={t('contact.form.company')}
                     className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
                   />
                 </div>
@@ -122,20 +124,20 @@ const Contact = () => {
 
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
-                  Тема
+                  Subject
                 </label>
                 <Input
-                  placeholder="Интеграция игр / Партнерство / Техподдержка"
+                  placeholder="Game Integration / Partnership / Support"
                   className="bg-input border-border focus:border-accent placeholder:text-muted-foreground/60"
                 />
               </div>
 
               <div>
                 <label className="text-base font-medium text-foreground/80 mb-2 block">
-                  Сообщение <span className="text-red-500">*</span>
+                  {t('contact.form.message')} <span className="text-red-500">*</span>
                 </label>
                 <Textarea
-                  placeholder="Расскажите подробнее о вашем проекте..."
+                  placeholder={t('contact.description')}
                   rows={3}
                   required
                   minLength={10}
@@ -145,7 +147,7 @@ const Contact = () => {
 
               <Button className="w-full accent-gradient glow-effect font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 <Send className="w-5 h-5 mr-2" />
-                Отправить сообщение
+                {t('contact.form.send')}
               </Button>
             </form>
           </Card>
@@ -158,7 +160,7 @@ const Contact = () => {
             }}
           >
             <h3 className="text-2xl font-bold mb-6 text-foreground">
-              Контактная информация
+              {t('contact.info.title')}
             </h3>
 
             {contactInfo.map((info, index) => {

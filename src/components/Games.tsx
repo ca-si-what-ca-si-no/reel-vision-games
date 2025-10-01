@@ -4,13 +4,14 @@ import { GermanyFlag, RussiaFlag, USAFlag } from "@/components/ui/flag-icons";
 import { Star, Zap } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Games = () => {
+  const { t } = useLanguage();
   const [selectedGame, setSelectedGame] = useState(null);
   const gameTypes = [
     {
       title: "Keno",
-      description:
-        "Классическая лотерейная игра с современным интерфейсом и настраиваемым RTP",
+      description: t('games.keno.description'),
       features: {
         volatility: 3,
         rtp: "94-97%",
@@ -22,12 +23,12 @@ const Games = () => {
         ],
         maxMultiplier: "1000x",
       },
-      badge: "Популярное",
+      badge: t('games.badge.popular'),
       image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png",
     },
     {
       title: "Space Ball",
-      description: "Crash-игра с уникальным дизайном и механиками",
+      description: t('games.crash.description'),
       features: {
         volatility: 5,
         rtp: "98%",
@@ -35,12 +36,12 @@ const Games = () => {
         languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
         maxMultiplier: "x50000",
       },
-      badge: "Скоро в продаже",
+      badge: t('games.badge.coming_soon'),
       image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png",
     },
     {
       title: "Arrow Shot",
-      description: "Crash-игра с уникальным дизайном и механиками",
+      description: t('games.crash.description'),
       features: {
         volatility: 5,
         rtp: "98%",
@@ -48,13 +49,12 @@ const Games = () => {
         languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
         maxMultiplier: "x50000",
       },
-      badge: "Скоро в продаже",
+      badge: t('games.badge.coming_soon'),
       image: "/lovable-uploads/arrow-shot-game.png",
     },
     {
       title: "Hilo",
-      description:
-        "Увлекательная карточная игра с простыми правилами и высокой отдачей",
+      description: t('games.hilo.description'),
       features: {
         volatility: 4,
         rtp: "96-98%",
@@ -62,7 +62,7 @@ const Games = () => {
         languages: [<RussiaFlag size={20} />, <USAFlag size={20} />],
         maxMultiplier: "2500x",
       },
-      badge: "Скоро в продаже",
+      badge: t('games.badge.coming_soon'),
       image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png",
     },
   ];
@@ -115,9 +115,9 @@ const Games = () => {
       <div className="max-w-[1200px] mx-auto px-6 w-full">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Наши</span>{" "}
+            <span className="text-foreground">{t('games.title.our')}</span>{" "}
             <span className="text-transparent bg-gradient-accent bg-clip-text">
-              игры
+              {t('games.title.games')}
             </span>
           </h2>
         </div>
@@ -170,7 +170,7 @@ const Games = () => {
                           variant="gaming"
                           className="w-full h-10 sm:h-12 px-3 sm:px-4 rounded-lg text-sm sm:text-base"
                         >
-                          Играть!
+                          {t('games.play')}
                         </Button>
                       </Link>
                     </div>
@@ -180,7 +180,7 @@ const Games = () => {
                         disabled
                         className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base opacity-50 cursor-not-allowed"
                       >
-                        Скоро в продаже
+                        {t('games.coming_soon')}
                       </button>
                     </div>
                   )}
@@ -215,7 +215,7 @@ const Games = () => {
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Описание</h3>
+                  <h3 className="text-lg font-semibold mb-2">{t('games.dialog.description')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {selectedGame.description}
                   </p>
@@ -223,12 +223,12 @@ const Games = () => {
 
                 <div>
                   <h3 className="text-lg font-semibold mb-3">
-                    Характеристики игры
+                    {t('games.dialog.features')}
                   </h3>
                   <div className="grid grid-cols-1 gap-4">
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">
-                        Волатильность
+                        {t('games.dialog.volatility')}
                       </span>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
@@ -247,7 +247,7 @@ const Games = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">
-                        Платформы
+                        {t('games.dialog.platforms')}
                       </span>
                       <span className="text-sm font-medium">
                         {selectedGame.features.platforms.join(", ")}
@@ -255,7 +255,7 @@ const Games = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">
-                        Языки
+                        {t('games.dialog.languages')}
                       </span>
                       <div className="flex gap-2">
                         {selectedGame.features.languages.map((flag, i) => (
@@ -265,7 +265,7 @@ const Games = () => {
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <span className="text-sm text-muted-foreground">
-                        Макс. множитель
+                        {t('games.dialog.max_multiplier')}
                       </span>
                       <span className="text-sm font-semibold text-green-400">
                         {selectedGame.features.maxMultiplier}
@@ -280,7 +280,7 @@ const Games = () => {
                       onClick={() => setSelectedGame(null)}
                       className="accent-gradient glow-effect font-semibold flex-1"
                     >
-                      Закрыть
+                      {t('games.dialog.close')}
                     </Button>
                     <Button
                       onClick={() => {
@@ -302,7 +302,7 @@ const Games = () => {
                       }}
                       className="accent-gradient glow-effect font-semibold flex-1"
                     >
-                      Запросить интеграцию
+                      {t('games.dialog.request_integration')}
                     </Button>
                   </div>
                 </div>

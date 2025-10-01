@@ -1,8 +1,11 @@
 import logo from "@/assets/logo.svg";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-border">
       <div className="max-w-[1200px] mx-auto px-6 py-6">
@@ -22,8 +25,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-accent ml-3">Studio</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Вы даёте API — мы запускаем игру за 3 дня. Никакого кода с вашей
-              стороны.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -64,7 +66,7 @@ const Footer = () => {
                 }
               }}
             >
-              Начать сотрудничество
+              {t('nav.cta')}
               <ExternalLink className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </div>
@@ -73,7 +75,7 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="mt-6 pt-4 border-t border-border">
           <div className="text-muted-foreground text-xs text-center">
-            © 2025 2xWet Studio. Все права защищены.
+            {t('footer.copyright')}
           </div>
         </div>
       </div>

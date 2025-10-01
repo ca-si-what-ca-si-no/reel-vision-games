@@ -1,6 +1,6 @@
-import CallToActionCard from "@/components/CallToActionCard";
 import FloatingControls from "@/components/FloatingControls";
 import Footer from "@/components/Footer";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import MobileMenu from "@/components/MobileMenu";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +9,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeft,
   Globe,
@@ -23,22 +24,56 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const Keno = () => {
+  const { t } = useLanguage();
   const [selectedDevice, setSelectedDevice] = useState("mobile");
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
   const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
+  const [rightColumnStyle, setRightColumnStyle] = useState<React.CSSProperties>(
+    {}
+  );
 
   // Прокручиваем страницу наверх при загрузке
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Calculate right column position
+  useEffect(() => {
+    const updatePosition = () => {
+      const container = document.querySelector(".max-w-\\[1200px\\]");
+      if (!container) return;
+
+      const rect = container.getBoundingClientRect();
+      const leftWidth = rect.width * 0.6;
+      const rightWidth = rect.width * 0.4;
+
+      setRightColumnStyle({
+        position: "fixed",
+        top: "96px",
+        left: `${rect.left + leftWidth + 48}px`,
+        width: `${rightWidth - 48}px`,
+      });
+    };
+
+    if (window.innerWidth >= 1280) {
+      updatePosition();
+      window.addEventListener("resize", updatePosition);
+      return () => window.removeEventListener("resize", updatePosition);
+    }
+  }, []);
   const gameData = {
     title: "Keno",
-    badge: "Лотерея",
+    badge: t("keno.badge"),
     image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png",
   };
   return (
     <div className="min-h-screen">
+      {/* Desktop Language Switcher - Fixed Top Right */}
+      <div className="hidden lg:block fixed top-6 right-6 z-50">
+        <LanguageSwitcher variant="desktop" />
+      </div>
+
       {/* Animated Background */}
       <div className="animated-background">
         <div className="floating-orb"></div>
@@ -64,22 +99,38 @@ const Keno = () => {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Назад к играм
+              {t("keno.back")}
             </Link>
           </div>
 
           {/* 60/40 Layout */}
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-12 xl:items-start">
+          <div className="xl:flex xl:gap-12 xl:items-start">
             {/* Left Side - Information (60%) */}
-            <div className="xl:col-span-3 space-y-12">
+            <div className="xl:w-3/5 space-y-12">
               {/* Header */}
               <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <h1 className="text-4xl font-bold text-foreground">
-                    {gameData.title}
-                  </h1>
-                  <div className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    {gameData.badge}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                  <div className="flex items-center gap-4">
+                    <h1 className="text-4xl font-bold text-foreground">
+                      {gameData.title}
+                    </h1>
+                    <div className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                      {gameData.badge}
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Button
+                      onClick={() => setIsMobileModalOpen(true)}
+                      className="xl:hidden bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                    >
+                      {t("keno.play")}
+                    </Button>
+                    <Button
+                      onClick={() => window.location.href = '/#contact'}
+                      className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-6 py-2 rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                    >
+                      {t('keno.request_integration')}
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -87,51 +138,29 @@ const Keno = () => {
               {/* Game Description */}
               <div>
                 <h2 className="text-2xl font-semibold mb-6">
-                  Классика, которая работает всегда
+                  {t("keno.description.title")}
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Игроки понимают её с первого взгляда — выбираешь числа,
-                    получаешь результат. Никаких туториалов, никакой путаницы с
-                    правилами.
-                  </p>
+                  <p>{t("keno.description.p1")}</p>
 
-                  <p>
-                    Поддержка почти не получает вопросов благодаря простоте
-                    правил. Игроки возвращаются день за днем за честным и
-                    прозрачным геймплеем. Охват аудитории максимальный — от
-                    студентов до пенсионеров, от новичков до опытных игроков.
-                  </p>
+                  <p>{t("keno.description.p2")}</p>
 
-                  <p>
-                    Это не революция в гейминге. Это надежный инструмент,
-                    который приносит предсказуемый доход без головной боли. Как
-                    швейцарские часы — никаких сюрпризов, просто качественно
-                    выполняет свою функцию.
-                  </p>
-
-                  {/* Mobile Play Button - Moved before advantages */}
-                  <div className="block md:hidden mb-8">
-                    <Button
-                      onClick={() => setIsMobileModalOpen(true)}
-                      className="w-full bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground px-6 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
-                    >
-                      Играть
-                    </Button>
-                  </div>
+                  <p>{t("keno.description.p3")}</p>
                 </div>
               </div>
 
               {/* Technical Specifications */}
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Преимущества</h2>
+                <h2 className="text-2xl font-semibold mb-6">
+                  {t("keno.advantages.title")}
+                </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                   <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-primary text-sm md:text-base">
-                      Кастомизация
+                      {t("keno.advantages.customization")}
                     </div>
                   </div>
 
@@ -140,8 +169,7 @@ const Keno = () => {
                       <Plug className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-green-400 text-sm md:text-base leading-tight">
-                      Zero-effort
-                      <br className="sm:hidden" /> интеграция
+                      {t("keno.advantages.zero_effort")}
                     </div>
                   </div>
 
@@ -150,15 +178,14 @@ const Keno = () => {
                       <Zap className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-yellow-400 text-sm md:text-base">
-                      До x750
+                      {t("keno.advantages.multiplier")}
                     </div>
                   </div>
 
                   <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
-                    <div className="text-lg mb-3">📱💻📱</div>
+                    <div className="text-lg mb-3">📱💻</div>
                     <div className="font-semibold text-blue-400 text-sm md:text-base leading-tight">
-                      Адаптивный
-                      <br className="sm:hidden" /> дизайн
+                      {t("keno.advantages.responsive")}
                     </div>
                   </div>
 
@@ -167,7 +194,7 @@ const Keno = () => {
                       <Globe className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-cyan-400 text-sm md:text-base">
-                      Мультиязычность
+                      {t("keno.advantages.multilingual")}
                     </div>
                   </div>
 
@@ -176,7 +203,7 @@ const Keno = () => {
                       <Shield className="w-full h-full" />
                     </div>
                     <div className="font-semibold text-green-400 text-sm md:text-base">
-                      Provably Fair ✓
+                      {t("keno.advantages.provably_fair")}
                     </div>
                   </div>
                 </div>
@@ -184,61 +211,63 @@ const Keno = () => {
 
               {/* Game Process */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Процесс игры</h2>
+                <h2 className="text-2xl font-semibold mb-4">
+                  {t("keno.process.title")}
+                </h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
                   <div className="space-y-6">
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h3 className="text-lg font-semibold text-blue-400 mb-2">
-                        1. Инициализация раунда
+                        {t("keno.process.init.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Игрок выбирает 1-10 чисел из 40</li>
-                        <li>• Система генерирует seed для Provably Fair</li>
-                        <li>• Отображается хеш будущего результата</li>
+                        <li>{t("keno.process.init.item1")}</li>
+                        <li>{t("keno.process.init.item2")}</li>
+                        <li>{t("keno.process.init.item3")}</li>
                       </ul>
                     </div>
 
                     <div className="border-l-4 border-green-500 pl-4">
                       <h3 className="text-lg font-semibold text-green-400 mb-2">
-                        2. Транзакция ставки
+                        {t("keno.process.bet.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Запрос на списание через API казино</li>
-                        <li>• Подтверждение баланса</li>
-                        <li>• Фиксация ставки в системе</li>
+                        <li>{t("keno.process.bet.item1")}</li>
+                        <li>{t("keno.process.bet.item2")}</li>
+                        <li>{t("keno.process.bet.item3")}</li>
                       </ul>
                     </div>
 
                     <div className="border-l-4 border-purple-500 pl-4">
                       <h3 className="text-lg font-semibold text-purple-400 mb-2">
-                        3. Генерация результата
+                        {t("keno.process.result.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• RNG генерирует 10 чисел из 40</li>
-                        <li>• Использование seed + server seed</li>
-                        <li>• Результат неизменяем после генерации</li>
+                        <li>{t("keno.process.result.item1")}</li>
+                        <li>{t("keno.process.result.item2")}</li>
+                        <li>{t("keno.process.result.item3")}</li>
                       </ul>
                     </div>
 
                     <div className="border-l-4 border-yellow-500 pl-4">
                       <h3 className="text-lg font-semibold text-yellow-400 mb-2">
-                        4. Расчет выигрыша
+                        {t("keno.process.calc.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Сравнение выборов игрока с результатом</li>
-                        <li>• Применение коэффициента из таблицы выплат</li>
-                        <li>• Формирование суммы выигрыша</li>
+                        <li>{t("keno.process.calc.item1")}</li>
+                        <li>{t("keno.process.calc.item2")}</li>
+                        <li>{t("keno.process.calc.item3")}</li>
                       </ul>
                     </div>
 
                     <div className="border-l-4 border-orange-500 pl-4">
                       <h3 className="text-lg font-semibold text-orange-400 mb-2">
-                        5. Завершение раунда
+                        {t("keno.process.complete.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Начисление выигрыша через API</li>
-                        <li>• Сохранение истории раунда</li>
-                        <li>• Раскрытие server seed для проверки</li>
+                        <li>{t("keno.process.complete.item1")}</li>
+                        <li>{t("keno.process.complete.item2")}</li>
+                        <li>{t("keno.process.complete.item3")}</li>
                       </ul>
                     </div>
                   </div>
@@ -247,244 +276,256 @@ const Keno = () => {
 
               {/* Payout Table */}
               <div>
-                <h2 className="text-2xl font-semibold mb-2">Таблица выплат</h2>
+                <h2 className="text-2xl font-semibold mb-2">
+                  {t("keno.payout.title")}
+                </h2>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Коэффициенты для каждого количества выбранных и угаданных
-                  чисел
+                  {t("keno.payout.description")}
                 </p>
                 <div className="gaming-border card-shadow rounded-lg overflow-hidden">
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs">
+                    <table className="w-full text-xs border-collapse">
                       <thead className="bg-muted/30">
                         <tr>
-                          <th className="p-2 text-center font-semibold">
-                            Выбрано
+                          <th
+                            rowSpan={2}
+                            className="p-2 text-center font-semibold border border-border/30 text-xs text-muted-foreground uppercase tracking-wider align-middle"
+                          >
+                            {t("keno.payout.selected")}
                           </th>
-                          <th className="p-2 text-center font-semibold">
-                            1 совп.
+                          <th
+                            colSpan={10}
+                            className="p-2 text-center font-semibold border border-border/30 text-xs text-muted-foreground uppercase tracking-wider"
+                          >
+                            {t("keno.payout.matches")}
                           </th>
-                          <th className="p-2 text-center font-semibold">
-                            2 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            3 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            4 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            5 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            6 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            7 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            8 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            9 совп.
-                          </th>
-                          <th className="p-2 text-center font-semibold">
-                            10 совп.
-                          </th>
+                        </tr>
+                        <tr>
+                          <th className="p-2 text-center font-semibold border border-border/30">1</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">2</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">3</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">4</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">5</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">6</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">7</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">8</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">9</th>
+                          <th className="p-2 text-center font-semibold border border-border/30">10</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">1</td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            1
+                          </td>
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x3.8
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">2</td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            2
+                          </td>
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x1.9
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x4
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">3</td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            3
+                          </td>
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x1
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x3.1
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x8
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">4</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            4
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.7
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x2
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x6
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x12
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">5</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            5
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.4
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x1.3
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x3.9
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x11.8
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x30
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">6</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            6
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.3
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.9
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x2.7
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x8.1
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x24.1
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x50
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">7</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            7
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.2
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.6
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x1.9
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x5.6
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x16.8
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x50.3
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x100
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">8</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            8
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.1
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.4
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x1.3
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x3.9
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x11.8
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x35.4
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x106.2
                           </td>
-                          <td className="p-2 text-center text-red-400 font-bold">
+                          <td className="p-2 text-center text-red-400 font-bold border border-border/30">
                             x250
                           </td>
                         </tr>
-                        <tr className="border-b border-border/50">
-                          <td className="p-2 text-center font-medium">9</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                        <tr>
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            9
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.1
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.3
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.9
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x2.8
                           </td>
-                          <td className="p-2 text-center text-green-600 font-medium">
+                          <td className="p-2 text-center text-green-600 font-medium border border-border/30">
                             x8.4
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x25.1
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x75.4
                           </td>
-                          <td className="p-2 text-center text-red-400 font-bold">
+                          <td className="p-2 text-center text-red-400 font-bold border border-border/30">
                             x226.2
                           </td>
-                          <td className="p-2 text-center text-purple-500 font-bold">
+                          <td className="p-2 text-center text-purple-500 font-bold border border-border/30">
                             x600
                           </td>
                         </tr>
                         <tr>
-                          <td className="p-2 text-center font-medium">10</td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center font-medium border border-border/30 bg-muted/20">
+                            10
+                          </td>
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.1
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.2
                           </td>
-                          <td className="p-2 text-center text-gray-400 font-medium">
+                          <td className="p-2 text-center text-gray-400 font-medium border border-border/30">
                             x0.7
                           </td>
-                          <td className="p-2 text-center text-green-400 font-medium">
+                          <td className="p-2 text-center text-green-400 font-medium border border-border/30">
                             x2
                           </td>
-                          <td className="p-2 text-center text-green-500 font-medium">
+                          <td className="p-2 text-center text-green-500 font-medium border border-border/30">
                             x6
                           </td>
-                          <td className="p-2 text-center text-yellow-400 font-medium">
+                          <td className="p-2 text-center text-yellow-400 font-medium border border-border/30">
                             x18
                           </td>
-                          <td className="p-2 text-center text-orange-400 font-bold">
+                          <td className="p-2 text-center text-orange-400 font-bold border border-border/30">
                             x54
                           </td>
-                          <td className="p-2 text-center text-orange-500 font-bold">
+                          <td className="p-2 text-center text-orange-500 font-bold border border-border/30">
                             x162.1
                           </td>
-                          <td className="p-2 text-center text-purple-400 font-bold">
+                          <td className="p-2 text-center text-purple-400 font-bold border border-border/30">
                             x486.4
                           </td>
-                          <td className="p-2 text-center text-purple-600 font-bold text-shadow">
+                          <td className="p-2 text-center text-purple-600 font-bold text-shadow border border-border/30">
                             x750
                           </td>
                         </tr>
@@ -493,66 +534,56 @@ const Keno = () => {
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3">
-                  * Полная таблица коэффициентов для RTP 98%. Любые настройки по
-                  запросу.
+                  {t("keno.payout.note")}
                 </p>
               </div>
 
               {/* For Operators */}
               <div>
                 <h2 className="text-2xl font-semibold mb-4">
-                  Что мы настраиваем
+                  {t("keno.customization.title")}
                 </h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
                   <div className="space-y-6">
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h3 className="text-lg font-semibold text-blue-400 mb-2 flex items-center gap-2">
-                        🎯 Математическая модель
+                        {t("keno.customization.math.title")}
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        RTP без ограничений — хоть 50%, хоть 99%. Каждый
-                        коэффициент выплат настраивается отдельно. Полный
-                        контроль над волатильностью на каждом уровне выбора.
+                        {t("keno.customization.math.description")}
                       </p>
                     </div>
 
                     <div className="border-l-4 border-green-500 pl-4">
                       <h3 className="text-lg font-semibold text-green-400 mb-2 flex items-center gap-2">
-                        💸 Экономические параметры
+                        {t("keno.customization.economics.title")}
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        Любые лимиты ставок — подстроим под вашу аудиторию.
-                        Ограничение максимального выигрыша для контроля рисков.
-                        Работа со всеми валютами вашей платформы.
+                        {t("keno.customization.economics.description")}
                       </p>
                     </div>
 
                     <div className="border-l-4 border-purple-500 pl-4">
                       <h3 className="text-lg font-semibold text-purple-400 mb-2 flex items-center gap-2">
-                        🏢 Брендирование
+                        {t("keno.customization.branding.title")}
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        Ваш логотип прямо на игровом поле — игроки видят ваш
-                        бренд. Планируем: цветовые схемы, кастомные звуки,
-                        уникальные темы.
+                        {t("keno.customization.branding.description")}
                       </p>
                     </div>
 
                     <div className="border-l-4 border-yellow-500 pl-4">
                       <h3 className="text-lg font-semibold text-yellow-400 mb-2 flex items-center gap-2">
-                        🔜 Скоро запустим
+                        {t("keno.customization.coming_soon.title")}
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        Бэк-офис для самостоятельной настройки параметров.
-                        Расширенная визуальная кастомизация. A/B тестирование
-                        разных конфигураций.
+                        {t("keno.customization.coming_soon.description")}
                       </p>
                     </div>
 
                     <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg mt-6">
                       <p className="text-primary font-medium">
-                        Главное: вы говорите — мы настраиваем. Никаких
-                        ограничений.
+                        {t("keno.customization.main_message")}
                       </p>
                     </div>
                   </div>
@@ -562,42 +593,41 @@ const Keno = () => {
               {/* Integration */}
               <div>
                 <h2 className="text-2xl font-semibold mb-4">
-                  Zero-effort интеграция
+                  {t("keno.integration.title")}
                 </h2>
                 <div className="gaming-border card-shadow p-6 rounded-lg">
                   <div className="space-y-6">
                     {/* What you do */}
                     <div className="border-l-4 border-green-500 pl-4">
                       <h3 className="text-lg font-semibold text-green-400 mb-2">
-                        Что делаете вы:
+                        {t("keno.integration.you_do.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Отправляете доступ к вашему API</li>
+                        <li>{t("keno.integration.you_do.item1")}</li>
                       </ul>
                     </div>
 
                     {/* What we do */}
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h3 className="text-lg font-semibold text-blue-400 mb-3">
-                        Что делаем мы:
+                        {t("keno.integration.we_do.title")}
                       </h3>
                       <ul className="space-y-2 text-muted-foreground text-sm">
-                        <li>• Изучаем документацию вашего API</li>
-                        <li>• Пишем интеграционный слой</li>
-                        <li>• Настраиваем обмен данными</li>
-                        <li>• Тестируем все сценарии</li>
-                        <li>• Запускаем в продакшн</li>
+                        <li>{t("keno.integration.we_do.item1")}</li>
+                        <li>{t("keno.integration.we_do.item2")}</li>
+                        <li>{t("keno.integration.we_do.item3")}</li>
+                        <li>{t("keno.integration.we_do.item4")}</li>
+                        <li>{t("keno.integration.we_do.item5")}</li>
                       </ul>
                     </div>
 
                     {/* Result */}
                     <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
                       <h4 className="text-primary font-semibold mb-2">
-                        Результат через 3-5 дней:
+                        {t("keno.integration.result.title")}
                       </h4>
                       <p className="text-primary text-sm">
-                        Готовая игра в iframe, которую остается только встроить
-                        на сайт. Никакой работы для ваших разработчиков.
+                        {t("keno.integration.result.description")}
                       </p>
                     </div>
                   </div>
@@ -606,8 +636,8 @@ const Keno = () => {
             </div>
 
             {/* Right Side - Demo (40%) */}
-            <div className="xl:col-span-2">
-              <div className="sticky top-24">
+            <div className="xl:w-2/5 hidden xl:block relative">
+              <div className="xl:fixed xl:top-24 xl:w-[calc(40%-3rem*3/5)]">
                 {/* Device Preview with Side Controls */}
                 <div className="flex items-start justify-center gap-4 mb-6">
                   {/* Left side - Phone and CTA aligned */}
@@ -627,15 +657,15 @@ const Keno = () => {
                     )}
 
                     {/* Call to Action */}
-                    <div className="mt-8 w-full max-w-[400px]">
+                    {/* <div className="mt-8 w-full max-w-[400px]">
                       <CallToActionCard
-                        title="Готовы интегрировать Keno?"
-                        description="Получите полнофункциональную демо-версию с документацией API"
-                        statusText="На связи 24/7"
-                        buttonText="Запросить интеграцию"
+                        title={t("keno.cta.title")}
+                        description={t("keno.cta.description")}
+                        statusText={t("keno.cta.status")}
+                        buttonText={t("keno.cta.button")}
                         buttonLink="/#contact"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* Device Selection Buttons - Hidden on mobile */}
