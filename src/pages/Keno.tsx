@@ -654,6 +654,21 @@ const Keno = () => {
                     {selectedDevice === "mobile" && (
                       <div className="phone-frame hidden md:block">
                         <div className="phone-screen">
+                          <div className="phone-status-bar">
+                            <div className="status-left">9:41</div>
+                            <div className="status-right">
+                              <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                                <path d="M0 2C0 0.895431 0.895431 0 2 0H4C5.10457 0 6 0.895431 6 2V10C6 11.1046 5.10457 12 4 12H2C0.895431 12 0 11.1046 0 10V2Z" fill="white" fillOpacity="0.4"/>
+                                <path d="M7.5 3C7.5 2.17157 8.17157 1.5 9 1.5H11C11.8284 1.5 12.5 2.17157 12.5 3V9C12.5 9.82843 11.8284 10.5 11 10.5H9C8.17157 10.5 7.5 9.82843 7.5 9V3Z" fill="white" fillOpacity="0.4"/>
+                                <path d="M14 4C14 3.44772 14.4477 3 15 3C15.5523 3 16 3.44772 16 4V8C16 8.55228 15.5523 9 15 9C14.4477 9 14 8.55228 14 8V4Z" fill="white" fillOpacity="0.4"/>
+                              </svg>
+                              <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+                                <path d="M0 4C0 2.89543 0.895431 2 2 2H11C12.1046 2 13 2.89543 13 4V8C13 9.10457 12.1046 10 11 10H2C0.895431 10 0 9.10457 0 8V4Z" fill="white" fillOpacity="0.4"/>
+                                <path d="M13.5 4.5V7.5C14.3284 7.16667 15 6.33333 15 5.5C15 4.66667 14.3284 4.83333 13.5 4.5Z" fill="white" fillOpacity="0.4"/>
+                                <rect x="1.5" y="3.5" width="10" height="5" rx="1" fill="white"/>
+                              </svg>
+                            </div>
+                          </div>
                           <iframe
                             key={language}
                             src={gameUrl}

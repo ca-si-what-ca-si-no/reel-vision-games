@@ -719,7 +719,34 @@ All colors MUST be HSL.
     height: 30px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
-    z-index: 5;
+    z-index: 15;
+  }
+
+  .phone-status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 10;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+  }
+
+  .status-left {
+    flex: 1;
+  }
+
+  .status-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .tablet-frame {
