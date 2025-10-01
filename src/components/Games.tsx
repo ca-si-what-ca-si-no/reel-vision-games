@@ -5,6 +5,13 @@ import { Star, Zap, Clock } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Helper to get correct public path with base URL
+const getPublicPath = (path: string) => {
+  const base = import.meta.env.BASE_URL;
+  return base + path.replace(/^\//, '');
+};
+
 const Games = () => {
   const { t } = useLanguage();
   const [selectedGame, setSelectedGame] = useState(null);
@@ -24,7 +31,7 @@ const Games = () => {
         maxMultiplier: "1000x",
       },
       badge: t('games.badge.popular'),
-      image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png",
+      image: getPublicPath("lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"),
     },
     {
       title: "Space Ball",
@@ -37,7 +44,7 @@ const Games = () => {
         maxMultiplier: "x50000",
       },
       badge: t('games.badge.coming_soon'),
-      image: "/lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png",
+      image: getPublicPath("lovable-uploads/b17f2fcd-8c2a-4f79-9914-3e3373e0a661.png"),
     },
     {
       title: "Arrow Shot",
@@ -50,7 +57,7 @@ const Games = () => {
         maxMultiplier: "x50000",
       },
       badge: t('games.badge.coming_soon'),
-      image: "/lovable-uploads/arrow-shot-game.png",
+      image: getPublicPath("lovable-uploads/arrow-shot-game.png"),
     },
     {
       title: "Hilo",
@@ -63,7 +70,7 @@ const Games = () => {
         maxMultiplier: "2500x",
       },
       badge: t('games.badge.coming_soon'),
-      image: "/lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png",
+      image: getPublicPath("lovable-uploads/e380c354-c9a4-40de-a8be-22c8b6d81ccf.png"),
     },
   ];
   return (

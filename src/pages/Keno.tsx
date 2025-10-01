@@ -62,10 +62,17 @@ const Keno = () => {
       return () => window.removeEventListener("resize", updatePosition);
     }
   }, []);
+
+  // Helper to get correct public path with base URL
+  const getPublicPath = (path: string) => {
+    const base = import.meta.env.BASE_URL;
+    return base + path.replace(/^\//, '');
+  };
+
   const gameData = {
     title: "Keno",
     badge: t("keno.badge"),
-    image: "/lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png",
+    image: getPublicPath("lovable-uploads/8ae2ba9a-e0ad-4bcd-a93e-b8aec9370099.png"),
   };
   return (
     <div className="min-h-screen">
