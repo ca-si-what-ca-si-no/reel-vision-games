@@ -18,7 +18,6 @@ import {
   Settings,
   Shield,
   Smartphone,
-  TabletSmartphone,
   Zap,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -27,7 +26,6 @@ const Keno = () => {
   const { t, language } = useLanguage();
   const [selectedDevice, setSelectedDevice] = useState("mobile");
   const [isDesktopModalOpen, setIsDesktopModalOpen] = useState(false);
-  const [isTabletModalOpen, setIsTabletModalOpen] = useState(false);
   const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
   const [rightColumnStyle, setRightColumnStyle] = useState<React.CSSProperties>(
     {}
@@ -696,13 +694,6 @@ const Keno = () => {
                       >
                         <Monitor className="w-5 h-5" />
                       </button>
-                      <button
-                        onClick={() => setIsTabletModalOpen(true)}
-                        className="flex items-center justify-center p-3 rounded-md transition-all bg-background text-foreground hover:bg-muted/50 border border-border hover:border-muted-foreground mt-2"
-                        title="Планшет"
-                      >
-                        <TabletSmartphone className="w-5 h-5" />
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -746,27 +737,6 @@ const Keno = () => {
             title="Keno Desktop Demo Game"
             allow="fullscreen"
           />
-        </DialogContent>
-      </Dialog>
-
-      {/* Tablet Modal */}
-      <Dialog open={isTabletModalOpen} onOpenChange={setIsTabletModalOpen}>
-        <DialogContent className="max-w-fit p-8 bg-background/95 backdrop-blur [&>button]:w-8 [&>button]:h-8 md:[&>button]:w-6 md:[&>button]:h-6">
-          <DialogTitle className="sr-only">Keno Tablet Game</DialogTitle>
-          <DialogDescription className="sr-only">
-            Полнофункциональная демо-версия игры Keno для планшета
-          </DialogDescription>
-          <div className="tablet-frame relative mx-auto">
-            <div className="tablet-screen">
-              <iframe
-                key={language}
-                src={gameUrl}
-                className="w-full h-full border-0 rounded-[15px]"
-                title="Keno Tablet Demo Game"
-                allow="fullscreen"
-              />
-            </div>
-          </div>
         </DialogContent>
       </Dialog>
 
