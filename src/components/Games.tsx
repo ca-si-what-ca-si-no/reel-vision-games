@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { GermanyFlag, RussiaFlag, USAFlag } from "@/components/ui/flag-icons";
-import { Star, Zap } from "lucide-react";
+import { Star, Zap, Clock } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -178,9 +178,10 @@ const Games = () => {
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                       <button
                         disabled
-                        className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base opacity-50 cursor-not-allowed"
+                        className="outline-button flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base opacity-50 cursor-not-allowed flex items-center justify-center gap-2"
                       >
-                        {t('games.coming_soon')}
+                        <Clock className="w-4 h-4" />
+                        {t('games.button.coming_soon')}
                       </button>
                     </div>
                   )}
