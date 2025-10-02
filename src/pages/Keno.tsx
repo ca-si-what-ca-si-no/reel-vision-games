@@ -32,7 +32,7 @@ const Keno = () => {
   );
 
   // Game URL with language parameter
-  const gameUrl = `https://v464541.hosted-by-vdsina.com/simple-frontend/keno?balance_amount=10000&promocode=demo&language=${language}`;
+  const gameUrl = `https://v464541.hosted-by-vdsina.com/simple-frontend/keno?balance_amount=10000&promocode=demo&sound=off&language=${language}`;
 
   // Прокручиваем страницу наверх при загрузке
   useEffect(() => {
