@@ -145,6 +145,7 @@ const Games = () => {
                   src={game.image}
                   alt={`${game.title} game interface`}
                   className="w-full h-56 object-cover"
+                  loading={index < 3 ? "eager" : "lazy"}
                 />
                 <div className="absolute top-4 left-4">
                   <div className="game-badge px-3 py-1 rounded-full text-sm">
