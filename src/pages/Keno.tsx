@@ -530,7 +530,7 @@ const Keno = () => {
                           <td className="p-2 text-center text-orange-500 font-bold border border-border/30">
                             x162.1
                           </td>
-                          <td className="p-2 text-center text-purple-400 font-bold border border-border/30">
+                          <td className="p-2 text-center text-purple-500 font-bold border border-border/30">
                             x486.4
                           </td>
                           <td className="p-2 text-center text-purple-600 font-bold text-shadow border border-border/30">
