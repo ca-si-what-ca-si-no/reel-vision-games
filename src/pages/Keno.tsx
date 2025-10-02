@@ -163,7 +163,7 @@ const Keno = () => {
                   {t("keno.advantages.title")}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-primary">
                       <Settings className="w-full h-full" />
                     </div>
@@ -172,7 +172,7 @@ const Keno = () => {
                     </div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-green-400">
                       <Plug className="w-full h-full" />
                     </div>
@@ -190,14 +190,14 @@ const Keno = () => {
                     </div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="text-lg mb-3">📱💻</div>
                     <div className="font-semibold text-blue-400 text-sm md:text-base leading-tight">
                       {t("keno.advantages.responsive")}
                     </div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-cyan-400">
                       <Globe className="w-full h-full" />
                     </div>
@@ -206,7 +206,7 @@ const Keno = () => {
                     </div>
                   </div>
 
-                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center">
+                  <div className="gaming-border card-shadow p-4 md:p-6 rounded-lg text-center flex flex-col items-center justify-center">
                     <div className="w-8 h-8 mx-auto mb-3 text-green-400">
                       <Shield className="w-full h-full" />
                     </div>
