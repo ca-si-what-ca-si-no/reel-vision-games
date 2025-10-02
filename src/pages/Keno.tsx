@@ -128,7 +128,7 @@ const Keno = () => {
                   </div>
                   <div className="flex gap-3">
                     <Button
-                      onClick={() => setIsMobileModalOpen(true)}
+                      onClick={() => window.open(gameUrl, '_blank')}
                       className="xl:hidden bg-gradient-to-r from-accent via-primary-glow to-primary text-primary-foreground font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
                     >
                       {t("keno.play")}
